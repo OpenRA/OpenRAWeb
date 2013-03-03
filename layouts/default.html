@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>OpenRA - <%= @item[:title] %></title>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="/style.css" rel="stylesheet">
+
+    <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+  </head>
+
+  <body>
+    <div id="Wrap">
+      <div style="padding-top: 30px;">
+        <div id="Header" class="bar typography">
+          <h1><img src="/images/soviet-logo.png" />OpenRA</h1>
+        </div>
+        <div id="Container">
+          <div id="Navigation" class="typography">
+            <span class="links"><a href="/">Home</a></span>
+            <span class="links"><a href="/download/">Download</a></span>
+            <span class="links"><a href="/news/">News</a></span>
+            <span class="links"><a href="/mods/">Mods</a></span>
+            <span class="links"><a href="/get-involved/">Get Involved</a></span>
+            <span class="links"><a href="http://www.sleipnirstuff.com/forum/viewforum.php?f=80">Forum</a></span>
+            <span class="links"><a href="irc://chat.freenode.net/openra">IRC</a></span>
+            <span class="links"><a href="http://twitter.com/openRA">Twitter</a></span>
+            <span class="links"><a href="http://github.com/OpenRA/OpenRA/wiki">Wiki</a></span>
+          </div>
+          <div id="Layout">
+              <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Footer" class="bar typography">
+      <p id="trademarks">
+      Copyright &copy; 2007-2013 The OpenRA Developers<br />
+      Platform icons by Tatice (<a href="http://tatice.deviantart.com/">http://tatice.deviantart.com/</a>)
+      </p>
+    </div>
+  </body>
+</html>
