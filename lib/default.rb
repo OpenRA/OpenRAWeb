@@ -30,9 +30,9 @@ module OpenRAHelpers
             size = size_of_download(platform, release_type)
             ret += <<-HTML
                 <div id="DownloadLatest" style="clear: both;">
-                    <a href="#{url}"><img src="/images/platforms/#{platform}.png" alt="#{platform}.png" width="64px" /></a>
+                    <a href="#{url}"><img src="/images/platforms/#{platform}.png" alt="#{platform}.png" /></a>
                     <div style="padding-top: 15px;">
-                        <a href="#{url}" title="Download #{release_type.capitalize} Vrsion">Download #{release_type.capitalize} Version</a><br />
+                        <a href="#{url}" title="Download #{release_type.capitalize} Version">Download #{release_type.capitalize} Version</a><br />
                         (#{size})
                     </div>
                 </div>
