@@ -3,39 +3,23 @@
 
 <h3>Windows</h3>
 
-<div id="DownloadLatest" style="clear: both;">
-    <a href="/download/win/release/latest"><img src="/images/platforms/Windows.png" alt="Windows.png" width="64px" /></a>
-    <div style="padding-top: 15px;">
-        <a href="/download/win/release/latest" title="Download Latest Version">Download Latest Version</a><br />
-        (20120504, 2.9 MB)
-    </div>
-</div>
+<%= download_helper("windows") %>
 
-<div id="DownloadLatest" style="clear: both;" >
-    <a href="/download/win/release/latest"><img src="/images/platforms/Windows.png" alt="Windows.png" width="64px" /></a>
-    <div style="padding-top: 15px;">
-        <a href="/download/win/release/latest" title="Download Playtest Version">Download Playtest Version</a><br />
-        (20120504, 2.9 MB)
-    </div>
-</div>
+<h3>OS X (intel) Leopard (10.5) or higher</h3>
 
-<h3>Other Platform</h3>
+<%= download_helper("osx") %>
 
-<div id="DownloadLatest" style="clear: both;">
-    <a href="/download/win/release/latest"><img src="/images/platforms/Windows.png" alt="Windows.png" width="64px" /></a>
-    <div style="padding-top: 15px;">
-        <a href="/download/win/release/latest" title="Download Latest Version">Download Latest Version</a><br />
-        (20120504, 2.9 MB)
-    </div>
-</div>
+<h3>Debian (including Ubuntu)</h3>
 
-<div id="DownloadLatest" style="clear: both;" >
-    <a href="/download/win/release/latest"><img src="/images/platforms/Windows.png" alt="Windows.png" width="64px" /></a>
-    <div style="padding-top: 15px;">
-        <a href="/download/win/release/latest" title="Download Playtest Version">Download Playtest Version</a><br />
-        (20120504, 2.9 MB)
-    </div>
-</div>
+<%= download_helper("linux/deb") %>
+
+<h3>RPM (Fedora)</h3>
+
+<%= download_helper("linux/rpm") %>
+
+<h3>Arch-Linux</h3>
+
+<%= download_helper("linux/arch") %>
 
 <!-- move to bug tracker page some how. Makes no sense to say this on download -->
 <!-- <p>When trying to report a crash to the developers, please include your exception.log file in your report. It can be found in My Documents/OpenRA/Logs</p> -->
