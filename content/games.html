@@ -1,0 +1,95 @@
+<div id="Content" class="singlecolumn typography">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", gamelist_updateInfo, false);
+
+    function gamelist_updateInfo() {
+        $.ajax({
+        type: "GET",
+        url:  "http://master.open-ra.org/list_json.php"
+        }).done(function(masterMessage) {
+            $('#serverlist').empty();
+            $('#serverlist').append('<tr><td><table id="gamelist"><tr><th>Server Name</th><th>Mod / Version</th><th>Players</th></tr></table></td><td><table id="maplist"><tr><th>Map</th></tr></table></td></tr>');
+            var masterReply = jQuery.parseJSON(masterMessage);
+
+            var totalPlayers = 0;
+
+            for (var i in masterReply) {
+                var game=masterReply[i];
+                totalPlayers += parseInt(game['players']);
+
+                if (game['state'] == 3) { // server shutting down
+                    continue;
+                }
+
+                if ((game['state'] == 2) && !(document.show.started.checked)) {
+                    continue;
+                }
+
+                if ((game['state'] == 1) && !(document.show.waiting.checked)) {
+                    continue;
+                }
+
+                if ((game['players'] == 0) && !(document.show.empty.checked)) {
+                    continue;
+                }
+
+                $('#gamelist').append('<tr><td><span class="tooltip" title="'+game['address']+'">'+game['name']+'</span></td><td>'+game['mods']+'</td><td>'+game['players']+'</td></tr>');
+
+                $.ajax({
+                    type: "GET",
+                    url:  "http://content.open-ra.org/api/map_data.php?hash="+game['map']
+                }).done(function(contentMessage) {
+                     var contentReply = jQuery.parseJSON(contentMessage);
+
+                     var map = {
+                        "id": "0",
+                        "title": "unknown",
+                        "description": "Please upload the map on http://content.open-ra.org!",
+                        "author": "?",
+                        "type": "?",
+                        "players": "?",
+                        "mod": "?",
+                        "hash": "?",
+                        "width":"?",
+                        "height":"?",
+                        "tileset":"?"
+                    };
+
+                    if (typeof contentReply[0] != 'undefined') {
+                         map = contentReply[0];
+                    }
+                    var mapURL = "http://content.open-ra.org/index.php?p=detail&table=maps&id="+map['id'];
+                    $('#maplist').append('<tr><td><span class="tooltip" title="('+map['type']+') '+map['description']+' ('+map['width']+'x'+map['height']+') by '+map['author']+'"><a href="'+mapURL+'">'+map['title']+'</a></span</td></tr>');
+                });
+            }
+
+            $('#statslist').empty();
+            $('#statslist').append('<b>Total:</b>&nbsp;'+masterReply.length+'&nbsp;Servers online,&nbsp;'+totalPlayers+'&nbsp;Players online (long-term <a href="http://openra.ipdx.ru/graphs.html">Statistics</a>)');
+       });
+    }
+</script>
+
+<h2>Games</h2>
+<form name="show">
+    <p style="text-indent:2em;"><b>Show:</b>
+        <input type="checkbox" name="waiting" onchange="gamelist_updateInfo()" checked=true> waiting for players
+        <input type="checkbox" name="started" onchange="gamelist_updateInfo()"> already started
+        <input type="checkbox" name="empty" onchange="gamelist_updateInfo()"> empty
+        &nbsp;&nbsp;&nbsp; <!-- TODO: wire it up -->
+        <select name="mod" size="1" onchange="gamelist_updateInfo()" disabled=true> 
+            <option>all mods</option>
+        </select>
+        <select name="version" size="1" onchange="gamelist_updateInfo()" disabled=true>
+            <option>all versions</option>
+        </select>
+        <select name="map" size="1" onchange="gamelist_updateInfo()" disabled=true>
+            <option>all maps</option>
+        </select>
+    </p>
+</form>
+<table id="serverlist"></table>
+<p style="text-indent:2em;" id="statslist">
+    <b>Error:</b>&nbsp;Please enable JavaScript and use a modern web browser with support for <a href="http://jquery.com/browser-support/">JQuery</a>/<a href="http://enable-cors.org/client.html">CORS</a> for this to work.
+</p>
+</div>

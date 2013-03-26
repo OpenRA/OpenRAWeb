@@ -319,3 +319,18 @@ span.links:hover {
   border: 3px solid #650B03;
 }
 
+table
+{
+border-collapse: collapse;
+background-color: rgba(0, 0, 0, 0.2);
+}
+
+td, th, tr
+{
+padding: 5px;
+}
+
+span.tooltip
+{
+border-bottom: thin dotted;
+}
