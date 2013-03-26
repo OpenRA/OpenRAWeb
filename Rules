@@ -17,6 +17,10 @@ compile '/stylesheet/' do
   # don’t filter or layout
 end
 
+compile '/jquery/' do
+  # don’t filter or layout
+end
+
 compile '/news/*/' do
     filter :kramdown
     layout 'post'
@@ -29,6 +33,10 @@ compile '*' do
     filter :erb
     layout 'default'
   end
+end
+
+route '/jquery/' do
+  '/games/jquery.js'
 end
 
 route '/stylesheet/' do
