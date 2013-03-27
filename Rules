@@ -20,6 +20,16 @@ compile '/news/*/' do
     layout 'post'
 end
 
+compile '/download/linux/' do
+    filter :erb
+    layout 'default'
+end
+
+compile '/download/*/' do
+    filter :erb
+    layout 'download'
+end
+
 compile '*' do
   if item.binary?
     # don’t filter binary items

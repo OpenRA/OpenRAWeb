@@ -1,0 +1,10 @@
+<% render 'default' do %>
+
+  <h3>OpenRA for <%= @item[:title] %></h3>
+
+  <p>Please select the package for the stable or playtest release below.<br />
+     Need help? Start with the <a href="http://github.com/OpenRA/wiki/FAQ" target="_blank" >Frequently Asked Questions</a> and Platform Specific Instructions.</p>
+
+  <%= yield %>
+
+<% end %>
