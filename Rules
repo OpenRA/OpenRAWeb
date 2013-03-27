@@ -17,6 +17,10 @@ compile '/stylesheet/' do
   # don’t filter or layout
 end
 
+compile '/favicon/' do
+  # don’t filter or layout
+end
+
 compile '/news/*/' do
     filter :kramdown
     layout 'post'
@@ -33,6 +37,10 @@ end
 
 route '/stylesheet/' do
   '/style.css'
+end
+
+route '/favicon/' do
+  '/favicon.ico'
 end
 
 route '*' do
