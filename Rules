@@ -13,9 +13,7 @@
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
 
-compile '/stylesheet/' do
-  # don’t filter or layout
-end
+passthrough '/style/'
 
 compile '/news/*/' do
     filter :kramdown
@@ -29,10 +27,6 @@ compile '*' do
     filter :erb
     layout 'default'
   end
-end
-
-route '/stylesheet/' do
-  '/style.css'
 end
 
 route '*' do
