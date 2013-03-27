@@ -89,7 +89,7 @@ p.download,
 #Container
 {
   overflow: auto;
-  padding-bottom: 60px;
+  padding-bottom: 146px;
 }
 
 #Content.twocolumn
@@ -157,8 +157,8 @@ p.download,
   font-size: 0.7em; 
   text-align: center;
   position: relative;
-  margin-top: -60px;
-  height: 54px;
+  margin-top: -126px;
+  height: 120px;
 }
 
 #Footer .trademarks
