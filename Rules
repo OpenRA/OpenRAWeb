@@ -22,6 +22,24 @@ compile '/news/*/' do
     layout 'post'
 end
 
+compile '/download/*/' do
+  if item.binary?
+    # don’t filter binary items
+  else
+    filter :erb
+    layout 'default'
+  end
+end
+
+compile '/download/linux/*/' do
+  if item.binary?
+    # don’t filter binary items
+  else
+    filter :erb
+    layout 'default'
+  end
+end
+
 compile '*' do
   if item.binary?
     # don’t filter binary items
@@ -33,6 +51,14 @@ end
 
 route '/stylesheet/' do
   '/style.css'
+end
+
+route '/download/*/' do
+    item.identifier + 'index.html'
+end
+
+route '/download/linux/*/' do
+    item.identifier + 'index.html'
 end
 
 route '*' do
