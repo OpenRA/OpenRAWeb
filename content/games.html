@@ -35,36 +35,32 @@
 
                 $('#gamelist').append('<tr><td><span class="tooltip" title="'+game['address']+'">'+game['name']+'</span></td><td>'+game['mods']+'</td><td>'+game['players']+'</td></tr>');
 
-                if (!document.show.empty.checked) { // Don't query too much.
-                    $.ajax({
-                        type: "GET",
-                        url:  "http://content.open-ra.org/api/map_data.php?hash="+game['map']
-                    }).done(function(contentMessage) {
-                        var contentReply = jQuery.parseJSON(contentMessage);
+                $.ajax({
+                    type: "GET",
+                    url:  "http://content.open-ra.org/api/map_data.php?hash="+game['map']
+                }).done(function(contentMessage) {
+                     var contentReply = jQuery.parseJSON(contentMessage);
 
-                        var map = {
-                            "id": "0",
-                            "title": "unknown",
-                            "description": "Please upload the map on http://content.open-ra.org!",
-                            "author": "?",
-                            "type": "?",
-                            "players": "?",
-                            "mod": "?",
-                            "hash": "?",
-                            "width":"?",
-                            "height":"?",
-                            "tileset":"?"
-                        };
+                     var map = {
+                        "id": "0",
+                        "title": "unknown",
+                        "description": "Please upload the map on http://content.open-ra.org!",
+                        "author": "?",
+                        "type": "?",
+                        "players": "?",
+                        "mod": "?",
+                        "hash": "?",
+                        "width":"?",
+                        "height":"?",
+                        "tileset":"?"
+                    };
 
-                        if (typeof contentReply[0] != 'undefined') {
-                            map = contentReply[0];
-                        }
-                        var mapURL = "http://content.open-ra.org/index.php?p=detail&table=maps&id="+map['id'];
-                        $('#maplist').append('<tr><td><span class="tooltip" title="('+map['type']+') '+map['description']+' ('+map['width']+'x'+map['height']+') by '+map['author']+'"><a href="'+mapURL+'">'+map['title']+'</a></span</td></tr>');
-                    });
-                } else {
-                    $('#maplist').empty();
-                }
+                    if (typeof contentReply[0] != 'undefined') {
+                         map = contentReply[0];
+                    }
+                    var mapURL = "http://content.open-ra.org/index.php?p=detail&table=maps&id="+map['id'];
+                    $('#maplist').append('<tr><td><span class="tooltip" title="('+map['type']+') '+map['description']+' ('+map['width']+'x'+map['height']+') by '+map['author']+'"><a href="'+mapURL+'">'+map['title']+'</a></span</td></tr>');
+                });
             }
 
             $('#statslist').empty();
