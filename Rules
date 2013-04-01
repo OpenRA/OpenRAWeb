@@ -18,6 +18,10 @@ compile '/stylesheet/' do
 end
 
 compile '/jquery/' do
+    # don’t filter or layout
+end
+
+compile '/favicon/' do
   # don’t filter or layout
 end
 
@@ -67,6 +71,10 @@ end
 
 route '/download/linux/*/' do
     item.identifier + 'index.html'
+end
+
+route '/favicon/' do
+  '/favicon.ico'
 end
 
 route '*' do
