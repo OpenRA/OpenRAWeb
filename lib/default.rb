@@ -33,7 +33,7 @@ module OpenRAHelpers
                     <a href="#{url}"><img src="/images/platforms/#{platform}.png" alt="#{platform}.png" /></a>
                     <div style="padding-top: 15px;">
                         <a href="#{url}" title="Download #{release_type.capitalize} Version">Download #{release_type.capitalize} Version</a><br />
-                        (#{size})
+                        <! --(#{size}) -->
                     </div>
                 </div>
             HTML
@@ -46,9 +46,9 @@ module OpenRAHelpers
         #construct a url where it is presented 
         case release_type
             when "release"
-                ver = "RELEASE999.exe"
+                ver = "latest"
             when "playtest"
-                ver = "PLAYTEST9999999.exe"
+                ver = "latest"
             else
                 raise "Why is your release_type #{release_type}?!?!"
         end
@@ -59,9 +59,9 @@ module OpenRAHelpers
         #TODO: shell out or otherwise find the size of the latest binary
         case release_type
             when "release"
-                size = "RELEASESIZE"
+                size = "?"
             when "playtest"
-                size = "PLAYTESTSIZE"
+                size = "?"
             else
                 raise "Why is your release_type #{release_type}?!?!"
             end
