@@ -31,6 +31,7 @@ end
 compile '/download/*/' do
     filter :erb
     layout 'download'
+    layout 'default'
 end
 
 compile '*' do
