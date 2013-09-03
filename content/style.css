@@ -170,10 +170,9 @@ p.download,
 {
   /*	border: solid 3px #650b03;
   background-color: #000; */
-padding-left: 0px;
-padding-right: 0px;
-padding-bottom: 10px;
-font-size: 0.8em;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 10px;
 }
 
 #NewsList li
@@ -190,7 +189,6 @@ font-size: 0.8em;
 {
   font-family: Helvetica, Arial, Sans-Serif;
   font-weight: bold;
-  font-size: 1.5em;
   text-decoration: none;
 }
 
