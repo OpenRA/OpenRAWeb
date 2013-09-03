@@ -1,0 +1,341 @@
+.typography * {
+  font-family: Cambria,Georgia,Times New Roman,Serif;
+}
+.typography h1 {
+  font-family: Cambria,Georgia,Times New Roman,Serif;
+}
+.typography h2, .typography h3 {
+  font-family: Helvetica,Arial,Sans-Serif;
+}
+
+h2.newsTitle {
+    margin-bottom:5px;
+    margin-top: 5px;
+}
+
+.typography pre, .typography code {
+  font-family: Consolas,Incosolata,Lucida Console,Monospace;
+}
+
+body { 
+  background-color: black;
+  background-image: url("/OpenRAWeb/images/background.png");
+  margin: 0px; 
+  color: White; 
+  font-family: Cambria, Georgia, Times New Roman, Serif; 
+  font-size: 12pt 
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	background: #650b03;
+}
+
+a,
+a:visited { 
+  color: White 
+}
+
+div.bar
+{
+  border-top: solid 3px #650b03;
+  border-bottom: solid 3px #650b03;
+  background-color: #272d2c;
+  width: 100%;
+}
+
+p.download,
+.newsDetails
+{
+  margin-top:0;
+  margin-bottom:0;
+  padding-top:0;
+  font-size: 0.8em;
+}
+
+.breadcrumbs
+{
+  margin-top: 1em;
+}
+
+
+#Container 
+{	
+  width: 1024px; 
+  margin: 0 auto;
+  padding: 0;
+  padding-top: 20px;
+}
+
+#Header
+{
+  height: 66px;
+  margin-top: 30px;
+}
+
+#Header h1
+{
+  margin: 0 auto;
+  width:280px;
+}
+
+#Header img
+{
+  vertical-align: middle; 
+  margin: -30px 0px;
+}
+
+#Container
+{
+  position: absolute;
+  top: 102px;
+  left: 0px;
+  right: 0px;
+  border: 3px solid #650b03;
+  border-top:0;
+  border-bottom:0;
+  background-color: #111;
+  background-color: rgba(39,45,44,0.33);
+}
+
+#Content.twocolumn
+{
+  text-align: justify;
+  width:50%;
+  padding-left:50px;
+}
+
+#Content.singlecolumn
+{
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* Navigation */
+#Navigation
+{
+  list-style-type:none;
+  display:inline;
+  margin:0;
+  padding:0;
+
+  margin-top: 10px; 
+  margin-left: auto;
+  margin-right:auto;
+  width:90%;
+  text-align:center;
+}
+
+#Navigation li {
+  border: medium none;
+  font-size: 1.2em;
+  margin: 0 10px;
+}
+
+#Navigation a { text-decoration: none; color: White }
+#Navigation a:visited { text-decoration: none; color: White }
+#Navigation a:hover { text-decoration: none; color: White }
+
+/* Sidebar */
+#Sidebar
+{
+  margin-top: 19px;
+  float: right; 
+  width: 450px;
+  text-align: center
+}
+#Sidebar img
+{
+  border: none;
+}
+#Sidebar strong
+{
+  font-size: 2.3em;
+  display: block
+}
+#Sidebar .stats
+{
+  display: inline-block;
+  margin-right: 10px;
+}
+#Sidebar .desc
+{
+  font-size: 0.8em
+}
+
+#Sidebar a.desc
+{
+  font-size: 0.7em
+}
+
+/* Footer */
+#Footer
+{
+  margin-top:20px;
+  clear: both;
+  font-size: 0.7em; 
+  text-align: center;
+}
+
+#Footer .trademarks
+{
+  margin-top: 10px; margin-bottom: 10px
+}
+
+#NewsList
+{
+  /*	border: solid 3px #650b03;
+  background-color: #000; */
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+}
+
+#NewsList li
+{
+  list-style-type: none;
+}
+
+#NewsList .newsDateTitle
+{
+  font-size: 0.8em;
+}
+
+#NewsList .newsDateTitle a
+{
+  font-family: Helvetica, Arial, Sans-Serif;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#NewsList .newsDateTitle a:hover
+{
+  text-decoration: underline;
+}
+
+#NewsList .newsCommentCount
+{
+  margin-bottom: 10px;
+}
+
+#NewsList .newsSummary li
+{
+  list-style-type: disc;
+}
+
+#Screenshot
+{
+  border: solid 3px #650b03; 
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px; 
+  width: 300px;
+}
+
+#DownloadLatest img
+{
+  float: left;
+  margin-right: 1em;
+}
+
+#PlatformList li
+{
+  list-style-type: none;
+  margin-bottom: 1em;
+}
+
+#PlatformList img
+{
+  vertical-align: middle;
+  margin-right: 1em;
+  border: none;
+}
+
+#CommentHolder
+{
+  border: solid 3px #650b03;
+}
+
+#PageComments
+{
+  font-size: 0.8em;
+  padding: 0;
+  margin: 0;
+}
+
+#PageComments .odd
+{
+  background-color: #272D2C;
+}
+
+#PageComments li
+{
+  list-style-type: none;
+  padding: 0 20px;
+}
+
+#PageComments .comment
+{
+  padding-top: 20px;
+  margin: 0;
+  /*font-size: 1.2em;*/
+}
+
+#PageComments .actionLinks
+{
+  padding-bottom: 20px;
+}
+
+#PageComments .actionLinks li
+{
+  display: inline;
+}
+
+span.links {
+  border: medium none;
+  font-size: 1.2em;
+  margin: 0 10px;
+}
+span.links:hover {
+  border-bottom: 3px solid #BD0000;
+}
+#nav li {
+  background-color: white;
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 15px;
+  list-style-type: none;
+  margin-right: 10px;
+  width: 20px;
+}
+#nav li.activeSlide {
+  background-color: #650B03;
+}
+#videoPlayer {
+  background-color: Black;
+  height: 410px;
+  margin: 20px auto;
+  padding-top: 5px;
+  width: 500px;
+}
+.border {
+  border: 3px solid #650B03;
+}
+
+table
+{
+border-collapse: collapse;
+background-color: rgba(0, 0, 0, 0.2);
+}
+
+td, th, tr
+{
+padding: 5px;
+}
+
+span.tooltip
+{
+border-bottom: thin dotted;
+}
