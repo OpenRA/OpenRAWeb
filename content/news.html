@@ -1,3 +1,4 @@
+<div id="Content" class="singlecolumn typography">
 <ul id="NewsList" class="rounded">
     <% sorted_articles.each do |post| %>          
         <li class="newsDateTitle"><%= link_to post[:title], post.path %></li>
@@ -5,3 +6,4 @@
         <li class="newsSummary"><%= post_snippet(post) %></li>
     <% end %>
 </ul>
+</div>
