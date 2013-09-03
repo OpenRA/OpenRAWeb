@@ -1,0 +1,11 @@
+<h2><%= @item[:title] %></h2>
+
+<div class="newsDetails">
+  Posted on <%= @item[:created_at] %> by <%= @item[:author] %>
+</div>
+
+<%= yield %>
+
+<div id="PageComments_holder" class="typography">
+<!-- TODO: comments -->
+</div>

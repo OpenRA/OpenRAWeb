@@ -1,14 +1,7 @@
-<% render 'default' do %>
 <div id="Content" class="singlecolumn typography">
 
   <div class="breadcrumbs">
       <a href="/news/">Archived News</a> &raquo; <%= @item[:title] %>
-  </div>
-
-  <h2><%= @item[:title] %></h2>
-
-  <div class="newsDetails">
-      Posted on <%= @item[:created_at] %> by <%= @item[:author] %>
   </div>
 
   <%= yield %>
@@ -17,4 +10,3 @@
     <!-- TODO: comments -->
   </div>
 </div>
-<% end %>

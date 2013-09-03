@@ -14,12 +14,6 @@
 <h2>Welcome Back, Commander</h2>
 <p>OpenRA is a Libre/Free Real Time Strategy game engine supporting early Westwood games like Command &amp; Conquer and Command &amp; Conquer: Red Alert.</p>
 
-<h2>News</h2>
-<ul id="NewsList" class="rounded">
-    <% sorted_articles.each do |post| %>
-    <li><span><%= pretty_date(post[:created_at]) %></span> &raquo; <%= link_to post[:title], post.path %></li>
-    <% end %>
-    <!--- <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li> -->
-</ul>
+<%= sorted_articles.first.compiled_content(:snapshot => :body) %>
 
 </div>
