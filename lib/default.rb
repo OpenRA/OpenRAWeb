@@ -6,6 +6,7 @@ include Nanoc::Helpers::LinkTo
 
 module OpenRAHelpers
     RELEASE_TYPES = ["release", "playtest"]
+    PACKAGE_DIR = '/path/to/packages/dir/'
 
     def pretty_date(date)
         attribute_to_time(date).strftime("%Y-%m-%d")
@@ -41,31 +42,37 @@ module OpenRAHelpers
         ret
     end
 
+    def package_list(platform, release_type)
+      case platform
+          when "osx"
+              pattern = "OpenRA-*.zip"
+          when "win"
+              pattern = "OpenRA-*.exe"
+          when "linux/arch"
+              pattern = "openra-*-1-any.pkg.tar.xz"
+          when "linux/deb"
+              pattern = "openra_*_all.deb"
+          when "linux/rpm"
+              pattern = "openra-*-1.noarch.rpm"
+          else
+              raise "Why is your platform #{platform}?!?!"
+      end
+      Dir.glob("#{PACKAGE_DIR}/#{platform}/#{release_type}/#{pattern}")
+    end
+
     def url_for_download(platform, release_type)
-        #TODO: shell out or otherwise find the latest binary for a given platform
-        #construct a url where it is presented 
-        case release_type
-            when "release"
-                ver = "RELEASE999.exe"
-            when "playtest"
-                ver = "PLAYTEST9999999.exe"
-            else
-                raise "Why is your release_type #{release_type}?!?!"
-        end
-        "http://openra.res0l.net/download/#{platform}/#{release_type}/#{ver}"
+        package = File.basename(package_list(platform, release_type).last || "")
+        "#{release_type}/#{package}"
     end
 
     def size_of_download(platform, release_type)
-        #TODO: shell out or otherwise find the size of the latest binary
-        case release_type
-            when "release"
-                size = "RELEASESIZE"
-            when "playtest"
-                size = "PLAYTESTSIZE"
-            else
-                raise "Why is your release_type #{release_type}?!?!"
-            end
+        package = package_list(platform, release_type).last
+        size = if package then (File.stat(package).size / 1048576.0).to_s[0..3] else '???' end
         "#{size} MB"
+    end
+
+    def name_of_download(platform, release_type)
+        File.basename(package_list(platform, release_type).last || "")
     end
 end
 include OpenRAHelpers
