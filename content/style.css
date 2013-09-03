@@ -7,6 +7,12 @@
 .typography h2, .typography h3 {
   font-family: Helvetica,Arial,Sans-Serif;
 }
+
+h2.newsTitle {
+    margin-bottom:5px;
+    margin-top: 5px;
+}
+
 .typography pre, .typography code {
   font-family: Consolas,Incosolata,Lucida Console,Monospace;
 }
@@ -21,6 +27,12 @@ body {
   color: White; 
   font-family: Cambria, Georgia, Times New Roman, Serif; 
   font-size: 12pt 
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	background: #650b03;
 }
 
 a,
@@ -39,6 +51,9 @@ div.bar
 p.download,
 .newsDetails
 {
+	margin-top:0;
+	margin-bottom:0;
+	padding-top:0;
   font-size: 0.8em;
 }
 
