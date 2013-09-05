@@ -79,8 +79,8 @@ p.download, .newsDetails {
 }
 
 #Content.singlecolumn {
-  width: 70%;
-  margin: 0 auto;
+  padding-left:50px;
+  padding-right:50px;
 }
 
 #Navigation {
