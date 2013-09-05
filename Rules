@@ -14,27 +14,13 @@
 #   because “*” matches zero or more characters.
 
 passthrough '/style/'
-
-compile '/jquery/' do
-  # don’t filter or layout
-end
+passthrough '/jquery/'
 
 compile '/news/*/' do
     filter :kramdown
     layout 'news'
     snapshot :body
     layout 'archived'
-    layout 'default'
-end
-
-compile '/download/linux/' do
-    filter :erb
-    layout 'default'
-end
-
-compile '/download/*/' do
-    filter :erb
-    layout 'download'
     layout 'default'
 end
 

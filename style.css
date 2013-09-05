@@ -339,3 +339,54 @@ span.tooltip
 {
 border-bottom: thin dotted;
 }
+
+/* Downloads page */
+.downloadplatform {
+	padding:0;
+	margin:0;
+}
+
+.downloadplatform li {
+	list-style:none;
+	display:inline;
+}
+
+.downloadplatform a {
+	padding:5px 10px;
+	display:inline-block;
+	border: solid 3px #272d2c;
+	background-color: #272d2c;
+	text-decoration:none;
+	border-radius: 10px; 
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+}
+
+.downloadplatform a.active {
+	border: solid 3px #650b03;
+	background-color: #272d2c;
+}
+
+.downloadlinks li {
+	list-style:none;
+	padding:15px;
+	display:inline;
+}
+
+.downloadlinks a {
+	padding:5px 10px;
+	display:inline-block;
+	border: solid 3px #650b03;
+	background-color: #272d2c;
+	text-decoration:none;
+	text-align:center;
+	border-radius: 10px; 
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+}
+
+.downloadblurb {
+	height: 75px;
+}

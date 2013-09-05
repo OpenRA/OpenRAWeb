@@ -177,3 +177,84 @@ td, th, tr {
 span.tooltip {
   border-bottom: thin dotted;
 }
+
+/* Downloads page */
+.downloadplatform {
+  list-style-type:none;
+  padding:0;
+  margin:0 auto;
+  width:90%;
+  text-align:center;
+}
+
+.downloadplatform li {
+  display:inline;
+  margin:2px;
+}
+
+.downloadplatform a {
+  padding:4px;
+  display:inline-block;
+  border: solid 3px #272d2c;
+  background-color: #272d2c;
+  text-decoration:none;
+  border-radius: 10px; 
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+}
+
+.downloadplatform a img {
+  vertical-align: middle; 
+}
+
+.downloadplatform a:hover {
+  background-color: #888;
+  border-color: #888;
+}
+
+.downloadplatform a.active {
+  border: solid 3px #650b03;
+  background-color: #272d2c;
+}
+
+.downloadplatform a.active:hover {
+  background-color: #888;
+}
+
+.downloadlinks {
+  list-style-type:none;
+  padding:0;
+  margin:0 auto;
+  width:90%;
+  text-align:center;
+}
+
+.downloadlinks li {
+  display:inline;
+  padding:15px;
+}
+
+.downloadlinks a {
+  font-family: 12px/1.4 Helvetica,arial,freesans,clean,sans-serif; 
+  background: url("/images/download.png") no-repeat;
+  background-position: 15px 15px; 
+  padding:10px 15px 10px 60px;
+  display:inline-block;
+  border: solid 3px #650b03;
+  background-color: #272d2c;
+  text-decoration:none;
+  text-align:center;
+  border-radius: 10px; 
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+}
+
+.downloadlinks a:hover {
+  background-color: #888;
+}
+
+.downloadblurb {
+  height: 50px;
+}
