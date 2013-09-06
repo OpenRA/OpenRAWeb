@@ -1,5 +1,9 @@
+h1 {
+    font-family: Cambria, Georgia, Times New Roman, Serif; 
+}
+
 h2, h3 {
-  font-family: Helvetica,Arial,Sans-Serif;
+  font-family: Helvetica,arial,freesans,clean,sans-serif; 
 }
 
 h2.newsTitle {
@@ -8,7 +12,8 @@ h2.newsTitle {
 }
 
 .typography pre, .typography code {
-  font-family: Consolas,Incosolata,Lucida Console,Monospace;
+  font-family: Consolas,"Liberation Mono",Courier,monospace;
+  font-size: 12px;
 }
 
 body { 
@@ -16,9 +21,7 @@ body {
   background-image: url("/images/bga.png");
   background-attachment:fixed;
   margin: 0; 
-  color: white; 
-  font-family: Cambria, Georgia, Times New Roman, Serif; 
-  font-size: 12pt 
+  color: white;
 }
 
 hr {
