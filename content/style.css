@@ -45,23 +45,23 @@ p.download, .newsDetails {
   margin-top: 1em;
 }
 
-#Header {
+#header {
   height: 66px;
   border-bottom: solid 3px #650b03;
   background-color: #272d2c;
 }
 
-#Header h1 {
+#header h1 {
   margin: 0 auto;
   width:280px;
 }
 
-#Header img {
+#header img {
   vertical-align: middle; 
   margin: -33px 0px;
 }
 
-#Container {
+#container {
   width: 850px;
   margin: 30px auto;
   border: 3px solid #650b03;
@@ -70,18 +70,12 @@ p.download, .newsDetails {
   background-attachment:fixed;
 }
 
-#Content.twocolumn {
-  text-align: justify;
-  width:50%;
-  padding-left:50px;
-}
-
-#Content.singlecolumn {
+#content {
   padding-left:50px;
   padding-right:50px;
 }
 
-#Navigation {
+#nav {
   list-style-type:none;
   margin-top: 20px;
   margin-left: auto;
@@ -90,7 +84,7 @@ p.download, .newsDetails {
   text-align:center;
 }
 
-#Navigation li {
+#nav li {
   display:inline;
   font-size: 1.2em;
   margin: 0 10px;
@@ -98,18 +92,11 @@ p.download, .newsDetails {
   text-decoration: none;
 }
 
-#Navigation a { text-decoration: none; }
-#Navigation a:visited { text-decoration: none; }
-#Navigation a:hover { text-decoration: none; }
+#nav a { text-decoration: none; }
+#nav a:visited { text-decoration: none; }
+#nav a:hover { text-decoration: none; }
 
-#Sidebar {
-  margin-top: 19px;
-  float: right; 
-  width: 450px;
-  text-align: center
-}
-
-#Footer {
+#footer {
   margin-top:20px;
   clear: both;
   height:35px;
@@ -119,20 +106,20 @@ p.download, .newsDetails {
   background-color: #272d2c;
 }
 
-#NewsList {
+#newslist {
   padding: 0;
 }
 
-#NewsList li {
+#newslist li {
   list-style-type: none;
 }
 
-#NewsList .newsDateTitle a {
+#newslist .newsDateTitle a {
   font-weight: bold;
   text-decoration: none;
 }
 
-#NewsList .newsDateTitle a:hover {
+#newslist .newsDateTitle a:hover {
   text-decoration: underline;
 }
 
@@ -142,33 +129,18 @@ p.download, .newsDetails {
 	height:200px;
 }
 
-#Screenshot {
+#screenshot {
   border: solid 3px #650b03; 
   padding: 0;
   margin: 0;
 }
 
-#Screenshot img {
-	padding: 0;
-	margin: 0;
+#screenshot img {
+  padding: 0;
+  margin: 0;
 }
 
-#DownloadLatest img {
-  float: left;
-  margin-right: 1em;
-}
-
-#PlatformList li {
-  list-style-type: none;
-  margin-bottom: 1em;
-}
-
-#PlatformList img {
-  vertical-align: middle;
-  margin-right: 1em;
-  border: none;
-}
-
+/* Games page */
 table {
   border-collapse: collapse;
   background-color: rgba(0, 0, 0, 0.2);

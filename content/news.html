@@ -1,11 +1,8 @@
-<div id="Content" class="singlecolumn">
-    <div class="breadcrumbs">
-        Archived News
-    </div>
-	<ul id="NewsList">
-	    <% sorted_articles.each do |post| %>
-	    <li class="newsDateTitle"><%= link_to post[:title], post.path %> (<%= pretty_date(post[:created_at]) %>)</li>
-	    <% end %>
-	    <!--- <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li> -->
-	</ul>
+<div class="breadcrumbs">
+  Archived News
 </div>
+<ul id="newslist">
+  <% sorted_articles.each do |post| %>
+  <li class="newsDateTitle"><%= link_to post[:title], post.path %> (<%= pretty_date(post[:created_at]) %>)</li>
+  <% end %>
+</ul>

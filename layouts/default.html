@@ -9,27 +9,20 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <link href="/style.css" rel="stylesheet">
-	<link href="/hidpi.css" rel="stylesheet" media="only screen and (min-resolution: 120dpi), only screen and (-o-min-device-pixel-ratio: 13/10), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3)" />
+    <link href="/hidpi.css" rel="stylesheet" media="only screen and (min-resolution: 120dpi), only screen and (-o-min-device-pixel-ratio: 13/10), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3)" />
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
   </head>
-
   <body>
-    <div id="Container">
-      <div id="Header">
-        <h1><img src="/images/soviet-logo.png" />OpenRA</h1>
-      </div>
-      <ul id="Navigation">
+    <div id="container">
+      <div id="header"><h1><img src="/images/soviet-logo.png" />OpenRA</h1></div>
+      <ul id="nav">
         <li><a href="/">Home</a></li>
         <li><a href="/download/">Download</a></li>
         <li><a href="/games/">Games</a></li>
         <li><a href="/get-involved/">Support / Get Involved</a></li>
       </ul>
-      <div id="Layout">
-        <%= yield %>
-      </div>
-      <div id="Footer">
-        <p>Copyright &copy; 2007-2013 The OpenRA Developers (<a href="/legal/">Legal notices</a>)</p>
-      </div>
+      <div id="content"><%= yield %></div>
+      <div id="footer"><p>Copyright &copy; 2007-2013 The OpenRA Developers (<a href="/legal/">Legal notices</a>)</p></div>
     </div>
     <script src="/retina.js"></script>
   </body>

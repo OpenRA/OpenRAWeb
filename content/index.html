@@ -1,16 +1,12 @@
-<div id="Content" class="singlecolumn">
-	<div id="mainleft">
-		<div id="Screenshot"><img width="250" src="/images/screenshots/ss11.jpg"/></div>
-	</div>
-	<div>
-		<h2>Welcome Back, Commander</h2>
-		<p>OpenRA is an Libre/Free (Open Source) Real Time Strategy game engine which recreates the look and gameplay of the first generation Command&nbsp;&amp;&nbsp;Conquer games.</p>
-		<p>OpenRA currently includes mods reimagining C&amp;C (Tiberian Dawn), C&amp;C: Red Alert, and Dune 2000.</p>
-		<p>Cross-platform multiplayer is supported between Windows, OS X, and Linux, and singleplayer skirmishes are available vs bots.</p>
-	</div>
-	<h2 style="clear:both">Latest News</h2>
-	<%= sorted_articles.first.compiled_content(:snapshot => :body) %>
-
-	<a href="/news/">Archived News</a>
-
+<div id="mainleft">
+  <div id="screenshot"><img width="250" src="/images/screenshots/ss11.jpg"/></div>
 </div>
+<div>
+  <h2>Welcome Back, Commander</h2>
+  <p>OpenRA is an Libre/Free (Open Source) Real Time Strategy game engine which recreates the look and gameplay of the first generation Command&nbsp;&amp;&nbsp;Conquer games.</p>
+  <p>OpenRA currently includes mods reimagining C&amp;C (Tiberian Dawn), C&amp;C: Red Alert, and Dune 2000.</p>
+  <p>Cross-platform multiplayer is supported between Windows, OS X, and Linux, and singleplayer skirmishes are available vs bots.</p>
+</div>
+<h2 style="clear:both">Latest News</h2>
+<%= sorted_articles.first.compiled_content(:snapshot => :body) %>
+<a href="/news/">Archived News</a>
