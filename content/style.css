@@ -62,13 +62,8 @@ p.download, .newsDetails {
 }
 
 #Container {
-  position: absolute;
-  width: 1018px;
-  padding: 0;
-  margin: 0 auto;
-  top: 30px;
-  left: 0px;
-  right: 0px;
+  width: 850px;
+  margin: 30px auto;
   border: 3px solid #650b03;
   background-color: #111;
   background-image: url("/images/bgb.png");
@@ -115,7 +110,7 @@ p.download, .newsDetails {
 }
 
 #Footer {
-	margin-top:20px;
+  margin-top:20px;
   clear: both;
   height:35px;
   font-size: 0.7em; 
@@ -141,12 +136,21 @@ p.download, .newsDetails {
   text-decoration: underline;
 }
 
+#mainleft {
+    margin-right: 35px;
+    float: left;
+	height:200px;
+}
+
 #Screenshot {
   border: solid 3px #650b03; 
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px; 
-  width: 300px;
+  padding: 0;
+  margin: 0;
+}
+
+#Screenshot img {
+	padding: 0;
+	margin: 0;
 }
 
 #DownloadLatest img {
