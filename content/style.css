@@ -140,6 +140,12 @@ p.download, .newsDetails {
   margin: 0;
 }
 
+#ghbanner img {
+	float:right;
+    margin: -72px -3px;
+	top: 0; right: 0; border: 0;
+}
+
 /* Games page */
 table {
   border-collapse: collapse;
