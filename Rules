@@ -14,7 +14,8 @@
 #   because “*” matches zero or more characters.
 
 passthrough '/style/'
-passthrough '/jquery/'
+passthrough '/hidpi/'
+passthrough '/retina/'
 
 compile '/news/*/' do
     filter :kramdown
