@@ -1,13 +1,14 @@
 <%
 
-PLATFORMS = ["win", "osx", "deb", "rpm", "arch", "source"]
+PLATFORMS = ["win", "osx", "deb", "rpm", "arch", "source", "desura"]
 PLATFORM_NAME = {
 	"win" => "Windows",
 	"osx" => "OS X",
 	"deb" => "Debian / Ubuntu",
 	"rpm" => "Fedora / OpenSUSE",
 	"arch" => "Arch Linux",
-	"source" => "Source Code"
+	"source" => "Source Code",
+	"desura" => "Desura"
 }
 
 PLATFORM_BLURB = {
@@ -16,7 +17,8 @@ PLATFORM_BLURB = {
 	"deb" => "Just install the package, and you're good to go!",
 	"rpm" => "Just install the package, and you're good to go!",
 	"arch" => "Just install the package, and you're good to go!",
-	"source" => "Follow the instructions in the INSTALL document to build and run OpenRA.<br />We recommend fetching the source via git if you intend on <a href=\"/get-involved/\">contributing to OpenRA</a>."
+	"source" => "Follow the instructions in the INSTALL document to build and run OpenRA.<br />We recommend fetching the source via git if you intend on <a href=\"/get-involved/\">contributing to OpenRA</a>.",
+	"desura" => "Desura is a community driven digital distribution service for gamers, putting the best games, mods and downloadable content from developers at gamers fingertips, ready to buy and play.",
 }
 
 def package_name(platform, tag)
@@ -99,7 +101,7 @@ end
 
 	<h2>Download OpenRA</h2>
 	<h3>Which Operating System?</h3>
-	<p>Select a pre-packaged build, or the source code package if you'd prefer to compile OpenRA yourself.</p>
+	<p>Select a pre-packaged build, or the source code package if you'd prefer to compile OpenRA yourself.<br />OpenRA is also available on Desura.</p>
     <ul class="downloadplatform">
 	    <% PLATFORMS.each do |platform| %>
 		<li><a href="#<%= platform %>"><img src="/images/platforms/<%= platform %>.png" alt="<%= PLATFORM_NAME[platform] %>" title="<%= PLATFORM_NAME[platform] %>"/></a></li>
@@ -116,12 +118,20 @@ end
 	<% PLATFORMS.each do |platform| %>
 	<div id="<%= platform %>" class="tab">
 		<hr />
+		<% if platform == "desura" then %>
+		<h3>Download OpenRA via <%= PLATFORM_NAME[platform] %></h3>
+		<p class="downloadblurb"><%= PLATFORM_BLURB[platform] %></p>
+	    <ul class="downloadlinks">
+			<li><a href="http://www.desura.com/games/openra" title="Download via Desura">View and Download<br />OpenRA on Desura</a></li>
+	    </ul>
+		<% else %>
 		<h3>Download OpenRA <%= "for " unless platform == "source" %> <%= PLATFORM_NAME[platform] %></h3>
 		<p class="downloadblurb"><%= PLATFORM_BLURB[platform] %></p>
 	    <ul class="downloadlinks">
 			<li><a href="<%= package_url(platform, @item[:release_tag]) %>" title="Download <%= @item[:release_tag] %>">Download <%= @item[:release_tag] %><br />(<%= package_size(platform, @item[:release_tag]) %>)</a></li>
 			<li><a href="<%= package_url(platform, @item[:playtest_tag]) %>" title="Download <%= @item[:playtest_tag] %>">Download <%= @item[:playtest_tag] %><br />(<%= package_size(platform, @item[:playtest_tag]) %>)</a></li>
 	    </ul>
+		<% end %>
 	</div>
     <% end %>
 </div>
