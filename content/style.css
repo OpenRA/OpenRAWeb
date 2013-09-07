@@ -154,8 +154,8 @@ p.download, .newsDetails {
 
 /* Games page */
 table {
-  border-collapse: collapse;
-  background-color: rgba(0, 0, 0, 0.2);
+  margin:0 auto;
+  width:90%;
 }
 
 td, th, tr {
