@@ -1,5 +1,20 @@
 <div id="mainleft">
-  <div id="screenshot"><img width="250" src="/images/screenshots/ss11.jpg"/></div>
+  <div id="screenshot">
+    <img width="253" src="/images/screenshots/ss1.jpg" alt="" class="active" />
+    <img width="253" src="/images/screenshots/ss2.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss3.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss4.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss5.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss6.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss7.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss8.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss9.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss10.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss11.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss12.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss13.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss14.jpg" alt="" />
+</div>
 </div>
 <div>
   <h2>Welcome Back, Commander</h2>
@@ -11,3 +26,22 @@
 <hr />
 <h3 class="newsTitle"><%= sorted_articles.first[:title] %></h3>
 <%= sorted_articles.first.compiled_content(:snapshot => :body) %>
+
+<script>
+  function slideSwitch() {
+    var $active = $('#screenshot IMG.active');
+    if ($active.length == 0)
+      $active = $('#screenshot IMG:last');
+    var $next =  $active.next().length ? $active.next()
+      : $('#screenshot IMG:first');
+    $active.addClass('last-active');
+    $next.css({opacity: 0.0})
+      .addClass('active')
+      .animate({opacity: 1.0}, 1000, function() {
+          $active.removeClass('active last-active');
+    });
+  }
+  $(function() {
+    setInterval("slideSwitch()", 2500);
+  });
+</script>

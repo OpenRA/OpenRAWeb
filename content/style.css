@@ -125,13 +125,32 @@ p.download, .newsDetails {
 #mainleft {
   margin-right: 35px;
   float: left;
+  width:260px;
   height:200px;
 }
 
+#screenshot {
+  position:relative;
+  height:350px;
+}
+
 #screenshot img {
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:8;
   padding: 0;
-  margin: 0;
+  margin: 10px 0;
   border: solid 2px #650b03;
+}
+
+
+#screenshot IMG.active {
+  z-index:10;
+}
+
+#screenshot IMG.last-active {
+    z-index:9;
 }
 
 #ghbanner img {
