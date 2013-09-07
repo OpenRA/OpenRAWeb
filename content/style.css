@@ -3,7 +3,8 @@ h1 {
 }
 
 h2, h3 {
-  font-family: Helvetica,arial,freesans,clean,sans-serif; 
+  font-family: Helvetica,arial,freesans,clean,sans-serif;
+  margin: 10px 0;
 }
 
 h2.newsTitle {
@@ -77,10 +78,8 @@ p.download, .newsDetails {
 
 #nav {
   list-style-type:none;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right:auto;
-  width:90%;
+  margin: 20px auto;
+  width:80%;
   text-align:center;
 }
 
@@ -106,12 +105,8 @@ p.download, .newsDetails {
   background-color: #272d2c;
 }
 
-#newslist {
-  padding: 0;
-}
-
 #newslist li {
-  list-style-type: none;
+  margin: 10px 0;
 }
 
 #newslist .newsDateTitle a {
@@ -124,26 +119,37 @@ p.download, .newsDetails {
 }
 
 #mainleft {
-    margin-right: 35px;
-    float: left;
-	height:200px;
-}
-
-#screenshot {
-  border: solid 3px #650b03; 
-  padding: 0;
-  margin: 0;
+  margin-right: 35px;
+  float: left;
+  height:200px;
 }
 
 #screenshot img {
   padding: 0;
   margin: 0;
+  border: solid 2px #650b03;
 }
 
 #ghbanner img {
-	float:right;
-    margin: -72px -3px;
-	top: 0; right: 0; border: 0;
+  float:right;
+  margin: -72px -3px;
+  top: 0; right: 0; border: 0;
+}
+
+#header-right {
+  padding-top: 10px;
+  padding-right: 10px;
+  float: right;
+}
+
+/* Comment position hacks */
+#disqus_thread {
+  padding-top: 20px;
+}
+
+#disqus_thread div.noscript {
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 /* Games page */

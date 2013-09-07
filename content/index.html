@@ -3,10 +3,11 @@
 </div>
 <div>
   <h2>Welcome Back, Commander</h2>
-  <p>OpenRA is an Libre/Free Real Time Strategy game engine that allows the recreation of the early Command&nbsp;&amp;&nbsp;Conquer titles.</p>
+  <p>OpenRA is a Libre/Free Real Time Strategy game engine that allows the recreation of the early Command&nbsp;&amp;&nbsp;Conquer titles.</p>
   <p>OpenRA currently includes three distinct mods that reinvent C&amp;C&nbsp;(Tiberian&nbsp;Dawn), C&amp;C:&nbsp;Red&nbsp;Alert, and Dune&nbsp;2000.</p>
   <p>Cross-platform multiplayer is supported between Windows, OS&nbsp;X, and Linux, and singleplayer skirmishes against bots.</p>
 </div>
 <h2 style="clear:both">Latest News</h2>
+<hr />
+<h3 class="newsTitle"><%= sorted_articles.first[:title] %></h3>
 <%= sorted_articles.first.compiled_content(:snapshot => :body) %>
-<a href="/news/">Archived News</a>
