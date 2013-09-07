@@ -1,4 +1,17 @@
-<!DOCTYPE html>
+<%
+PAGES = ["/", "/news/", "/download/", "/games/", "/get-involved/"]
+PAGE_TITLES = {
+	"/" => "Home",
+	"/news/" => "News",
+	"/download/" => "Download",
+	"/games/" => "Games",
+	"/get-involved/" => "Support / Contribute"
+}
+
+def navigation_page(page)
+	page == @item.path || (page == "/news/" && @item.path.start_with?("/news/"))
+end
+%><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -17,11 +30,9 @@
       <div id="header"><h1><img src="/images/soviet-logo.png" />OpenRA</h1></div>
       <a id="ghbanner" href="https://github.com/OpenRA/OpenRA"><img src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
       <ul id="nav">
-        <li><a href="/">Home</a></li>
-        <li><a href="/news/">News</a></li>
-        <li><a href="/download/">Download</a></li>
-        <li><a href="/games/">Games</a></li>
-        <li><a href="/get-involved/">Support / Get Involved</a></li>
+      <% PAGES.each do |page| %>
+        <li><a href="<%= page %>"<%= ' class="nav-selected"' if navigation_page(page) %>><%= PAGE_TITLES[page] %></a></li>
+      <% end %>
       </ul>
       <div id="content"><%= yield %></div>
       <div id="footer"><p>Copyright &copy; 2007-2013 The OpenRA Developers (<a href="/legal/">Legal notices</a>)</p></div>

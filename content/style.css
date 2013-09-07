@@ -89,6 +89,11 @@ p.download, .newsDetails {
   text-decoration: none;
 }
 
+#nav .nav-selected {
+  border: solid #650b03;
+  border-width: 0 0 2px 0;
+}
+
 #nav a { text-decoration: none; }
 #nav a:visited { text-decoration: none; }
 #nav a:hover { text-decoration: none; }
