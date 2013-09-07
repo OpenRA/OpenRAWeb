@@ -68,22 +68,12 @@
     }
 </script>
 
-<h2>Games</h2>
+<h3>Who's playing?</h3>
 <form name="show">
     <p style="text-indent:2em;"><b>Show:</b>
         <input type="checkbox" name="waiting" onchange="gamelist_updateInfo()" checked=true> waiting for players
         <input type="checkbox" name="started" onchange="gamelist_updateInfo()"> already started
         <input type="checkbox" name="empty" onchange="gamelist_updateInfo()"> empty
-        &nbsp;&nbsp;&nbsp; <!-- TODO: wire it up -->
-        <select name="mod" size="1" onchange="gamelist_updateInfo()" disabled=true> 
-            <option>all mods</option>
-        </select>
-        <select name="version" size="1" onchange="gamelist_updateInfo()" disabled=true>
-            <option>all versions</option>
-        </select>
-        <select name="map" size="1" onchange="gamelist_updateInfo()" disabled=true>
-            <option>all maps</option>
-        </select>
     </p>
 </form>
 <table id="serverlist"></table>
