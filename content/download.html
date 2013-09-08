@@ -45,12 +45,7 @@ def package_name(platform, tag)
 end
 
 def package_url(platform, tag)
-	package = package_name(platform, tag)
-	if package == "source"
-		"#{@item[:download_repository]}/#{package}"
-	else 
-		"#{@item[:download_repository]}/#{package}"
-	end
+	"#{@item[:download_repository]}#{package_name(platform, tag)}"
 end
 
 def package_size(platform, tag)
