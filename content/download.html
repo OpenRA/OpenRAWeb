@@ -58,50 +58,50 @@ end
 %>
 <script>
 // Wait until the DOM has loaded before querying the document
-			$(document).ready(function(){
-				$('ul.downloadplatform').each(function(){
-					// For each set of tabs, we want to keep track of
-					// which tab is active and it's associated content
-					var $active, $content, $links = $(this).find('a');
+$(document).ready(function(){
+    $('ul.downloadplatform').each(function(){
+      // For each set of tabs, we want to keep track of
+      // which tab is active and it's associated content
+      var $active, $content, $links = $(this).find('a');
 
-					// If the location.hash matches one of the links, use that as the active tab.
-					// If no match is found, use the first link as the initial active tab.
-					$active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
-					$active.addClass('active');
-					$content = $($active.attr('href'));
+      // If the location.hash matches one of the links, use that as the active tab.
+      // If no match is found, use the first link as the initial active tab.
+      $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+      $active.addClass('active');
+      $content = $($active.attr('href'));
 
-					// Hide the remaining content
-					$links.not($active).each(function () {
-						$($(this).attr('href')).hide();
-					});
+      // Hide the remaining content
+      $links.not($active).each(function () {
+        $($(this).attr('href')).hide();
+      });
 
-					// Bind the click event handler
-					$(this).on('click', 'a', function(e){
-						// Make the old tab inactive.
-						$active.removeClass('active');
-						$content.hide();
+      // Bind the click event handler
+      $(this).on('click', 'a', function(e){
+      // Make the old tab inactive.
+      $active.removeClass('active');
+      $content.hide();
 
-						// Update the variables with the new link and content
-						$active = $(this);
-						$content = $($(this).attr('href'));
+      // Update the variables with the new link and content
+      $active = $(this);
+      $content = $($(this).attr('href'));
 
-						// Make the tab active.
-						$active.addClass('active');
-						$content.show();
+      // Make the tab active.
+      $active.addClass('active');
+      $content.show();
 
-						// Prevent the anchor's default click action
-						e.preventDefault();
-					});
-				});
-			});
+      // Prevent the anchor's default click action
+      e.preventDefault();
+    });
+  });
+});
 </script>
 
 <h3>Which Operating System?</h3>
 <p>Select a pre-packaged build, or the source code package if you'd prefer to compile OpenRA yourself.<br />OpenRA is also available on Desura.</p>
 <ul class="downloadplatform">
-    <% PLATFORMS.each do |platform| %>
-	<li><a href="#<%= platform %>"><img src="/images/platforms/<%= platform %>.png" alt="<%= PLATFORM_NAME[platform] %>" title="<%= PLATFORM_NAME[platform] %>"/></a></li>
-    <% end %>
+  <% PLATFORMS.each do |platform| %>
+  <li><a href="#<%= platform %>"><img src="/images/platforms/<%= platform %>.png" alt="<%= PLATFORM_NAME[platform] %>" title="<%= PLATFORM_NAME[platform] %>"/></a></li>
+  <% end %>
 </ul>
 <br />
 <hr />
@@ -113,20 +113,20 @@ end
 
 <% PLATFORMS.each do |platform| %>
 <div id="<%= platform %>" class="tab">
-	<hr />
-	<% if platform == "desura" then %>
-	<h3>Download OpenRA via <%= PLATFORM_NAME[platform] %></h3>
-	<p class="downloadblurb"><%= PLATFORM_BLURB[platform] %></p>
-    <ul class="downloadlinks">
-		<li><a href="http://www.desura.com/games/openra" title="Download via Desura">View and download<br />OpenRA on Desura</a></li>
-    </ul>
-	<% else %>
-	<h3>Download OpenRA <%= "for " unless platform == "source" %> <%= PLATFORM_NAME[platform] %></h3>
-	<p class="downloadblurb"><%= PLATFORM_BLURB[platform] %></p>
-    <ul class="downloadlinks">
-		<li><a href="<%= package_url(platform, @item[:release_tag]) %>" title="Download <%= @item[:release_tag] %>">Download <%= @item[:release_tag] %><br />(<%= package_size(platform, @item[:release_tag]) %>)</a></li>
-		<li><a href="<%= package_url(platform, @item[:playtest_tag]) %>" title="Download <%= @item[:playtest_tag] %>">Download <%= @item[:playtest_tag] %><br />(<%= package_size(platform, @item[:playtest_tag]) %>)</a></li>
-    </ul>
-	<% end %>
+  <hr />
+  <% if platform == "desura" then %>
+  <h3>Download OpenRA via <%= PLATFORM_NAME[platform] %></h3>
+  <p class="downloadblurb"><%= PLATFORM_BLURB[platform] %></p>
+  <ul class="downloadlinks">
+    <li><a href="http://www.desura.com/games/openra" title="Download via Desura">View and download<br />OpenRA on Desura</a></li>
+  </ul>
+  <% else %>
+  <h3>Download OpenRA <%= "for " unless platform == "source" %> <%= PLATFORM_NAME[platform] %></h3>
+  <p class="downloadblurb"><%= PLATFORM_BLURB[platform] %></p>
+  <ul class="downloadlinks">
+    <li><a href="<%= package_url(platform, @item[:release_tag]) %>" title="Download <%= @item[:release_tag] %>">Download <%= @item[:release_tag] %><br />(<%= package_size(platform, @item[:release_tag]) %>)</a></li>
+    <li><a href="<%= package_url(platform, @item[:playtest_tag]) %>" title="Download <%= @item[:playtest_tag] %>">Download <%= @item[:playtest_tag] %><br />(<%= package_size(platform, @item[:playtest_tag]) %>)</a></li>
+  </ul>
+  <% end %>
 </div>
 <% end %>
