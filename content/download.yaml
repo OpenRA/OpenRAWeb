@@ -2,6 +2,6 @@
 title: "Download"
 playtest_tag: "playtest-20130902"
 release_tag: "release-20130514"
-download_repository: "https://github.com/OpenRA/OpenRA/"
-download_cache: "tmp/packages/"
+download_repository: "http://openra.res0l.net/assets/downloads/"
+download_cache: "downloads/"
 --- 
