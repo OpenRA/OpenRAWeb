@@ -1,0 +1,3 @@
+http://openra.ipdx.ru/packages/SDL-1.2.14-win32.zip
+http://openra.ppmsite.com/SDL-1.2.14-win32.zip
+http://openra.dxnet.ru/SDL-1.2.14-win32.zip

@@ -1,0 +1,3 @@
+http://openra.ppmsite.com/freetype-zlib.zip
+http://openra.ipdx.ru/packages/freetype-zlib.zip
+http://openra.dxnet.ru/freetype-zlib.zip
