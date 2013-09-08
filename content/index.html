@@ -1,25 +1,47 @@
-<div id="Sidebar">
-<div id="Screenshot"><img width="300px" src="/images/screenshots/ss11.jpg"/></div>
-<p class="download">
-<a href="download/">Download OpenRA</a>
-</p>
-<p>
-<a href="license/"><img src="/images/gplv3-127x51.png" alt="GPLv3 Logo" style="border: none; margin-top: 5px;"/></a>
-</p>
+<div id="mainleft">
+  <div id="screenshot">
+    <img width="253" src="/images/screenshots/ss1.jpg" alt="" class="active" />
+    <img width="253" src="/images/screenshots/ss2.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss3.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss4.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss5.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss6.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss7.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss8.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss9.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss10.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss11.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss12.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss13.jpg" alt="" />
+    <img width="253" src="/images/screenshots/ss14.jpg" alt="" />
 </div>
-
-<div id="Content" class="twocolumn typography">
-
-
-<h2>Welcome Back, Commander</h2>
-<p>OpenRA is a Libre/Free Real Time Strategy game engine supporting early Westwood games like Command &amp; Conquer and Command &amp; Conquer: Red Alert.</p>
-
-<h2>News</h2>
-<ul id="NewsList" class="rounded">
-    <% sorted_articles.each do |post| %>
-    <li><span><%= pretty_date(post[:created_at]) %></span> &raquo; <%= link_to post[:title], post.path %></li>
-    <% end %>
-    <!--- <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li> -->
-</ul>
-
 </div>
+<div>
+  <h2>Welcome Back, Commander</h2>
+  <p>OpenRA is a Libre/Free Real Time Strategy game engine that allows the recreation of the early Command&nbsp;&amp;&nbsp;Conquer titles.</p>
+  <p>OpenRA currently includes three distinct mods that reinvent C&amp;C&nbsp;(Tiberian&nbsp;Dawn), C&amp;C:&nbsp;Red&nbsp;Alert, and Dune&nbsp;2000.</p>
+  <p>Cross-platform multiplayer is supported between Windows, OS&nbsp;X, and Linux, and singleplayer skirmishes against bots.</p>
+</div>
+<h2 style="clear:both">Latest News</h2>
+<hr />
+<h3 class="newsTitle"><%= sorted_articles.first[:title] %></h3>
+<%= sorted_articles.first.compiled_content(:snapshot => :body) %>
+
+<script>
+  function slideSwitch() {
+    var $active = $('#screenshot IMG.active');
+    if ($active.length == 0)
+      $active = $('#screenshot IMG:last');
+    var $next =  $active.next().length ? $active.next()
+      : $('#screenshot IMG:first');
+    $active.addClass('last-active');
+    $next.css({opacity: 0.0})
+      .addClass('active')
+      .animate({opacity: 1.0}, 1000, function() {
+          $active.removeClass('active last-active');
+    });
+  }
+  $(function() {
+    setInterval("slideSwitch()", 2500);
+  });
+</script>

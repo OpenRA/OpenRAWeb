@@ -1,0 +1,79 @@
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", gamelist_updateInfo, false);
+
+    function gamelist_updateInfo() {
+        $.ajax({
+        type: "GET",
+        url:  "http://master.open-ra.org/list_json.php"
+        }).done(function(masterMessage) {
+            $('#serverlist').empty();
+            $('#serverlist').append('<tr><td><table id="gamelist"><tr><th>Server Name</th><th>Mod / Version</th><th>Players</th></tr></table></td><td><table id="maplist"><tr><th>Map</th></tr></table></td></tr>');
+            var masterReply = jQuery.parseJSON(masterMessage);
+
+            var totalPlayers = 0;
+
+            for (var i in masterReply) {
+                var game=masterReply[i];
+                totalPlayers += parseInt(game['players']);
+
+                if (game['state'] == 3) { // server shutting down
+                    continue;
+                }
+
+                if ((game['state'] == 2) && !(document.show.started.checked)) {
+                    continue;
+                }
+
+                if ((game['state'] == 1) && !(document.show.waiting.checked)) {
+                    continue;
+                }
+
+                if ((game['players'] == 0) && !(document.show.empty.checked)) {
+                    continue;
+                }
+
+                $('#gamelist').append('<tr><td><span class="tooltip" title="'+game['address']+'">'+game['name']+'</span></td><td>'+game['mods']+'</td><td>'+game['players']+'</td></tr>');
+
+                $.ajax({
+                    type: "GET",
+                    url:  "http://content.open-ra.org/api/map_data.php?hash="+game['map']
+                }).done(function(contentMessage) {
+                     var contentReply = jQuery.parseJSON(contentMessage);
+
+                     var map = {
+                        "id": "0",
+                        "title": "unknown",
+                        "description": "Please upload the map on http://content.open-ra.org!",
+                        "author": "?",
+                        "type": "?",
+                        "players": "?",
+                        "mod": "?",
+                        "hash": "?",
+                        "width":"?",
+                        "height":"?",
+                        "tileset":"?"
+                    };
+
+                    if (typeof contentReply[0] != 'undefined') {
+                         map = contentReply[0];
+                    }
+                    var mapURL = "http://content.open-ra.org/index.php?p=detail&table=maps&id="+map['id'];
+                    $('#maplist').append('<tr><td><span class="tooltip" title="('+map['type']+') '+map['description']+' ('+map['width']+'x'+map['height']+') by '+map['author']+'"><a href="'+mapURL+'">'+map['title']+'</a></span</td></tr>');
+                });
+            }
+
+            $('#statslist').empty();
+            $('#statslist').append('<p style="text-align: center">There are '+masterReply.length+'&nbsp;servers and &nbsp;'+totalPlayers+'&nbsp;players online.</p>');
+       });
+    }
+</script>
+<h3>Who's playing?</h3>
+<form name="show">
+    <p style="text-align: center"><b>Show:</b>
+        <input type="checkbox" name="waiting" onchange="gamelist_updateInfo()" checked=true> Waiting for players
+        <input type="checkbox" name="started" onchange="gamelist_updateInfo()"> In Progress
+        <input type="checkbox" name="empty" onchange="gamelist_updateInfo()"> Empty
+    </p>
+</form>
+<table id="serverlist"></table>
+<p style="text-align: center" id="statslist">Loading server list...</p>

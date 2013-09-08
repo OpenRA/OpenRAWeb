@@ -14,10 +14,15 @@
 #   because “*” matches zero or more characters.
 
 passthrough '/style/'
+passthrough '/hidpi/'
+passthrough '/retina/'
 
 compile '/news/*/' do
     filter :kramdown
-    layout 'post'
+    layout 'news'
+    snapshot :body
+    layout 'archived'
+    layout 'default'
 end
 
 compile '*' do

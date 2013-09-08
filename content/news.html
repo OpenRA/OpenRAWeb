@@ -1,7 +1,11 @@
-<ul id="NewsList" class="rounded">
-    <% sorted_articles.each do |post| %>          
-        <li class="newsDateTitle"><%= link_to post[:title], post.path %></li>
-        <li class="newsDateTitle"><%= pretty_date(post[:created_at]) %></li>
-        <li class="newsSummary"><%= post_snippet(post) %></li>
-    <% end %>
+<h3>Archived News</h3>
+<ul id="newslist">
+  <% sorted_articles.each do |post| %>
+  <li class="newsDateTitle">
+	  <%= link_to post[:title], post.path %>
+	  <p class="newsDetails">Posted by <% post[:author] %> on <%= pretty_date(post[:created_at]) %></p>
+	  <p class="newsDetails"><a href="<%= post.path %>#disqus_thread" data-disqus-identifier="<%= post.path %>"></a></p>
+  </li>
+  <% end %>
 </ul>
+<script type="text/javascript">var disqus_shortname='openra';(function(){var s = document.createElement('script');s.async=true;s.type='text/javascript';s.src='http://'+disqus_shortname+'.disqus.com/count.js';(document.getElementsByTagName('HEAD')[0]||document.getElementsByTagName('BODY')[0]).appendChild(s);}());</script>

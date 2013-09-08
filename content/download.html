@@ -1,26 +1,137 @@
+<%
 
-<p>When running a server, make sure you have <a href="http://portforward.com/">forwarded the port</a> on your router that the server is running on. The default port is 1234.</p>
+PLATFORMS = ["win", "osx", "deb", "rpm", "arch", "source", "desura"]
+PLATFORM_NAME = {
+	"win" => "Windows",
+	"osx" => "OS X",
+	"deb" => "Debian / Ubuntu",
+	"rpm" => "Fedora / OpenSUSE",
+	"arch" => "Arch Linux",
+	"source" => "Source Code",
+	"desura" => "Desura"
+}
 
-<h3>Windows</h3>
+PLATFORM_BLURB = {
+	"win" => "The default GPU drivers included with Windows do not support OpenGL rendering.<br />You may need to install full drivers supplied by your GPU vendor.",
+	"osx" => "OpenRA requires Mono 2.10 or greater (3.2 or greater recommended).<br /><a href=\"http://www.go-mono.com/mono-downloads/download.html\">Download Mono</a>.",
+	"deb" => "Just install the package, and you're good to go!",
+	"rpm" => "Just install the package, and you're good to go!",
+	"arch" => "Just install the package, and you're good to go!",
+	"source" => "Follow the instructions in the INSTALL document to build and run OpenRA.<br />
+	<a title=\"Visual C# Express Download\" href=\"http://www.microsoft.com/express/downloads/\">Visual C# Express</a> (Windows) and <a title=\"MonoDevelop\" href=\"http://www.monodevelop.com/\"/>MonoDevelop</a> (OS X / Linux) are free IDEs that work with OpenRA.<br /><br />
+	If you'd like to <a href=\"/get-involved/\">contribute patches</a> (or just don't want to fiddle with tar files) you can download and/or update the code using the <a href=\"http://git-scm.com/\">git version control system</a>:<br />
+	<pre>$ git clone git://github.com/OpenRA/OpenRA.git</pre><br />",
+	"desura" => "Desura is a community driven digital distribution service for gamers, putting the best games, mods and downloadable content from developers at gamers fingertips.",
+}
 
-<%= download_helper("windows") %>
+def package_name(platform, tag)
+	modtag = tag.gsub('-', '.')
+	case platform
+		when "osx"
+			"OpenRA-#{tag}.zip"
+		when "win"
+			"OpenRA-#{tag}.exe"
+		when "arch"
+			"openra-#{modtag}-1-any.pkg.tar.xz"
+		when "deb"
+			"openra_#{modtag}_all.deb"
+		when "rpm"
+			"openra-#{modtag}-1.noarch.rpm"
+		when "source"
+			"OpenRA-#{tag}.tar.gz"
+	else
+		raise "Why is your platform #{platform}?!?!"
+	end
+end
 
-<h3>OS X (intel) Leopard (10.5) or higher</h3>
+def package_url(platform, tag)
+	package = package_name(platform, tag)
+	if package == "source"
+		"#{@item[:download_repository]}archive/#{package}"
+	else 
+		"#{@item[:download_repository]}releases/download/#{tag}/#{package}"
+	end
+end
 
-<%= download_helper("osx") %>
+def package_size(platform, tag)
+	
+	package = "#{Dir.pwd}/#{@item[:download_cache]}#{package_name(platform, tag)}"
+	size = if package then (File.stat(package).size / 1048576.0).to_s[0..3] else '???' end
+	"#{size} MB"
+end
 
-<h3>Debian (including Ubuntu)</h3>
+%>
+<script>
+// Wait until the DOM has loaded before querying the document
+			$(document).ready(function(){
+				$('ul.downloadplatform').each(function(){
+					// For each set of tabs, we want to keep track of
+					// which tab is active and it's associated content
+					var $active, $content, $links = $(this).find('a');
 
-<%= download_helper("linux/deb") %>
+					// If the location.hash matches one of the links, use that as the active tab.
+					// If no match is found, use the first link as the initial active tab.
+					$active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+					$active.addClass('active');
+					$content = $($active.attr('href'));
 
-<h3>RPM (Fedora)</h3>
+					// Hide the remaining content
+					$links.not($active).each(function () {
+						$($(this).attr('href')).hide();
+					});
 
-<%= download_helper("linux/rpm") %>
+					// Bind the click event handler
+					$(this).on('click', 'a', function(e){
+						// Make the old tab inactive.
+						$active.removeClass('active');
+						$content.hide();
 
-<h3>Arch-Linux</h3>
+						// Update the variables with the new link and content
+						$active = $(this);
+						$content = $($(this).attr('href'));
 
-<%= download_helper("linux/arch") %>
+						// Make the tab active.
+						$active.addClass('active');
+						$content.show();
 
-<!-- move to bug tracker page some how. Makes no sense to say this on download -->
-<!-- <p>When trying to report a crash to the developers, please include your exception.log file in your report. It can be found in My Documents/OpenRA/Logs</p> -->
+						// Prevent the anchor's default click action
+						e.preventDefault();
+					});
+				});
+			});
+</script>
 
+<h3>Which Operating System?</h3>
+<p>Select a pre-packaged build, or the source code package if you'd prefer to compile OpenRA yourself.<br />OpenRA is also available on Desura.</p>
+<ul class="downloadplatform">
+    <% PLATFORMS.each do |platform| %>
+	<li><a href="#<%= platform %>"><img src="/images/platforms/<%= platform %>.png" alt="<%= PLATFORM_NAME[platform] %>" title="<%= PLATFORM_NAME[platform] %>"/></a></li>
+    <% end %>
+</ul>
+<br />
+<hr />
+
+<h3>Which Build?</h3>
+<p>Release builds are recommended for most players.<br />They have been extensively tested and have a larger player base.</p>
+<p>Playtest builds contain the latest improvements, but change frequently and may be broken at times.</p>
+<p>Older releases can be <a href="https://github.com/OpenRA/OpenRA/releases">downloaded from Github</a>.</p>
+
+<% PLATFORMS.each do |platform| %>
+<div id="<%= platform %>" class="tab">
+	<hr />
+	<% if platform == "desura" then %>
+	<h3>Download OpenRA via <%= PLATFORM_NAME[platform] %></h3>
+	<p class="downloadblurb"><%= PLATFORM_BLURB[platform] %></p>
+    <ul class="downloadlinks">
+		<li><a href="http://www.desura.com/games/openra" title="Download via Desura">View and download<br />OpenRA on Desura</a></li>
+    </ul>
+	<% else %>
+	<h3>Download OpenRA <%= "for " unless platform == "source" %> <%= PLATFORM_NAME[platform] %></h3>
+	<p class="downloadblurb"><%= PLATFORM_BLURB[platform] %></p>
+    <ul class="downloadlinks">
+		<li><a href="<%= package_url(platform, @item[:release_tag]) %>" title="Download <%= @item[:release_tag] %>">Download <%= @item[:release_tag] %><br />(<%= package_size(platform, @item[:release_tag]) %>)</a></li>
+		<li><a href="<%= package_url(platform, @item[:playtest_tag]) %>" title="Download <%= @item[:playtest_tag] %>">Download <%= @item[:playtest_tag] %><br />(<%= package_size(platform, @item[:playtest_tag]) %>)</a></li>
+    </ul>
+	<% end %>
+</div>
+<% end %>

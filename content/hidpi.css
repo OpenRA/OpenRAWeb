@@ -1,0 +1,14 @@
+body {
+  background-image: url("/images/bga@2x.png");
+  background-size: 1024px 480px
+}
+
+#Container {
+  background-image: url("/images/bgb@2x.png");
+  background-size: 1024px 480px
+}
+
+.downloadlinks a {
+  background-image: url("/images/download@2x.png");
+  background-size: 32px 32px
+}
