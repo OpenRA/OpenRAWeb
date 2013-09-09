@@ -216,7 +216,8 @@ span.tooltip {
 }
 
 .downloadplatform a img {
-  vertical-align: middle; 
+  vertical-align: middle;
+  border: 0;
 }
 
 .downloadplatform a:hover {
