@@ -14,8 +14,6 @@
 #   because “*” matches zero or more characters.
 
 passthrough '/style/'
-passthrough '/hidpi/'
-passthrough '/retina/'
 passthrough '/get-dependency/'
 passthrough '/releases/'
 passthrough '/releases/*/'
