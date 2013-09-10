@@ -16,6 +16,9 @@
 passthrough '/style/'
 passthrough '/hidpi/'
 passthrough '/retina/'
+passthrough '/get-dependency/'
+passthrough '/releases/'
+passthrough '/releases/*/'
 
 compile '/news/*/' do
     filter :kramdown
