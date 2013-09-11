@@ -1,79 +1,98 @@
 <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", gamelist_updateInfo, false);
-
-    function gamelist_updateInfo() {
-        $.ajax({
-        type: "GET",
-        url:  "http://master.open-ra.org/list_json.php"
-        }).done(function(masterMessage) {
-            $('#serverlist').empty();
-            $('#serverlist').append('<tr><td><table id="gamelist"><tr><th>Server Name</th><th>Mod / Version</th><th>Players</th></tr></table></td><td><table id="maplist"><tr><th>Map</th></tr></table></td></tr>');
-            var masterReply = jQuery.parseJSON(masterMessage);
-
-            var totalPlayers = 0;
-
-            for (var i in masterReply) {
-                var game=masterReply[i];
-                totalPlayers += parseInt(game['players']);
-
-                if (game['state'] == 3) { // server shutting down
-                    continue;
-                }
-
-                if ((game['state'] == 2) && !(document.show.started.checked)) {
-                    continue;
-                }
-
-                if ((game['state'] == 1) && !(document.show.waiting.checked)) {
-                    continue;
-                }
-
-                if ((game['players'] == 0) && !(document.show.empty.checked)) {
-                    continue;
-                }
-
-                $('#gamelist').append('<tr><td><span class="tooltip" title="'+game['address']+'">'+game['name']+'</span></td><td>'+game['mods']+'</td><td>'+game['players']+'</td></tr>');
-
-                $.ajax({
-                    type: "GET",
-                    url:  "http://content.open-ra.org/api/map_data.php?hash="+game['map']
-                }).done(function(contentMessage) {
-                     var contentReply = jQuery.parseJSON(contentMessage);
-
-                     var map = {
-                        "id": "0",
-                        "title": "unknown",
-                        "description": "Please upload the map on http://content.open-ra.org!",
-                        "author": "?",
-                        "type": "?",
-                        "players": "?",
-                        "mod": "?",
-                        "hash": "?",
-                        "width":"?",
-                        "height":"?",
-                        "tileset":"?"
-                    };
-
-                    if (typeof contentReply[0] != 'undefined') {
-                         map = contentReply[0];
-                    }
-                    var mapURL = "http://content.open-ra.org/index.php?p=detail&table=maps&id="+map['id'];
-                    $('#maplist').append('<tr><td><span class="tooltip" title="('+map['type']+') '+map['description']+' ('+map['width']+'x'+map['height']+') by '+map['author']+'"><a href="'+mapURL+'">'+map['title']+'</a></span</td></tr>');
-                });
-            }
-
-            $('#statslist').empty();
-            $('#statslist').append('<p style="text-align: center">There are '+masterReply.length+'&nbsp;servers and &nbsp;'+totalPlayers+'&nbsp;players online.</p>');
-       });
+  var data = {};
+  function initMapInfo(hash) {
+    var doMap = function(map) {
+      if ('title' in map)
+        $('.map-'+hash).html(map['title']+'<br /><span class="gameSubline">'+map['type']+'&nbsp;('+map['players']+' Players)</span>');
+      else
+        $('.map-'+hash).html('Unknown Map');
+    };
+    if (hash in data) {
+      doMap(data[hash]);
+      return;
     }
+
+    $.ajax({type: "GET", url: "http://content.open-ra.org/api/map_data.php?hash="+hash}).done(function(msg) {
+      data[hash] = {};
+      var reply = jQuery.parseJSON(msg);
+      if (!!reply[0])
+           data[hash] = reply[0];
+
+      doMap(data[hash]);
+    });
+  }
+
+  function updateGameList() {
+    $('#serverlist').empty();
+    $('#serverlist').append('<tr><td colspan="4">Loading server list...</td></tr>');
+
+    $.ajax({
+      type: "GET",
+      url:  "http://master.open-ra.org/list_json.php"
+    }).done(function(masterMessage) {
+      $('#serverlist').empty();
+      var masterReply = jQuery.parseJSON(masterMessage);
+      var hashes = [];
+      var activePlayers = 0;
+      var activeServers = 0;
+      for (var i in masterReply) {
+        var game = masterReply[i];
+        // Ignore empty servers or finished games
+        if (game['players'] == 0 || game['state'] == 3)
+          continue;
+
+        activePlayers += parseInt(game['players']);
+        activeServers++;
+        var state = 'Unknown';
+        var stateClass = '';
+        switch (game['state']) {
+          case '2': state = 'Playing'; stateClass = 'gamePlaying'; break;
+          case '1': state = 'Waiting'; stateClass = 'gameWaiting'; break;
+        }
+
+        var modver = game['mods'].split('@');
+        // Invalid entry
+        if (modver.length != 2)
+          continue;
+
+        var tag = modver[1];
+        var mod = 'Unknown Mod ('+modver[0]+')';
+        switch (modver[0]) {
+          case 'ra': mod = "Red Alert"; break;
+          case 'cnc': mod = "C&amp;C"; break;
+          case 'd2k': mod = "Dune 2000"; break;
+        }
+
+        var row = $('<tr>');
+        row.append('<td>'+game['name'].replace(/\\\'/g, "'")+'<br /><span class="gameSubline">'+game['address']+'</span></td>');
+        row.append('<td><span class="'+stateClass+'">'+state+'</span><br /><span class="gameSubline">'+game['players']+(game['players'] == 1 ? ' player' : ' players')+'</span></td>');
+        row.append('<td>'+mod+'<br /><span class="gameSubline">'+tag+'</span></td>');
+        row.append('<td class="map-'+game['map']+'">Loading...</td></tr>');
+        $('#serverlist').append(row);
+
+        if ($.inArray(game['map'], hashes) < 0)
+          hashes.push(game['map']);
+      }
+
+      if (activeServers == 0)
+        $('#serverlist').append('<tr><td colspan="4">No active games found</td></tr>');
+
+      for (var i in hashes)
+        initMapInfo(hashes[i]);
+
+      $('#activePlayers').text(activePlayers+(activePlayers == 1 ? ' player is' : ' players are'));
+      $('#activeServers').text(activeServers);
+
+      window.setTimeout(updateGameList, 30000);
+    });
+  }
+
+  $(document).ready(updateGameList);
 </script>
 <h3>Who's playing?</h3>
-<form name="show">
-    <p style="text-align: center"><b>Show:</b>
-        <input type="checkbox" name="waiting" onchange="gamelist_updateInfo()" checked=true> Waiting for players
-        <input type="checkbox" name="started" onchange="gamelist_updateInfo()"> In Progress
-        <input type="checkbox" name="empty" onchange="gamelist_updateInfo()"> Empty
-    </p>
-</form>
-<table id="serverlist"></table>
-<p style="text-align: center" id="statslist">Loading server list...</p>
+<p><span id="activePlayers">0 players are</span> online in <span id="activeServers">0</span> advertised servers.</p>
+<table>
+  <thead><tr><th>Server</th><th>Status</th><th>Mod</th><th>Map</th></tr></thead>
+  <tbody id="serverlist"></tbody>
+</table>
+<noscript><div class="noscript">Please enable JavaScript to view the server list.</div></noscript>

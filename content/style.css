@@ -173,7 +173,7 @@ p.download, .newsDetails {
   padding-top: 20px;
 }
 
-#disqus_thread div.noscript {
+div.noscript {
   text-align: center;
   padding-bottom: 10px;
 }
@@ -186,12 +186,24 @@ table {
 
 td, th, tr {
   padding: 5px;
+  width:25%;
 }
 
-span.tooltip {
-  border-bottom: thin dotted;
+#serverlist {
+  text-align:center;
 }
 
+#serverlist .gameSubline {
+  font-size:10px;
+}
+
+#serverlist .gameWaiting {
+  color: #0A0;
+}
+
+#serverlist .gamePlaying {
+  color: #F80;
+}
 /* Downloads page */
 .downloadplatform {
   list-style-type:none;
