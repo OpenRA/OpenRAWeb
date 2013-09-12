@@ -25,13 +25,10 @@
   </metadata>
   <defs
      id="defs2989" />
-  <rect
-     width="45.600544"
-     height="37.600544"
-     x="9.199728"
-     y="13.199728"
+  <path
+     d="m 9.199728,13.199728 45.600544,0 0,37.600544 -45.600544,0 z"
      id="rect2990"
-     style="fill:#141200;fill-opacity:1;stroke:#c0c0c0;stroke-width:2.39945555;stroke-linejoin:round;stroke-miterlimit:3.98290491;stroke-opacity:1;stroke-dasharray:none" />
+     style="fill:#141200;fill-opacity:1;stroke:none" />
   <g
      transform="matrix(0.75898268,0,0,1.0190073,-0.3508032,-0.3826369)"
      id="text3760"
@@ -43,4 +40,8 @@
        d="m 38.241038,30.41096 0,1.147792 -10.077796,0 0,-1.147792"
        id="path3767" />
   </g>
+  <path
+     d="M 9.09375,12 A 1.1998477,1.1998477 0 0 0 8,13.1875 l 0,37.625 A 1.1998477,1.1998477 0 0 0 9.1875,52 l 45.625,0 A 1.1998477,1.1998477 0 0 0 56,50.8125 l 0,-37.625 A 1.1998477,1.1998477 0 0 0 54.8125,12 l -45.625,0 a 1.1998477,1.1998477 0 0 0 -0.09375,0 z m 1.3125,2.40625 43.1875,0 0,35.1875 -43.1875,0 0,-35.1875 z"
+     id="path10"
+     style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#c0c0c0;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.39945555;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
 </svg>
