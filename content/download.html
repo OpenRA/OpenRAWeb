@@ -1,4 +1,5 @@
 <%
+require 'net/http'
 
 PLATFORMS = ["win", "osx", "deb", "rpm", "arch", "source", "desura"]
 PLATFORM_NAME = {
@@ -45,13 +46,17 @@ def package_name(platform, tag)
 end
 
 def package_url(platform, tag)
-  "#{@item[:download_repository]}#{package_name(platform, tag)}"
+  @item[:download_base_path]+package_name(platform, tag)
 end
 
 def package_size(platform, tag)
-  package = "#{Dir.pwd}/#{@item[:download_cache]}#{package_name(platform, tag)}"
-  size = if package then (File.stat(package).size / 1048576.0).to_s[0..3] else '???' end
-  "#{size} MB"
+  size = "??? MB"
+  uri = URI.parse(package_url(platform, tag))
+  http = Net::HTTP.start(uri.host, uri.port)
+  http.request_head(uri.path) {|response|
+    size = sprintf("%.2f MB", Integer(response['content-length']) / 1048576.0)
+  }
+  size
 end
 
 %>
