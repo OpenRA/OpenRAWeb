@@ -9,8 +9,8 @@
 <script type="text/javascript">
   if (document.domain == 'openra.res0l.net') {
     var disqus_shortname = 'openra';
-    var disqus_identifier = '<%= @item.path %>';
-	<% # Future proofed permalink. disqus doesn't let you change this after it has been initially set %>
+    var disqus_identifier = '<%= @item[:disqus_id] %>';
+	// Future proofed permalink
     var disqus_url = 'http://open-ra.org<%= @item.path %>';
     var disqus_title = '<%= @item[:title] %>';
 
