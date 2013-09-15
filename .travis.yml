@@ -12,6 +12,10 @@ install:
 script:
  - nanoc compile
 
+after_success:
+ - gem install systemu
+ - nanoc deploy --target res0l --dry-run
+
 # Only watch the production branch.
 branches:
  only:
