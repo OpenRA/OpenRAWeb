@@ -28,6 +28,11 @@ compile '/news/*/' do
     layout 'default'
 end
 
+# .htaccess does get filtered with erb, but without layout.
+compile %r{^/(htaccess)/$} do
+  filter :erb
+end
+
 compile '*' do
   if item.binary?
     # don’t filter binary items
@@ -35,6 +40,11 @@ compile '*' do
     filter :erb
     layout 'default'
   end
+end
+
+
+route '/htaccess/' do
+  '/.htaccess'
 end
 
 route '*' do
