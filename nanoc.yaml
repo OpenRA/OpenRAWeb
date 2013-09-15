@@ -81,13 +81,13 @@ redirects:
     from: /download/linux
     to: /download
   -
-    from: /download/linux/arch
+    from: /download/arch
     to: /download/#arch
   -
-    from: /download/linux/deb
+    from: /download/deb
     to: /download/#deb
   -
-    from: /download/linux/rpm
+    from: /download/rpm
     to: /download/#rpm
   -
     from: /download/osx
@@ -95,6 +95,15 @@ redirects:
   -
     from: /download/win
     to: /download/#win
+  -
+    from: /download/release
+    to: /download/
+  -
+    from: /download/playtest
+    to: /download/
+  -
+    from: /download/latest
+    to: /download/
 
 deploy:
   res0l:
