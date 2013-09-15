@@ -3,4 +3,8 @@ kind: article
 title: "Release 20130915"
 author: "Paul Chote"
 created_at: 2013-09-15 00:30:00 +1200
+
+# Keep compatibility with the originally posted comment thread
+# See other articles for the standard id convention
+disqus_id: "/news/release-20130915/"
 ---
