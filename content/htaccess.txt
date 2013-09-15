@@ -1,5 +1,5 @@
 # Custom file not found sub-page
-ErrorDocument 404 /404.html
+ErrorDocument 404 /404/
 
 <% if @site.config[:redirects] %>
 # Set up URL redirects<% @site.config[:redirects].each do |h| %>
