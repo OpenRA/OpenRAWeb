@@ -37,7 +37,11 @@ end
   </head>
   <body>
     <div id="container">
+      <% if @item.path == '/404/' then %>
+      <div id="header"><h1><img src="/images/soviet-logo-404.svg" />OpenRA</h1></div>
+      <% else %>
       <div id="header"><h1><img src="/images/soviet-logo.svg" />OpenRA</h1></div>
+      <% end %>
       <a id="ghbanner" href="https://github.com/OpenRA/OpenRA"><img src="/images/forkme.svg" alt="Fork me on GitHub"></a>
       <ul id="nav">
       <% PAGES.each do |page| %>
