@@ -95,3 +95,8 @@ redirects:
   -
     from: /download/win
     to: /download/#win
+
+deploy:
+  res0l:
+    kind: rsync
+    dst:  "openra@openra.res0l.net:/home/openra/openra.res0l.net"
