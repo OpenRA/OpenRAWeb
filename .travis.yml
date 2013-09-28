@@ -7,7 +7,7 @@ rvm:
   - 1.8.7
 
 install:
- - gem install nanoc kramdown
+ - gem install builder kramdown nanoc
 
 script:
  - nanoc compile
