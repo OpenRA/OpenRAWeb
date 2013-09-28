@@ -39,7 +39,7 @@ def package_name(platform, tag)
     when "rpm"
       "linux/rpm/openra-#{modtag}-1.noarch.rpm"
     when "source"
-      "#{tag}.tar.gz"
+      "source/#{tag}.tar.gz"
   else
     raise "Why is your platform #{platform}?!?!"
   end
@@ -113,7 +113,7 @@ $(document).ready(function(){
 <h3>Which Build?</h3>
 <p>Release builds are recommended for most players.<br />They have been extensively tested and have a larger player base.</p>
 <p>Playtest builds contain the latest improvements, but change frequently and may be broken at times.</p>
-<p>Older releases can be <a href="https://github.com/OpenRA/OpenRA/releases">downloaded from Github</a>.</p>
+<p>Older releases can be <a href="http://openra.res0l.net/assets/downloads/">found here</a>.</p>
 
 <% PLATFORMS.each do |platform| %>
 <div id="<%= platform %>" class="tab">
