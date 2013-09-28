@@ -23,9 +23,6 @@
   }
 
   function updateGameList() {
-    $('#serverlist').empty();
-    $('#serverlist').append('<tr><td colspan="4">Loading server list...</td></tr>');
-
     $.ajax({
       type: "GET",
       url:  "http://master.open-ra.org/list_json.php"
@@ -87,7 +84,12 @@
     });
   }
 
-  $(document).ready(updateGameList);
+  $(document).ready(function() {
+    $('#serverlist').empty();
+    $('#serverlist').append('<tr><td colspan="4">Loading server list...</td></tr>');
+	updateGameList();
+  });
+
 </script>
 <h3>Who's playing?</h3>
 <p><span id="activePlayers">0 players are</span> online in <span id="activeServers">0</span> advertised servers.</p>
