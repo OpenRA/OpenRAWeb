@@ -19,8 +19,13 @@ passthrough '/packages/'
 passthrough '/packages/*/'
 passthrough '/releases/'
 passthrough '/releases/*/'
+passthrough '/robots/'
 
 compile '/news/atom/' do
+  filter :erb
+end
+
+compile 'sitemap' do
   filter :erb
 end
 
@@ -49,6 +54,10 @@ end
 
 route '/htaccess/' do
   '/.htaccess'
+end
+
+route '/sitemap' do
+  item.identifier.chop + '.xml'
 end
 
 route '*' do

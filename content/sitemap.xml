@@ -1,0 +1,3 @@
+-----
+-----
+<%= xml_sitemap :items => @items.reject{ |i| i[:is_hidden] || i.binary? || !i.identifier.index('releases').nil? || !i.identifier.index('assets').nil? || !i.identifier.index('packages').nil? } %>
