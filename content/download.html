@@ -39,7 +39,7 @@ def package_name(platform, tag)
     when "rpm"
       "linux/rpm/openra-#{modtag}-1.noarch.rpm"
     when "source"
-      "#{tag}.tar.gz"
+      "source/#{tag}.tar.gz"
   else
     raise "Why is your platform #{platform}?!?!"
   end
