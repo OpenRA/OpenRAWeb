@@ -20,6 +20,10 @@ passthrough '/packages/*/'
 passthrough '/releases/'
 passthrough '/releases/*/'
 
+compile '/news/atom/' do
+  filter :erb
+end
+
 compile '/news/*/' do
     filter :kramdown
     layout 'news'
