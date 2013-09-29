@@ -108,6 +108,9 @@ redirects:
   -
     from: /news/rss
     to: /news/atom
+  -
+    from: /assets/images
+    to: /images
 
 deploy:
   res0l:
