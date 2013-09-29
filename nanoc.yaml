@@ -111,6 +111,9 @@ redirects:
   -
     from: /assets/images
     to: /images
+  -
+    from: /master/ping.php
+    to: http://master.open-ra.org/ping.php
 
 deploy:
   res0l:
