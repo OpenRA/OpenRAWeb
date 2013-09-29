@@ -8,3 +8,8 @@ Deployment
 * `nanoc compile` to update the HTML.
 * `nanoc view` to preview the changes at [http://localhost:3000](http://localhost:3000).
 * `nanoc deploy --target res0l` to upload to [http://openra.res0l.net](http://openra.res0l.net) (requires SSH access and rsync).
+
+Stats
+-----
+* Visitors: http://openra.res0l.net/statistics/
+* Uptime: http://stats.pingdom.com/syygqlg6525r/788293
