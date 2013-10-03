@@ -79,6 +79,9 @@ watcher:
 # Point old URLs from the Silverstripe CMS website to new counterparts
 redirects:
   -
+    from: /index.php
+    to: /
+  -
     from: /download/linux
     to: /download
   -
@@ -108,6 +111,9 @@ redirects:
   -
     from: /news/rss
     to: /news/atom
+  -
+    from: /themes/openra/images
+    to: /images
   -
     from: /assets/images
     to: /images
