@@ -1,3 +1,2 @@
 http://openra.ppmsite.com/cg-win32.zip
-http://openra.ipdx.ru/packages/cg-win32.zip
 http://openra.dxnet.ru/cg-win32.zip

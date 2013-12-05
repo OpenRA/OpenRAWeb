@@ -1,3 +1,2 @@
 http://openra.ppmsite.com/d2k-103-packages.zip
-http://openra.ipdx.ru/packages/d2k-103-packages.zip
 http://openra.dxnet.ru/d2k-103-packages.zip
