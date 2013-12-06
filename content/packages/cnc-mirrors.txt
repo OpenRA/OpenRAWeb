@@ -1,3 +1,2 @@
 http://openra.ppmsite.com/cnc-packages.zip
-http://openra.ipdx.ru/packages/cnc-packages.zip
 http://openra.dxnet.ru/cnc-packages.zip
