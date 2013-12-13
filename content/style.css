@@ -129,12 +129,11 @@ p.download, .newsDetails {
   margin-right: 35px;
   float: left;
   width:260px;
-  height:200px;
+  height:180px;
 }
 
 #screenshot {
   position:relative;
-  height:350px;
 }
 
 #screenshot img {

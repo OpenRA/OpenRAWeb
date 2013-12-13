@@ -1,26 +1,21 @@
 <div id="mainleft">
   <div id="screenshot">
-    <img width="253" src="/images/screenshots/ss1.jpg" alt="" class="active" />
-    <img width="253" src="/images/screenshots/ss2.jpg" alt="" />
-    <img width="253" src="/images/screenshots/ss3.jpg" alt="" />
-    <img width="253" src="/images/screenshots/ss4.jpg" alt="" />
-    <img width="253" src="/images/screenshots/ss5.jpg" alt="" />
-    <img width="253" src="/images/screenshots/ss6.jpg" alt="" />
-    <img width="253" src="/images/screenshots/ss7.jpg" alt="" />
-    <img width="253" src="/images/screenshots/ss8.jpg" alt="" />
-    <img width="253" src="/images/screenshots/ss9.jpg" alt="" />
-    <img width="253" src="/images/screenshots/ss10.jpg" alt="" />
-    <img width="253" src="/images/screenshots/ss11.jpg" alt="" />
-    <img width="253" src="/images/screenshots/ss12.jpg" alt="" />
-    <img width="253" src="/images/screenshots/ss13.jpg" alt="" />
-    <img width="253" src="/images/screenshots/ss14.jpg" alt="" />
+<%
+  i = 0
+  Dir.glob('content/images/screenshots/*.png') do |item|
+    next if item == '.' or item == '..' %>
+	<img width="250" height="150" src="images/screenshots/<%= File.basename(item) %>" alt=""<%= if i == 0 then ' class="active"' end %> />
+<%
+    i = i + 1
+  end
+%>
 </div>
 </div>
 <div>
   <h2>Welcome Back, Commander</h2>
-  <p>OpenRA is a Libre/Free Real Time Strategy game engine that allows the recreation of the early Command&nbsp;&amp;&nbsp;Conquer titles.</p>
-  <p>OpenRA currently includes three distinct mods that reinvent C&amp;C&nbsp;(Tiberian&nbsp;Dawn), C&amp;C:&nbsp;Red&nbsp;Alert, and Dune&nbsp;2000.</p>
-  <p>Cross-platform multiplayer is supported between Windows, OS&nbsp;X, and Linux, and singleplayer skirmishes against bots.</p>
+  <p>OpenRA is a Libre/Free Real Time Strategy project that recreates the classic Command&nbsp;&amp;&nbsp;Conquer titles.</p>
+  <p>We include recreations of C&amp;C&nbsp;(Tiberian&nbsp;Dawn), C&amp;C:&nbsp;Red&nbsp;Alert, and Dune&nbsp;2000. These are not intended to be perfect copies, but instead combine the classic gameplay of the originals with modern improvements such as unit veterancy and the fog of war.</p>
+  <p>OpenRA's primary focus is cross-platform multiplayer between Windows, OS&nbsp;X, and Linux; however, we include a number of single-player missions, and also support skirmish games against AI bots.</p>
 </div>
 <h2 style="clear:both">Latest News</h2>
 <hr />
