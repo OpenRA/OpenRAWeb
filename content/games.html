@@ -60,7 +60,11 @@
           case 'd2k': mod = "Dune 2000"; break;
         }
 
-        var row = $('<tr>');
+        rowClass = '';
+        if ( modver[1] != "<%= @item[:release_tag]  %>" & modver[1] != "<%= @item[:playtest_tag] %>" )
+          rowClass = 'greyout';
+
+        var row = $('<tr class="'+rowClass+'">');
         row.append('<td>'+game['name'].replace(/\\\'/g, "'")+'<br /><span class="gameSubline">'+game['address']+'</span></td>');
         row.append('<td><span class="'+stateClass+'">'+state+'</span><br /><span class="gameSubline">'+game['players']+(game['players'] == 1 ? ' player' : ' players')+'</span></td>');
         row.append('<td>'+mod+'<br /><span class="gameSubline">'+tag+'</span></td>');
