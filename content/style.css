@@ -203,6 +203,10 @@ td, th, tr {
 #serverlist .gamePlaying {
   color: #F80;
 }
+
+#serverlist .greyout {
+  color: #999;
+}
 /* Downloads page */
 .downloadplatform {
   list-style-type:none;
