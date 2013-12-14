@@ -61,7 +61,7 @@
         }
 
         rowClass = '';
-        if ( modver[1] != "<%= @item[:release_tag]  %>" & modver[1] != "<%= @item[:playtest_tag] %>" )
+        if (modver[1] != "<%= RELEASE_TAG %>" & modver[1] != "<%= PLAYTEST_TAG %>")
           rowClass = 'greyout';
 
         var row = $('<tr class="'+rowClass+'">');
