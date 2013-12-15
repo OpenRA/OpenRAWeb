@@ -292,3 +292,8 @@ td, th, tr {
 .downloadblurb {
   min-height: 50px;
 }
+
+pre {
+  font-weight: normal;
+  font-family: monospace;
+}
