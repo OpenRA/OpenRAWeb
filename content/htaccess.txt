@@ -1,11 +1,6 @@
 # Custom file not found sub-page
 ErrorDocument 404 /404/
 
-<% if @site.config[:redirects] %>
-# Set up URL redirects<% @site.config[:redirects].each do |h| %>
-Redirect 301 <%= h[:from] %> <%= h[:to] %>
-<% end %><% end %>
-
 # Format the /assets/downloads/ folders properly
 IndexOptions FancyIndexing VersionSort XHTML NameWidth=* SuppressDescription
 IndexStyleSheet /style.css
@@ -19,3 +14,10 @@ RedirectMatch 301 ^/download/linux/deb/* /download/#deb
 RedirectMatch 301 ^/download/linux/rpm/* /download/#rpm
 RedirectMatch 301 ^/download/linux/* /download/#deb
 RedirectMatch 301 ^/download/win/* /download/#win
+
+# Point old URLs from the Silverstripe CMS website to new counterparts
+Redirect 301 /index.php /
+Redirect 301 /news/rss /news/atom
+Redirect 301 /themes/openra/images /images
+Redirect 301 /assets/images /images
+Redirect 301 /master/ping.php http://master.open-ra.org/ping.php
