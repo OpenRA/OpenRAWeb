@@ -1,6 +1,6 @@
 DOWNLOAD_BASE_PATH = "http://openra.res0l.net/assets/downloads/"
 
-PLAYTEST_TAG = "playtest-20131211"
+PLAYTEST_TAG = "playtest-20131215"
 RELEASE_TAG = "release-20130915"
 
 PLATFORMS = ["win", "osx", "deb", "rpm", "arch", "source", "desura"]
