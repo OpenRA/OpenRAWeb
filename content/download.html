@@ -51,8 +51,6 @@ $(document).ready(function(){
 <h3>Which Build?</h3>
 <p>Release builds are recommended for most players.<br />They have been extensively tested and have a larger player base.</p>
 <p>Playtest builds contain the latest improvements, but change frequently and may be broken at times.</p>
-<p>Older releases can be <a href=<%= DOWNLOAD_BASE_PATH%>>found here</a>.</p>
-
 <% PLATFORMS.each do |platform| %>
 <div id="<%= platform %>" class="tab">
   <hr />
@@ -69,6 +67,7 @@ $(document).ready(function(){
     <li><a href="<%= package_url(platform, RELEASE_TAG) %>" title="Download <%= RELEASE_TAG %>">Download <%= RELEASE_TAG %><br />(<%= package_size(platform, RELEASE_TAG) %>)</a></li>
     <li><a href="<%= package_url(platform, PLAYTEST_TAG) %>" title="Download <%= PLAYTEST_TAG %>">Download <%= PLAYTEST_TAG %><br />(<%= package_size(platform, PLAYTEST_TAG) %>)</a></li>
   </ul>
+  <p>Older releases can be found in our <a href="<%= DOWNLOAD_BASE_PATH + package_path(platform) %>">package archive</a>.</p>
   <% end %>
 </div>
 <% end %>

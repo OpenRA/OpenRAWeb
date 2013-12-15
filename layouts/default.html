@@ -1,17 +1,4 @@
-<%
-PAGES = ["/", "/news/", "/download/", "/games/", "/get-involved/"]
-PAGE_TITLES = {
-	"/" => "Home",
-	"/news/" => "News",
-	"/download/" => "Download",
-	"/games/" => "Games",
-	"/get-involved/" => "Support / Contribute"
-}
-
-def navigation_page(page)
-	page == @item.path || (page == "/news/" && @item.path.start_with?("/news/"))
-end
-%><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
