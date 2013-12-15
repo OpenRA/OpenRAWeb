@@ -31,24 +31,43 @@ def package_name(platform, tag)
     modtag = tag.gsub('-', '.')
     case platform
         when "osx"
-            "mac/OpenRA-#{tag}.zip"
+            "OpenRA-#{tag}.zip"
         when "win"
-            "windows/OpenRA-#{tag}.exe"
+            "OpenRA-#{tag}.exe"
         when "arch"
-            "linux/arch/openra-#{modtag}-1-any.pkg.tar.xz"
+            "openra-#{modtag}-1-any.pkg.tar.xz"
         when "deb"
-            "linux/deb/openra_#{modtag}_all.deb"
+            "openra_#{modtag}_all.deb"
         when "rpm"
-            "linux/rpm/openra-#{modtag}-1.noarch.rpm"
+            "openra-#{modtag}-1.noarch.rpm"
         when "source"
-            "source/#{tag}.tar.gz"
+            "#{tag}.tar.gz"
         else
             raise "Why is your platform #{platform}?!?!"
     end
 end
 
 def package_url(platform, tag)
-    DOWNLOAD_BASE_PATH + package_name(platform, tag)
+    DOWNLOAD_BASE_PATH + package_path(platform) + package_name(platform, tag)
+end
+
+def package_path(platform)
+    case platform
+        when "osx"
+            "mac/"
+        when "win"
+            "windows/"
+        when "arch"
+            "linux/arch/"
+        when "deb"
+            "linux/deb/"
+        when "rpm"
+            "linux/rpm/"
+        when "source"
+            "source/"
+        else
+            raise "Why is your platform #{platform}?!?!"
+    end
 end
 
 def package_size(platform, tag)
