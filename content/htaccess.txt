@@ -9,3 +9,5 @@ Redirect 301 <%= h[:from] %> <%= h[:to] %>
 # Format the /assets/downloads/ folders properly
 IndexOptions FancyIndexing VersionSort XHTML NameWidth=* SuppressDescription
 IndexStyleSheet /style.css
+HeaderName /includes/header/index.html
+ReadmeName /includes/footer/index.html

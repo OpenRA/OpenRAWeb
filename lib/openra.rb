@@ -84,3 +84,16 @@ end
 def pretty_date(date)
     attribute_to_time(date).strftime("%Y-%m-%d")
 end
+
+PAGES = ["/", "/news/", "/download/", "/games/", "/get-involved/"]
+PAGE_TITLES = {
+	"/" => "Home",
+	"/news/" => "News",
+	"/download/" => "Download",
+	"/games/" => "Games",
+	"/get-involved/" => "Support / Contribute"
+}
+
+def navigation_page(page)
+	page == @item.path || (page == "/news/" && @item.path.start_with?("/news/"))
+end
