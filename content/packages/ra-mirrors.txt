@@ -1,2 +1,3 @@
 http://openra.ppmsite.com/ra-packages.zip
 http://openra.dxnet.ru/ra-packages.zip
+http://nazgul.dxnet.ru/ra-packages.zip
