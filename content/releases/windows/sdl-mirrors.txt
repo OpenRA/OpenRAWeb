@@ -2,3 +2,4 @@ http://openra.ppmsite.com/SDL-1.2.14-win32.zip
 http://openra.dxnet.ru/SDL-1.2.14-win32.zip
 http://nazgul.dxnet.ru/SDL-1.2.14-win32.zip
 http://srvdonate.ut.mephi.ru/openra/SDL-1.2.14-win32.zip
+http://openra-mirror.ihptru.net/SDL-1.2.14-win32.zip
