@@ -14,8 +14,6 @@ session_name('global');
 session_start();
 $time = time();
 
-error_log(serialize($_SESSION));
-
 $mirrors_file = FALSE;
 switch ($_GET["file"])
 {
