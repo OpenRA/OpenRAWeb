@@ -14,60 +14,30 @@ session_name('global');
 session_start();
 $time = time();
 
-$mirrors_file = FALSE;
-switch ($_GET["file"])
-{
-	case "ra-packages":
-		$mirrors_file = "packages/ra-mirrors.txt";
-		break;
-	case "cnc-packages":
-		$mirrors_file = "packages/cnc-mirrors.txt";
-		break;
-	case "d2k-packages":
-		$mirrors_file = "packages/d2k-mirrors.txt";
-		break;
-	case "d2k-complete-packages":
-		$mirrors_file = "packages/d2k-complete-mirrors.txt";
-		break;
-	case "d2k-103-packages":
-		$mirrors_file = "packages/d2k-103-mirrors.txt";
-		break;
-	case "ts-packages":
-		$mirrors_file = "packages/ts-mirrors.txt";
-		break;
-	case "osx-deps-v2":
-		$mirrors_file = "releases/mac/osx-dependencies-mirrors.txt";
-		break;
-	case "osx-deps-v3":
-		$mirrors_file = "releases/mac/osx-dependencies-mirrors-v3.txt";
-		break;
-	case "osx-deps-v4":
-		$mirrors_file = "releases/mac/osx-dependencies-mirrors-v4.txt";
-		break;
-	case "freetype":
-		$mirrors_file = "releases/windows/freetype-mirrors.txt";
-		break;
-	case "cg":
-		$mirrors_file = "releases/windows/cg-mirrors.txt";
-		break;
-	case "sdl":
-		$mirrors_file = "releases/windows/sdl-mirrors.txt";
-		break;
-	case "openal":
-		$mirrors_file = "releases/windows/openal-mirrors.txt";
-		break;
-	case "dmclglcd":
-		$mirrors_file = "releases/windows/dmclglcd-mirrors.txt";
-		break;
-	default:
-		break;
-}
+$mirrors_files_assoc = array(
+	"ra-packages"		=> "packages/ra-mirrors.txt",
+	"cnc-packages"		=> "packages/cnc-mirrors.txt",
+	"d2k-packages"		=> "packages/d2k-mirrors.txt",
+	"d2k-complete-packages"	=> "packages/d2k-complete-mirrors.txt",
+	"d2k-103-packages"	=> "packages/d2k-103-mirrors.txt",
+	"ts-packages"		=> "packages/ts-mirrors.txt",
+	"osx-deps-v2"		=> "releases/mac/osx-dependencies-mirrors.txt",
+	"osx-deps-v3"		=> "releases/mac/osx-dependencies-mirrors-v3.txt",
+	"osx-deps-v4"		=> "releases/mac/osx-dependencies-mirrors-v4.txt",
+	"freetype"		=> "releases/windows/freetype-mirrors.txt",
+	"cg"			=> "releases/windows/cg-mirrors.txt",
+	"sdl"			=> "releases/windows/sdl-mirrors.txt",
+	"openal"		=> "releases/windows/openal-mirrors.txt",
+	"dmclglcd"		=> "releases/windows/dmclglcd-mirrors.txt",
+);
 
-if ($mirrors_file !== FALSE)
+if(isset($mirrors_files_assoc[$_GET["file"]]))
 {
 	$errors		= array();
 
 	// Getting mirrors
+
+	$mirrors_file	= $mirrors_files_assoc[$_GET["file"]];
 
 	$mirrors 	= file_get_contents($mirrors_file);
 	$mirrors_array 	= explode("\n", $mirrors);
@@ -92,7 +62,6 @@ if ($mirrors_file !== FALSE)
 		$time_check_last = isset($_SESSION['last']['time']['check'][$mirror]) ? 
 					 $_SESSION['last']['time']['check'][$mirror]  :
 					 0;
-		
 		if ($time > $time_check_last + MIRRORCHECK_MININTERVAL)
 		{
 			// Checking the mirror
@@ -133,7 +102,5 @@ if (isset($mirror))
 	header('Location: '. $mirror);		// Redirecting to the mirror, if found
 else
 	header('Status: 404 Not Found');	// Otherwise
-
-
 
 ?>
