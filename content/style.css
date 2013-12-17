@@ -207,6 +207,15 @@ td, th, tr {
 #serverlist .greyout {
   color: #999;
 }
+
+#serverlist .greyout .gameWaiting {
+  color: #050;
+}
+
+#serverlist .greyout .gamePlaying {
+  color: #740;
+}
+
 /* Downloads page */
 .downloadplatform {
   list-style-type:none;
