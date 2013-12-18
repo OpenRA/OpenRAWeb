@@ -3,8 +3,9 @@
 // === configuration ===
 
 // Minimal interval between mail notifies about mirrors problems
-
 define('NOTIFY_MININTERVAL',		1800 /* 30 min */);
+
+// Minimal interval between mirror check
 define('MIRRORCHECK_MININTERVAL',	 600 /* 10 min */);
 
 // === program ===
