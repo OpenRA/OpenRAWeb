@@ -1,12 +1,10 @@
 <div id="mainleft">
   <div id="screenshot">
 <%
-  i = 0
   Dir.glob('content/images/screenshots/*.png') do |item|
     next if item == '.' or item == '..' %>
-	<img width="250" height="150" src="images/screenshots/<%= File.basename(item) %>" alt=""<%= if i == 0 then ' class="active"' end %> />
+	<img width="250" height="150" src="images/screenshots/<%= File.basename(item) %>" alt="" />
 <%
-    i = i + 1
   end
 %>
 </div>
@@ -23,20 +21,22 @@
 <%= sorted_articles.first.compiled_content(:snapshot => :body) %>
 
 <script>
+  function nextSlide() {
+    var x = $('#screenshot img:not(.active)');
+    return $(x[Math.floor(Math.random() * x.length)]);
+  }
+
   function slideSwitch() {
-    var $active = $('#screenshot IMG.active');
-    if ($active.length == 0)
-      $active = $('#screenshot IMG:last');
-    var $next =  $active.next().length ? $active.next()
-      : $('#screenshot IMG:first');
-    $active.addClass('last-active');
-    $next.css({opacity: 0.0})
+    var active = $('#screenshot img.active');
+    if (active.length == 0)
+      active = nextSlide();
+    var next = nextSlide();
+    active.addClass('last-active');
+    next.css({opacity: 0.0})
       .addClass('active')
       .animate({opacity: 1.0}, 1000, function() {
-          $active.removeClass('active last-active');
+          active.removeClass('active last-active');
     });
   }
-  $(function() {
-    setInterval("slideSwitch()", 2500);
-  });
+  $(function() { setInterval("slideSwitch()", 3500); });
 </script>
