@@ -21,3 +21,6 @@ Redirect 301 /news/rss /news/atom
 Redirect 301 /themes/openra/images /images
 Redirect 301 /assets/images /images
 Redirect 301 /master/ping.php http://master.open-ra.org/ping.php
+
+# Content download migration
+Redirect 301 /download/content/ /get-dependency.php?file=
