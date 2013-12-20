@@ -1,2 +1,5 @@
 http://openra.ppmsite.com/cg-win32.zip
 http://openra.dxnet.ru/cg-win32.zip
+http://nazgul.dxnet.ru/cg-win32.zip
+http://srvdonate.ut.mephi.ru/openra/cg-win32.zip
+http://openra-mirror.ihptru.net/cg-win32.zip

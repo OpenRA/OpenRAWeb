@@ -1,2 +1,5 @@
 http://openra.dxnet.ru/ts-packages.zip
 http://openra.ppmsite.com/ts-packages.zip
+http://nazgul.dxnet.ru/ts-packages.zip
+http://srvdonate.ut.mephi.ru/openra/ts-packages.zip
+http://openra-mirror.ihptru.net/ts-packages.zip
