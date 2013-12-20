@@ -1,0 +1,6 @@
+-----
+-----
+{
+	"version":"<%= RELEASE_TAG.scan(/\d/).join('') %>",
+	"size":"<%= package_size('osx', RELEASE_TAG).delete(' ') %>"
+}

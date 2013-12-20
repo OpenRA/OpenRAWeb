@@ -50,7 +50,7 @@ compile %r{^/(htaccess)/$} do
   filter :erb
 end
 
-compile %r{^/(version)/$} do
+compile '/*-version/' do
   filter :erb
 end
 
@@ -72,8 +72,12 @@ route '/sitemap' do
   item.identifier.chop + '.xml'
 end
 
-route '/version' do
+route '/master-version' do
   '/releases/master/VERSION'
+end
+
+route '/mac-version' do
+  '/releases/mac/version.json'
 end
 
 route '*' do
