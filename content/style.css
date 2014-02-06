@@ -15,7 +15,7 @@ h3 {
 
 body {
   background-color: black;
-  background-image: url("bg.svg");
+  background-image: url("/images/bg.svg");
   background-attachment:fixed;
   margin: 0; 
   color: white;
