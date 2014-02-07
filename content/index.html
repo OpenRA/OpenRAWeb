@@ -12,10 +12,9 @@
     Find us on your favorite social network:
     <ul>
       <% SOCIAL.each do |s| %>
-        <li><a id="social-<%= s %>" href="<%= SOCIAL_URL[s] %>"<%= ' rel="publisher"' if s == "gplus" %>><img src="/images/social/<%= s %>.svg" alt="<%= SOCIAL_NAME[s] %>" title="<%= SOCIAL_NAME[s] %>" /></a></li>
+        <li><a href="<%= SOCIAL_URL[s] %>"<%= ' rel="publisher"' if s == "gplus" %>><img src="/images/social/<%= s %>.svg" alt="<%= SOCIAL_NAME[s] %>" title="<%= SOCIAL_NAME[s] %>" /></a></li>
       <% end %>
     </ul>
-    <p id="social-blocked">Are you running an ad-blocker?<br />These links appear to have been removed.</p>
   </div>
 </div>
 <div>
@@ -49,6 +48,4 @@
     });
   }
   $(function() { setInterval("slideSwitch()", 3500); });
-
-  $(function() { if ($('#social-facebook').is(":hidden")) $('#social-blocked').show(); });
 </script>
