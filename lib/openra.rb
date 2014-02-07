@@ -1,4 +1,5 @@
 DOWNLOAD_BASE_PATH = "http://openra.res0l.net/assets/downloads/"
+SOURCEFORGE_MIRROR = "http://downloads.sourceforge.net/project/openra.mirror/OpenRA%2020131223/"
 
 PLAYTEST_TAG = "playtest-20131220"
 RELEASE_TAG = "release-20131223"
@@ -70,6 +71,10 @@ end
 
 def package_url(platform, tag)
     DOWNLOAD_BASE_PATH + package_path(platform) + package_name(platform, tag)
+end
+
+def package_mirror_url(platform, tag)
+    SOURCEFORGE_MIRROR + package_name(platform, tag)
 end
 
 def package_path(platform)
