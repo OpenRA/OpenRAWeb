@@ -3,19 +3,19 @@
 <%
   Dir.glob('content/images/screenshots/*.png') do |item|
     next if item == '.' or item == '..' %>
-	<img width="250" height="150" src="images/screenshots/<%= File.basename(item) %>" alt="" />
+      <img width="250" height="150" src="images/screenshots/<%= File.basename(item) %>" alt="" />
 <%
   end
 %>
   </div>
   <div id="so-links">
-	Find us on your favorite social network:
+    Find us on your favorite social network:
     <ul>
       <% SOCIAL.each do |s| %>
-        <li><a id="social-<%= s %>" href="<%= SOCIAL_URL[s] %>"><img src="/images/social/<%= s %>.svg" alt="<%= SOCIAL_NAME[s] %>" title="<%= SOCIAL_NAME[s] %>" /></a></li>
+        <li><a id="social-<%= s %>" href="<%= SOCIAL_URL[s] %>"<%= ' rel="publisher"' if s == "gplus" %>><img src="/images/social/<%= s %>.svg" alt="<%= SOCIAL_NAME[s] %>" title="<%= SOCIAL_NAME[s] %>" /></a></li>
       <% end %>
     </ul>
-	<p id="social-blocked">Are you running an ad-blocker?<br />These links appear to have been removed.</p>
+    <p id="social-blocked">Are you running an ad-blocker?<br />These links appear to have been removed.</p>
   </div>
 </div>
 <div>
