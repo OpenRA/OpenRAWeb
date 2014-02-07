@@ -64,7 +64,7 @@ $(document).ready(function(){
   <h3>Download OpenRA <%= "for " unless platform == "source" %> <%= PLATFORM_NAME[platform] %></h3>
   <p class="downloadblurb"><%= PLATFORM_BLURB[platform] %></p>
   <ul class="downloadlinks">
-    <li><a href="<%= package_url(platform, RELEASE_TAG) %>" title="Download <%= RELEASE_TAG %>">Download <%= RELEASE_TAG %><br />(<%= package_size(platform, RELEASE_TAG) %>)</a></li>
+    <li><a href="<%= mirrored_package_url(platform, RELEASE_TAG) %>" title="Download <%= RELEASE_TAG %>">Download <%= RELEASE_TAG %><br />(<%= package_size(platform, RELEASE_TAG) %>)</a></li>
     <li><a href="<%= package_url(platform, PLAYTEST_TAG) %>" title="Download <%= PLAYTEST_TAG %>">Download <%= PLAYTEST_TAG %><br />(<%= package_size(platform, PLAYTEST_TAG) %>)</a></li>
   </ul>
   <p>Older releases can be found in our <a href="<%= DOWNLOAD_BASE_PATH + package_path(platform) %>">package archive</a>.</p>

@@ -1,4 +1,6 @@
 DOWNLOAD_BASE_PATH = "http://openra.res0l.net/assets/downloads/"
+DOWNLOAD_GITHUB_RELEASE_PATH = "https://github.com/OpenRA/OpenRA/releases/download/"
+DOWNLOAD_GITHUB_SOURCE_PATH = "https://github.com/OpenRA/OpenRA/archive/"
 
 PLAYTEST_TAG = "playtest-20131220"
 RELEASE_TAG = "release-20131223"
@@ -70,6 +72,15 @@ end
 
 def package_url(platform, tag)
     DOWNLOAD_BASE_PATH + package_path(platform) + package_name(platform, tag)
+end
+
+def mirrored_package_url(platform, tag)
+    case platform 
+        when "source"
+            DOWNLOAD_GITHUB_SOURCE_PATH + package_name(platform, tag)
+        else
+            DOWNLOAD_GITHUB_RELEASE_PATH + tag + '/' + package_name(platform, tag)
+    end
 end
 
 def package_path(platform)
