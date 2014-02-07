@@ -183,13 +183,6 @@ p.download, .newsDetails {
   opacity: 0.5;
 }
 
-#social-blocked {
-  display:none;
-  margin-top:-37px;
-  font-size:10px;
-  color:#666;
-}
-
 #ghbanner img {
   float:right;
   margin: -72px -3px;
