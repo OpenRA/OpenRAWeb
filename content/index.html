@@ -7,7 +7,16 @@
 <%
   end
 %>
-</div>
+  </div>
+  <div id="so-links">
+	Find us on your favorite social network:
+    <ul>
+      <% SOCIAL.each do |s| %>
+        <li><a id="social-<%= s %>" href="<%= SOCIAL_URL[s] %>"><img src="/images/social/<%= s %>.svg" alt="<%= SOCIAL_NAME[s] %>" title="<%= SOCIAL_NAME[s] %>" /></a></li>
+      <% end %>
+    </ul>
+	<p id="social-blocked">Are you running an ad-blocker?<br />These links appear to have been removed.</p>
+  </div>
 </div>
 <div>
   <h2>Welcome Back, Commander</h2>
@@ -15,6 +24,7 @@
   <p>We include recreations of C&amp;C&nbsp;(Tiberian&nbsp;Dawn), C&amp;C:&nbsp;Red&nbsp;Alert, and Dune&nbsp;2000. These are not intended to be perfect copies, but instead combine the classic gameplay of the originals with modern improvements such as unit veterancy and the fog of war.</p>
   <p>OpenRA's primary focus is cross-platform multiplayer between Windows, OS&nbsp;X, and Linux; however, we include a number of single-player missions, and also support skirmish games against AI bots.</p>
 </div>
+
 <h2 style="clear:both">Latest News</h2>
 <hr />
 <h3 class="newsTitle"><%= sorted_articles.first[:title] %></h3>
@@ -39,4 +49,6 @@
     });
   }
   $(function() { setInterval("slideSwitch()", 3500); });
+
+  $(function() { if ($('#social-facebook').is(":hidden")) $('#social-blocked').show(); });
 </script>

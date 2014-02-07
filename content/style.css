@@ -128,8 +128,8 @@ p.download, .newsDetails {
 #mainleft {
   margin-right: 35px;
   float: left;
-  width:260px;
-  height:180px;
+  width:254px;
+  height:280px;
 }
 
 #screenshot {
@@ -139,20 +139,55 @@ p.download, .newsDetails {
 #screenshot img {
   position:absolute;
   top:0;
-  left:0;
   z-index:8;
   padding: 0;
   margin: 10px 0;
   border: solid 2px #650b03;
 }
 
-
 #screenshot IMG.active {
   z-index:10;
 }
 
 #screenshot IMG.last-active {
-    z-index:9;
+  z-index:9;
+}
+
+#so-links {
+  margin-top:180px;
+  text-align: center;
+  margin-bottom:0;
+}
+
+#so-links ul {
+  border-radius: 4px;
+  height:42px;
+  background-color: #272d2c;
+  list-style-type:none;
+  padding:0;
+  margin:5px;
+}
+
+#so-links li {
+  display:inline;
+  padding:0;
+  margin:2px;
+}
+
+#so-links li a img {
+  padding-top:5px;
+  border-style:none;
+}
+
+#so-links li a:hover {
+  opacity: 0.5;
+}
+
+#social-blocked {
+  display:none;
+  margin-top:-37px;
+  font-size:10px;
+  color:#666;
 }
 
 #ghbanner img {

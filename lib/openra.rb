@@ -3,6 +3,7 @@ DOWNLOAD_BASE_PATH = "http://openra.res0l.net/assets/downloads/"
 PLAYTEST_TAG = "playtest-20131220"
 RELEASE_TAG = "release-20131223"
 
+# TODO: Remove this gross duplication
 PLATFORMS = ["win", "osx", "deb", "rpm", "arch", "source", "desura"]
 PLATFORM_NAME = {
     "win" => "Windows",
@@ -12,6 +13,26 @@ PLATFORM_NAME = {
     "arch" => "Arch Linux",
     "source" => "Source Code",
     "desura" => "Desura"
+}
+
+# TODO: Remove this gross duplication
+SOCIAL = ["facebook", "gplus", "twitter", "moddb", "reddit", "github"]
+SOCIAL_NAME = {
+  "facebook" => "Facebook",
+  "gplus" => "Google+",
+  "twitter" => "Twitter",
+  "moddb" => "ModDB",
+  "reddit" => "Reddit",
+  "github" => "Github"
+}
+
+SOCIAL_URL = {
+  "facebook" => "https://www.facebook.com/openra",
+  "gplus" => "https://plus.google.com/100332364931123881367",
+  "twitter" => "http://twitter.com/openRA",
+  "moddb" => "http://www.moddb.com/games/openra",
+  "reddit" => "http://www.reddit.com/r/openra",
+  "github" => "https://github.com/OpenRA/OpenRA"
 }
 
 PLATFORM_BLURB = {
