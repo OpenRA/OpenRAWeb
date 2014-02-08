@@ -334,3 +334,16 @@ pre {
   font-weight: normal;
   font-family: monospace;
 }
+
+.communityblock {
+  margin:auto;
+}
+
+.communityblock img {
+  padding-left:10px;
+  float:left;
+}
+
+.communityblock p {
+  margin-left:80px;
+}

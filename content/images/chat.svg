@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   width="48"
+   height="48"
+   id="svg5816">
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Jakub Steiner</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:contributor>
+          <cc:Agent>
+            <dc:title />
+          </cc:Agent>
+        </dc:contributor>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-sa/2.0/" />
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>group</rdf:li>
+            <rdf:li>chat</rdf:li>
+            <rdf:li>IRC</rdf:li>
+            <rdf:li>internet</rdf:li>
+            <rdf:li>network</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-sa/2.0/">
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/Reproduction" />
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/Distribution" />
+        <cc:requires
+           rdf:resource="http://web.resource.org/cc/Notice" />
+        <cc:requires
+           rdf:resource="http://web.resource.org/cc/Attribution" />
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://web.resource.org/cc/ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <path
+     d="m 15.258941,0.69033413 c -1.435846,0 -2.573005,1.22878897 -2.573005,2.72328957 V 24.84983 c 0,1.494357 1.137159,2.679882 2.573005,2.679882 h 18.93523 c 1.146534,1.569786 3.379329,4.117309 8.728929,6.236452 -2.381468,-2.916133 -2.376112,-4.8958 -2.10823,-6.236452 h 3.88027 c 1.434506,0 2.614526,-1.185525 2.614526,-2.679882 V 3.4136237 c 0,-1.4939312 -1.18002,-2.72272027 -2.614526,-2.72272027 H 15.258941 z"
+     id="rect29408"
+     style="color:#000000;fill:#ffffff;stroke:#787878;stroke-width:1.38066816;display:block" />
+  <path
+     d="m 32.736518,14.241444 c 1.434248,0 2.570326,1.228758 2.570326,2.722739 v 21.424982 c 0,1.493978 -1.136078,2.677594 -2.570326,2.677594 H 13.808333 c -1.147122,1.570159 -3.377865,4.116555 -8.7264016,6.235493 2.3806557,-2.9146 2.3765137,-4.893875 2.1073337,-6.235493 H 3.3112785 c -1.4342462,0 -2.61353085,-1.183616 -2.61353085,-2.677594 V 16.964183 c 0,-1.493981 1.17928465,-2.722739 2.61353085,-2.722739 H 32.736104 z"
+     id="path29441"
+     style="color:#000000;fill:#ffffff;stroke:#787878;stroke-width:1.3954953;display:block" />
+</svg>

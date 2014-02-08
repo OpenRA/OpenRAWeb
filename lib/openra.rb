@@ -117,13 +117,13 @@ def pretty_date(date)
     attribute_to_time(date).strftime("%Y-%m-%d")
 end
 
-PAGES = ["/", "/news/", "/download/", "/games/", "/get-involved/"]
+PAGES = ["/", "/news/", "/download/", "/games/", "/community/"]
 PAGE_TITLES = {
 	"/" => "Home",
 	"/news/" => "News",
 	"/download/" => "Download",
 	"/games/" => "Games",
-	"/get-involved/" => "Support / Contribute"
+	"/community/" => "Community"
 }
 
 def navigation_page(page)

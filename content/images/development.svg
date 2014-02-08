@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   width="48"
+   height="48"
+   id="svg11300">
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:contributor>
+          <cc:Agent>
+            <dc:title>Henrik Andersen</dc:title>
+          </cc:Agent>
+        </dc:contributor>
+        <dc:title></dc:title>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>developer</rdf:li>
+            <rdf:li>dev</rdf:li>
+            <rdf:li>tool</rdf:li>
+            <rdf:li>make</rdf:li>
+            <rdf:li>compile</rdf:li>
+            <rdf:li>build</rdf:li>
+            <rdf:li>code</rdf:li>
+            <rdf:li>hacker</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Jakub Steiner</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:source>http://jimmac.musichall.cz</dc:source>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-sa/2.0/" />
+        <dc:title></dc:title>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>preferences</rdf:li>
+            <rdf:li>settings</rdf:li>
+            <rdf:li>control panel</rdf:li>
+            <rdf:li>tweaks</rdf:li>
+            <rdf:li>system</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-sa/2.0/">
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/Reproduction" />
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/Distribution" />
+        <cc:requires
+           rdf:resource="http://web.resource.org/cc/Notice" />
+        <cc:requires
+           rdf:resource="http://web.resource.org/cc/Attribution" />
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://web.resource.org/cc/ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <path
+     d="m 13.052203,20.292123 23.828921,24.005038 c 0.842102,0.962404 3.510388,1.706219 5.293218,0 1.721631,-1.64765 1.323304,-3.969913 -0.3609,-5.65412 L 18.826622,14.517704 C 21.29216,7.6689892 16.302035,1.9165421 9.8642421,3.1493107 L 8.4807871,4.4124652 12.811602,8.5026794 13.052203,12.111696 9.8186871,15.063331 5.9544787,14.638004 1.984566,10.908692 0.59277343,12.283809 c -0.6473547,6.181724 5.81617617,11.70662 12.45942957,8.008314 z"
+     id="path2140"
+     style="color:#000000;fill:#c0c0c0;fill-opacity:1;fill-rule:nonzero;stroke:#808080;stroke-width:1.09579396;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible" />
+  <g
+     transform="matrix(0.77484362,0.77484362,-0.77484362,0.77484362,-75.632487,-138.64181)"
+     id="g4721"
+     style="fill:#e4a140;fill-opacity:1;stroke:#9a5b00;stroke-opacity:1">
+    <path
+       d="m 171.04228,65.702992 c 2.28219,-0.05133 2.24901,-2.610868 2.18061,-5.344146 -0.11958,-4.781402 -0.82929,-4.219524 -0.97878,-10.196283 -0.14948,-5.976752 0.39385,-17.60825 0.39385,-17.60825 -0.0476,-1.904867 0.28281,-4.437364 -3.28589,-4.203494 -3.5687,-0.23387 -3.23825,2.298627 -3.28589,4.203494 0,0 0.54333,11.631498 0.39385,17.60825 -0.14949,5.976759 -0.8592,5.414881 -0.97878,10.196283 -0.0684,2.733278 -0.10158,5.292819 2.18061,5.344146 0,0 -0.16595,0.01887 1.69021,0.01887 1.85616,0 1.69021,-0.01887 1.69021,-0.01887 z"
+       id="path3930"
+       style="color:#000000;fill:#e4a140;fill-opacity:1;fill-rule:nonzero;stroke:#9a5b00;stroke-width:0.9999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible" />
+  </g>
+  <g
+     transform="matrix(1.095732,0.01169235,-0.01169235,1.095732,-3.5774086,-1.1470327)"
+     id="g3815"
+     style="fill:#c0c0c0;fill-opacity:1;stroke:#808080;stroke-opacity:1">
+    <path
+       d="m 21.733036,4.2895778 0.277332,0.042544 c 3.129991,-1.2369372 10.517617,2.5440684 9.129271,6.3548182 -0.371659,0.606706 -0.245638,1.641758 0.277448,2.267696 l 3.388978,2.985578 c 0.995974,0.802387 1.896004,0.826701 2.733027,0.547066 1.616576,-0.540072 2.620446,1.015203 3.667507,2.134373 l -0.419521,0.46101 c -0.619764,0.700034 -0.496567,1.814841 0.280001,2.509971 0.776567,0.695128 1.901769,0.694372 2.521932,0.0016 l 2.7739,-3.095049 c 0.619765,-0.700034 0.496566,-1.814842 -0.283408,-2.506164 -0.700634,-0.630586 -1.668519,-0.663861 -2.313092,-0.150598 -2.137713,-2.146665 -1.099596,-2.544216 -3.917097,-5.337092 L 34.593883,5.6981833 C 30.817619,2.3830766 26.164662,2.6441733 21.733036,4.2896256 z"
+       id="path3732"
+       style="fill:#c0c0c0;fill-opacity:1;stroke:#808080;stroke-opacity:1" />
+  </g>
+  <style
+     type="text/css"
+     id="style3292" />
+  <style
+     type="text/css"
+     id="style3570" />
+</svg>
