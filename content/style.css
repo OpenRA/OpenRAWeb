@@ -335,8 +335,15 @@ pre {
   font-family: monospace;
 }
 
-.icon {
-  padding-top: 8px;
-  padding-right: 8px;
-  float: left;
+.communityblock {
+  margin:auto;
+}
+
+.communityblock img {
+  padding-left:10px;
+  float:left;
+}
+
+.communityblock p {
+  margin-left:80px;
 }
