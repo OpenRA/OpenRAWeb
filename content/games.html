@@ -12,7 +12,7 @@
       return;
     }
 
-    $.ajax({type: "GET", url: "http://content.open-ra.org/api/map_data.php?hash="+hash}).done(function(msg) {
+    $.ajax({type: "GET", url: "http://resource.openra.net/map/hash/"+hash}).done(function(msg) {
       data[hash] = {};
       var reply = jQuery.parseJSON(msg);
       if (!!reply[0])
