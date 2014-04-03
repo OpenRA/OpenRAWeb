@@ -4,7 +4,7 @@
 <h3>Manually installing content</h3>
 <p>If you receive a "Can't connect to remote server" error in game, then you can manually install the content:</p>
 <ul>
-  <li>Download the content assets for your favorite mod: <a href="/download/content/ra-packages">Red Alert</a>, <a href="/download/content/cnc-packages">Tiberium Dawn</a>, <a href="/download/content/d2k-103-packages">Dune 2000</a>.</li>
+  <li>Download the content assets for your favorite mod: <a href="/download/content/ra-packages">Red Alert</a>, <a href="/download/content/cnc-packages">Tiberian Dawn</a>, <a href="/download/content/d2k-103-packages">Dune 2000</a>.</li>
   <li>Extract the zip file contents into the following directory (where &lt;MOD&gt; is either ra, cnc, or d2k)
 	  <ul><li>Windows Users: <span style="font-family: monospace; border: 1px solid #999; padding: 0 5px; background-color: #666">My Documents\OpenRA\Content\&lt;MOD&gt;</span></li>
 		  <li>Mac OSX Users: <span style="font-family: monospace; border: 1px solid #999; padding: 0 5px; background-color: #666">~/Library/Application Support/OpenRA/Content/&lt;MOD&gt;</span><br /><span style="font-size:10px">(The Library folder is hidden, so use the Finder's <strong>Go &rarr; Go To Folder...</strong> option and paste this path.)</span></li>
