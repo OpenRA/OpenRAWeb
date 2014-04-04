@@ -10,3 +10,5 @@ http://mirrors.yun-idc.com/anthon/openra/d2k-103-packages.zip
 http://mirrors.oss.org.cn/anthon/openra/d2k-103-packages.zip
 http://mirror.pcbeta.com/anthonos/openra/d2k-103-packages.zip
 http://mirrors.oss.org.cn/anthon/openra/d2k-103-packages.zip
+http://mirrors.scie.in/anthon/openra/d2k-103-packages.zip
+http://mirrors.hust.edu.cn/anthon/openra/d2k-103-packages.zip
