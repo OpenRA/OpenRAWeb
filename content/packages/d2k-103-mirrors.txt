@@ -4,3 +4,9 @@ http://nazgul.dxnet.ru/d2k-103-packages.zip
 http://srvdonate.ut.mephi.ru/openra/d2k-103-packages.zip
 http://openra-mirror.ihptru.net/d2k-103-packages.zip
 http://ra.norimg.no/openra/d2k-103-packages.zip
+http://mirror.anthonos.org/openra/d2k-103-packages.zip
+http://mirrors.ustc.edu.cn/anthon/openra/d2k-103-packages.zip
+http://mirrors.yun-idc.com/anthon/openra/d2k-103-packages.zip
+http://mirrors.oss.org.cn/anthon/openra/d2k-103-packages.zip
+http://mirror.pcbeta.com/anthonos/openra/d2k-103-packages.zip
+http://mirrors.oss.org.cn/anthon/openra/d2k-103-packages.zip
