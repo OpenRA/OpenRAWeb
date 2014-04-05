@@ -2,7 +2,7 @@ DOWNLOAD_BASE_PATH = "http://openra.res0l.net/assets/downloads/"
 DOWNLOAD_GITHUB_RELEASE_PATH = "https://github.com/OpenRA/OpenRA/releases/download/"
 DOWNLOAD_GITHUB_SOURCE_PATH = "https://github.com/OpenRA/OpenRA/archive/"
 
-PLAYTEST_TAG = "playtest-20131220"
+PLAYTEST_TAG = "playtest-20140405-2"
 RELEASE_TAG = "release-20131223"
 
 # TODO: Remove this gross duplication
