@@ -3,7 +3,7 @@
   function initMapInfo(hash) {
     var doMap = function(map) {
       if ('title' in map)
-        $('.map-'+hash).html(map['title']+'<br /><span class="gameSubline">'+map['type']+'&nbsp;('+map['players']+' Players)</span>');
+        $('.map-'+hash).html(map['title']+'<br /><span class="gameSubline">'+map['map_type']+'&nbsp;('+map['players']+' Players)</span>');
       else
         $('.map-'+hash).html('Unknown Map');
     };
