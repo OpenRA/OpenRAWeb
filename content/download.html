@@ -17,24 +17,31 @@ $(document).ready(function(){
         $($(this).attr('href')).hide();
       });
 
+      function activateTab(tabEl){
+        // Make the old tab inactive.
+        if ($active && $active.length) $active.removeClass('active');
+        if ($content && $content.length) $content.hide();
+
+        // Update the variables with the new link and content
+        $active = $(tabEl);
+        $content = $($(tabEl).attr('href'));
+
+        // Make the tab active.
+        $active.addClass('active');
+        $content.show();
+      }
+
+      // Attempt to automatically highlight the viewer's OS on page load:
+      var ua = navigator.userAgent;
+      if (ua.match('Mac OS X')) activateTab($('a[href=#osx]'));
+      if (ua.match('Linux')) activateTab($('a[href=#deb]'));    // No way to detect distro AFAIK
+
       // Bind the click event handler
       $(this).on('click', 'a', function(e){
-      // Make the old tab inactive.
-      $active.removeClass('active');
-      $content.hide();
-
-      // Update the variables with the new link and content
-      $active = $(this);
-      $content = $($(this).attr('href'));
-
-      // Make the tab active.
-      $active.addClass('active');
-      $content.show();
-
-      // Prevent the anchor's default click action
-      e.preventDefault();
+        activateTab(this);
+        e.preventDefault();
+      });
     });
-  });
 });
 </script>
 
