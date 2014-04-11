@@ -34,7 +34,10 @@ $(document).ready(function(){
       // Attempt to automatically highlight the viewer's OS on page load:
       var ua = navigator.userAgent;
       if (ua.match('Mac OS X')) activateTab($('a[href=#osx]'));
-      if (ua.match('Linux')) activateTab($('a[href=#deb]'));    // No way to detect distro AFAIK
+      else if (ua.match(/Ubuntu|Debian/)) activateTab($('a[href=#deb]'));
+      else if (ua.match(/Red Hat|Fedora/)) activateTab($('a[href=#rpm]'));
+      else if (ua.match('Arch Linux')) activateTab($('a[href=#arch]'));
+      else if (ua.match('Linux')) activateTab($('a[href=#source]'));
 
       // Bind the click event handler
       $(this).on('click', 'a', function(e){
