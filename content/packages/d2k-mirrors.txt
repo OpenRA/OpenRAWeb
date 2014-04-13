@@ -4,3 +4,11 @@ http://nazgul.dxnet.ru/d2k-packages.zip
 http://srvdonate.ut.mephi.ru/openra/d2k-packages.zip
 http://openra-mirror.ihptru.net/d2k-packages.zip
 http://ra.norimg.no/openra/d2k-packages.zip
+http://ftp.ubuntu-tw.org/mirror/anthonos/openra/d2k-packages.zip
+http://ftp.ubuntu-tw.org/mirror/anthonos/openra/d2k-packages.zip
+http://mirrors.ustc.edu.cn/anthon/openra/d2k-packages.zip
+http://mirrors.yun-idc.com/anthon/openra/d2k-packages.zip
+http://mirrors.oss.org.cn/anthon/openra/d2k-packages.zip
+http://mirrors.hust.edu.cn/anthon/openra/d2k-packages.zip
+http://mirror.pcbeta.com/anthonos/openra/d2k-packages.zip
+http://mirror.oss.maxcdn.com/anthonos/openra/d2k-packages.zip

@@ -3,3 +3,11 @@ http://openra.dxnet.ru/freetype-zlib.zip
 http://nazgul.dxnet.ru/freetype-zlib.zip
 http://srvdonate.ut.mephi.ru/openra/freetype-zlib.zip
 http://openra-mirror.ihptru.net/freetype-zlib.zip
+http://ftp.ubuntu-tw.org/mirror/anthonos/openra/freetype-zlib.zip
+http://ftp.ubuntu-tw.org/mirror/anthonos/openra/freetype-zlib.zip
+http://mirrors.ustc.edu.cn/anthon/openra/freetype-zlib.zip
+http://mirrors.yun-idc.com/anthon/openra/freetype-zlib.zip
+http://mirrors.oss.org.cn/anthon/openra/freetype-zlib.zip
+http://mirrors.hust.edu.cn/anthon/openra/freetype-zlib.zip
+http://mirror.pcbeta.com/anthonos/openra/freetype-zlib.zip
+http://mirror.oss.maxcdn.com/anthonos/openra/freetype-zlib.zip
