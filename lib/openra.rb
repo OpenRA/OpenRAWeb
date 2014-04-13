@@ -45,7 +45,7 @@ PLATFORM_BLURB = {
     "arch" => "Just install the package, and you're good to go!",
     "source" => "Follow the instructions in the INSTALL document to build and run OpenRA.<br />
     <a title=\"Visual C# Express Download\" href=\"http://www.microsoft.com/express/downloads/\">Visual C# Express</a> (Windows) and <a title=\"MonoDevelop\" href=\"http://www.monodevelop.com/\"/>MonoDevelop</a> (OS X / Linux) are free IDEs that work with OpenRA.<br /><br />
-    If you'd like to <a href=\"/get-involved/\">contribute patches</a> (or just don't want to fiddle with tar files) you can download and/or update the code using the <a href=\"http://git-scm.com/\">git version control system</a>:<br />
+    If you'd like to <a href=\"https://github.com/OpenRA/OpenRA/pulls\">contribute patches</a> (or just don't want to fiddle with tar files) you can download and/or update the code using the <a href=\"http://git-scm.com/\">git version control system</a>:<br />
     <pre>$ git clone git://github.com/OpenRA/OpenRA.git</pre><br />",
     "desura" => "Desura is a community driven digital distribution service for gamers, putting the best games, mods and downloadable content from developers at gamers fingertips.",
 }
