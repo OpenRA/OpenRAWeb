@@ -1,10 +1,9 @@
 # Travis-CI Build for the OpenRA website
 # see travis-ci.org for details
 
-# Same version as the open-ra.org webserver.
 language: ruby
 rvm:
-  - 1.8.7
+  - 2.1.2
 
 install:
  - gem install builder kramdown nanoc
