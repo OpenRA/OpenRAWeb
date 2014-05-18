@@ -1,2 +1,4 @@
 #!/bin/bash
-find . -iname '*-mirrors.txt' -exec cat {} ';' | xargs -n1 ./check.sh | grep HTTP
+pushd content/packages
+find . -iname '*.txt' -exec cat {} ';' | xargs -n1 wget --spider --timeout=5 --tries=1
+popd
