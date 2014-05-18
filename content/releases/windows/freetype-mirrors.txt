@@ -1,5 +1,0 @@
-http://openra.ppmsite.com/freetype-zlib.zip
-http://openra.dxnet.ru/freetype-zlib.zip
-http://nazgul.dxnet.ru/freetype-zlib.zip
-http://srvdonate.ut.mephi.ru/openra/freetype-zlib.zip
-http://openra-mirror.ihptru.net/freetype-zlib.zip

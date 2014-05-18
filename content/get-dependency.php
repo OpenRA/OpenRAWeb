@@ -8,41 +8,11 @@ switch ($_GET["file"])
     case "cnc-packages":
         $mirrors_file = "packages/cnc-mirrors.txt";
         break;
-    case "d2k-packages":
-        $mirrors_file = "packages/d2k-mirrors.txt";
-        break;
-    case "d2k-complete-packages":
-        $mirrors_file = "packages/d2k-complete-mirrors.txt";
-        break;
     case "d2k-103-packages":
         $mirrors_file = "packages/d2k-103-mirrors.txt";
         break;
     case "ts-packages":
         $mirrors_file = "packages/ts-mirrors.txt";
-        break;
-    case "osx-deps-v2":
-        $mirrors_file = "releases/mac/osx-dependencies-mirrors.txt";
-        break;
-    case "osx-deps-v3":
-        $mirrors_file = "releases/mac/osx-dependencies-mirrors-v3.txt";
-        break;
-    case "osx-deps-v4":
-        $mirrors_file = "releases/mac/osx-dependencies-mirrors-v4.txt";
-        break;
-    case "freetype":
-        $mirrors_file = "releases/windows/freetype-mirrors.txt";
-        break;
-    case "cg":
-        $mirrors_file = "releases/windows/cg-mirrors.txt";
-        break;
-    case "sdl":
-        $mirrors_file = "releases/windows/sdl-mirrors.txt";
-        break;
-    case "openal":
-        $mirrors_file = "releases/windows/openal-mirrors.txt";
-        break;
-    case "dmclglcd":
-        $mirrors_file = "releases/windows/dmclglcd-mirrors.txt";
         break;
     default:
         break;
