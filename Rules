@@ -59,6 +59,9 @@ compile '*' do
   end
 end
 
+route '/404/' do
+  '/404.html'
+end
 
 route '/htaccess/' do
   '/.htaccess'

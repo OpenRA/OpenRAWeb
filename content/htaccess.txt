@@ -1,5 +1,5 @@
 # Custom file not found sub-page
-ErrorDocument 404 /404/
+ErrorDocument 404 /404.html
 
 # Format the /assets/downloads/ folders properly
 IndexOptions FancyIndexing VersionSort XHTML NameWidth=* SuppressDescription
