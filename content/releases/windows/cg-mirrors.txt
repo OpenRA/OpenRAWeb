@@ -3,3 +3,13 @@ http://openra.dxnet.ru/cg-win32.zip
 http://nazgul.dxnet.ru/cg-win32.zip
 http://srvdonate.ut.mephi.ru/openra/cg-win32.zip
 http://openra-mirror.ihptru.net/cg-win32.zip
+http://ftp.ubuntu-tw.org/mirror/anthonos/openra/cg-win32.zip
+http://mirror.oss.maxcdn.com/anthonos/cg-win32.zip
+http://ftp.ubuntu-tw.org/mirror/anthonos/openra/cg-win32.zip
+http://ftp.ubuntu-tw.org/mirror/anthonos/openra/cg-win32.zip
+http://mirrors.ustc.edu.cn/anthon/openra/cg-win32.zip
+http://mirrors.yun-idc.com/anthon/openra/cg-win32.zip
+http://mirrors.oss.org.cn/anthon/openra/cg-win32.zip
+http://mirrors.hust.edu.cn/anthon/openra/cg-win32.zip
+http://mirror.pcbeta.com/anthonos/openra/cg-win32.zip
+http://mirror.oss.maxcdn.com/anthonos/openra/cg-win32.zip

@@ -3,3 +3,11 @@ http://openra.dxnet.ru/SDL-1.2.14-win32.zip
 http://nazgul.dxnet.ru/SDL-1.2.14-win32.zip
 http://srvdonate.ut.mephi.ru/openra/SDL-1.2.14-win32.zip
 http://openra-mirror.ihptru.net/SDL-1.2.14-win32.zip
+http://ftp.ubuntu-tw.org/mirror/anthonos/openra/SDL-1.2.14-win32.zip
+http://ftp.ubuntu-tw.org/mirror/anthonos/openra/SDL-1.2.14-win32.zip
+http://mirrors.ustc.edu.cn/anthon/openra/SDL-1.2.14-win32.zip
+http://mirrors.yun-idc.com/anthon/openra/SDL-1.2.14-win32.zip
+http://mirrors.oss.org.cn/anthon/openra/SDL-1.2.14-win32.zip
+http://mirrors.hust.edu.cn/anthon/openra/SDL-1.2.14-win32.zip
+http://mirror.pcbeta.com/anthonos/openra/SDL-1.2.14-win32.zip
+http://mirror.oss.maxcdn.com/anthonos/openra/SDL-1.2.14-win32.zip

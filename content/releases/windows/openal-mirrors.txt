@@ -3,3 +3,11 @@ http://openra.dxnet.ru/oalinst.zip
 http://nazgul.dxnet.ru/oalinst.zip
 http://srvdonate.ut.mephi.ru/openra/oalinst.zip
 http://openra-mirror.ihptru.net/oalinst.zip
+http://ftp.ubuntu-tw.org/mirror/anthonos/openra/oalinst.zip
+http://ftp.ubuntu-tw.org/mirror/anthonos/openra/oalinst.zip
+http://mirrors.ustc.edu.cn/anthon/openra/oalinst.zip
+http://mirrors.yun-idc.com/anthon/openra/oalinst.zip
+http://mirrors.oss.org.cn/anthon/openra/oalinst.zip
+http://mirrors.hust.edu.cn/anthon/openra/oalinst.zip
+http://mirror.pcbeta.com/anthonos/openra/oalinst.zip
+http://mirror.oss.maxcdn.com/anthonos/openra/oalinst.zip
