@@ -4,3 +4,4 @@ http://srvdonate.ut.mephi.ru/openra/cnc-packages.zip
 http://openra-mirror.ihptru.net/cnc-packages.zip
 http://ra.norimg.no/openra/cnc-packages.zip
 http://ftp.ubuntu-tw.org/mirror/anthonos/openra/cnc-packages.zip
+http://mirror.oss.maxcdn.com/anthonos/openra/cnc-packages.zip

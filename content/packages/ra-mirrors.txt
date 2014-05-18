@@ -4,3 +4,4 @@ http://srvdonate.ut.mephi.ru/openra/ra-packages.zip
 http://openra-mirror.ihptru.net/ra-packages.zip
 http://ra.norimg.no/openra/ra-packages.zip
 http://ftp.ubuntu-tw.org/mirror/anthonos/openra/ra-packages.zip
+http://mirror.oss.maxcdn.com/anthonos/openra/ra-packages.zip

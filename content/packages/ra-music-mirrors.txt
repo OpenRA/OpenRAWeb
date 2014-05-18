@@ -4,3 +4,4 @@ http://srvdonate.ut.mephi.ru/openra/ra-music.zip
 http://openra-mirror.ihptru.net/ra-music.zip
 http://ra.norimg.no/music/ra-music.zip
 http://ftp.ubuntu-tw.org/mirror/anthonos/openra/ra-music.zip
+http://mirror.oss.maxcdn.com/anthonos/openra/ra-music.zip

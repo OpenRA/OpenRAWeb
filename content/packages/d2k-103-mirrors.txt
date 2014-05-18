@@ -4,3 +4,4 @@ http://srvdonate.ut.mephi.ru/openra/d2k-103-packages.zip
 http://openra-mirror.ihptru.net/d2k-103-packages.zip
 http://ra.norimg.no/openra/d2k-103-packages.zip
 http://ftp.ubuntu-tw.org/mirror/anthonos/openra/d2k-103-packages.zip
+http://mirror.oss.maxcdn.com/anthonos/openra/d2k-103-packages.zip
