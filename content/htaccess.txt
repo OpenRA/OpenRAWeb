@@ -24,3 +24,11 @@ Redirect 301 /master/ping.php http://master.open-ra.org/ping.php
 
 # Content download migration
 Redirect 301 /download/content/ /get-dependency.php?file=
+
+# Moving everything to GitHub pages except packages and old PHP mirror redirects
+Redirect 301 /index.html http://www.openra.net/
+RedirectMatch 301 ^/news/(.*)$ http://www.openra.net/news/$1
+Redirect 301 /download http://www.openra.net/download
+Redirect 301 /games http://www.openra.net/games
+Redirect 301 /community http://www.openra.net/community
+Redirect 301 /legal http://www.openra.net/legal

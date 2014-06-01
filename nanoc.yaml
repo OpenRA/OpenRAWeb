@@ -82,6 +82,6 @@ deploy:
     dst:  "openra@openra.res0l.net:/home/openra/openra.res0l.net"
 
 # Meta data for news feeds:
-base_url: "http://openra.res0l.net"
+base_url: "http://openra.net"
 author_name: "OpenRA developers"
-author_uri: "http://open-ra.org"
+author_uri: "http://openra.net"
