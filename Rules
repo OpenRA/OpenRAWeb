@@ -51,6 +51,10 @@ compile %r{^/(htaccess)/$} do
   filter :erb
 end
 
+compile '/*-version/' do
+  filter :erb
+end
+
 compile '*' do
   if item.binary?
     # don’t filter binary items
@@ -70,6 +74,14 @@ end
 
 route '/sitemap' do
   item.identifier.chop + '.xml'
+end
+
+route '/master-version' do
+  '/releases/master/VERSION'
+end
+
+route '/mac-version' do
+  '/releases/mac/version.json'
 end
 
 route '*' do
