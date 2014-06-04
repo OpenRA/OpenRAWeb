@@ -7,7 +7,7 @@ PLAYTEST_TAG = "playtest-20140602"
 RELEASE_TAG = "release-20131223"
 
 # TODO: Remove this gross duplication
-PLATFORMS = ["win", "osx", "debian", "ubuntu", "suse", "redhat", "arch", "source", "desura"]
+PLATFORMS = ["win", "osx", "debian", "ubuntu", "suse", "redhat", "arch", "gentoo", "source", "desura"]
 PLATFORM_NAME = {
     "win" => "Windows",
     "osx" => "OS X",
@@ -16,6 +16,7 @@ PLATFORM_NAME = {
     "redhat" => "Fedora",
     "suse" => "openSUSE",
     "arch" => "Arch Linux",
+    "gentoo" => "Gentoo",
     "source" => "Source Code",
     "desura" => "Desura"
 }
@@ -44,8 +45,13 @@ PLATFORM_BLURB = {
     "win" => "The default GPU drivers included with Windows do not support OpenGL rendering.<br />You may need to install full drivers supplied by your GPU vendor.",
     "osx" => "OpenRA requires Mono 2.10 or greater (3.2 or greater recommended).<br /><a href=\"http://www.go-mono.com/mono-downloads/download.html\">Download Mono</a>.",
     "debian" => "Just install the package, and you're good to go!",
-    "ubuntu" => "If you are using a version of Ubuntu < 14.04 you need the <a href=\"#debian\">Debian package</a> instead!",
-    "suse" => "The stable version is also available in the <a href=\"http://software.opensuse.org/download.html?project=games&package=openra\">official openSUSE games repositories</a>",
+    "gentoo" => "Stable versions are packaged in the <a href=\"http://packages.gentoo.org/package/games-strategy/openra\">official Gentoo repositories</a>.<br /><br />
+    To install the ebuild:<br />
+    <pre>$ emerge -av openra</pre><br />
+    You can get unstable playtests using the following overlay:<br />
+    <pre>http://github.com/cerebrum/dr/raw/master/repo.xml</pre><br />",
+    "ubuntu" => "The stable version is also available from <a href=\"http://www.playdeb.net/software/OpenRA\">PlayDeb</a>.<br /><br />If you are using a version of Ubuntu < 14.04 you need the <a href=\"#debian\">Debian package</a> instead!",
+    "suse" => "The stable version is also available in the <a href=\"http://software.opensuse.org/download.html?project=games&package=openra\">official openSUSE games repository.</a>",
     "redhat" => "Just install the package, and you're good to go!",
     "arch" => "The stable version is also available in the <a href=\"https://www.archlinux.org/packages/community/any/openra/\">official Arch Linux repositories</a>.",
     "source" => "Follow the instructions in the INSTALL document to build and run OpenRA.<br />
