@@ -1,6 +1,7 @@
 DOWNLOAD_BASE_PATH = "http://openra.res0l.net/assets/downloads/"
 DOWNLOAD_GITHUB_RELEASE_PATH = "https://github.com/OpenRA/OpenRA/releases/download/"
 DOWNLOAD_GITHUB_SOURCE_PATH = "https://github.com/OpenRA/OpenRA/archive/"
+DOWNLOAD_OPENSUSE_PATH = "http://download.opensuse.org/repositories/games:/openra/"
 
 PLAYTEST_TAG = "playtest-20140602"
 RELEASE_TAG = "release-20131223"
@@ -42,7 +43,7 @@ PLATFORM_BLURB = {
     "osx" => "OpenRA requires Mono 2.10 or greater (3.2 or greater recommended).<br /><a href=\"http://www.go-mono.com/mono-downloads/download.html\">Download Mono</a>.",
     "deb" => "Just install the package, and you're good to go!",
     "rpm" => "Just install the package, and you're good to go!",
-    "arch" => "Just install the package, and you're good to go!",
+    "arch" => "The stable version is also available in the <a href=\"https://www.archlinux.org/packages/community/any/openra/\">official Arch Linux repositories</a>.",
     "source" => "Follow the instructions in the INSTALL document to build and run OpenRA.<br />
     <a title=\"Visual C# Express Download\" href=\"http://www.microsoft.com/express/downloads/\">Visual C# Express</a> (Windows) and <a title=\"MonoDevelop\" href=\"http://www.monodevelop.com/\"/>MonoDevelop</a> (OS X / Linux) are free IDEs that work with OpenRA.<br /><br />
     If you'd like to <a href=\"https://github.com/OpenRA/OpenRA/pulls\">contribute patches</a> (or just don't want to fiddle with tar files) you can download and/or update the code using the <a href=\"http://git-scm.com/\">git version control system</a>:<br />
@@ -71,15 +72,30 @@ def package_name(platform, tag)
 end
 
 def package_url(platform, tag)
-    DOWNLOAD_BASE_PATH + package_path(platform) + package_name(platform, tag)
+    case platform
+        when "arch"
+            obs_package_url(platform, tag)
+        else
+            DOWNLOAD_BASE_PATH + package_path(platform) + package_name(platform, tag)
+    end
 end
 
 def mirrored_package_url(platform, tag)
-    case platform 
+    case platform
         when "source"
             DOWNLOAD_GITHUB_SOURCE_PATH + package_name(platform, tag)
+        when "arch"
+            obs_package_url(platform, tag)
         else
             DOWNLOAD_GITHUB_RELEASE_PATH + tag + '/' + package_name(platform, tag)
+    end
+end
+
+def obs_package_url(platform, tag)
+    version = tag.gsub(/[^0-9]/, '')
+    case platform
+        when "arch"
+            DOWNLOAD_OPENSUSE_PATH + "Arch_Extra/i686/openra-#{version}-1-any.pkg.tar.xz"
     end
 end
 
