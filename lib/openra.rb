@@ -75,6 +75,8 @@ def package_url(platform, tag)
     case platform
         when "arch"
             obs_package_url(platform, tag)
+        when "source"
+            DOWNLOAD_GITHUB_SOURCE_PATH + package_name(platform, tag)
         else
             DOWNLOAD_BASE_PATH + package_path(platform) + package_name(platform, tag)
     end
