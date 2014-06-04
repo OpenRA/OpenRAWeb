@@ -34,7 +34,8 @@ $(document).ready(function(){
       // Attempt to automatically highlight the viewer's OS on page load:
       var ua = navigator.userAgent;
       if (ua.match('Mac OS X')) activateTab($('a[href=#osx]'));
-      else if (ua.match(/Ubuntu|Debian/)) activateTab($('a[href=#deb]'));
+      else if (ua.match(/Debian/)) activateTab($('a[href=#debian]'));
+      else if (ua.match(/Ubuntu/)) activateTab($('a[href=#ubuntu]'));
       else if (ua.match(/Red Hat|Fedora/)) activateTab($('a[href=redhat]'));
       else if (ua.match(/SUSE/)) activateTab($('a[href=suse]'));
       else if (ua.match('Arch Linux')) activateTab($('a[href=#arch]'));

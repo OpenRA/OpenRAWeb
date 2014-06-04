@@ -7,11 +7,12 @@ PLAYTEST_TAG = "playtest-20140602"
 RELEASE_TAG = "release-20131223"
 
 # TODO: Remove this gross duplication
-PLATFORMS = ["win", "osx", "deb", "suse", "redhat", "arch", "source", "desura"]
+PLATFORMS = ["win", "osx", "debian", "ubuntu", "suse", "redhat", "arch", "source", "desura"]
 PLATFORM_NAME = {
     "win" => "Windows",
     "osx" => "OS X",
-    "deb" => "Debian / Ubuntu",
+    "debian" => "Debian",
+    "ubuntu" => "Ubuntu",
     "redhat" => "Fedora",
     "suse" => "openSUSE",
     "arch" => "Arch Linux",
@@ -42,7 +43,8 @@ SOCIAL_URL = {
 PLATFORM_BLURB = {
     "win" => "The default GPU drivers included with Windows do not support OpenGL rendering.<br />You may need to install full drivers supplied by your GPU vendor.",
     "osx" => "OpenRA requires Mono 2.10 or greater (3.2 or greater recommended).<br /><a href=\"http://www.go-mono.com/mono-downloads/download.html\">Download Mono</a>.",
-    "deb" => "Just install the package, and you're good to go!",
+    "debian" => "Just install the package, and you're good to go!",
+    "ubuntu" => "If you are using a version of Ubuntu < 14.04 you need the <a href=\"#debian\">Debian package</a> instead!",
     "suse" => "The stable version is also available in the <a href=\"http://software.opensuse.org/download.html?project=games&package=openra\">official openSUSE games repositories</a>",
     "redhat" => "Just install the package, and you're good to go!",
     "arch" => "The stable version is also available in the <a href=\"https://www.archlinux.org/packages/community/any/openra/\">official Arch Linux repositories</a>.",
@@ -62,7 +64,9 @@ def package_name(platform, tag)
             "OpenRA-#{tag}.exe"
         when "arch"
             "openra-#{modtag}-1-any.pkg.tar.xz"
-        when "deb"
+        when "ubuntu"
+            "openra_#{modtag}_all.deb"
+        when "debian"
             "openra_#{modtag}_all.deb"
         when "suse"
             "openra-#{modtag}-1.noarch.rpm"
@@ -82,6 +86,8 @@ def package_url(platform, tag)
         when "redhat"
             obs_package_url(platform, tag)
         when "suse"
+            obs_package_url(platform, tag)
+        when "ubuntu"
             obs_package_url(platform, tag)
         when "source"
             DOWNLOAD_GITHUB_SOURCE_PATH + package_name(platform, tag)
@@ -110,6 +116,8 @@ def obs_package_url(platform, tag)
             DOWNLOAD_OPENSUSE_PATH + "Fedora_19/noarch/openra-#{version}-1.1.noarch.rpm"
         when "suse"
             DOWNLOAD_OPENSUSE_PATH + "openSUSE_13.1/noarch/openra-#{version}-1.1.noarch.rpm"
+        when "ubuntu"
+            DOWNLOAD_OPENSUSE_PATH + "xUbuntu_14.04/all/openra_#{version}-0_all.deb"
     end
 end
 
@@ -121,7 +129,9 @@ def package_path(platform)
             "windows/"
         when "arch"
             "linux/arch/"
-        when "deb"
+        when "debian"
+            "linux/deb/"
+        when "ubuntu"
             "linux/deb/"
         when "suse"
             "linux/rpm/"
