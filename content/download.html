@@ -34,9 +34,12 @@ $(document).ready(function(){
       // Attempt to automatically highlight the viewer's OS on page load:
       var ua = navigator.userAgent;
       if (ua.match('Mac OS X')) activateTab($('a[href=#osx]'));
-      else if (ua.match(/Ubuntu|Debian/)) activateTab($('a[href=#deb]'));
-      else if (ua.match(/Red Hat|Fedora|SUSE/)) activateTab($('a[href=#rpm]'));
+      else if (ua.match(/Debian/)) activateTab($('a[href=#debian]'));
+      else if (ua.match(/Ubuntu/)) activateTab($('a[href=#ubuntu]'));
+      else if (ua.match(/Red Hat|Fedora/)) activateTab($('a[href=redhat]'));
+      else if (ua.match(/SUSE/)) activateTab($('a[href=suse]'));
       else if (ua.match('Arch Linux')) activateTab($('a[href=#arch]'));
+      else if (ua.match('Gentoo')) activateTab($('a[href=#gentoo]'));
       else if (ua.match('Linux')) activateTab($('a[href=#source]'));
 
       // Bind the click event handler
@@ -52,7 +55,7 @@ $(document).ready(function(){
 <p>Select a pre-packaged build, or the source code package if you'd prefer to compile OpenRA yourself.<br />OpenRA is also available on Desura.</p>
 <ul class="downloadplatform">
   <% PLATFORMS.each do |platform| %>
-  <li><a href="#<%= platform %>"><img src="/images/platforms/<%= platform %>.svg" alt="<%= PLATFORM_NAME[platform] %>" title="<%= PLATFORM_NAME[platform] %>" /></a></li>
+  <li><a href="#<%= platform %>"><img src="/images/platforms/<%= platform %>.svg" width="36" height="36" alt="<%= PLATFORM_NAME[platform] %>" title="<%= PLATFORM_NAME[platform] %>" /></a></li>
   <% end %>
 </ul>
 <br />
@@ -73,11 +76,14 @@ $(document).ready(function(){
   <% else %>
   <h3>Download OpenRA <%= "for " unless platform == "source" %> <%= PLATFORM_NAME[platform] %></h3>
   <p class="downloadblurb"><%= PLATFORM_BLURB[platform] %></p>
+  <% if platform == "gentoo" then %>
+  <% else %>
   <ul class="downloadlinks">
     <li><a href="<%= mirrored_package_url(platform, RELEASE_TAG) %>" title="Download <%= RELEASE_TAG %>">Download <%= RELEASE_TAG %><br />(<%= package_size(platform, RELEASE_TAG) %>)</a></li>
     <li><a href="<%= package_url(platform, PLAYTEST_TAG) %>" title="Download <%= PLAYTEST_TAG %>">Download <%= PLAYTEST_TAG %><br />(<%= package_size(platform, PLAYTEST_TAG) %>)</a></li>
   </ul>
   <p>Older releases can be found in our <a href="<%= DOWNLOAD_BASE_PATH + package_path(platform) %>">package archive</a>.</p>
+  <% end %>
   <% end %>
 </div>
 <% end %>
