@@ -42,7 +42,7 @@ SOCIAL_URL = {
 PLATFORM_BLURB = {
     "win" => "The default GPU drivers included with Windows do not support OpenGL rendering.<br />You may need to install full drivers supplied by your GPU vendor.",
     "osx" => "OpenRA requires Mono 2.10 or greater (3.2 or greater recommended).<br /><a href=\"http://www.go-mono.com/mono-downloads/download.html\">Download Mono</a>.",
-    "deb" => "Just install the package, and you're good to go!",
+    "deb" => "The stable version is also available from <a href=\"http://www.playdeb.net/software/OpenRA\">PlayDeb</a>.",
     "rpm" => "The stable version is also available in the <a href=\"http://software.opensuse.org/download.html?project=games&package=openra\">official openSUSE games repository.</a>",
     "gentoo" => "Stable versions are packaged in the <a href=\"http://packages.gentoo.org/package/games-strategy/openra\">official Gentoo repositories</a>.<br /><br />
     To install the ebuild:<br />
