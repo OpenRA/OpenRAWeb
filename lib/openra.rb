@@ -104,12 +104,16 @@ end
 
 def package_size(platform, tag)
     require 'net/http'
-    size = "??? MB"
-    uri = URI.parse(package_url(platform, tag))
-    http = Net::HTTP.start(uri.host, uri.port)
-    http.request_head(uri.path) {|response|
-        size = sprintf("%.2f MB", Integer(response['content-length']) / 1048576.0)
-    }
+    size = ""
+    begin
+        uri = URI.parse(package_url(platform, tag))
+        http = Net::HTTP.start(uri.host, uri.port)
+        http.request_head(uri.path) {|response|
+            size = sprintf("%.2f MB", Integer(response['content-length']) / 1048576.0)
+        }
+    rescue
+        size = "??? MB"
+    end
     size
 end
 
