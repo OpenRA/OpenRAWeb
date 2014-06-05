@@ -6,13 +6,15 @@ PLAYTEST_TAG = "playtest-20140602"
 RELEASE_TAG = "release-20131223"
 
 # TODO: Remove this gross duplication
-PLATFORMS = ["win", "osx", "deb", "rpm", "arch", "source", "desura"]
+PLATFORMS = ["win", "osx", "deb", "rpm", "arch", "gentoo", "source", "desura"]
+
 PLATFORM_NAME = {
     "win" => "Windows",
     "osx" => "OS X",
     "deb" => "Debian / Ubuntu",
     "rpm" => "Fedora / openSUSE",
     "arch" => "Arch Linux",
+    "gentoo" => "Gentoo",
     "source" => "Source Code",
     "desura" => "Desura"
 }
@@ -42,6 +44,11 @@ PLATFORM_BLURB = {
     "osx" => "OpenRA requires Mono 2.10 or greater (3.2 or greater recommended).<br /><a href=\"http://www.go-mono.com/mono-downloads/download.html\">Download Mono</a>.",
     "deb" => "Just install the package, and you're good to go!",
     "rpm" => "Just install the package, and you're good to go!",
+    "gentoo" => "Stable versions are packaged in the <a href=\"http://packages.gentoo.org/package/games-strategy/openra\">official Gentoo repositories</a>.<br /><br />
+    To install the ebuild:<br />
+    <pre>$ emerge -av openra</pre><br />
+    You can get unstable playtests using the following overlay:<br />
+    <pre>http://github.com/cerebrum/dr/raw/master/repo.xml</pre><br />",
     "arch" => "The stable version is also available in the <a href=\"https://www.archlinux.org/packages/community/any/openra/\">official Arch Linux repositories</a>.",
     "source" => "Follow the instructions in the INSTALL document to build and run OpenRA.<br />
     <a title=\"Visual C# Express Download\" href=\"http://www.microsoft.com/express/downloads/\">Visual C# Express</a> (Windows) and <a title=\"MonoDevelop\" href=\"http://www.monodevelop.com/\"/>MonoDevelop</a> (OS X / Linux) are free IDEs that work with OpenRA.<br /><br />
