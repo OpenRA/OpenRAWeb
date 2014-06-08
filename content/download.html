@@ -52,8 +52,8 @@ $(document).ready(function(){
 <h3>Which Operating System?</h3>
 <p>Select a pre-packaged build, or the source code package if you'd prefer to compile OpenRA yourself.<br />OpenRA is also available on Desura.</p>
 <ul class="downloadplatform">
-  <% PLATFORMS.each do |platform| %>
-  <li><a href="#<%= platform %>"><img src="/images/platforms/<%= platform %>.svg" alt="<%= PLATFORM_NAME[platform] %>" title="<%= PLATFORM_NAME[platform] %>" /></a></li>
+  <% PLATFORMS.each do |id, platform| %>
+  <li><a href="#<%= id %>"><img src="/images/platforms/<%= id %>.svg" alt="<%= platform[:name] %>" title="<%= platform[:name] %>" /></a></li>
   <% end %>
 </ul>
 <br />
@@ -62,25 +62,30 @@ $(document).ready(function(){
 <h3>Which Build?</h3>
 <p>Release builds are recommended for most players.<br />They have been extensively tested and have a larger player base.</p>
 <p>Playtest builds contain the latest improvements, but change frequently and may be broken at times.</p>
-<% PLATFORMS.each do |platform| %>
-<div id="<%= platform %>" class="tab">
+<%
+
+playtest_tag = fetch_git_tag(GITHUB_PLAYTEST_ID)
+release_tag = fetch_git_tag(GITHUB_RELEASE_ID)
+sizes = fetch_package_sizes([GITHUB_RELEASE_ID, GITHUB_PLAYTEST_ID])
+
+PLATFORMS.each do |id, platform| %>
+<div id="<%= id %>" class="tab">
   <hr />
-  <% if platform == "desura" then %>
-  <h3>Download OpenRA via <%= PLATFORM_NAME[platform] %></h3>
-  <p class="downloadblurb"><%= PLATFORM_BLURB[platform] %></p>
+  <% if id == "desura" then %>
+  <h3>Download OpenRA via <%= platform[:name] %></h3>
+  <p class="downloadblurb"><%= platform[:desc] %></p>
   <ul class="downloadlinks">
     <li><a href="http://www.desura.com/games/openra" title="Download via Desura">View and download<br />OpenRA on Desura</a></li>
   </ul>
   <% else %>
-  <h3>Download OpenRA <%= "for " unless platform == "source" %> <%= PLATFORM_NAME[platform] %></h3>
-  <p class="downloadblurb"><%= PLATFORM_BLURB[platform] %></p>
-  <% if platform == "gentoo" then %>
-  <% else %>
+  <h3>Download OpenRA <%= "for " unless id == "source" %> <%= platform[:name] %></h3>
+  <p class="downloadblurb"><%= platform[:desc] %></p>
+  <% if id != "gentoo" then %>
   <ul class="downloadlinks">
-    <li><a href="<%= mirrored_package_url(platform, RELEASE_TAG) %>" title="Download <%= RELEASE_TAG %>">Download <%= RELEASE_TAG %><br />(<%= package_size(platform, RELEASE_TAG) %>)</a></li>
-    <li><a href="<%= package_url(platform, PLAYTEST_TAG) %>" title="Download <%= PLAYTEST_TAG %>">Download <%= PLAYTEST_TAG %><br />(<%= package_size(platform, PLAYTEST_TAG) %>)</a></li>
+    <li><%= generate_download_button(id, GITHUB_RELEASE_ID, release_tag, sizes) %></li>
+    <li><%= generate_download_button(id, GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
   </ul>
-  <p>Older releases can be found in our <a href="<%= DOWNLOAD_BASE_PATH + package_path(platform) %>">package archive</a>.</p>
+  <p>Older releases can be found in our <a href="<%= DOWNLOAD_GITHUB_BASE_PATH + 'releases/' %>">release archive</a>.</p>
   <% end %>
   <% end %>
 </div>
