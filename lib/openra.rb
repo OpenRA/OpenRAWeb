@@ -5,6 +5,14 @@ DOWNLOAD_GITHUB_SOURCE_PATH = "https://github.com/OpenRA/OpenRA/archive/"
 PLAYTEST_TAG = "playtest-20140602"
 RELEASE_TAG = "release-20131223"
 
+PAGES = {
+	"/" => "Home",
+	"/news/" => "News",
+	"/download/" => "Download",
+	"/games/" => "Games",
+	"/community/" => "Community"
+}
+
 # TODO: Remove this gross duplication
 PLATFORMS = ["win", "osx", "deb", "rpm", "arch", "gentoo", "source", "desura"]
 
@@ -116,15 +124,6 @@ end
 def pretty_date(date)
     attribute_to_time(date).strftime("%Y-%m-%d")
 end
-
-PAGES = ["/", "/news/", "/download/", "/games/", "/community/"]
-PAGE_TITLES = {
-	"/" => "Home",
-	"/news/" => "News",
-	"/download/" => "Download",
-	"/games/" => "Games",
-	"/community/" => "Community"
-}
 
 def navigation_page(page)
 	page == @item.path || (page == "/news/" && @item.path.start_with?("/news/"))

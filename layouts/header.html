@@ -2,8 +2,8 @@
 <div id="header"><h1><img src="/images/soviet-logo.svg" />OpenRA</h1></div>
 <a id="ghbanner" href="https://github.com/OpenRA/OpenRA"><img src="/images/forkme.svg" alt="Fork me on GitHub"></a>
 <ul id="nav">
-<% PAGES.each do |page| %>
-	<li><a href="<%= page %>"<%= ' class="nav-selected"' if navigation_page(page) %>><%= PAGE_TITLES[page] %></a></li>
+<% PAGES.each do |page, title| %>
+	<li><a href="<%= page %>"<%= ' class="nav-selected"' if navigation_page(page) %>><%= title %></a></li>
 <% end %>
 </ul>
 <div id="content">
