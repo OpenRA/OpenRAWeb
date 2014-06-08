@@ -6,7 +6,7 @@ rvm:
   - 2.1.2
 
 install:
- - gem install builder kramdown nanoc
+ - gem install builder kramdown octokit nanoc
 
 script:
  - nanoc compile

@@ -1,5 +1,8 @@
 <script type="text/javascript">
   var data = {};
+  var release_tag = "<%= fetch_git_tag(GITHUB_RELEASE_ID) %>";
+  var playtest_tag = "<%= fetch_git_tag(GITHUB_PLAYTEST_ID) %>";
+
   function initMapInfo(hash) {
     var doMap = function(map) {
       if ('title' in map)
@@ -65,7 +68,7 @@
         }
 
         rowClass = '';
-        if (modver[1] != "<%= RELEASE_TAG %>" & modver[1] != "<%= PLAYTEST_TAG %>")
+        if (modver[1] != release_tag & modver[1] != playtest_tag)
           rowClass = 'greyout';
 
         var row = $('<tr class="'+rowClass+'">');
