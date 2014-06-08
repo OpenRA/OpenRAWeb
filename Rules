@@ -14,11 +14,8 @@
 #   because “*” matches zero or more characters.
 
 passthrough '/style/'
-passthrough '/get-dependency/'
 passthrough '/packages/'
 passthrough '/packages/*/'
-passthrough '/releases/'
-passthrough '/releases/*/'
 passthrough '/robots/'
 passthrough 'gamenews'
 
@@ -62,10 +59,6 @@ end
 
 route '/404/' do
   '/404.html'
-end
-
-route '/htaccess/' do
-  '/.htaccess'
 end
 
 route '/sitemap' do
