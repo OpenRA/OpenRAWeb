@@ -78,7 +78,11 @@ $(document).ready(function(){
   <% else %>
   <ul class="downloadlinks">
     <li><a href="<%= mirrored_package_url(platform, RELEASE_TAG) %>" title="Download <%= RELEASE_TAG %>">Download <%= RELEASE_TAG %><br />(<%= package_size(platform, RELEASE_TAG) %>)</a></li>
+	<% if PLAYTEST_TAG == "" %>
+    <li><span>No playtest available<br />(release is newer)</span></li>
+	<% else %>
     <li><a href="<%= package_url(platform, PLAYTEST_TAG) %>" title="Download <%= PLAYTEST_TAG %>">Download <%= PLAYTEST_TAG %><br />(<%= package_size(platform, PLAYTEST_TAG) %>)</a></li>
+	<% end %>
   </ul>
   <p>Older releases can be found in our <a href="<%= DOWNLOAD_BASE_PATH + package_path(platform) %>">package archive</a>.</p>
   <% end %>

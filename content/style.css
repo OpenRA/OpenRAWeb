@@ -301,10 +301,10 @@ td, th, tr {
   padding:15px;
 }
 
-.downloadlinks a {
+.downloadlinks a, .downloadlinks span {
+  width: 190px;
   font-family: 12px/1.4 Helvetica,arial,freesans,clean,sans-serif; 
-  background: url("/images/download.svg") no-repeat;
-  background-position: 15px 15px;
+  background: url("/images/download.svg") no-repeat 15px 15px;
   padding:10px 15px 10px 60px;
   display:inline-block;
   border: solid 3px #650b03;
@@ -317,9 +317,22 @@ td, th, tr {
   -khtml-border-radius: 10px;
 }
 
+.downloadlinks span {
+  background: url("/images/nodownload.svg") no-repeat 15px 15px;
+  border: solid 3px #650b03;
+  background-color: #272d2c;
+  color: #999;
+}
+
+
 .no-svg .downloadlinks a {
   background-image: url("/images/download-fallback.png");
 }
+
+.no-svg .downloadlinks span {
+  background-image: url("/images/nodownload-fallback.png");
+}
+
 
 .downloadlinks a:hover {
   background-color: #888;
