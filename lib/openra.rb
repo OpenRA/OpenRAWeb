@@ -6,13 +6,15 @@ PLAYTEST_TAG = "playtest-20140602"
 RELEASE_TAG = "release-20131223"
 
 # TODO: Remove this gross duplication
-PLATFORMS = ["win", "osx", "deb", "rpm", "arch", "source", "desura"]
+PLATFORMS = ["win", "osx", "deb", "rpm", "arch", "gentoo", "source", "desura"]
+
 PLATFORM_NAME = {
     "win" => "Windows",
     "osx" => "OS X",
     "deb" => "Debian / Ubuntu",
     "rpm" => "Fedora / openSUSE",
     "arch" => "Arch Linux",
+    "gentoo" => "Gentoo",
     "source" => "Source Code",
     "desura" => "Desura"
 }
@@ -40,10 +42,15 @@ SOCIAL_URL = {
 PLATFORM_BLURB = {
     "win" => "The default GPU drivers included with Windows do not support OpenGL rendering.<br />You may need to install full drivers supplied by your GPU vendor.",
     "osx" => "OpenRA requires Mono 2.10 or greater (3.2 or greater recommended).<br /><a href=\"http://www.go-mono.com/mono-downloads/download.html\">Download Mono</a>.",
-    "deb" => "Just install the package, and you're good to go!",
-    "rpm" => "Just install the package, and you're good to go!",
-    "arch" => "Just install the package, and you're good to go!",
-    "source" => "Follow the instructions in the INSTALL document to build and run OpenRA.<br />
+    "deb" => "The stable version is also available from <a href=\"http://www.playdeb.net/software/OpenRA\">PlayDeb</a>.",
+    "rpm" => "The stable version is also available in the <a href=\"http://software.opensuse.org/download.html?project=games&package=openra\">official openSUSE games repository.</a>",
+    "gentoo" => "Stable versions are packaged in the <a href=\"http://packages.gentoo.org/package/games-strategy/openra\">official Gentoo repositories</a>.<br /><br />
+    To install the ebuild:<br />
+    <pre>$ emerge -av openra</pre><br />
+    You can get unstable playtests using the following overlay:<br />
+    <pre>http://github.com/cerebrum/dr/raw/master/repo.xml</pre><br />",
+    "arch" => "The stable version is also available in the <a href=\"https://www.archlinux.org/packages/community/any/openra/\">official Arch Linux repositories</a>.",
+    "source" => "Follow the instructions in the <a href=\"https://github.com/OpenRA/OpenRA/blob/bleed/INSTALL.md\">INSTALL.md</a> document to build and run OpenRA.<br />
     <a title=\"Visual C# Express Download\" href=\"http://www.microsoft.com/express/downloads/\">Visual C# Express</a> (Windows) and <a title=\"MonoDevelop\" href=\"http://www.monodevelop.com/\"/>MonoDevelop</a> (OS X / Linux) are free IDEs that work with OpenRA.<br /><br />
     If you'd like to <a href=\"https://github.com/OpenRA/OpenRA/pulls\">contribute patches</a> (or just don't want to fiddle with tar files) you can download and/or update the code using the <a href=\"http://git-scm.com/\">git version control system</a>:<br />
     <pre>$ git clone git://github.com/OpenRA/OpenRA.git</pre><br />",
@@ -104,12 +111,16 @@ end
 
 def package_size(platform, tag)
     require 'net/http'
-    size = "??? MB"
-    uri = URI.parse(package_url(platform, tag))
-    http = Net::HTTP.start(uri.host, uri.port)
-    http.request_head(uri.path) {|response|
-        size = sprintf("%.2f MB", Integer(response['content-length']) / 1048576.0)
-    }
+    size = ""
+    begin
+        uri = URI.parse(package_url(platform, tag))
+        http = Net::HTTP.start(uri.host, uri.port)
+        http.request_head(uri.path) {|response|
+            size = sprintf("%.2f MB", Integer(response['content-length']) / 1048576.0)
+        }
+    rescue
+        size = "??? MB"
+    end
     size
 end
 
