@@ -11,8 +11,8 @@
   <div id="so-links">
     Find us on your favorite social network:
     <ul>
-      <% SOCIAL.each do |s| %>
-        <li><a href="<%= SOCIAL_URL[s] %>"<%= ' rel="publisher"' if s == "gplus" %>><img src="/images/social/<%= s %>.svg" alt="<%= SOCIAL_NAME[s] %>" title="<%= SOCIAL_NAME[s] %>" /></a></li>
+      <% SOCIAL.each do |s, data| %>
+        <li><a href="<%= data[:url] %>"<%= ' rel="publisher"' if s == "gplus" %>><img src="/images/social/<%= s %>.svg" alt="<%= data[:name] %>" title="<%= data[:name] %>" /></a></li>
       <% end %>
     </ul>
   </div>

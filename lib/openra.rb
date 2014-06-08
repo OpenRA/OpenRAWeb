@@ -19,24 +19,13 @@ PLATFORM_NAME = {
     "desura" => "Desura"
 }
 
-# TODO: Remove this gross duplication
-SOCIAL = ["facebook", "gplus", "twitter", "moddb", "reddit", "github"]
-SOCIAL_NAME = {
-  "facebook" => "Facebook",
-  "gplus" => "Google+",
-  "twitter" => "Twitter",
-  "moddb" => "ModDB",
-  "reddit" => "Reddit",
-  "github" => "Github"
-}
-
-SOCIAL_URL = {
-  "facebook" => "https://www.facebook.com/openra",
-  "gplus" => "https://plus.google.com/100332364931123881367",
-  "twitter" => "http://twitter.com/openRA",
-  "moddb" => "http://www.moddb.com/games/openra",
-  "reddit" => "http://www.reddit.com/r/openra",
-  "github" => "https://github.com/OpenRA/OpenRA"
+SOCIAL = {
+  "facebook" => { name: "Facebook", url: "https://www.facebook.com/openra" },
+  "gplus" => { name: "Google+", url: "https://plus.google.com/100332364931123881367" },
+  "twitter" => { name: "Twitter", url: "http://twitter.com/openRA" },
+  "moddb" => { name: "ModDB", url: "http://www.moddb.com/games/openra" },
+  "reddit" => { name: "Reddit", url: "http://www.reddit.com/r/openra" },
+  "github" => { name: "Github", url: "https://github.com/OpenRA/OpenRA"}
 }
 
 PLATFORM_BLURB = {
