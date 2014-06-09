@@ -4,6 +4,9 @@
 language: ruby
 rvm:
   - 2.1.2
+env:
+  global:
+    secure: "DsI/JRrG13WTFvi6kp77Fr2wxr1dXILC9pJvdTCeKvowmkq3jDUYm5RaPjVuJ8wKuGZCGNM+dF2L+0ixw15sBU2u1g1nru586qz3thMQwPlX/c8ArGKhy/rJMvskwdVmnw9q0/Zl28zIpGhVhLS4BMu64CsckAAXe4a7r5KKl88="
 
 install:
  - gem install builder kramdown octokit nanoc
@@ -12,8 +15,7 @@ script:
  - nanoc compile
 
 after_success:
- - gem install systemu
- - nanoc deploy --target res0l --dry-run
+ - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && ./update-github-pages.sh
 
 # Only watch the production branch.
 branches:
