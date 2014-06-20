@@ -10,6 +10,5 @@ cp -rf "$TRAVIS_BUILD_DIR"/output/* . || exit 1
 git add *
 git commit -m "Deploy OpenRAWeb HTML to GitHub pages
 
-travis build: $TRAVIS_BUILD_NUMBER
 commit: $TRAVIS_COMMIT"
 git push origin master
