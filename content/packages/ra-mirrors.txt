@@ -2,5 +2,5 @@ http://openra.ppmsite.com/ra-packages.zip
 http://openra.dxnet.ru/ra-packages.zip
 http://srvdonate.ut.mephi.ru/openra/ra-packages.zip
 http://openra-mirror.ihptru.net/ra-packages.zip
-http://ra.norimg.no/openra/ra-packages.zip
+http://openra.baxxster.no/openra/ra-packages.zip
 http://ftp.ubuntu-tw.org/mirror/anthonos/openra/ra-packages.zip
