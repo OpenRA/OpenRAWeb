@@ -28,7 +28,7 @@
   function updateGameList() {
     $.ajax({
       type: "GET",
-      url:  "http://master.open-ra.org/list_json.php"
+      url:  "http://master.openra.net/list_json.php"
     }).done(function(masterMessage) {
       $('#serverlist').empty();
       var masterReply = jQuery.parseJSON(masterMessage);
