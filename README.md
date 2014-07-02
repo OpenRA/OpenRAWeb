@@ -12,5 +12,6 @@ Deployment
 
 Stats
 -----
-* Visitors: http://open-ra.org/statistics/
-* Uptime: http://stats.pingdom.com/syygqlg6525r/788293
+* Analytics: http://www.seethestats.com/site/openra.net/STS5AYU4FS9 (current)
+* Visitors: http://open-ra.org/statistics/ (old)
+* Uptime: http://stats.pingdom.com/syygqlg6525r/788293 (old)
