@@ -36,7 +36,7 @@ PLATFORMS = {
 
     "arch" => {
       name: "Arch Linux",
-      desc: "The stable version is also available in the <a href=\"https://www.archlinux.org/packages/community/any/openra/\">official Arch Linux repositories</a>."
+      desc: "The stable version is also available in the <a href=\"https://www.archlinux.org/packages/community/any/openra/\">official Arch Linux repositories</a>.<br /><br />Playtest and bleed packages are also <a href=\"https://aur.archlinux.org/packages/?C=6&SeB=n&K=openra\">available</a> in the AUR."
     },
 
     "gentoo" => {
