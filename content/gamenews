@@ -1,9 +1,4 @@
-2014-06-08 12-00-00:
-	Title: June release available now!
+2014-07-09 23-50-00:
+	Title: July release candidate available
 	Author: Paul Chote
-	Content: The 20140608 release is now available. Visit our new website www.openra.net for details and the download!
-
-2014-06-02 10-05-00:
-	Title: Playtest 20140602
-	Author: Matthias Mailänder
-	Content: A new release candidate has been published to prepare for an upcoming stable release. Please report any problems you encounter.\n\nHappy testing!
+	Content: We have just released the first release candidate for our July release.  This build fixes several common crashes, and adds some long-awaited features!\n\nWe need testers! Download playtest-20140709 from the OpenRA website, and report any issues that you encounter at bugs.openra.net
