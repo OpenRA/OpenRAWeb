@@ -92,7 +92,7 @@ def generate_download_button(platform, github_id, tag, sizes)
     package = package_name(platform, tag)
     url = DOWNLOAD_GITHUB_BASE_PATH + "releases/download/" + tag + '/' + package
     size = sizes.key?(package) ? sprintf("(%.2f MB)", sizes[package] / 1048576.0) : "(size unknown)"
-    sprintf('<a href="%s" title=\"Download %s">Download %s<br />%s</a>', url, tag, tag, size)
+    sprintf('<a href="%s" title="Download %s">Download %s<br />%s</a>', url, tag, tag, size)
   end
 end
 
