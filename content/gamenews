@@ -1,9 +1,4 @@
-2014-07-11 10-00-00:
-	Title: Second July release candidate
-	Author: Matthias Mailänder
-	Content: We have released a second release candidate (20140711) which fixes a few additional issues. Thanks to everyone who reported problems and submitted patches.
-
-2014-07-09 23-50-00:
-	Title: July release candidate available
+2014-07-19 09-00-00:
+	Title: Fourth July release candidate available
 	Author: Paul Chote
-	Content: We have just released the first release candidate for our July release.  This build fixes several common crashes, and adds some long-awaited features!\n\nWe need testers! Download playtest-20140709 from the OpenRA website, and report any issues that you encounter at bugs.openra.net
+	Content: The fourth (and hopefully final) playtest for our July release is now available.  Thanks to everyone who  has submitted bug reports and fixes!
