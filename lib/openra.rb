@@ -4,8 +4,8 @@ DOWNLOAD_GITHUB_BASE_PATH = "https://github.com/OpenRA/OpenRA/"
 ENABLE_GITHUB_API = true
 
 # Github release IDs: obtain from https://api.github.com/repos/OpenRA/OpenRA/releases
-GITHUB_PLAYTEST_ID = '439133'
-GITHUB_RELEASE_ID = '363007'
+GITHUB_PLAYTEST_ID = ''
+GITHUB_RELEASE_ID = '443608'
 
 PAGES = {
 	"/" => "Home",
