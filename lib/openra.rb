@@ -22,7 +22,7 @@ PLATFORMS = {
     },
     "osx" => {
       name: "OS X",
-      desc: "OpenRA requires Mono 2.10 or greater (3.2 or greater recommended).<br /><a href=\"http://www.go-mono.com/mono-downloads/download.html\">Download Mono</a>."
+      desc: "OpenRA requires Mono 3.2 or greater.<br /><a href=\"http://www.go-mono.com/mono-downloads/download.html\">Download Mono</a>."
     }, 
     "deb" => {
       name: "Debian / Ubuntu",
