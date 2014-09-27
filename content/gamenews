@@ -1,4 +1,4 @@
-2014-07-22 09-00-00:
-	Title: July release now available
-	Author: Paul Chote
-	Content: The July release adds new features, improves performance, and fixes a number of crashes and bugs.  Download it from www.openra.net today!
+2014-09-27 12-00-00:
+	Title: September playtest now available!
+	Author: Oliver Brakmann
+	Content: The first playtest for our next big release is out now!\n\nThe biggest change in this playtest compared to our July release is the overhauled in-game interface. Players will also enjoy the new plane separation behaviour, balancing improvements and updated campaign missions, while a heavily improved Lua API, mission objectives, a prerequisites system and unit upgrades will bring benefits to mappers and modders.\n\nPlease give this playtest a try and report any and all problems you encounter at http://bugs.openra.net.
