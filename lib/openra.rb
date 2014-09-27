@@ -4,7 +4,7 @@ DOWNLOAD_GITHUB_BASE_PATH = "https://github.com/OpenRA/OpenRA/"
 ENABLE_GITHUB_API = true
 
 # Github release IDs: obtain from https://api.github.com/repos/OpenRA/OpenRA/releases
-GITHUB_PLAYTEST_ID = ''
+GITHUB_PLAYTEST_ID = '587108'
 GITHUB_RELEASE_ID = '443608'
 
 PAGES = {
@@ -22,7 +22,7 @@ PLATFORMS = {
     },
     "osx" => {
       name: "OS X",
-      desc: "OpenRA requires Mono 2.10 or greater (3.2 or greater recommended).<br /><a href=\"http://www.go-mono.com/mono-downloads/download.html\">Download Mono</a>."
+      desc: "OpenRA requires Mono 3.2 or greater.<br /><a href=\"http://www.go-mono.com/mono-downloads/download.html\">Download Mono</a>."
     }, 
     "deb" => {
       name: "Debian / Ubuntu",
