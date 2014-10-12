@@ -1,3 +1,8 @@
+2014-10-12 10-00-00:
+	Title: October playtest out now!
+	Author: Oliver Brakmann
+	Content: We are making big strides towards our upcoming Halloween release, for which we have now released a second playtest.\n\nOn top of all the bug fixes and improvements of the previous playtest, this one adds more stability, UI polish and gameplay improvements. On the modding front, our new Lua API has again been the focus of attention, and also some gaps in our trait documentation have been closed, amonst others.  Please see the changelog on our wiki for a full list.\n\nAs always, please give this playtest a try and report any and all problems you encounter at http://bugs.openra.net.
+
 2014-09-27 12-00-00:
 	Title: September playtest now available!
 	Author: Oliver Brakmann
