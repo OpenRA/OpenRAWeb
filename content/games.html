@@ -7,15 +7,21 @@
     var doMap = function(map) {
       if ('title' in map)
         $('.map-'+hash).html(map['title']+'<br /><span class="gameSubline">'+map['map_type']+'&nbsp;('+map['players']+' Players)</span>');
-      else
-        $('.map-'+hash).html('Unknown Map');
     };
     if (hash in data) {
       doMap(data[hash]);
       return;
     }
 
-    $.ajax({type: "GET", url: "http://resource.openra.net/map/hash/"+hash}).done(function(msg) {
+    $.ajax({
+      type: "GET",
+      url: "http://resource.openra.net/map/hash/"+hash,
+      statusCode: {
+        404: function() {
+          $('.map-'+hash).html('Unknown Map');
+        }
+      }
+    }).done(function(msg) {
       data[hash] = {};
       var reply = jQuery.parseJSON(msg);
       if (!!reply[0])
