@@ -1,14 +1,4 @@
-2014-10-20 08-00-00:
-	Title: Final playtest for the Halloween release out now!
+2014-10-29 09-00-00:
+	Title: Halloween release out now!
 	Author: Oliver Brakmann
-	Content: Hot on the heels of last week's, we have released the final playtest in preparation for our next stable release.\n\nThis playtest improves memory usage, corrects a long-standing bug with crushing fences, among others, introduces an overhauled observer and replay sidebar, and sees more work towards the single-player campaigns.  The new Lua API has gained another set of improvements and is finally able to completely replace the old API, which has now been removed.\n\nPlease take this playtest out for a spin and report any and all problems at http://bugs.openra.net.
-
-2014-10-12 10-00-00:
-	Title: October playtest out now!
-	Author: Oliver Brakmann
-	Content: We are making big strides towards our upcoming Halloween release, for which we have now released a second playtest.\n\nOn top of all the bug fixes and improvements of the previous playtest, this one adds more stability, UI polish and gameplay improvements. On the modding front, our new Lua API has again been the focus of attention, and also some gaps in our trait documentation have been closed, amonst others.  Please see the changelog on our wiki for a full list.\n\nAs always, please give this playtest a try and report any and all problems you encounter at http://bugs.openra.net.
-
-2014-09-27 12-00-00:
-	Title: September playtest now available!
-	Author: Oliver Brakmann
-	Content: The first playtest for our next big release is out now!\n\nThe biggest change in this playtest compared to our July release is the overhauled in-game interface. Players will also enjoy the new plane separation behaviour, balancing improvements and updated campaign missions, while a heavily improved Lua API, mission objectives, a prerequisites system and unit upgrades will bring benefits to mappers and modders.\n\nPlease give this playtest a try and report any and all problems you encounter at http://bugs.openra.net.
+	Content: After three months of unrelenting work, resulting in over 760 commits and over 100,000 changed lines by 41 contributors, we are proud to present to you this year's Halloween release!\n\nAll the changes are too numerous to mention in this little space, but you'll surely notice an improved user interface, both in and out of the game, greater stability and lots of gameplay polishing.  Please see our changelog at http://changelog.openra.net for a complete list.\n\nWe hope you enjoy this release, and wish you a happy Halloween!
