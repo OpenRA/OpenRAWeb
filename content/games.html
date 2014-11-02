@@ -6,7 +6,7 @@
   function initMapInfo(hash) {
     var doMap = function(map) {
       if ('title' in map)
-        $('.map-'+hash).html(map['title']+'<br /><span class="gameSubline">'+map['map_type']+'&nbsp;('+map['players']+' Players)</span>');
+        $('.map-'+hash).html('<a href="http://resource.openra.net/maps/'+map['id']+'" target="_maps">'+map['title']+'</a><br /><span class="gameSubline">'+map['map_type']+'&nbsp;('+map['players']+' Players)</span>');
     };
     if (hash in data) {
       doMap(data[hash]);
