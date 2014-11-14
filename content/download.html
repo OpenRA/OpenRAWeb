@@ -131,8 +131,13 @@ $(document).ready(function(){
 </div>
 <div id="gentoo" class="tab">
   <hr />
-  <h3>Download OpenRA for Gentoo</h3>
-  <p class="downloadblurb">Stable versions are packaged in the <a href="http://packages.gentoo.org/package/games-strategy/openra">official Gentoo repositories</a>.<br /><br />To install the ebuild:<br /><pre>$ emerge -av openra</pre><br />You can get unstable playtests using the following overlay:<br /><pre>http://github.com/cerebrum/dr/raw/master/repo.xml</pre><br /></p>
+  <h3>Install OpenRA for Gentoo</h3>
+  <p class="downloadblurb">Stable releases are available in the <a href="http://packages.gentoo.org/package/games-strategy/openra">official Gentoo repositories</a>, and can be installed using <span style="font-family: monospace;">emerge</span>:<pre>$ emerge -av openra</pre></p>
+  <p class="downloadblurb">Playtests are available via the &ldquo;dr&rdquo; overlay:
+<pre>$ layman -S -a dr -o http://github.com/cerebrum/dr/raw/master/repo.xml
+$ printf '%s\n' "games-strategy/openra ~amd64" >> /etc/portage/package.keywords
+$ emerge games-strategy/openra</pre></p>
+  <p class="downloadblurb"><em>These packages are maintained by a third party, and may not always include the latest versions.<br />Please contact the downstream repository maintainers about any packaging issues.</em></p>
 </div>
 <div id="source" class="tab">
   <hr />
