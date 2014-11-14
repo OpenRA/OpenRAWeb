@@ -121,13 +121,10 @@ $(document).ready(function(){
 </div>
 <div id="arch" class="tab">
   <hr />
-  <h3>Download OpenRA for Arch Linux</h3>
-  <p class="downloadblurb" style="min-height: 50px">The stable version is also available in the <a href="https://www.archlinux.org/packages/community/any/openra/">official Arch Linux repositories</a>.<br /><br />Playtest and bleed packages are also <a href="https://aur.archlinux.org/packages/?C=6&SeB=n&K=openra">available</a> in the AUR.</p>
-  <ul class="downloadlinks">
-    <li><%= generate_download_button("arch", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
-    <li><%= generate_download_button("arch", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
-  </ul>
-  <p>Older releases can be found in our <a href="<%= DOWNLOAD_GITHUB_BASE_PATH + 'releases/' %>">release archive</a>.</p>
+  <h3>Install OpenRA for Arch Linux</h3>
+  <p class="downloadblurb">Stable releases are available in the <a href="https://www.archlinux.org/packages/community/any/openra/">official Arch repository</a>, and can be installed using <span style="font-family: monospace;">pacman</span>:<pre>$ pacman -S openra </pre></p>
+  <p class="downloadblurb">Playtests are available via the <a href="https://aur.archlinux.org/packages/openra-playtest/">AUR</a>, and can be installed using <span style="font-family: monospace;">yaourt</span>:<pre>$ yaourt openra-playtest</pre></p>
+  <p class="downloadblurb"><em>These packages are maintained by a third party, and may not always include the latest versions.<br />Please contact the downstream repository maintainers about any packaging issues.</em></p>
 </div>
 <div id="gentoo" class="tab">
   <hr />
