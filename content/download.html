@@ -6,8 +6,7 @@ PLATFORMS = {
     "rpm" => "Fedora / openSUSE",
     "arch" => "Arch Linux",
     "gentoo" => "Gentoo",
-     "source" => "Source Code",
-    "desura" => "Desura",
+    "source" => "Source Code",
 }
 
 playtest_tag = fetch_git_tag(GITHUB_PLAYTEST_ID)
@@ -66,7 +65,7 @@ $(document).ready(function(){
 </script>
 
 <h3>Which Operating System?</h3>
-<p>Select a pre-packaged build, or the source code package if you'd prefer to compile OpenRA yourself.<br />OpenRA is also available on Desura.</p>
+<p>Select a pre-packaged build, or the source code package if you'd prefer to compile OpenRA yourself.<br />OpenRA is also available on <a href="http://www.desura.com/games/openra">Desura</a> and <a href="https://lutris.net/games/openra/">Lutris</a>.</p>
 <ul class="downloadplatform">
   <% PLATFORMS.each do |id, name| %>
   <li><a href="#<%= id %>"><img src="/images/platforms/<%= id %>.svg" alt="<%= name %>" title="<%= name %>" /></a></li>
@@ -145,12 +144,4 @@ $ emerge games-strategy/openra</pre></p>
     <li><%= generate_download_button("source", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
   </ul>
   <p>Older releases can be found in our <a href="<%= DOWNLOAD_GITHUB_BASE_PATH + 'releases/' %>">release archive</a>.</p>
-</div>
-<div id="desura" class="tab">
-  <hr />
-  <h3>Download OpenRA via Desura</h3>
-  <p class="downloadblurb">Desura is a community driven digital distribution service for gamers, putting the best games, mods and downloadable content from developers at gamers fingertips.</p>
-  <ul class="downloadlinks">
-    <li><a href="http://www.desura.com/games/openra" title="Download via Desura">View and download<br />OpenRA on Desura</a></li>
-  </ul>
 </div>
