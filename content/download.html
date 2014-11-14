@@ -1,3 +1,19 @@
+<%
+PLATFORMS = {
+    "win" => "Windows",
+    "osx" => "OS X",
+    "deb" => "Debian / Ubuntu",
+    "rpm" => "Fedora / openSUSE",
+    "arch" => "Arch Linux",
+    "gentoo" => "Gentoo",
+     "source" => "Source Code",
+    "desura" => "Desura",
+}
+
+playtest_tag = fetch_git_tag(GITHUB_PLAYTEST_ID)
+release_tag = fetch_git_tag(GITHUB_RELEASE_ID)
+sizes = fetch_package_sizes([GITHUB_RELEASE_ID, GITHUB_PLAYTEST_ID])
+%>
 <script>
 // Wait until the DOM has loaded before querying the document
 $(document).ready(function(){
@@ -52,8 +68,8 @@ $(document).ready(function(){
 <h3>Which Operating System?</h3>
 <p>Select a pre-packaged build, or the source code package if you'd prefer to compile OpenRA yourself.<br />OpenRA is also available on Desura.</p>
 <ul class="downloadplatform">
-  <% PLATFORMS.each do |id, platform| %>
-  <li><a href="#<%= id %>"><img src="/images/platforms/<%= id %>.svg" alt="<%= platform[:name] %>" title="<%= platform[:name] %>" /></a></li>
+  <% PLATFORMS.each do |id, name| %>
+  <li><a href="#<%= id %>"><img src="/images/platforms/<%= id %>.svg" alt="<%= name %>" title="<%= name %>" /></a></li>
   <% end %>
 </ul>
 <br />
@@ -62,31 +78,77 @@ $(document).ready(function(){
 <h3>Which Build?</h3>
 <p>Release builds are recommended for most players.<br />They have been extensively tested and have a larger player base.</p>
 <p>Playtest builds contain the latest improvements, but change frequently and may be broken at times.</p>
-<%
 
-playtest_tag = fetch_git_tag(GITHUB_PLAYTEST_ID)
-release_tag = fetch_git_tag(GITHUB_RELEASE_ID)
-sizes = fetch_package_sizes([GITHUB_RELEASE_ID, GITHUB_PLAYTEST_ID])
-
-PLATFORMS.each do |id, platform| %>
-<div id="<%= id %>" class="tab">
+<div id="win" class="tab">
   <hr />
-  <% if id == "desura" then %>
-  <h3>Download OpenRA via <%= platform[:name] %></h3>
-  <p class="downloadblurb"><%= platform[:desc] %></p>
+  <h3>Download OpenRA for Windows</h3>
+  <p class="downloadblurb" style="min-height: 50px">The default GPU drivers included with Windows do not support OpenGL rendering.<br />You may need to install full drivers supplied by your GPU vendor.</p>
+  <ul class="downloadlinks">
+    <li><%= generate_download_button("win", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
+    <li><%= generate_download_button("win", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
+  </ul>
+  <p>Older releases can be found in our <a href="<%= DOWNLOAD_GITHUB_BASE_PATH + 'releases/' %>">release archive</a>.</p>
+</div>
+<div id="osx" class="tab">
+  <hr />
+  <h3>Download OpenRA for OS X</h3>
+  <p class="downloadblurb" style="min-height: 50px">OpenRA requires Mono 3.2 or greater.<br /><a href="http://www.go-mono.com/mono-downloads/download.html">Download Mono</a>.</p>
+  <ul class="downloadlinks">
+    <li><%= generate_download_button("osx", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
+    <li><%= generate_download_button("osx", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
+  </ul>
+  <p>Older releases can be found in our <a href="<%= DOWNLOAD_GITHUB_BASE_PATH + 'releases/' %>">release archive</a>.</p>
+</div>
+<div id="deb" class="tab">
+  <hr />
+  <h3>Download OpenRA for Debian / Ubuntu</h3>
+  <p class="downloadblurb" style="min-height: 50px">The stable version is also available from <a href="http://www.playdeb.net/software/OpenRA">PlayDeb</a>.</p>
+  <ul class="downloadlinks">
+    <li><%= generate_download_button("deb", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
+    <li><%= generate_download_button("deb", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
+  </ul>
+  <p>Older releases can be found in our <a href="<%= DOWNLOAD_GITHUB_BASE_PATH + 'releases/' %>">release archive</a>.</p>
+</div>
+<div id="rpm" class="tab">
+  <hr />
+  <h3>Download OpenRA for Fedora / openSUSE</h3>
+  <p class="downloadblurb" style="min-height: 50px">The stable version is also available in the <a href="http://software.opensuse.org/download.html?project=games&package=openra">official openSUSE games repository</a>.</p>
+  <ul class="downloadlinks">
+    <li><%= generate_download_button("rpm", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
+    <li><%= generate_download_button("rpm", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
+  </ul>
+  <p>Older releases can be found in our <a href="<%= DOWNLOAD_GITHUB_BASE_PATH + 'releases/' %>">release archive</a>.</p>
+</div>
+<div id="arch" class="tab">
+  <hr />
+  <h3>Download OpenRA for Arch Linux</h3>
+  <p class="downloadblurb" style="min-height: 50px">The stable version is also available in the <a href="https://www.archlinux.org/packages/community/any/openra/">official Arch Linux repositories</a>.<br /><br />Playtest and bleed packages are also <a href="https://aur.archlinux.org/packages/?C=6&SeB=n&K=openra">available</a> in the AUR.</p>
+  <ul class="downloadlinks">
+    <li><%= generate_download_button("arch", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
+    <li><%= generate_download_button("arch", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
+  </ul>
+  <p>Older releases can be found in our <a href="<%= DOWNLOAD_GITHUB_BASE_PATH + 'releases/' %>">release archive</a>.</p>
+</div>
+<div id="gentoo" class="tab">
+  <hr />
+  <h3>Download OpenRA for Gentoo</h3>
+  <p class="downloadblurb">Stable versions are packaged in the <a href="http://packages.gentoo.org/package/games-strategy/openra">official Gentoo repositories</a>.<br /><br />To install the ebuild:<br /><pre>$ emerge -av openra</pre><br />You can get unstable playtests using the following overlay:<br /><pre>http://github.com/cerebrum/dr/raw/master/repo.xml</pre><br /></p>
+</div>
+<div id="source" class="tab">
+  <hr />
+  <h3>Download OpenRA source code</h3>
+  <p class="downloadblurb" style="min-height: 50px">Follow the instructions in the <a href="https://github.com/OpenRA/OpenRA/blob/bleed/INSTALL.md">INSTALL.md</a> document to build and run OpenRA.<br /><a title="Visual C# Express Download" href="http://www.microsoft.com/express/downloads/">Visual C# Express</a> (Windows) and <a title="MonoDevelop" href="http://www.monodevelop.com/"/>MonoDevelop</a> (OS X / Linux) are free IDEs that work with OpenRA.<br /><br />If you'd like to <a href="https://github.com/OpenRA/OpenRA/pulls">contribute patches</a> (or just don't want to fiddle with tar files) you can download and/or update the code using the <a href="http://git-scm.com/">git version control system</a>:<br /><pre>$ git clone git://github.com/OpenRA/OpenRA.git</pre><br /></p>
+  <ul class="downloadlinks">
+    <li><%= generate_download_button("source", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
+    <li><%= generate_download_button("source", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
+  </ul>
+  <p>Older releases can be found in our <a href="<%= DOWNLOAD_GITHUB_BASE_PATH + 'releases/' %>">release archive</a>.</p>
+</div>
+<div id="desura" class="tab">
+  <hr />
+  <h3>Download OpenRA via Desura</h3>
+  <p class="downloadblurb">Desura is a community driven digital distribution service for gamers, putting the best games, mods and downloadable content from developers at gamers fingertips.</p>
   <ul class="downloadlinks">
     <li><a href="http://www.desura.com/games/openra" title="Download via Desura">View and download<br />OpenRA on Desura</a></li>
   </ul>
-  <% else %>
-  <h3>Download OpenRA <%= "for " unless id == "source" %> <%= platform[:name] %></h3>
-  <p class="downloadblurb"><%= platform[:desc] %></p>
-  <% if id != "gentoo" then %>
-  <ul class="downloadlinks">
-    <li><%= generate_download_button(id, GITHUB_RELEASE_ID, release_tag, sizes) %></li>
-    <li><%= generate_download_button(id, GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
-  </ul>
-  <p>Older releases can be found in our <a href="<%= DOWNLOAD_GITHUB_BASE_PATH + 'releases/' %>">release archive</a>.</p>
-  <% end %>
-  <% end %>
 </div>
-<% end %>

@@ -342,10 +342,6 @@ td, th, tr {
   background-color: #888;
 }
 
-.downloadblurb {
-  min-height: 50px;
-}
-
 pre {
   font-weight: normal;
   font-family: monospace;
