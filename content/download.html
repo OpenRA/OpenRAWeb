@@ -3,7 +3,8 @@ PLATFORMS = {
     "win" => "Windows",
     "osx" => "OS X",
     "deb" => "Debian / Ubuntu",
-    "rpm" => "Fedora / openSUSE",
+    "fedora" => "Fedora",
+    "opensuse" => "openSUSE",
     "arch" => "Arch Linux",
     "gentoo" => "Gentoo",
     "source" => "Source Code",
@@ -50,7 +51,8 @@ $(document).ready(function(){
       var ua = navigator.userAgent;
       if (ua.match('Mac OS X')) activateTab($('a[href=#osx]'));
       else if (ua.match(/Ubuntu|Debian/)) activateTab($('a[href=#deb]'));
-      else if (ua.match(/Red Hat|Fedora|SUSE/)) activateTab($('a[href=#rpm]'));
+      else if (ua.match(/Red Hat|Fedora/)) activateTab($('a[href=#fedora]'));
+      else if (ua.match(/SUSE/)) activateTab($('a[href=#opensuse]'));
       else if (ua.match('Arch Linux')) activateTab($('a[href=#arch]'));
       else if (ua.match('Gentoo')) activateTab($('a[href=#gentoo]'));
       else if (ua.match('Linux')) activateTab($('a[href=#source]'));
@@ -108,15 +110,27 @@ $(document).ready(function(){
   </ul>
   <p>Older releases can be found in our <a href="<%= DOWNLOAD_GITHUB_BASE_PATH + 'releases/' %>">release archive</a>.</p>
 </div>
-<div id="rpm" class="tab">
+<div id="fedora" class="tab">
   <hr />
-  <h3>Download OpenRA for Fedora / openSUSE</h3>
-  <p class="downloadblurb" style="min-height: 50px">The stable version is also available in the <a href="http://software.opensuse.org/download.html?project=games&package=openra">official openSUSE games repository</a>.</p>
+  <h3>Install OpenRA for Fedora</h3>
+  <p class="downloadblurb">Stable releases are available via our openSUSE Build Service repository.</p>
+  <br />
   <ul class="downloadlinks">
-    <li><%= generate_download_button("rpm", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
-    <li><%= generate_download_button("rpm", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
+    <li><a href="https://build.opensuse.org/package/binaries/games:openra/release?repository=Fedora_19" title="Download OpenRA for Fedora 19">Download OpenRA releases<br />from openSUSE Build Service</a></li>
+	<li><span>No playtest available<br />(platform not supported)</span></li>
   </ul>
-  <p>Older releases can be found in our <a href="<%= DOWNLOAD_GITHUB_BASE_PATH + 'releases/' %>">release archive</a>.</p>
+  <p class="downloadblurb"><em>These packages are maintained by a third party, and may not always include the latest versions.<br />Please contact the downstream repository maintainers about any packaging issues.</em></p>
+</div>
+<div id="opensuse" class="tab">
+  <hr />
+  <h3>Install OpenRA for openSUSE</h3>
+  <p class="downloadblurb">Stable releases are available in the official openSUSE games repository.</p>
+  <br />
+  <ul class="downloadlinks">
+    <li><a href="http://software.opensuse.org/download.html?project=games&package=openra" title="Download OpenRA for openSUSE">Download OpenRA releases<br />from openSUSE Games</a></li>
+	<li><span>No playtest available<br />(platform not supported)</span></li>
+  </ul>
+  <p class="downloadblurb"><em>These packages are maintained by a third party, and may not always include the latest versions.<br />Please contact the downstream repository maintainers about any packaging issues.</em></p>
 </div>
 <div id="arch" class="tab">
   <hr />
