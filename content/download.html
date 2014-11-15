@@ -83,7 +83,7 @@ $(document).ready(function(){
 <div id="win" class="tab">
   <hr />
   <h3>Download OpenRA for Windows</h3>
-  <p class="downloadblurb" style="min-height: 50px">The default GPU drivers included with Windows do not support OpenGL rendering.<br />You may need to install full drivers supplied by your GPU vendor.</p>
+  <p class="downloadblurb">The default GPU drivers included with Windows do not support OpenGL rendering.<br />You may need to install full drivers supplied by your GPU vendor.</p>
   <ul class="downloadlinks">
     <li><%= generate_download_button("win", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
     <li><%= generate_download_button("win", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
@@ -93,7 +93,8 @@ $(document).ready(function(){
 <div id="osx" class="tab">
   <hr />
   <h3>Download OpenRA for OS X</h3>
-  <p class="downloadblurb" style="min-height: 50px">OpenRA requires Mono 3.2 or greater.<br /><a href="http://www.go-mono.com/mono-downloads/download.html">Download Mono</a>.</p>
+  <p class="downloadblurb">OpenRA requires Mono 3.2 or greater. <a href="http://www.mono-project.com/download/">Download Mono MRE</a>.</p>
+  <br />
   <ul class="downloadlinks">
     <li><%= generate_download_button("osx", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
     <li><%= generate_download_button("osx", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
@@ -103,12 +104,13 @@ $(document).ready(function(){
 <div id="deb" class="tab">
   <hr />
   <h3>Download OpenRA for Debian / Ubuntu</h3>
-  <p class="downloadblurb" style="min-height: 50px">The stable version is also available from <a href="http://www.playdeb.net/software/OpenRA">PlayDeb</a>.</p>
+  <p class="downloadblurb">Download and run one of the packages below to install OpenRA via the Ubuntu Software Center.<br /><em>Please note: The package quality warning is a known issue, and will be fixed in a future OpenRA release.</em></p>
   <ul class="downloadlinks">
     <li><%= generate_download_button("deb", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
     <li><%= generate_download_button("deb", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
   </ul>
   <p>Older releases can be found in our <a href="<%= DOWNLOAD_GITHUB_BASE_PATH + 'releases/' %>">release archive</a>.</p>
+  <p class="downloadblurb">Stable releases are also available via <a href="http://www.playdeb.net/software/OpenRA">PlayDeb</a> (<a href="http://www.playdeb.net/updates/Ubuntu/14.10#how_to_install">configuration instructions</a>).</p>
 </div>
 <div id="fedora" class="tab">
   <hr />
