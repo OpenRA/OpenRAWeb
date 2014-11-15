@@ -47,6 +47,11 @@ p.download, .newsDetails {
   font-size: 0.8em;
 }
 
+.versionlabel {
+  color: #FFFF56;
+  font-weight: bold;
+}
+
 .breadcrumbs {
   margin-top: 1em;
 }
