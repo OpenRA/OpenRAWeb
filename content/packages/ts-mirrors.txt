@@ -3,4 +3,9 @@ http://openra.ppmsite.com/ts-packages.zip
 http://srvdonate.ut.mephi.ru/openra/ts-packages.zip
 http://openra-mirror.ihptru.net/ts-packages.zip
 http://openra.baxxster.no/openra/ts-packages.zip
-http://ftp.ubuntu-tw.org/mirror/anthonos/openra/ts-packages.zip
+http://repo.anthonos.org/openra/ts-packages.zip
+http://ftp.nluug.nl/os/Linux/distr/anthon/openra/ts-packages.zip
+http://ftp.tsukuba.wide.ad.jp/Linux/anthon/openra/ts-packages.zip
+http://cdn.mirror.anthonos.org/openra/ts-packages.zip
+http://mirrors.ustc.edu.cn/anthon/openra/ts-packages.zip
+http://mirror.oss.maxcdn.com/anthonos/openra/ts-packages.zip
