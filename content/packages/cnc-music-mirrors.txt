@@ -3,3 +3,9 @@ http://openra.dxnet.ru/cnc-music.zip
 http://srvdonate.ut.mephi.ru/openra/cnc-music.zip
 http://openra-mirror.ihptru.net/cnc-music.zip
 http://openra.baxxster.no/music/cnc-music.zip
+http://repo.anthonos.org/cnc-music.zip
+http://ftp.nluug.nl/os/Linux/distr/anthon/openra/cnc-music.zip
+http://ftp.tsukuba.wide.ad.jp/Linux/anthon/openra/cnc-music.zip
+http://cdn.mirror.anthonos.org/openra/cnc-music.zip
+http://mirrors.ustc.edu.cn/anthon/openra/cnc-music.zip
+http://mirror.oss.maxcdn.com/anthonos/openra/cnc-music.zip
