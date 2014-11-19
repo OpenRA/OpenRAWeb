@@ -3,8 +3,8 @@ PLATFORMS = {
     "win" => "Windows",
     "osx" => "OS X",
     "deb" => "Debian / Ubuntu",
-    "fedora" => "Fedora",
     "opensuse" => "openSUSE",
+    "fedora" => "Fedora",
     "arch" => "Arch Linux",
     "gentoo" => "Gentoo",
     "freebsd" => "FreeBSD",
@@ -130,12 +130,12 @@ $(document).ready(function(){
 <div id="opensuse" class="tab">
   <hr />
   <h3>Install OpenRA for openSUSE</h3>
-  <p>Stable releases are available in the <a href="http://software.opensuse.org/download.html?project=games&package=openra">openSUSE games repository</a>.<br />If required, you may add this repository from the terminal:</p>
-  <pre>
-$ zypper addrepo http://download.opensuse.org/repositories/games/openSUSE_13.2/games.repo
-$ zypper refresh</pre>
-  <p>The stable release can then be installed by running:</p>
-  <pre>$ zypper install openra</pre>
+  <p>Stable releases are available in the <a href="http://software.opensuse.org/download.html?project=games&package=openra">openSUSE games repository</a>.</p>
+  <br />
+  <ul class="downloadlinks">
+    <li><a href="http://software.opensuse.org/download.html?project=games&package=openra" title="Download from software.opensuse.org">Download OpenRA from<br />software.opensuse.org</a></li>
+  </ul>
+  <br />
   <p>OpenRA is also available on <a href="http://www.desura.com/games/openra">Desura</a> and <a href="https://lutris.net/games/openra/">Lutris</a>.</p>
   <p class="downloadthirdparty">We do not directly maintain these external package sources, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
 </div>
