@@ -15,44 +15,6 @@ PAGES = {
 	"/community/" => "Community"
 }
 
-PLATFORMS = {
-    "win" => {
-      name: "Windows",
-      desc: "The default GPU drivers included with Windows do not support OpenGL rendering.<br />You may need to install full drivers supplied by your GPU vendor."
-    },
-    "osx" => {
-      name: "OS X",
-      desc: "OpenRA requires Mono 3.2 or greater.<br /><a href=\"http://www.go-mono.com/mono-downloads/download.html\">Download Mono</a>."
-    }, 
-    "deb" => {
-      name: "Debian / Ubuntu",
-      desc: "The stable version is also available from <a href=\"http://www.playdeb.net/software/OpenRA\">PlayDeb</a>."
-    },
-
-    "rpm" => {
-      name: "Fedora / openSUSE",
-      desc: "The stable version is also available in the <a href=\"http://software.opensuse.org/download.html?project=games&package=openra\">official openSUSE games repository.</a>"
-    },
-
-    "arch" => {
-      name: "Arch Linux",
-      desc: "The stable version is also available in the <a href=\"https://www.archlinux.org/packages/community/any/openra/\">official Arch Linux repositories</a>.<br /><br />Playtest and bleed packages are also <a href=\"https://aur.archlinux.org/packages/?C=6&SeB=n&K=openra\">available</a> in the AUR."
-    },
-
-    "gentoo" => {
-      name: "Gentoo",
-      desc: "Stable versions are packaged in the <a href=\"http://packages.gentoo.org/package/games-strategy/openra\">official Gentoo repositories</a>.<br /><br />To install the ebuild:<br /><pre>$ emerge -av openra</pre><br />You can get unstable playtests using the following overlay:<br /><pre>http://github.com/cerebrum/dr/raw/master/repo.xml</pre><br />"
-    },
-    "source" => {
-      name: "Source Code",
-      desc: "Follow the instructions in the <a href=\"https://github.com/OpenRA/OpenRA/blob/bleed/INSTALL.md\">INSTALL.md</a> document to build and run OpenRA.<br /><a title=\"Visual C# Express Download\" href=\"http://www.microsoft.com/express/downloads/\">Visual C# Express</a> (Windows) and <a title=\"MonoDevelop\" href=\"http://www.monodevelop.com/\"/>MonoDevelop</a> (OS X / Linux) are free IDEs that work with OpenRA.<br /><br />If you'd like to <a href=\"https://github.com/OpenRA/OpenRA/pulls\">contribute patches</a> (or just don't want to fiddle with tar files) you can download and/or update the code using the <a href=\"http://git-scm.com/\">git version control system</a>:<br /><pre>$ git clone git://github.com/OpenRA/OpenRA.git</pre><br />"
-    },
-    "desura" => {
-      name: "Desura",
-      desc: "Desura is a community driven digital distribution service for gamers, putting the best games, mods and downloadable content from developers at gamers fingertips."
-    }
-}
-
 SOCIAL = {
   "facebook" => { name: "Facebook", url: "https://www.facebook.com/openra" },
   "gplus" => { name: "Google+", url: "https://www.google.com/+OpenraNet" },

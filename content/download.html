@@ -1,3 +1,19 @@
+<%
+PLATFORMS = {
+    "win" => "Windows",
+    "osx" => "OS X",
+    "deb" => "Debian / Ubuntu",
+    "opensuse" => "openSUSE",
+    "fedora" => "Fedora",
+    "arch" => "Arch Linux",
+    "gentoo" => "Gentoo",
+    "freebsd" => "FreeBSD",
+}
+
+playtest_tag = fetch_git_tag(GITHUB_PLAYTEST_ID)
+release_tag = fetch_git_tag(GITHUB_RELEASE_ID)
+sizes = fetch_package_sizes([GITHUB_RELEASE_ID, GITHUB_PLAYTEST_ID])
+%>
 <script>
 // Wait until the DOM has loaded before querying the document
 $(document).ready(function(){
@@ -35,10 +51,11 @@ $(document).ready(function(){
       var ua = navigator.userAgent;
       if (ua.match('Mac OS X')) activateTab($('a[href=#osx]'));
       else if (ua.match(/Ubuntu|Debian/)) activateTab($('a[href=#deb]'));
-      else if (ua.match(/Red Hat|Fedora|SUSE/)) activateTab($('a[href=#rpm]'));
+      else if (ua.match(/Red Hat|Fedora/)) activateTab($('a[href=#fedora]'));
+      else if (ua.match(/SUSE/)) activateTab($('a[href=#opensuse]'));
       else if (ua.match('Arch Linux')) activateTab($('a[href=#arch]'));
       else if (ua.match('Gentoo')) activateTab($('a[href=#gentoo]'));
-      else if (ua.match('Linux')) activateTab($('a[href=#source]'));
+      else if (ua.match('FreeBSD')) activateTab($('a[href=#freebsd]'));
 
       // Bind the click event handler
       $(this).on('click', 'a', function(e){
@@ -49,44 +66,103 @@ $(document).ready(function(){
 });
 </script>
 
-<h3>Which Operating System?</h3>
-<p>Select a pre-packaged build, or the source code package if you'd prefer to compile OpenRA yourself.<br />OpenRA is also available on Desura.</p>
-<ul class="downloadplatform">
-  <% PLATFORMS.each do |id, platform| %>
-  <li><a href="#<%= id %>"><img src="/images/platforms/<%= id %>.svg" alt="<%= platform[:name] %>" title="<%= platform[:name] %>" /></a></li>
-  <% end %>
+<h3>Which Build?</h3>
+<p>Two types of build are available, depending on how you want to play:</p>
+<ul>
+	<li>Stable releases are recommended for players who want to play multiplayer games online.</li>
+	<li>Playtests provide a preview of the latest improvements for players who want to help test and shape the future releases of OpenRA.</li>
 </ul>
-<br />
+<p>The latest stable release is <span class="versionlabel"><%= release_tag %></span><% if GITHUB_PLAYTEST_ID != '' then %>, and the latest playtest is <span class="versionlabel"><%= playtest_tag %></span><% end %>.
 <hr />
 
-<h3>Which Build?</h3>
-<p>Release builds are recommended for most players.<br />They have been extensively tested and have a larger player base.</p>
-<p>Playtest builds contain the latest improvements, but change frequently and may be broken at times.</p>
-<%
+<h3>Which Operating System?</h3>
+<ul class="downloadplatform">
+  <% PLATFORMS.each do |id, name| %>
+  <li><a href="#<%= id %>"><img src="/images/platforms/<%= id %>.svg" alt="<%= name %>" title="<%= name %>" /></a></li>
+  <% end %>
+</ul>
+<p>You may also <a href="https://github.com/OpenRA/OpenRA/wiki/Compiling">compile from source</a> on any operating system.</p>
 
-playtest_tag = fetch_git_tag(GITHUB_PLAYTEST_ID)
-release_tag = fetch_git_tag(GITHUB_RELEASE_ID)
-sizes = fetch_package_sizes([GITHUB_RELEASE_ID, GITHUB_PLAYTEST_ID])
-
-PLATFORMS.each do |id, platform| %>
-<div id="<%= id %>" class="tab">
+<div id="win" class="tab">
   <hr />
-  <% if id == "desura" then %>
-  <h3>Download OpenRA via <%= platform[:name] %></h3>
-  <p class="downloadblurb"><%= platform[:desc] %></p>
+  <h3>Download OpenRA for Windows</h3>
+  <p>The default GPU drivers included with Windows do not support OpenGL rendering.<br />You may need to install full drivers supplied by your GPU vendor.</p>
   <ul class="downloadlinks">
-    <li><a href="http://www.desura.com/games/openra" title="Download via Desura">View and download<br />OpenRA on Desura</a></li>
+    <li><%= generate_download_button("win", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
+    <li><%= generate_download_button("win", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
   </ul>
-  <% else %>
-  <h3>Download OpenRA <%= "for " unless id == "source" %> <%= platform[:name] %></h3>
-  <p class="downloadblurb"><%= platform[:desc] %></p>
-  <% if id != "gentoo" then %>
-  <ul class="downloadlinks">
-    <li><%= generate_download_button(id, GITHUB_RELEASE_ID, release_tag, sizes) %></li>
-    <li><%= generate_download_button(id, GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
-  </ul>
-  <p>Older releases can be found in our <a href="<%= DOWNLOAD_GITHUB_BASE_PATH + 'releases/' %>">release archive</a>.</p>
-  <% end %>
-  <% end %>
+  <p>OpenRA is also available on <a href="http://www.desura.com/games/openra">Desura</a>.</p>
 </div>
-<% end %>
+<div id="osx" class="tab">
+  <hr />
+  <h3>Download OpenRA for OS X</h3>
+  <p>OpenRA requires Mono 3.2 or greater. <a href="http://www.mono-project.com/download/">Download Mono MRE</a>.</p>
+  <br />
+  <ul class="downloadlinks">
+    <li><%= generate_download_button("osx", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
+    <li><%= generate_download_button("osx", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
+  </ul>
+  <br />
+</div>
+<div id="deb" class="tab">
+  <hr />
+  <h3>Download OpenRA for Debian / Ubuntu</h3>
+  <p>Download and run one of the packages below to install OpenRA via the Ubuntu Software Center.<br />Ubuntu 12.04 and Debian users must first install <span style="font-family: monospace;">libSDL2</span> from a PPA or other source.</p>
+  <ul class="downloadlinks">
+    <li><%= generate_download_button("deb", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
+    <li><%= generate_download_button("deb", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
+  </ul>
+  <p>OpenRA is also available on <a href="http://www.playdeb.net/software/OpenRA">PlayDeb</a>, <a href="http://www.desura.com/games/openra">Desura</a>, and <a href="https://lutris.net/games/openra/">Lutris</a>.</p>
+  <p class="downloadthirdparty">We do not directly maintain these external package sources, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
+</div>
+<div id="fedora" class="tab">
+  <hr />
+  <h3>Install OpenRA for Fedora</h3>
+  <p>Stable releases are available via our <a href="https://build.opensuse.org/package/binaries/games:openra/release?repository=Fedora_19">openSUSE Build Service repository</a>.<br />You can add the repository from the terminal:</p>
+  <pre>
+# cd /etc/yum.repos.d/
+# wget http://download.opensuse.org/repositories/games:/openra/Fedora_19/games:openra.repo</pre>
+  <p>The stable release can then be installed by running:</p>
+  <pre># yum install openra</pre>
+  <p>OpenRA is also available on <a href="http://www.desura.com/games/openra">Desura</a> and <a href="https://lutris.net/games/openra/">Lutris</a>.</p>
+  <p class="downloadthirdparty">We do not directly maintain these external package sources, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
+</div>
+<div id="opensuse" class="tab">
+  <hr />
+  <h3>Install OpenRA for openSUSE</h3>
+  <p>Stable releases are available in the <a href="http://software.opensuse.org/download.html?project=games&package=openra">openSUSE games repository</a>.</p>
+  <br />
+  <ul class="downloadlinks">
+    <li><a href="http://software.opensuse.org/download.html?project=games&package=openra" title="Download from software.opensuse.org">Download OpenRA from<br />software.opensuse.org</a></li>
+  </ul>
+  <br />
+  <p>OpenRA is also available on <a href="http://www.desura.com/games/openra">Desura</a> and <a href="https://lutris.net/games/openra/">Lutris</a>.</p>
+  <p class="downloadthirdparty">We do not directly maintain these external package sources, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
+</div>
+<div id="arch" class="tab">
+  <hr />
+  <h3>Install OpenRA for Arch Linux</h3>
+  <p>Stable releases are available in the <a href="https://www.archlinux.org/packages/community/any/openra/">official Arch repository</a>, and can be installed using <span style="font-family: monospace;">pacman</span>:<pre>$ pacman -S openra </pre></p>
+  <p>Playtests are available via the <a href="https://aur.archlinux.org/packages/openra-playtest/">AUR</a>, and can be installed using <span style="font-family: monospace;">yaourt</span>:<pre>$ yaourt openra-playtest</pre></p>
+  <p>OpenRA is also available on <a href="http://www.desura.com/games/openra">Desura</a> and <a href="https://lutris.net/games/openra/">Lutris</a>.</p>
+  <p class="downloadthirdparty">We do not directly maintain these external package sources, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
+</div>
+<div id="gentoo" class="tab">
+  <hr />
+  <h3>Install OpenRA for Gentoo</h3>
+  <p>Stable releases are available in the <a href="http://packages.gentoo.org/package/games-strategy/openra">official Gentoo repositories</a>, and can be installed using <span style="font-family: monospace;">emerge</span>:<pre>$ emerge -av openra</pre></p>
+  <p>Playtests are available via the &ldquo;dr&rdquo; overlay:</p>
+  <pre>$ layman -S -a dr -o http://github.com/cerebrum/dr/raw/master/repo.xml
+$ printf '%s\n' "games-strategy/openra ~amd64" >> /etc/portage/package.keywords
+$ emerge games-strategy/openra</pre>
+  <p>OpenRA is also available on <a href="http://www.desura.com/games/openra">Desura</a> and <a href="https://lutris.net/games/openra/">Lutris</a>.</p>
+  <p class="downloadthirdparty">We do not directly maintain these external package sources, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
+</div>
+<div id="freebsd" class="tab">
+  <hr />
+  <h3>Install OpenRA for FreeBSD</h3>
+  <p>Stable releases are available in the <a href="http://svnweb.freebsd.org/ports/head/games/openra/">FreeBSD Ports Collection</a>:<br />
+<pre># cd /usr/ports/games/openra
+# make install</pre></p>
+  <p class="downloadthirdparty">We do not directly maintain these external package sources, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
+</div>
