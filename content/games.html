@@ -94,7 +94,7 @@
       for (var i in hashes)
         initMapInfo(hashes[i]);
 
-      $('#activePlayers').text(activePlayers+(activePlayers == 1 ? ' player is' : ' players are'));
+      $('#activePlayers').text(activePlayers);
       $('#activeServers').text(activeServers);
 
       window.setTimeout(updateGameList, 30000);
@@ -104,12 +104,12 @@
   $(document).ready(function() {
     $('#serverlist').empty();
     $('#serverlist').append('<tr><td colspan="4">Loading server list...</td></tr>');
-	updateGameList();
+    updateGameList();
   });
 
 </script>
-<h3>Who's playing?</h3>
-<p><span id="activePlayers">0 players are</span> online in <span id="activeServers">0</span> advertised servers.</p>
+<h3>Server Browser</h3>
+<p><span id="activePlayers">0</span> <a href="/players/">players</a> are online in <span id="activeServers">0</span> advertised servers.</p>
 <table>
   <thead><tr><th>Server</th><th>Status</th><th>Mod</th><th>Map</th></tr></thead>
   <tbody id="serverlist"></tbody>
