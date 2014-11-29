@@ -1,4 +1,10 @@
-<script type="text/javascript" src="http://javascriptrrd.sourceforge.net/docs/javascriptrrd_v1.1.1/src/lib/javascriptrrd.wlibs.js"></script>
+<% if @config[:debug] %>
+  <% for file in @config[:scripts] %>
+    <script src="/scripts/<%= file %>"></script>
+  <% end %>
+<% else %>
+  <script src="/scripts/all.js"></script>
+<% end %>
 
 <script type="text/javascript">
   $(document).ready(function() {

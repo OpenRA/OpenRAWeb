@@ -85,3 +85,16 @@ deploy:
 base_url: "http://openra.net"
 author_name: "OpenRA developers"
 author_uri: "http://openra.net"
+
+
+debug: false # if true, don't concatenate scripts
+
+scripts:
+  - flot
+  - flotselection
+  - flottime
+  - flottooltip
+  - javascriptrrd
+  - rrdFlot
+  - rrdFlotAsync
+
