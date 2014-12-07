@@ -92,6 +92,7 @@ debug: false # if true, don't concatenate scripts
 scripts:
   - flot
   - flotselection
+  - flotstack
   - flottime
   - flottooltip
   - javascriptrrd

@@ -373,3 +373,5 @@ pre {
 .communityblock p {
   margin-left:80px;
 }
+
+.tickLabel, .flot-x-axis { color: #fff; }
