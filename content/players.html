@@ -14,11 +14,12 @@
       tooltip: true, tooltipOpts: { defaultTheme: false, content: "<h4>%s: %y</h4>"},
       selection: { mode: null },
       grid: { borderColor: "#fff", tickColor: "#333" }
+      series: { stack: true }
     };
 
     var ds_graph_options = {
-      'playing':{ label: 'Playing', color: "#0A0", lines: { show: true, fill: false } },
-      'waiting':{ label: 'Waiting', color: "#F80", lines: { show: true, fill: false } }
+      'playing':{ label: 'Playing', color: "#0A0", lines: { show: true, fill: true } },
+      'waiting':{ label: 'Waiting', color: "#F80", lines: { show: true, fill: true } }
     };
 
     var rrdflot_daily = {
