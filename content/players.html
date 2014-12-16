@@ -11,9 +11,9 @@
     var rrdfile = "http://openra.ipdx.ru/db/openra-players.rrd";
 
     var graph_options = {
-      tooltip: true, tooltipOpts: { defaultTheme: false, content: "<h4>%s: %y</h4>"},
+      tooltip: true, tooltipOpts: { defaultTheme: false, id: "flotTip", content: "%s: %y on %x"},
       selection: { mode: null },
-      grid: { borderColor: "#fff", tickColor: "#333" }
+      grid: { borderColor: "#fff", tickColor: "#333", hoverable: true },
       series: { stack: true }
     };
 
