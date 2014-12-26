@@ -78,7 +78,10 @@
           rowClass = 'greyout';
 
         var row = $('<tr class="'+rowClass+'">');
-        row.append('<td>'+game['name'].replace(/\\\'/g, "'")+'<br /><span class="gameSubline">'+game['address']+'</span></td>');
+        if (game['state'] == '1')
+          row.append('<td>'+game['name'].replace(/\\\'/g, "'")+'<br /><span class="gameSubline"><a href="openra://'+game['address']+'">'+game['address']+'</a></span></td>');
+        else
+          row.append('<td>'+game['name'].replace(/\\\'/g, "'")+'<br /><span class="gameSubline">'+game['address']+'</span></td>');
         row.append('<td><span class="'+stateClass+'">'+state+'</span><br /><span class="gameSubline">'+game['players']+(game['players'] == 1 ? ' player' : ' players')+'</span></td>');
         row.append('<td>'+mod+'<br /><span class="gameSubline">'+tag+'</span></td>');
         row.append('<td class="map-'+game['map']+'">Loading...</td></tr>');
