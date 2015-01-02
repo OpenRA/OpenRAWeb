@@ -11,4 +11,4 @@ git add *
 git commit -m "Deploy OpenRAWeb HTML to GitHub pages
 
 commit: OpenRA/OpenRAWeb@$TRAVIS_COMMIT"
-git push origin master
+git push --quiet origin master &> /dev/null

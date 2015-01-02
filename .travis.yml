@@ -5,7 +5,7 @@ language: ruby
 
 env:
   global:
-    secure: "DsI/JRrG13WTFvi6kp77Fr2wxr1dXILC9pJvdTCeKvowmkq3jDUYm5RaPjVuJ8wKuGZCGNM+dF2L+0ixw15sBU2u1g1nru586qz3thMQwPlX/c8ArGKhy/rJMvskwdVmnw9q0/Zl28zIpGhVhLS4BMu64CsckAAXe4a7r5KKl88="
+    secure: "XF0bBT03kB2mITedNssEdEizz2/30Miw9N1S/VPLupgi42DTcbcIAvOUSV6XdLaKrcdZ900x1v8w0Ol23lkz1RTmnVDg4B90uvjnpcYW/fAr5/3775/ZFh4B1724Hw4y0kMGHgZPOHItYoju9akSICaRw3/2wP+6ttFFVrSAX70="
 
 install:
  - gem install builder kramdown octokit
