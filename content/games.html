@@ -94,7 +94,7 @@
       for (var i in hashes)
         initMapInfo(hashes[i]);
 
-      $('#activePlayers').text(activePlayers+(activePlayers == 1 ? ' player is' : ' players are'));
+      $('#activePlayers').text(activePlayers);
       $('#activeServers').text(activeServers);
 
       window.setTimeout(updateGameList, 30000);
@@ -102,16 +102,77 @@
   }
 
   $(document).ready(function() {
+    $('#servercontainer').show();
     $('#serverlist').empty();
     $('#serverlist').append('<tr><td colspan="4">Loading server list...</td></tr>');
-	updateGameList();
+    updateGameList();
   });
 
 </script>
-<h3>Who's playing?</h3>
-<p><span id="activePlayers">0 players are</span> online in <span id="activeServers">0</span> advertised servers.</p>
+
+<% if @config[:debug] %>
+  <% for file in @config[:scripts] %>
+    <script src="/scripts/<%= file %>"></script>
+  <% end %>
+<% else %>
+  <script src="/scripts/all.js"></script>
+<% end %>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var rrdfile = "http://openra.ipdx.ru/db/openra-players.rrd";
+    var graph_options = {
+      tooltip: true, tooltipOpts: { defaultTheme: false, id: "flotTip", content: "%s: %y on %x"},
+      selection: { mode: null },
+      grid: { borderColor: "#fff", tickColor: "#333", hoverable: true, margin: { left: 45, top: 0, right: 0, bottom: 15 } },
+      series: { stack: true }
+    };
+
+    var ds_graph_options = {
+      'playing': { label: 'Playing', color: "#0A0", lines: { show: true, fill: 0.7, lineWidth: 0 } },
+      'waiting': { label: 'Waiting', color: "#F80", lines: { show: true, fill: 0.7, lineWidth: 0 } }
+    };
+
+    var rrdflot_options = {
+      use_rra: true, rra: 2,
+      graph_only: true, legend: "None",
+      use_checked_DSs: true, checked_DSs: ['playing', 'waiting'],
+      graph_width: "620px", graph_height: "200px"
+    };
+
+    plot = new rrdFlotAsync("players", rrdfile, null, graph_options, ds_graph_options, rrdflot_options, null, null, draw_plot_axes);
+  })
+
+  function draw_plot_axes() {
+    setTimeout(function() {
+      var c = $('#players').find('.flot-base').get(0);
+      var ctx = c.getContext("2d");
+      var pxratio = window.devicePixelRatio || 1;
+      var cx = (c.width / pxratio + 45) / 2;
+      var cy = (c.height / pxratio - 30) / 2;
+
+      ctx.fillStyle = "white";
+      ctx.textAlign = 'center';
+
+      ctx.font = "bold 14px sans-serif";
+      ctx.fillText('Date', cx, c.height);
+
+      ctx.rotate(-Math.PI/2);
+      ctx.fillText('Players', -cy, 35);
+    }, 0);
+  }
+</script>
+
+<h3>Server Browser</h3>
+<noscript><div class="noscript">Please enable JavaScript to view the server list.</div></noscript>
+<div id="servercontainer" style="display: none">
+<p><span id="activePlayers">0</span> players are online in <span id="activeServers">0</span> advertised servers.</p>
 <table>
   <thead><tr><th>Server</th><th>Status</th><th>Mod</th><th>Map</th></tr></thead>
   <tbody id="serverlist"></tbody>
 </table>
-<noscript><div class="noscript">Please enable JavaScript to view the server list.</div></noscript>
+<br/>
+<h3>Player Activity</h3>
+<p>View the numbers of gamers <span class="gamePlaying">playing</span> and <span class="gameWaiting">waiting</span> over the last fortnight:</p>
+<a href="/players/"><div id="players"><center><h4>Loading...</h4></center></div></a>
+<p>More detailed graphs are available at the <a href="/players/">player statistics</a> page.</p>
+</div>

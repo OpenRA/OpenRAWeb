@@ -19,6 +19,11 @@ passthrough '/packages/*/'
 passthrough '/robots/'
 passthrough 'gamenews'
 
+compile '/scripts/*' do
+  filter :erb
+  filter :uglify_js if File.basename(item[:content_filename], ".*") == 'all'
+end
+
 compile '/news/atom/' do
   filter :erb
 end
@@ -63,6 +68,15 @@ end
 
 route '/sitemap' do
   item.identifier.chop + '.xml'
+end
+
+route '/scripts/*' do
+  # if not debug mode, only let all.js through
+  unless @config[:debug]
+    item.identifier.chop + '.js' if File.basename(item[:content_filename], ".*") == 'all'
+  else
+    item.identifier.chop + '.js'
+  end
 end
 
 route '*' do
