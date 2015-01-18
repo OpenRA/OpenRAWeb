@@ -7,8 +7,7 @@ git config --global user.email "orabot@users.noreply.github.com"
 cd "$HOME"
 
 mkdir -p "$HOME"/.ssh
-[[ -n "$KEY" ]] && echo "decryption key is set"
-openssl aes-256-cbc -k $KEY -in "$TRAVIS_BUILD_DIR"/ssh.enc -d -out "$HOME"/.ssh/id_rsa
+cp "$TRAVIS_BUILD_DIR"/id_rsa "$HOME"/.ssh
 
 git clone --branch=master git@github.com:OpenRA/openra.github.io.git openra.net > /dev/null
 cd openra.net
