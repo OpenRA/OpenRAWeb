@@ -1,8 +1,4 @@
-2014-11-13 07-00-00:
-	Title: 2v2 RA tournament starting 29th November
-	Author: Gareth
-	Content: A new release means a new tournament!\n\nWe are now accepting entries for teams AND singles (to be paired) for our next 2v2 RA tournament, starting on the 29th of November.\nDouble elimination brackets so all teams will have at least 2 games.\nEntries are currently open, and will close on the 27th.\nGo to bit.ly/openratournament to enter.
-2014-10-29 09-00-00:
-	Title: Halloween release out now!
+2015-01-18 10-17-00:
+	Title: New worm-infested playtest out now!
 	Author: Oliver Brakmann
-	Content: After three months of unrelenting work, resulting in over 760 commits and over 100,000 changed lines by 41 contributors, we are proud to present to you this year's Halloween release!\n\nAll the changes are too numerous to mention in this little space, but you'll surely notice an improved user interface, both in and out of the game, greater stability and lots of gameplay polishing.  Please see our changelog at http://changelog.openra.net for a complete list.\n\nWe hope you enjoy this release, and wish you a happy Halloween!
+	Content: There is a new release on the horizon for which we have released the first playtest today.\n\nThe focus of improvements has been on the Dune 2000 mod, which most importantly now features Sandworms and Carryalls. The biggest change in the Red Alert mod has been the addition of playable country factions, each with its own special abilities. On top of that, the game has received quite a number of performance improvements as well as the usual bug fixes and polishing all over the place.\n\nPlease give this playtest a try and report any and all problems at http://bugs.openra.net.\nThank you, and happy new year!

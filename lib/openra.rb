@@ -4,7 +4,7 @@ DOWNLOAD_GITHUB_BASE_PATH = "https://github.com/OpenRA/OpenRA/"
 ENABLE_GITHUB_API = true
 
 # Github release IDs: obtain from https://api.github.com/repos/OpenRA/OpenRA/releases
-GITHUB_PLAYTEST_ID = ''
+GITHUB_PLAYTEST_ID = '861648'
 GITHUB_RELEASE_ID = '661703'
 
 PAGES = {
@@ -31,14 +31,8 @@ def package_name(platform, tag)
             "OpenRA-#{tag}.zip"
         when "win"
             "OpenRA-#{tag}.exe"
-        when "arch"
-            "openra-#{modtag}-1-any.pkg.tar.gz"
         when "deb"
             "openra_#{modtag}_all.deb"
-        when "rpm"
-            "openra-#{modtag}-1.noarch.rpm"
-        when "source"
-            "#{tag}.tar.gz"
         else
             raise "Why is your platform #{platform}?!?!"
     end
