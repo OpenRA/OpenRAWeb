@@ -15,7 +15,7 @@ script:
  - nanoc compile
 
 after_success:
- - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && ./update-github-pages.sh
+ - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && openssl aes-256-cbc -k $KEY -in $TRAVIS_BUILD_DIR/ssh.enc -d -out $TRAVIS_BUILD_DIR/id_rsa && ./update-github-pages.sh
 
 # Only watch the production branch.
 branches:
