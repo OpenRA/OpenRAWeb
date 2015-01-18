@@ -5,7 +5,6 @@ language: ruby
 
 env:
   global:
-    secure: "g0ObdYxcbfkLzSNmyhYN+74qHsGEg3mwt9e0tZLnmCwISL8qSErjHz+t46Jdyw4hXrQ63kXnCQApIqbtiPywXyKgMzINhXTnzuYbXc4wfrSz900xBw/eCKTICJO+DcwHgwE/RUbQzAB0a/lc6Y49YTr7ez9i2Uv1ecQ/Wo0Mcpo="
 
 install:
  - gem install builder kramdown octokit uglifier
@@ -15,7 +14,7 @@ script:
  - nanoc compile
 
 after_success:
- - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && openssl aes-256-cbc -k $KEY -in $TRAVIS_BUILD_DIR/ssh.enc -d -out $TRAVIS_BUILD_DIR/id_rsa && ./update-github-pages.sh
+# - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && ./update-github-pages.sh
 
 # Only watch the production branch.
 branches:
