@@ -3,7 +3,7 @@ set -e
 
 git config --global user.name "orabot"
 git config --global user.email "orabot@users.noreply.github.com"
-git config --global credential.helper "store --file ~/.openra-credentials"
+git config --global credential.helper "store --file=~/.openra-credentials"
 echo "https://${GH_TOKEN}:@github.com" > ~/.openra-credentials
 
 cd "$HOME"
