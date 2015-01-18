@@ -3,11 +3,14 @@ set -e
 
 git config --global user.name "orabot"
 git config --global user.email "orabot@users.noreply.github.com"
-git config --global credential.helper "store --file ~/.openra-credentials"
-echo "https://${GH_TOKEN}:@github.com" > ~/.openra-credentials
 
 cd "$HOME"
-git clone --branch=master https://${GH_TOKEN}@github.com/OpenRA/openra.github.io openra.net > /dev/null
+
+mkdir -p "$HOME"/.ssh
+[[ -n "$KEY" ]] && echo "decryption key is set"
+openssl aes-256-cbc -k $KEY -in "$TRAVIS_BUILD_DIR"/ssh.enc -d -out "$HOME"/.ssh/id_rsa
+
+git clone --branch=master git@github.com:OpenRA/openra.github.io.git openra.net > /dev/null
 cd openra.net
 cp -rf "$TRAVIS_BUILD_DIR"/output/* .
 
@@ -17,3 +20,4 @@ git commit -m "Deploy OpenRAWeb HTML to GitHub pages
 commit: OpenRA/OpenRAWeb@$TRAVIS_COMMIT"
 
 git push origin master
+shred -u "$HOME"/.ssh/id_rsa
