@@ -243,11 +243,11 @@ td, th, tr {
 }
 
 .gameWaiting {
-  color: #0A0;
+  color: #F80;
 }
 
 .gamePlaying {
-  color: #F80;
+  color: #0A0;
 }
 
 #serverlist .greyout {
