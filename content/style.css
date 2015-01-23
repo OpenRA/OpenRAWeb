@@ -255,11 +255,11 @@ td, th, tr {
 }
 
 #serverlist .greyout .gameWaiting {
-  color: #050;
+  color: #740;
 }
 
 #serverlist .greyout .gamePlaying {
-  color: #740;
+  color: #050;
 }
 
 /* Downloads page */
