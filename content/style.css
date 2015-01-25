@@ -242,11 +242,11 @@ td, th, tr {
   font-size:10px;
 }
 
-.gameWaiting {
+#serverlist .gameWaiting {
   color: #F80;
 }
 
-.gamePlaying {
+#serverlist .gamePlaying {
   color: #0A0;
 }
 
@@ -389,4 +389,12 @@ pre {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   -khtml-border-radius: 10px;
+}
+
+.statsWaiting {
+  color: #d62700;
+}
+
+.statsPlaying {
+  color: #6a1200;
 }
