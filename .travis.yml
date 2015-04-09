@@ -8,7 +8,9 @@ env:
     secure: "Ot/NHtOO6W2pGcWAvXpdz3tKoppcvyZ3XlbPNMr/qOlRhcySMPB5wgkdZJFS3D+E5QoXeB+aOYuAW4dqm5R2bnwCoAnbgMrLItN6nejQ/CR5gejEHLrugoM5hXp0BuY/MUiRMkhj9ERMDIbwUulC2Zpsmx05Wq4q7+ZRBF451rE="
 
 install:
- - gem install builder kramdown octokit uglifier
+ - gem install builder kramdown octokit
+ - gem install execjs --version 2.5.0
+ - gem install uglifier
  - gem install nanoc --version 3.6.9
 
 script:
