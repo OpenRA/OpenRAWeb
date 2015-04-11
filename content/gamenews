@@ -1,4 +1,4 @@
-2015-04-18 12-00-00:
-	Title: Another playtest with lots of fixes!
+2015-04-24 18-00-00:
+	Title: New OpenRA release out now! This is not a drill!
 	Author: Oliver Brakmann
-	Content: Our plan to release the stable version this weekend has unfortunately been thwarted by a few show-stopper bugs. Those have now all been fixed, so a new playtest is available!\n\nIt includes, among others, fixes for the freezes that would sometimes occur mid-game, and also for crashes that happened when joining servers or selecting specific maps in the lobby. Please see the complete changelog at http://changelog.openra.net for all the details.\n\nIf you encounter any bugs or problems, please let us know on our bugtracker at http://bugs.openra.net.\n\nThank you very much!
+	Content: We are thrilled to announce the Spring release of OpenRA!\n\nThis release, almost six months in the making, is one of our biggest yet: it contains countless new features, bug fixes and improvements. Sandworms and Carryalls for Dune 2000 and playable Countries in Red Alert are the most visible enhancements, but there is lots more to discover!\n\nCheck out http://openra.net for the full announcement and http://changelog.openra.net for the complete changelog.\n\nEnjoy and have a lot of fun! Thank you!
