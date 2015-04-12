@@ -250,6 +250,10 @@ td, th, tr {
   color: #0A0;
 }
 
+.gameEmpty {
+  color: #FFF;
+}
+
 #serverlist .greyout {
   color: #999;
 }
@@ -260,6 +264,10 @@ td, th, tr {
 
 #serverlist .greyout .gamePlaying {
   color: #050;
+}
+
+#serverlist .greyout .gameEmpty {
+  color: #999;
 }
 
 /* Downloads page */

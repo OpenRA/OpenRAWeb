@@ -43,9 +43,18 @@
       var activeServers = 0;
       for (var i in masterReply) {
         var game = masterReply[i];
-        // Ignore empty servers or finished games
-        if (game['players'] == 0 || game['state'] == 3)
-          continue;
+
+        if (game['state'] == 3) // server shutting down
+            continue;
+
+        if ((game['state'] == 2) && !$('#status_playing').is(':checked'))
+            continue;
+
+        if ((game['state'] == 1 && game['players'] > 0) && !$('#status_waiting').is(':checked'))
+            continue;
+
+        if ((game['players'] == 0) && !$('#status_empty').is(':checked'))
+            continue;
 
         activePlayers += parseInt(game['players']);
         activeServers++;
@@ -53,7 +62,18 @@
         var stateClass = '';
         switch (game['state']) {
           case '2': state = 'Playing'; stateClass = 'gamePlaying'; break;
-          case '1': state = 'Waiting'; stateClass = 'gameWaiting'; break;
+          case '1':
+           if (game['players'] > 0)
+           {
+             state = 'Waiting';
+             stateClass = 'gameWaiting';
+           }
+           else
+           {
+             state = 'Empty';
+             stateClass = 'gameEmpty';
+           }
+           break;
         }
 
         var modver = game['mods'].split('@');
@@ -92,7 +112,7 @@
       }
 
       if (activeServers == 0)
-        $('#serverlist').append('<tr><td colspan="4">No active games found</td></tr>');
+        $('#serverlist').append('<tr><td colspan="4">No matching games found</td></tr>');
 
       for (var i in hashes)
         initMapInfo(hashes[i]);
@@ -168,7 +188,13 @@
 <h3>Server Browser</h3>
 <noscript><div class="noscript">Please enable JavaScript to view the server list.</div></noscript>
 <div id="servercontainer" style="display: none">
-<p><span id="activePlayers">0</span> players are online in <span id="activeServers">0</span> advertised servers.</p>
+<form>
+  <b>Show:</b>
+  <input type="checkbox" id="status_playing" onchange="updateGameList()" checked="true"><label for="status_playing" class="gamePlaying"> Playing</label>
+  <input type="checkbox" id="status_waiting" onchange="updateGameList()" checked="true"><label for="status_waiting" class="gameWaiting"> Waiting</label>
+  <input type="checkbox" id="status_empty" onchange="updateGameList()"><label for="status_empty" class="gameEmpty"> Empty</label>
+</form>
+<p>Found <span id="activeServers">0</span> servers with <span id="activePlayers">0</span> players matching your selection:</p>
 <table>
   <thead><tr><th>Server</th><th>Status</th><th>Mod</th><th>Map</th></tr></thead>
   <tbody id="serverlist"></tbody>
