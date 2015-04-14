@@ -38,17 +38,26 @@ def package_name(platform, tag)
     end
 end
 
+def generate_url_sha1sum(url)
+  require 'digest'
+  require 'net/http'
+  response = Net::HTTP.get(URI.parse(url))
+  Digest::SHA1.hexdigest response
+end
+
 def generate_download_button(platform, github_id, tag, sizes)
   if github_id == "" then
     "<span>No playtest available<br />(release is newer)</span>"
   elsif platform == "source"
     url = DOWNLOAD_GITHUB_BASE_PATH + "archive/#{tag}.tar.gz"
-    sprintf('<a href="%s" title=\"Download %s">Download %s<br />(source package)</a>', url, tag, tag)
+    sha1sum = generate_url_sha1sum(url)
+    sprintf('<a href="%s" title=\"Download %s">Download %s<br />(source package)<br />SHA1: %s</a>', url, tag, tag, sha1sum)
   else
     package = package_name(platform, tag)
     url = DOWNLOAD_GITHUB_BASE_PATH + "releases/download/" + tag + '/' + package
+    sha1sum = generate_url_sha1sum(url)
     size = sizes.key?(package) ? sprintf("(%.2f MB)", sizes[package] / 1048576.0) : "(size unknown)"
-    sprintf('<a href="%s" title="Download %s">Download %s<br />%s</a>', url, tag, tag, size)
+    sprintf('<a href="%s" title="Download %s">Download %s<br />%s<br />SHA1: %s</a>', url, tag, tag, size, sha1sum)
   end
 end
 
