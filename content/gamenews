@@ -1,4 +1,4 @@
-2015-04-08 12-00-00:
-	Title: Red Alert balancing finished for the next release!
+2015-04-18 12-00-00:
+	Title: Another playtest with lots of fixes!
 	Author: Oliver Brakmann
-	Content: The Red Alert balancing adjustments have been finished and thus warrant another playtest, which will hopefully be the last before our next long-awaited release.\n\nBesides the RA balancing, which represents the bulk of the changes, some minor fixes and polishing are included. For the detailed list, please see our changelog at http://changelog.openra.net as usual.\n\nThis will likely be your last chance to give feedback and contribute to this release, so please report any problems you encounter at http://bugs.openra.net.\n\nThank you, and have fun!
+	Content: Our plan to release the stable version this weekend has unfortunately been thwarted by a few show-stopper bugs. Those have now all been fixed, so a new playtest is available!\n\nIt includes, among others, fixes for the freezes that would sometimes occur mid-game, and also for crashes that happened when joining servers or selecting specific maps in the lobby. Please see the complete changelog at http://changelog.openra.net for all the details.\n\nIf you encounter any bugs or problems, please let us know on our bugtracker at http://bugs.openra.net.\n\nThank you very much!
