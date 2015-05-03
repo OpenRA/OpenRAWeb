@@ -242,12 +242,12 @@ td, th, tr {
   font-size:10px;
 }
 
-.gameWaiting {
-  color: #F80;
+#serverlist .gameWaiting {
+  color: #0A0;
 }
 
-.gamePlaying {
-  color: #0A0;
+#serverlist .gamePlaying {
+  color: #F80;
 }
 
 #serverlist .greyout {
@@ -389,4 +389,12 @@ pre {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   -khtml-border-radius: 10px;
+}
+
+.statsWaiting {
+  color: #d62700;
+}
+
+.statsPlaying {
+  color: #6a1200;
 }
