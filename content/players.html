@@ -1,0 +1,103 @@
+<% if @config[:debug] %>
+  <% for file in @config[:scripts] %>
+    <script src="/scripts/<%= file %>"></script>
+  <% end %>
+<% else %>
+  <script src="/scripts/all.js"></script>
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#servercontainer').show();
+
+    var rrdfile = "http://openra.ipdx.ru/db/openra-players.rrd";
+
+    var graph_options = {
+      tooltip: true, tooltipOpts: { defaultTheme: false, id: "flotTip", content: "%s: %y on %x"},
+      selection: { mode: null },
+      grid: { borderColor: "#fff", tickColor: "#333", hoverable: true, margin: { left: 45, top: 50, right: 0, bottom: 15 } },
+      series: { stack: true }
+    };
+
+    var fivemin_options = $.extend({}, graph_options);
+    fivemin_options.tooltipOpts = $.extend({}, graph_options.tooltipOpts);
+    fivemin_options.tooltipOpts.content = "%s: %y at %x";
+
+    var ds_graph_options = {
+      'playing': { label: 'Playing', color: "#0A0", lines: { show: true, fill: 0.7, lineWidth: 0 } },
+      'waiting': { label: 'Waiting', color: "#F80", lines: { show: true, fill: 0.7, lineWidth: 0 } }
+    };
+
+    var rrdflot_daily = {
+      use_rra: true, rra: 4,
+      graph_only: true, legend: "None",
+      use_checked_DSs: true, checked_DSs: ['playing', 'waiting'],
+      graph_width: "600px", graph_height: "300px"
+    };
+
+    var rrdflot_halfanhour = {
+      use_rra: true, rra: 2,
+      graph_only: true, legend: "None",
+      use_checked_DSs: true, checked_DSs: ['playing', 'waiting'],
+      graph_width: "600px", graph_height: "300px"
+    };
+
+    var rrdflot_fiveminutes = {
+      use_rra: true, rra: 1,
+      graph_only: true, legend: "None",
+      use_checked_DSs: true, checked_DSs: ['playing', 'waiting'],
+      graph_width: "600px", graph_height: "300px"
+    };
+
+    var rrdflot_thirtyseconds = {
+      use_rra: true, rra: 0,
+      graph_only: true, legend: "None",
+      use_checked_DSs: true, checked_DSs: ['playing', 'waiting'],
+      graph_width: "600px", graph_height: "300px"
+    };
+
+    var after_firstplot = function(obj) {
+      secondplot = new rrdFlot("fiveminutes", obj.rrd_data, graph_options, ds_graph_options, rrdflot_fiveminutes);
+      thirdplot = new rrdFlot("halfanhour", obj.rrd_data, graph_options, ds_graph_options, rrdflot_halfanhour);
+      fourthplot = new rrdFlot("daily", obj.rrd_data, graph_options, ds_graph_options, rrdflot_daily);
+
+      setTimeout(function(){
+        draw_plot_axes('#thirtyseconds', 'Hourly activity', 'Time');
+        draw_plot_axes('#fiveminutes', 'Daily activity', 'Date');
+        draw_plot_axes('#halfanhour', 'Weekly activity', 'Date');
+        draw_plot_axes('#daily', 'Yearly activity', 'Date');
+      }, 0);
+    }
+
+    firstplot = new rrdFlotAsync("thirtyseconds", rrdfile, null, fivemin_options, ds_graph_options, rrdflot_thirtyseconds, null, null, after_firstplot);
+  });
+
+  function draw_plot_axes(id, title, xlabel) {
+    var c = $(id).find('.flot-base').get(0);
+    var ctx = c.getContext("2d");
+    var pxratio = window.devicePixelRatio || 1;
+    var cx = (c.width / pxratio + 45) / 2;
+    var cy = c.height / pxratio / 2;
+
+    ctx.font = "bold 20px sans-serif";
+    ctx.fillStyle = "white";
+    ctx.textAlign = 'center';
+    ctx.fillText(title, cx, 35);
+
+    ctx.font = "bold 14px sans-serif";
+    ctx.fillText(xlabel, cx, c.height);
+
+    ctx.rotate(-Math.PI/2);
+    ctx.fillText("Players", -cy, 35);
+  }
+</script>
+
+<h3>Player Statistics</h3>
+
+<noscript><div class="noscript">Please enable JavaScript to view the player statistics.</div></noscript>
+<div id="servercontainer" style="display: none">
+<div id="thirtyseconds"><center><h4>Loading...</h4></center></div>
+<div id="fiveminutes"></div>
+<div id="halfanhour"></div>
+<div id="daily"></div>
+</div>

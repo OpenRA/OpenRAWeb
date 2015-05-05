@@ -373,3 +373,20 @@ pre {
 .communityblock p {
   margin-left:80px;
 }
+
+.tickLabel, .flot-x-axis { color: #fff; }
+
+#flotTip {
+  white-space: nowrap;
+  padding: 6px 8px 3px 8px;
+  font-family: 12px/1.4 Helvetica,arial,freesans,clean,sans-serif; 
+  display:inline-block;
+  border: solid 3px #650b03;
+  background-color: #272d2c;
+  text-decoration:none;
+  text-align:center;
+  border-radius: 10px; 
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+}
