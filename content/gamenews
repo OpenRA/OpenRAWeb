@@ -1,4 +1,4 @@
-2015-04-24 18-00-00:
-	Title: New OpenRA release out now! This is not a drill!
-	Author: Oliver Brakmann
-	Content: We are thrilled to announce the Spring release of OpenRA!\n\nThis release, almost six months in the making, is one of our biggest yet: it contains countless new features, bug fixes and improvements. Sandworms and Carryalls for Dune 2000 and playable Countries in Red Alert are the most visible enhancements, but there is lots more to discover!\n\nCheck out http://openra.net for the full announcement and http://changelog.openra.net for the complete changelog.\n\nEnjoy and have a lot of fun! Thank you!
+2015-05-24 11-25-00:
+	Title: Playtest 20150524
+	Author: Matthias Mailänder
+	Content: It has been a month and lots of new stuff has been added.\n\nGo to Extras - Map Editor to give the new in-game map editor a try. Dune 2000 got support for building upgrades and several missions have been added to the Tiberian Dawn mod. Also OpenRA integrates far better into the system with double-click start replays and openra:// server join URLs.\n\nCheck out http://www.openra.net for the full announcement and http://changelog.openra.net for the complete changelog.\n\nEnjoy and have a lot of fun! Thank you!
