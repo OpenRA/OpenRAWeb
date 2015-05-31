@@ -1,4 +1,4 @@
-2015-05-24 11-25-00:
-	Title: Playtest 20150524
-	Author: Matthias Mailänder
-	Content: It has been a month and lots of new stuff has been added.\n\nGo to Extras - Map Editor to give the new in-game map editor a try. Dune 2000 got support for building upgrades and several missions have been added to the Tiberian Dawn mod. Also OpenRA integrates far better into the system with double-click start replays and openra:// server join URLs.\n\nCheck out http://www.openra.net for the full announcement and http://changelog.openra.net for the complete changelog.\n\nEnjoy and have a lot of fun! Thank you!
+2015-05-31 12-00-00:
+	Title: Another week, another playtest!
+	Author: Oliver Brakmann
+	Content: We have received a small number of issues after last week's playtest release. These issues have been addressed and so we are releasing a new playtest for you to check out!\n\nThe fixes concern mostly single-player missions, but also included a rare crash that could occur in the Dune 2000 mod, as well as the noticeable rendering glitches with range circles and nuke explosions.\n\nHave a look at http://changelog.openra.net for the full changelog. Don't hesitate to report all problems and issues you encounter at http://bugs.openra.net! Thanks, and enjoy!
