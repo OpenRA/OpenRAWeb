@@ -3,6 +3,7 @@ http://openra.dxnet.ru/ra-music.zip
 http://srvdonate.ut.mephi.ru/openra/ra-music.zip
 http://openra-mirror.ihptru.net/ra-music.zip
 http://openra.baxxster.no/openra/ra-music.zip
+http://openra.us.baxxster.no/openra/ra-music.zip
 http://repo.anthonos.org/openra/ra-music.zip
 http://ftp.nluug.nl/os/Linux/distr/anthon/openra/ra-music.zip
 http://ftp.tsukuba.wide.ad.jp/Linux/anthon/openra/ra-music.zip
