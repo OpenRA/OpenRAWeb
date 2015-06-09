@@ -3,6 +3,7 @@ http://openra.dxnet.ru/cnc-packages.zip
 http://srvdonate.ut.mephi.ru/openra/cnc-packages.zip
 http://openra-mirror.ihptru.net/cnc-packages.zip
 http://openra.baxxster.no/openra/cnc-packages.zip
+http://openra.us.baxxster.no/openra/cnc-packages.zip
 http://repo.anthonos.org/openra/cnc-packages.zip
 http://ftp.nluug.nl/os/Linux/distr/anthon/openra/cnc-packages.zip
 http://ftp.tsukuba.wide.ad.jp/Linux/anthon/openra/cnc-packages.zip
