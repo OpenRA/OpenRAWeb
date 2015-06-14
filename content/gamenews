@@ -1,4 +1,4 @@
-2015-05-31 12-00-00:
-	Title: Another week, another playtest!
+2015-06-14 12-00-00:
+	Title: A new stable release is available!
 	Author: Oliver Brakmann
-	Content: We have received a small number of issues after last week's playtest release. These issues have been addressed and so we are releasing a new playtest for you to check out!\n\nThe fixes concern mostly single-player missions, but also included a rare crash that could occur in the Dune 2000 mod, as well as the noticeable rendering glitches with range circles and nuke explosions.\n\nHave a look at http://changelog.openra.net for the full changelog. Don't hesitate to report all problems and issues you encounter at http://bugs.openra.net! Thanks, and enjoy!
+	Content: The newest incarnation of OpenRA is out now!\n\nThe standout feature of this release is no doubt the new in-game editor, which for the first time in OpenRA history offers fully cross-platform map editing abilities for all our supported mods. Other changes are all over the place: map chooser, new missions, new support power hotkeys, you name it!\n\nCheck out the full release announcement on http://openra.net and the changelog at http://changelog.openra.net to find out more about these and other shiny new things!\n\nDownload now and enjoy!
