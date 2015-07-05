@@ -11,3 +11,4 @@ http://cdn.mirror.anthonos.org/openra/cnc-music.zip
 http://mirrors.ustc.edu.cn/anthon/openra/cnc-music.zip
 http://mirror.oss.maxcdn.com/anthonos/openra/cnc-music.zip
 http://81.169.246.181/cnc-music.zip
+http://zoners.eu/openra/cnc-music.zip
