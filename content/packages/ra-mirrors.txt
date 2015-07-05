@@ -11,3 +11,4 @@ http://cdn.mirror.anthonos.org/openra/ra-packages.zip
 http://mirrors.ustc.edu.cn/anthon/openra/ra-packages.zip
 http://mirror.oss.maxcdn.com/anthonos/openra/ra-packages.zip
 http://81.169.246.181/ra-packages.zip
+http://zoners.eu/openra/ra-packages.zip
