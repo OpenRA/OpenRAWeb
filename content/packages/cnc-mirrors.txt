@@ -11,3 +11,4 @@ http://cdn.mirror.anthonos.org/openra/cnc-packages.zip
 http://mirrors.ustc.edu.cn/anthon/openra/cnc-packages.zip
 http://mirror.oss.maxcdn.com/anthonos/openra/cnc-packages.zip
 http://81.169.246.181/cnc-packages.zip
+http://zoners.eu/openra/cnc-packages.zip
