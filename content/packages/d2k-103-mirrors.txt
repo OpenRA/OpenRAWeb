@@ -11,3 +11,4 @@ http://cdn.mirror.anthonos.org/openra/d2k-103-packages.zip
 http://mirrors.ustc.edu.cn/anthon/openra/d2k-103-packages.zip
 http://mirror.oss.maxcdn.com/anthonos/openra/d2k-103-packages.zip
 http://81.169.246.181/d2k-103-packages.zip
+http://zoners.eu/openra/d2k-103-packages.zip
