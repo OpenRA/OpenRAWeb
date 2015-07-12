@@ -141,9 +141,10 @@ $(document).ready(function(){
 <div id="gentoo" class="tab">
   <hr />
   <h3>Install OpenRA for Gentoo</h3>
-  <p>Stable releases are available in the <a href="http://packages.gentoo.org/package/games-strategy/openra">official Gentoo repositories</a>, and can be installed using <span style="font-family: monospace;">emerge</span>:<pre>$ emerge -av openra</pre></p>
-  <p>Playtests are available via the &ldquo;dr&rdquo; overlay:</p>
-  <pre>$ layman -S -a dr -o http://github.com/cerebrum/dr/raw/master/repo.xml
+  <p>Unofficial packages for both releases and playtests are available via the &ldquo;dr&rdquo; overlay:</p>
+  <pre>$ emerge -av layman
+$ layman -a -S dotnet -o https://github.com/gentoo/dotnet/raw/master/Documentation/layman.xml
+$ layman -a -S dr -o http://github.com/cerebrum/dr/raw/master/repo.xml
 $ printf '%s\n' "games-strategy/openra ~amd64" >> /etc/portage/package.keywords
 $ emerge games-strategy/openra</pre>
   <p>OpenRA is also available on <a href="http://www.desura.com/games/openra">Desura</a> and <a href="https://lutris.net/games/openra/">Lutris</a>.</p>
