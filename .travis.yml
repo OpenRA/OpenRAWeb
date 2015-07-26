@@ -3,6 +3,9 @@
 
 language: ruby
 
+# http://docs.travis-ci.com/user/migrating-from-legacy
+sudo: false
+
 env:
   global:
     secure: "Ot/NHtOO6W2pGcWAvXpdz3tKoppcvyZ3XlbPNMr/qOlRhcySMPB5wgkdZJFS3D+E5QoXeB+aOYuAW4dqm5R2bnwCoAnbgMrLItN6nejQ/CR5gejEHLrugoM5hXp0BuY/MUiRMkhj9ERMDIbwUulC2Zpsmx05Wq4q7+ZRBF451rE="
