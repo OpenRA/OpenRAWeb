@@ -5,6 +5,14 @@ include Nanoc::Helpers::Rendering
 include Nanoc::Helpers::LinkTo
 include Nanoc::Helpers::XMLSitemap
 
+if ENV['TRAVIS'] == 'true' then
+    require 'octokit'
+    Octokit.configure do |c|
+        c.login = 'orabot'
+        c.password = ENV['ORABOT_GITHUB_PASSWORD']
+    end
+end
+
 def post_snippet(post)
     # For 'real' snippets, html tags should be stripped before text processing. 
     # But really, it's a static site - we don't need snippets :)
