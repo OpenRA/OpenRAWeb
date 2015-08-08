@@ -3,8 +3,7 @@ PLATFORMS = {
     "win" => "Windows",
     "osx" => "OS X",
     "deb" => "Debian / Ubuntu",
-    "opensuse" => "openSUSE",
-    "fedora" => "Fedora",
+    "rpm" => "Fedora / openSUSE",
     "arch" => "Arch Linux",
     "gentoo" => "Gentoo",
     "freebsd" => "FreeBSD",
@@ -51,8 +50,8 @@ $(document).ready(function(){
       var ua = navigator.userAgent;
       if (ua.match('Mac OS X')) activateTab($('a[href=#osx]'));
       else if (ua.match(/Ubuntu|Debian/)) activateTab($('a[href=#deb]'));
-      else if (ua.match(/Red Hat|Fedora/)) activateTab($('a[href=#fedora]'));
-      else if (ua.match(/SUSE/)) activateTab($('a[href=#opensuse]'));
+      else if (ua.match(/Red Hat|Fedora/)) activateTab($('a[href=#rpm]'));
+      else if (ua.match(/SUSE/)) activateTab($('a[href=#rpm]'));
       else if (ua.match('Arch Linux')) activateTab($('a[href=#arch]'));
       else if (ua.match('Gentoo')) activateTab($('a[href=#gentoo]'));
       else if (ua.match('FreeBSD')) activateTab($('a[href=#freebsd]'));
@@ -115,18 +114,10 @@ $(document).ready(function(){
   <p>OpenRA is also available on <a href="http://www.playdeb.net/software/OpenRA">PlayDeb</a> and <a href="http://www.desura.com/games/openra">Desura</a>.</p>
   <p class="downloadthirdparty">We do not directly maintain these external package sources, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
 </div>
-<div id="fedora" class="tab">
+<div id="rpm" class="tab">
   <hr />
-  <h3>Install OpenRA for Fedora</h3>
+  <h3>Install OpenRA for Fedora / openSUSE</h3>
   <p>Stable releases and playtests are available via our <a href="http://software.opensuse.org/download.html?project=games:openra&amp;package=openra">openSUSE Build Service repository</a>.</p>
-  <p>OpenRA is also available on <a href="http://www.desura.com/games/openra">Desura</a>.</p>
-  <p class="downloadthirdparty">We do not directly maintain these external package sources, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
-</div>
-<div id="opensuse" class="tab">
-  <hr />
-  <h3>Install OpenRA for openSUSE</h3>
-  <p>Stable releases are available in the <a href="http://software.opensuse.org/download.html?project=games&amp;package=openra">openSUSE games repository</a>.</p>
-  <p>Playtests are available via our <a href="http://software.opensuse.org/download.html?project=games:openra&amp;package=openra">openSUSE Build Service repository</a>.</p>
   <p>OpenRA is also available on <a href="http://www.desura.com/games/openra">Desura</a>.</p>
   <p class="downloadthirdparty">We do not directly maintain these external package sources, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
 </div>
