@@ -1,4 +1,4 @@
-2015-08-08 12-00-00:
-	Title: New playtest and feature freeze!
-	Author: Oliver Brakmann
-	Content: We are happy to announce that another playtest on the way to our next release is now available!\n\nPerformance improvements to the AI and harvester code are the standout changes. Also spies have been made more useful, UI polished, and bugs fixed of course!\n\nCheck out the full release announcement on http://openra.net and the changelog at http://changelog.openra.net to get the full picture!\n\nAs always with our playtests, we invite you to report any issues you encounter at http://bugs.openra.net to ensure the final release is as bug-free as possible. Thanks, and enjoy!
+2015-08-30 03-00-00:
+	Title: Playtest 20150830
+	Author: Pavel Penev
+	Content: We are happy to announce that another playtest on the way to our next release is now available!\n\nThis one focused on fixing bugs and polishing the existing features.\n\nHave a look at http://openra.net for details!\n\nAs always with our playtests, we invite you to report any issues you encounter at http://bugs.openra.net to ensure the final release is as bug-free as possible. Thanks, and enjoy!
