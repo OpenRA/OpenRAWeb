@@ -1,4 +1,4 @@
-2015-10-31 20-00-00:
-	Title: Halloween Playtest now available!
+2015-11-14 20-00-00:
+	Title: December Release RC1 out now!
 	Author: Oliver Brakmann
-	Content: Today we have started the countdown to our next stable release with a new OpenRA Halloween playtest!\n\nGlobal lobby chat, game speed settings, balance changes, new missions, improved performance: we have all sorts of tricks and treats in store for you today!\n\nHead over to our website at http://openra.net to read all about the good things coming your way, or read the detailed changelog at http://changelog.openra.net.\n\nWe rely on your feedback to make the next release as awesome as possible, so please give this playtest a try and report any and all problems you encounter at http://bugs.openra.net. Thanks, and have fun!
+	Content: We have received great feedback on our Halloween playtest and have been hard at work to resolve the issues that have been brought to our attention.\n\nThis release candidate includes more Dune 2000 polish and Red Alert balance changes, as well as copy & paste support in the map editor in addition to the usual round of bug fixes.\n\nPlease give this playtest a try. We're especially interested in feedback on balance. Check out the full releae announcement at http://openra.net and report any problems you encounter at https://bugs.openra.net. Thanks, and have fun!
