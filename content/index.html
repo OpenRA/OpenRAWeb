@@ -1,10 +1,12 @@
 <div id="mainleft">
   <div id="screenshot">
 <%
+  first = true
   Dir.glob('content/images/screenshots/*.png') do |item|
     next if item == '.' or item == '..' %>
-      <img width="250" height="150" src="images/screenshots/<%= File.basename(item) %>" alt="" />
+      <img width="250" height="150" <%= (first ? "class=\"active\"" : "style=\"opacity: 0\"") %> src="images/screenshots/<%= File.basename(item) %>" alt="" />
 <%
+    first = false
   end
 %>
   </div>
