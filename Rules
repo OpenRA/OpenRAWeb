@@ -40,14 +40,6 @@ compile '/news/*/' do
     layout 'default'
 end
 
-compile '/includes/header*' do
-    layout 'header'
-end
-
-compile '/includes/footer*' do
-    layout 'footer'
-end
-
 # .htaccess does get filtered with erb, but without layout.
 compile %r{^/(htaccess)/$} do
   filter :erb
