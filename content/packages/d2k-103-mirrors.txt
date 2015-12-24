@@ -6,3 +6,4 @@ http://openra.us.baxxster.no/openra/d2k-103-packages.zip
 http://81.169.246.181/d2k-103-packages.zip
 http://zoners.eu/openra/d2k-103-packages.zip
 http://178.63.32.174/d2k-103-packages.zip
+http://leamsi.xyz/openra/d2k-103-packages.zip
