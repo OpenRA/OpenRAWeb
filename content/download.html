@@ -111,21 +111,19 @@ $(document).ready(function(){
     <li><%= generate_download_button("deb", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
     <li><%= generate_download_button("deb", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
   </ul>
-  <p>OpenRA is also available on <a href="http://www.playdeb.net/software/OpenRA">PlayDeb</a> and <a href="http://www.desura.com/games/openra">Desura</a>.</p>
+  <p>OpenRA is also available on <a href="http://www.playdeb.net/software/OpenRA">PlayDeb</a>.</p>
   <p class="downloadthirdparty">We do not directly maintain these external package sources, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
 </div>
 <div id="rpm" class="tab">
   <hr />
   <h3>Install OpenRA for Fedora / openSUSE</h3>
   <p>Stable releases and playtests are available via our <a href="http://software.opensuse.org/download.html?project=games:openra&amp;package=openra">openSUSE Build Service repository</a>.</p>
-  <p>OpenRA is also available on <a href="http://www.desura.com/games/openra">Desura</a>.</p>
   <p class="downloadthirdparty">We do not directly maintain these external package sources, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
 </div>
 <div id="arch" class="tab">
   <hr />
   <h3>Install OpenRA for Arch Linux</h3>
   <p>Stable releases are available in the <a href="https://www.archlinux.org/packages/community/any/openra/">official Arch repository</a>, and can be installed using <span style="font-family: monospace;">pacman</span>:<pre>$ pacman -S openra </pre></p>
-  <p>OpenRA is also available on <a href="http://www.desura.com/games/openra">Desura</a>.</p>
   <p class="downloadthirdparty">We do not directly maintain these external package sources, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
 </div>
 <div id="gentoo" class="tab">
@@ -137,7 +135,6 @@ $ layman -a -S dotnet
 $ layman -a -S dr -o http://github.com/cerebrum/dr/raw/master/repo.xml
 $ printf '%s\n' "games-strategy/openra ~amd64" >> /etc/portage/package.keywords
 $ emerge games-strategy/openra</pre>
-  <p>OpenRA is also available on <a href="http://www.desura.com/games/openra">Desura</a>.</p>
   <p class="downloadthirdparty">We do not directly maintain these external package sources, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
 </div>
 <div id="freebsd" class="tab">
