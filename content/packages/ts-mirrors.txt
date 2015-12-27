@@ -6,3 +6,4 @@ http://openra.us.baxxster.no/openra/ts-packages.zip
 http://81.169.246.181/ts-packages.zip
 http://zoners.eu/openra/ts-packages.zip
 http://178.63.32.174/ts-packages.zip
+http://leamsi.xyz/openra/ts-packages.zip
