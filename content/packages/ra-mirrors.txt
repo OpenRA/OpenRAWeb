@@ -5,5 +5,5 @@ http://openra.baxxster.no/openra/ra-packages.zip
 http://openra.us.baxxster.no/openra/ra-packages.zip
 http://81.169.246.181/ra-packages.zip
 http://zoners.eu/openra/ra-packages.zip
-http://178.63.32.174/ra-music.zip
+http://178.63.32.174/ra-packages.zip
 http://leamsi.xyz/openra/ra-packages.zip
