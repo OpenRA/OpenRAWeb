@@ -10,4 +10,4 @@ The team that comes in 1st place will receive $160.00 USD. Second place will win
 
 For official rules and to register your team [Click Here](http://www.sleipnirstuff.com/forum/viewtopic.php?f=82&t=19414)  If you do not have a team mate you can also [Click Here](http://www.sleipnirstuff.com/forum/viewtopic.php?f=82&t=19415) to find another unteamed player.
 For those who would rather watch; there will be several casters who will be covering the games. They will be listed when the tournament arrives.
-All of our hats go off to Ripley for organizing this tournament!
+All of our hats go off to Ripley for organizing this tournament!  Soviet Hammer and Sickle logo created by Aro the original can be found [Here](http://www.moddb.com/members/aro/images/soviet-hammer-and-sickle-wallpaper#imagebox)
