@@ -1,4 +1,4 @@
-[March 2016 OpenRA Tournament Now With Cash Prizes!!!](..\images\news\march-2016-tournament.jpg)  If you are interested in some heated tag-team battles with the chance to win some cold hard cash, in OpenRA, [Register Your Team Here](http://www.sleipnirstuff.com/forum/viewtopic.php?f=82&t=19414)!
+[March 2016 OpenRA Tournament Now With Cash Prizes!!!](/images/news/march-2016-tournament.jpg)  If you are interested in some heated tag-team battles with the chance to win some cold hard cash, in OpenRA, [Register Your Team Here](http://www.sleipnirstuff.com/forum/viewtopic.php?f=82&t=19414)!
 
 It Will Run From: March 5th-6th and from March 11th-12th 2016!
 Each bracket will be determined randomly and game progression will be as follows: 
