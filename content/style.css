@@ -398,3 +398,42 @@ pre {
   -webkit-border-radius: 10px;
   -khtml-border-radius: 10px;
 }
+
+.about-right { float: right }
+.about-left { float: left }
+.about-highlight { color: #d92c2c }
+
+.about-modblock {
+	margin: 20px 0;
+	height: 180px;
+}
+
+.about-modimage {
+	width: 312px;
+	padding: 3px;
+	background: #650b03;
+	border-radius: 10px;
+	line-height: 0;
+}
+
+.about-modimage img {
+	border-radius: 8px;
+	background: #272d2c;
+}
+
+.about-modtext { width: 360px }
+.about-modtext h3 { margin: 0 }
+.about-modtext h3 img {
+	vertical-align: middle;
+	margin: 0 10px 5px 0;
+}
+
+.about-modtext p {
+	margin: 5px 0;
+}
+
+.about-todo-divider {
+	width: 100%;
+	height: 6px;
+	background: url('/images/about/stripe.svg') repeat-x;
+}
