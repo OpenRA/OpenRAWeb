@@ -21,6 +21,7 @@ SOCIAL = {
   "gplus" => { name: "Google+", url: "https://www.google.com/+OpenraNet" },
   "twitter" => { name: "Twitter", url: "http://twitter.com/openRA" },
   "reddit" => { name: "Reddit", url: "http://www.reddit.com/r/openra" },
+  "steam" => { name: "Steam", url: "http://steamcommunity.com/groups/openra/" },
   "moddb" => { name: "ModDB", url: "http://www.moddb.com/games/openra" },
   "gamereplays" => { name: "GameReplays", url: "http://www.gamereplays.org/openra/" },
   "github" => { name: "Github", url: "https://github.com/OpenRA/OpenRA"}
