@@ -20,8 +20,9 @@ SOCIAL = {
   "facebook" => { name: "Facebook", url: "https://www.facebook.com/openra" },
   "gplus" => { name: "Google+", url: "https://www.google.com/+OpenraNet" },
   "twitter" => { name: "Twitter", url: "http://twitter.com/openRA" },
-  "moddb" => { name: "ModDB", url: "http://www.moddb.com/games/openra" },
   "reddit" => { name: "Reddit", url: "http://www.reddit.com/r/openra" },
+  "moddb" => { name: "ModDB", url: "http://www.moddb.com/games/openra" },
+  "gamereplays" => { name: "GameReplays", url: "http://www.gamereplays.org/openra/" },
   "github" => { name: "Github", url: "https://github.com/OpenRA/OpenRA"}
 }
 
