@@ -1,33 +1,36 @@
-<div id="mainleft">
+<div id="toppanel">
+  <div id="screenshot-banner"><img src="images/banner.svg"></div>
   <div id="screenshot">
 <%
   first = true
   Dir.glob('content/images/screenshots/*.png') do |item|
     next if item == '.' or item == '..' %>
-      <img width="250" height="150" <%= (first ? "class=\"active\"" : "style=\"opacity: 0\"") %> src="images/screenshots/<%= File.basename(item) %>" alt="" />
+      <img width="500" height="275" <%= (first ? "class=\"active\"" : "style=\"opacity: 0\"") %> src="images/screenshots/<%= File.basename(item) %>" alt="" />
 <%
     first = false
   end
 %>
   </div>
-  <div id="so-links">
-    Find us on your favorite social network:
-    <ul>
+  <div id="rightpanel">
+    <p>Classic strategy games, rebuilt for the modern era.</p>
+	<p>Open Source. Free. For all modern operating systems.</p>
+    <ul class="mainlinks">
+      <li><a id="download" href="/download/" alt="Install now!" title="Install now!">Install now!</a></li>
+    </ul>
+    <div id="so-links">
+	  <p>Find us on social media:</p>
+      <ul>
       <% SOCIAL.each do |s, data| %>
         <li><a href="<%= data[:url] %>"<%= ' rel="publisher"' if s == "gplus" %>><img src="/images/social/<%= s %>.svg" alt="<%= data[:name] %>" title="<%= data[:name] %>" /></a></li>
       <% end %>
-    </ul>
+      </ul>
+    </div>
   </div>
 </div>
-<div>
-  <h2>Welcome Back, Commander</h2>
-  <p>OpenRA is a Libre/Free Real Time Strategy project that recreates the classic Command&nbsp;&amp;&nbsp;Conquer titles.</p>
-  <p>We include recreations of C&amp;C&nbsp;(Tiberian&nbsp;Dawn), C&amp;C:&nbsp;Red&nbsp;Alert, and Dune&nbsp;2000. These are not intended to be perfect copies, but instead combine the classic gameplay of the originals with modern improvements such as unit veterancy and the fog of war.</p>
-  <p>OpenRA's primary focus is cross-platform multiplayer between Windows, OS&nbsp;X, and Linux; however, we include a number of single-player missions, and also support skirmish games against AI bots.</p>
-</div>
 
-<h2 style="clear:both">Latest News</h2>
+<br style="clear:both" />
 <hr />
+<h2 id="newsbanner">Latest News</h2>
 <h3 class="newsTitle"><%= sorted_articles.first[:title] %></h3>
 <%= sorted_articles.first.compiled_content(:snapshot => :body) %>
 
@@ -49,5 +52,5 @@
           active.removeClass('active last-active');
     });
   }
-  $(function() { setInterval("slideSwitch()", 3500); });
+  $(function() { setInterval("slideSwitch()", 4000); });
 </script>

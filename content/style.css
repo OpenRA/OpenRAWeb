@@ -143,11 +143,23 @@ p.download, .newsDetails {
   text-decoration: underline;
 }
 
-#mainleft {
-  margin-right: 35px;
-  float: left;
-  width:254px;
-  height:280px;
+#toppanel {
+  position: relative;
+  background-color: #272d2c;
+  height: 275px;
+  width: 100%;
+  border: solid 2px #650b03;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+}
+
+#screenshot-banner {
+	z-index: 11;
+    position: absolute;
+    top: 15px;
+	left: 15px;
 }
 
 #screenshot {
@@ -159,8 +171,12 @@ p.download, .newsDetails {
   top:0;
   z-index:8;
   padding: 0;
-  margin: 10px 0;
-  border: solid 2px #650b03;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 #screenshot IMG.active {
@@ -171,34 +187,83 @@ p.download, .newsDetails {
   z-index:9;
 }
 
-#so-links {
-  margin-top:180px;
-  text-align: center;
-  margin-bottom:0;
+#rightpanel {
+	text-align: center;
+	width: 200px;
+	float:right;
+	height: 100%;
 }
 
+#rightpanel p { margin: 10px; }
+
+#so-links {
+  text-align: center;
+}
+
+#so-links p { margin: 3px; }
 #so-links ul {
-  border-radius: 4px;
-  height:42px;
-  background-color: #272d2c;
   list-style-type:none;
   padding:0;
-  margin:5px;
+  margin: 0;
 }
 
 #so-links li {
   display:inline;
   padding:0;
-  margin:2px;
+  margin:1px;
 }
 
 #so-links li a img {
-  padding-top:5px;
   border-style:none;
 }
 
 #so-links li a:hover {
   opacity: 0.5;
+}
+
+.mainlinks {
+  list-style-type:none;
+  padding:0;
+  margin:10px 0;
+  text-align:center;
+}
+
+.mainlinks a
+{
+    display: inline-block;
+    width: 140px;
+	height: 45px;
+	margin: 8px 0;
+	line-height: 50px;
+	color: transparent;
+    background-color: #800000;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px; 
+}
+
+.mainlinks a:hover { background-color: #bd0000 }
+
+.mainlinks #about { background-image: url("/images/about-button.svg") }
+.no-svg .mainlinks #about { background-image: url("/images/about-button-fallback.png") }
+
+.mainlinks #download { background-image: url("/images/install-button.svg") }
+.no-svg .mainlinks #download { background-image: url("/images/install-button-fallback.png") }
+
+#newsbanner {
+    float:right;
+    font-size: 1em;
+	padding: 4px 10px 2px 10px;
+	margin-top:10px;
+    display:inline-block;
+    border: solid 3px #272d2c;
+    background-color: #272d2c;
+    text-decoration:none;
+    border-radius: 10px; 
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
 }
 
 #ghbanner img {
@@ -349,7 +414,6 @@ td, th, tr {
   color: #999;
 }
 
-
 .no-svg .downloadlinks a {
   background-image: url("/images/download-fallback.png");
 }
@@ -357,7 +421,6 @@ td, th, tr {
 .no-svg .downloadlinks span {
   background-image: url("/images/nodownload-fallback.png");
 }
-
 
 .downloadlinks a:hover {
   background-color: #888;
@@ -412,11 +475,17 @@ pre {
 	padding: 3px;
 	background: #650b03;
 	border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
 	line-height: 0;
 }
 
 .about-modimage img {
 	border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
 	background: #272d2c;
 }
 
