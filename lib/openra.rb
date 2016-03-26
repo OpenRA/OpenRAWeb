@@ -10,6 +10,7 @@ GITHUB_RELEASE_ID = '2338200'
 PAGES = {
 	"/" => "Home",
 	"/news/" => "News",
+	"/about/" => "About",
 	"/download/" => "Download",
 	"/games/" => "Games",
 	"/community/" => "Community"
