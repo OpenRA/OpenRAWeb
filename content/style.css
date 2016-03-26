@@ -225,13 +225,12 @@ div.noscript {
 
 /* Games page */
 table {
-  margin:0 auto;
-  width:90%;
+  margin: 0 auto;
+  width: 700px;
 }
 
 td, th, tr {
   padding: 5px;
-  width:25%;
 }
 
 #serverlist {
