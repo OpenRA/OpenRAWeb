@@ -3,15 +3,11 @@ OpenRA Web
 
 Uses the [nanoc](http://nanoc.ws/) static website generator. [![Build Status](https://travis-ci.org/OpenRA/OpenRAWeb.png?branch=master)](https://travis-ci.org/OpenRA/OpenRAWeb)
 
-Deployment
+Development
 ----------
-* `nanoc compile` to update the HTML.
-* `nanoc view` to preview the changes at [localhost:3000](http://localhost:3000).
-* `nanoc deploy --target res0l` to upload to [open-ra.org](http://openra.res0l.net) (requires SSH access and rsync).
-* Push to [openra.github.io](https://github.com/OpenRA/openra.github.io.git) to update [openra.net](http://openra.net) (requires git)
+Use `nanoc compile` and `nanoc view` to generate and host a static preview at [localhost:3000](http://localhost:3000), or `nanoc autocompile` to automatically recompile as required.  Changes will be automatically deployed to [openra.github.io](https://github.com/OpenRA/openra.github.io.git) when a pull request is merged.
 
 Stats
 -----
-* Analytics: http://www.seethestats.com/site/openra.net/STS5AYU4FS9 (current)
-* Visitors: http://open-ra.org/statistics/ (old)
+* Analytics: http://www.seethestats.com/site/openra.net/STS5AYU4FS9
 * Uptime: http://stats.pingdom.com/syygqlg6525r/788293
