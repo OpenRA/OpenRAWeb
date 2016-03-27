@@ -34,7 +34,7 @@
   function updateGameList() {
     $.ajax({
       type: "GET",
-      url:  "http://master.openra.net/list_json.php"
+      url:  "http://master.openra.net/games_json.php"
     }).done(function(masterMessage) {
       $('#serverlist').empty();
       var masterReply = jQuery.parseJSON(masterMessage);
@@ -88,11 +88,12 @@
           case 'cnc': mod = "Tiberian Dawn"; break;
           case 'd2k': mod = "Dune 2000"; break;
           case 'ts': mod = "Tiberian Sun"; break;
+          case 'ra2': mod = "Red Alert 2"; break;
 
-          // Third party mods
           case 'fgtn': mod = "The Forgotten Chapter"; break;
           case 'to': mod = "RA: Tiberium Origins"; break;
           case 'tdx': mod = "Tiberian Dawn Xtended"; break;
+          case 'sp': mod = "Shattered Paradise"; break;
         }
 
         rowClass = '';
@@ -100,11 +101,19 @@
           rowClass = 'greyout';
 
         var row = $('<tr class="'+rowClass+'">');
+        row.append('<td>'+game['name'].replace(/\\\'/g, "'")+'</span></td>');
+
         if (game['state'] == '1')
-          row.append('<td>'+game['name'].replace(/\\\'/g, "'")+'<br /><span class="gameSubline"><a href="openra://'+game['address']+'">'+game['address']+'</a></span></td>');
+          row.append('<td>'+game['location']+'<br /><span class="gameSubline"><a href="openra://'+game['address']+'">'+game['address']+'</a></span></td>');
         else
-          row.append('<td>'+game['name'].replace(/\\\'/g, "'")+'<br /><span class="gameSubline">'+game['address']+'</span></td>');
-        row.append('<td><span class="'+stateClass+'">'+state+'</span><br /><span class="gameSubline">'+game['players']+(game['players'] == 1 ? ' player' : ' players')+'</span></td>');
+          row.append('<td>'+game['location']+'<br /><span class="gameSubline">'+game['address']+'</span></td>');
+		
+		var players = game['players']+' / '+game['maxplayers'];
+		if (game['spectators'] > 0)
+			players += ' + ' + game['spectators'];
+		
+		players += (game['players'] + game['spectators'] == 1 ? ' player' : ' players')
+        row.append('<td><span class="'+stateClass+'">'+state+'</span><br /><span class="gameSubline">'+players+'</span></td>');
         row.append('<td>'+mod+'<br /><span class="gameSubline">'+tag+'</span></td>');
         row.append('<td class="map-'+game['map']+'">Loading...</td></tr>');
         $('#serverlist').append(row);
@@ -198,7 +207,7 @@
 </form>
 <p>Found <span id="activeServers">0</span> servers with <span id="activePlayers">0</span> players matching your selection:</p>
 <table>
-  <thead><tr><th>Server</th><th>Status</th><th>Mod</th><th>Map</th></tr></thead>
+  <thead><tr><th width="210">Server</th><th width="100">Location</th><th width="90">Status</th><th width="110">Mod</th><th width="190">Map</th></tr></thead>
   <tbody id="serverlist"></tbody>
 </table>
 <br/>
