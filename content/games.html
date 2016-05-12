@@ -107,11 +107,11 @@
           row.append('<td>'+game['location']+'<br /><span class="gameSubline"><a href="openra://'+game['address']+'">'+game['address']+'</a></span></td>');
         else
           row.append('<td>'+game['location']+'<br /><span class="gameSubline">'+game['address']+'</span></td>');
-		
+
 		var players = game['players']+' / '+game['maxplayers'];
 		if (game['spectators'] > 0)
 			players += ' + ' + game['spectators'];
-		
+
 		players += (game['players'] + game['spectators'] == 1 ? ' player' : ' players')
         row.append('<td><span class="'+stateClass+'">'+state+'</span><br /><span class="gameSubline">'+players+'</span></td>');
         row.append('<td>'+mod+'<br /><span class="gameSubline">'+tag+'</span></td>');
