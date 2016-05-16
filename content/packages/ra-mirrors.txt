@@ -6,3 +6,4 @@ http://openra.us.baxxster.no/openra/ra-packages.zip
 http://81.169.246.181/ra-packages.zip
 http://178.63.32.174/ra-packages.zip
 http://leamsi.xyz/openra/ra-packages.zip
+http://openra.0x47.net/ra-packages.zip
