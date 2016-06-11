@@ -107,11 +107,11 @@
           row.append('<td>'+game['location']+'<br /><span class="gameSubline"><a href="openra://'+game['address']+'">'+game['address']+'</a></span></td>');
         else
           row.append('<td>'+game['location']+'<br /><span class="gameSubline">'+game['address']+'</span></td>');
-		
+
 		var players = game['players']+' / '+game['maxplayers'];
 		if (game['spectators'] > 0)
 			players += ' + ' + game['spectators'];
-		
+
 		players += (game['players'] + game['spectators'] == 1 ? ' player' : ' players')
         row.append('<td><span class="'+stateClass+'">'+state+'</span><br /><span class="gameSubline">'+players+'</span></td>');
         row.append('<td>'+mod+'<br /><span class="gameSubline">'+tag+'</span></td>');
@@ -207,7 +207,7 @@
 </form>
 <p>Found <span id="activeServers">0</span> servers with <span id="activePlayers">0</span> players matching your selection:</p>
 <table>
-  <thead><tr><th width="210">Server</th><th width="100">Location</th><th width="90">Status</th><th width="110">Mod</th><th width="190">Map</th></tr></thead>
+  <thead><tr><th width="180">Server</th><th width="110">Location</th><th width="80">Status</th><th width="100">Mod</th><th width="160">Map</th></tr></thead>
   <tbody id="serverlist"></tbody>
 </table>
 <br/>
