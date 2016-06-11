@@ -62,10 +62,10 @@
       fourthplot = new rrdFlot("daily", obj.rrd_data, graph_options, ds_graph_options, rrdflot_daily);
 
       setTimeout(function(){
-        draw_plot_axes('#thirtyseconds', 'Hourly activity', 'Time');
-        draw_plot_axes('#fiveminutes', 'Daily activity', 'Date');
-        draw_plot_axes('#halfanhour', 'Weekly activity', 'Date');
-        draw_plot_axes('#daily', 'Yearly activity', 'Date');
+        draw_plot_axes('#thirtyseconds', 'Last five hours', 'Time');
+        draw_plot_axes('#fiveminutes', 'Last two days (5 minute average)', 'Date');
+        draw_plot_axes('#halfanhour', 'Last two weeks (30 minute average)', 'Date');
+        draw_plot_axes('#daily', 'Last two years (1 day average)', 'Date');
       }, 0);
     }
 
@@ -93,7 +93,7 @@
 </script>
 
 <h3>Player Statistics</h3>
-
+<p>The following plots show the average number of players active in publically advertised servers over various time ranges. They are generated from the <a href="/games/">real-time games list</a>.</p>
 <noscript><div class="noscript">Please enable JavaScript to view the player statistics.</div></noscript>
 <div id="servercontainer" style="display: none">
 <div id="thirtyseconds"><center><h4>Loading...</h4></center></div>
