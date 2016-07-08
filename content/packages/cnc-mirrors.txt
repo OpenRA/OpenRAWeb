@@ -1,6 +1,5 @@
 http://openra.ppmsite.com/cnc-packages.zip
 http://srvdonate.ut.mephi.ru/openra/cnc-packages.zip
-http://openra-mirror.ihptru.net/cnc-packages.zip
 http://openra.baxxster.no/openra/cnc-packages.zip
 http://openra.us.baxxster.no/openra/cnc-packages.zip
 http://81.169.246.181/cnc-packages.zip
