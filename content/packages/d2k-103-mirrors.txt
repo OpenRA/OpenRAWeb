@@ -1,6 +1,5 @@
 http://openra.ppmsite.com/d2k-103-packages.zip
 http://srvdonate.ut.mephi.ru/openra/d2k-103-packages.zip
-http://openra-mirror.ihptru.net/d2k-103-packages.zip
 http://openra.baxxster.no/openra/d2k-103-packages.zip
 http://openra.us.baxxster.no/openra/d2k-103-packages.zip
 http://81.169.246.181/d2k-103-packages.zip
