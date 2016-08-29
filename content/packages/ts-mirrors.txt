@@ -3,5 +3,4 @@ http://srvdonate.ut.mephi.ru/openra/ts-packages.zip
 http://openra.baxxster.no/openra/ts-packages.zip
 http://openra.us.baxxster.no/openra/ts-packages.zip
 http://81.169.246.181/ts-packages.zip
-http://leamsi.xyz/openra/ts-packages.zip
 http://openra.0x47.net/ts-packages.zip
