@@ -1,4 +1,4 @@
-2016-09-04 19-00-00:
-	Title: Playtest 20160904 now available!
-	Author: Paul Chote
-	Content: The first release candidate for our next OpenRA release\nis now available, with some great new features including:\n\n • Improvements to unit pathfinding and aircraft reloading\n • Improvements to AI players\n • New hotkey and mouse binding options\n • 12 new missions across TD, RA, and D2K\n • Support for installing game videos and music\n • Many more polish, bug, and balance fixes\n\nCheck out the full news post at http://openra.net, or read the full changelog at http://changelog.openra.net.
+2016-10-01 19-00-00:
+	Title: Second (and possibly final!) playtest out now!
+	Author: Oliver Brakmann
+	Content: We are happy to announce the availability of the second playtest of this cycle!\n\nIt includes server stability improvements, AA weapons for the Soviet missile sub, and many more bug fixes!\n\nCheck out the full news post on the OpenRA website (http://openra.net), and the full changelog at http://changelog.openra.net.\n\nDon't hesitate to try it out and report any bugs or issues you encounter. It might be your last chance before the final release!\n\nThanks, and have fun!
