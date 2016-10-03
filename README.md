@@ -7,6 +7,13 @@ Development
 ----------
 Use `nanoc compile` and `nanoc view` to generate and host a static preview at [localhost:3000](http://localhost:3000), or `nanoc autocompile` to automatically recompile as required.  Changes will be automatically deployed to [openra.github.io](https://github.com/OpenRA/openra.github.io.git) when a pull request is merged.
 
+Alternatively use docker, e.g.:
+```sh
+docker build -t openraweb .
+docker run -ti --rm -p 3000:3000 -v `pwd`:/data openraweb
+```
+and then visit [localhost:3000](http://localhost:3000).
+
 Stats
 -----
 * Analytics: http://www.seethestats.com/site/openra.net/STS5AYU4FS9
