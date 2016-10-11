@@ -6,6 +6,7 @@ PLATFORMS = {
     "rpm" => "Fedora / openSUSE",
     "arch" => "Arch Linux",
     "gentoo" => "Gentoo",
+    "exherbo" => "Exherbo",
     "freebsd" => "FreeBSD",
 }
 
@@ -54,6 +55,7 @@ $(document).ready(function(){
       else if (ua.match(/SUSE/)) activateTab($('a[href=#rpm]'));
       else if (ua.match('Arch Linux')) activateTab($('a[href=#arch]'));
       else if (ua.match('Gentoo')) activateTab($('a[href=#gentoo]'));
+      else if (ua.match('Exherbo')) activateTab($('a[href=#exherbo]'));
       else if (ua.match('FreeBSD')) activateTab($('a[href=#freebsd]'));
 
       // Bind the click event handler
@@ -136,6 +138,15 @@ $ layman -a -S dotnet
 $ layman -a -S dr -o http://github.com/cerebrum/dr/raw/master/repo.xml
 $ printf '%s\n' "games-strategy/openra ~amd64" >> /etc/portage/package.keywords
 $ emerge games-strategy/openra</pre>
+  <p class="downloadthirdparty">We do not directly maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
+</div>
+<div id="exherbo" class="tab">
+  <hr />
+  <h3>Install OpenRA for Exherbo</h3>
+  <p>Packages for both releases and playtests are available via the <a href="https://git.exherbo.org/summer/packages/games-strategy/openra/index.html">hasufell overlay</a>:</p>
+  <pre>$ cave resolve repository/hasufell
+$ cave resolve games-strategy/openra:release
+$ cave resolve games-strategy/openra:playtest</pre>
   <p class="downloadthirdparty">We do not directly maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
 </div>
 <div id="freebsd" class="tab">
