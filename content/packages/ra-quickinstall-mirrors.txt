@@ -1,3 +1,4 @@
 http://openra.baxxster.no/openra/ra-quickinstall.zip
 http://openra.us.baxxster.no/openra/ra-quickinstall.zip
 http://openra.ppmsite.com/ra-quickinstall.zip
+http://81.169.246.181/openra/ra/ra-quickinstall.zip
