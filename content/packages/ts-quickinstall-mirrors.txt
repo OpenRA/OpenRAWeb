@@ -1,1 +1,2 @@
 http://openra.ppmsite.com/ts-quickinstall.zip
+http://openra.mirror.haffdata.com/ts-quickinstall.zip
