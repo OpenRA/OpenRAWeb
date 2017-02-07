@@ -3,3 +3,4 @@ http://openra.us.baxxster.no/openra/d2k-base.zip
 http://openra.ppmsite.com/d2k-base.zip
 http://81.169.246.181/openra/d2k/d2k-base.zip
 http://openra.mirror.haffdata.com/d2k-base.zip
+http://galaxy.republic.community/h/openra/d2k-base.zip
