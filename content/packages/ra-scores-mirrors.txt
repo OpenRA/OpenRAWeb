@@ -2,4 +2,5 @@ http://openra.baxxster.no/openra/ra-scores.zip
 http://openra.us.baxxster.no/openra/ra-scores.zip
 http://openra.ppmsite.com/ra-scores.zip
 http://81.169.246.181/openra/ra/ra-scores.zip
+http://openra.mirror.haffdata.com/ra-scores.zip
 http://galaxy.republic.community/h/openra/ra-scores.zip
