@@ -4,3 +4,4 @@ http://openra.ppmsite.com/ra-quickinstall.zip
 http://81.169.246.181/openra/ra/ra-quickinstall.zip
 http://openra.mirror.haffdata.com/ra-quickinstall.zip
 http://galaxy.republic.community/h/openra/ra-quickinstall.zip
+http://94.23.62.19/openra/ra-quickinstall.zip
