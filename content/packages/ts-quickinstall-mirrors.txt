@@ -1,3 +1,4 @@
 http://openra.ppmsite.com/ts-quickinstall.zip
 http://openra.mirror.haffdata.com/ts-quickinstall.zip
 http://galaxy.republic.community/h/openra/ts-quickinstall.zip
+http://94.23.62.19/openra/ts-quickinstall.zip
