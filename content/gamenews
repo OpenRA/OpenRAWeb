@@ -1,4 +1,4 @@
-2016-10-19 20-00-00:
-	Title: Release 20161019 hotfix now available!
+2017-03-04 18-00-00:
+	Title: Playtest 20170304 out now!
 	Author: Paul Chote
-	Content: LANDCOM 16 HQS.\nTOP SECRET\nTO: ALL FIELD COMMANDERS\n\nA SURPRISE AMBUSH OF MULTIPLAYER ISSUES\nHAS LEFT THE 20161015 RELEASE CRITICALLY\nWEAKENED.  REPORT TO www.openra.net FOR A FULL CASUALTY REPORT.\n\nPROCEEED TO www.openra.net/download/ FOR THE\nREINFORCED 20161019 RELEASE THEN CONTINUE\nTO THE MULTIPLAYER LOBBY AND DESTROY ALL\nENEMY OPPOSITION.\n\nTRANSMISSION ENDS.
+	Content: OpenRA's march to world domination continues with our first 2017 playtest. This release candidate includes:\n\n • Balance and map improvements for RA and TD\n • An significantly overhauled D2K experience\n • Fixed issues when lagging players leave an MP server\n • Muted main menu background battles\n • Many more bug fixes and technical improvements\n\nHead over to http://openra.net for more information, or read the full changelog at http://changelog.openra.net.
