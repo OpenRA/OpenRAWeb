@@ -3,7 +3,7 @@
 
 language: ruby
 rvm:
-  - 2.0
+  - 2.2
 
 # http://docs.travis-ci.com/user/migrating-from-legacy
 sudo: false
