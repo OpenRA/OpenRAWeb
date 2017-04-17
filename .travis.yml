@@ -11,6 +11,7 @@ sudo: false
 env:
   global:
     secure: "Ot/NHtOO6W2pGcWAvXpdz3tKoppcvyZ3XlbPNMr/qOlRhcySMPB5wgkdZJFS3D+E5QoXeB+aOYuAW4dqm5R2bnwCoAnbgMrLItN6nejQ/CR5gejEHLrugoM5hXp0BuY/MUiRMkhj9ERMDIbwUulC2Zpsmx05Wq4q7+ZRBF451rE="
+    secure: "ISEIa+b9ntHoaqWOVgB/CiAbJBcN+BEX9sc42jWcOfcDU07KAk2nWxHEkwlAEGsdug9EtGOxNQQWokulQwVYptuuEJJDEeMdQDXZ3RG32b9jfzWhl0OlVO3e9zQLlF4W2dOorpxzl565c71F1fNa9GZFEYY4LiSYGuC+16wrCXE="
 
 install:
 

@@ -3,6 +3,14 @@ DOWNLOAD_GITHUB_BASE_PATH = "https://github.com/OpenRA/OpenRA/"
 # Disable if you're doing something that may hit the gh rate limit (60 queries per hour for non-authenticated users)
 ENABLE_GITHUB_API = true
 
+# GitHub API OAuth to get a higher rate limit on shared Travis installations
+if ENV['TRAVIS'] == 'true' then
+    require 'octokit'
+    client = Octokit::Client.new :client_id => "88dbad17134ba93ee5c7", :client_secret => ENV['GITHUB_OAUTH']
+    user = client.user 'orabot'
+    user.login
+end
+
 # Github release IDs: obtain from https://api.github.com/repos/OpenRA/OpenRA/releases
 GITHUB_PLAYTEST_ID = '6022423'
 GITHUB_RELEASE_ID = '4433699'
