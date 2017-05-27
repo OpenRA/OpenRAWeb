@@ -5,7 +5,7 @@ ENABLE_GITHUB_API = true
 
 # Github release IDs: obtain from https://api.github.com/repos/OpenRA/OpenRA/releases
 GITHUB_PLAYTEST_ID = ''
-GITHUB_RELEASE_ID = '6152134'
+GITHUB_RELEASE_ID = '6523221'
 
 PAGES = {
 	"/" => "Home",

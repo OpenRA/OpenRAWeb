@@ -1,4 +1,4 @@
-2017-04-21 20-00-00:
-	Title: Release 20170421 out now!
-	Author: Oliver Brakmann
-	Content: Almost to the day half a year after our last stable release, we are proud to finally present to you our latest work - OpenRA Release 20170421!\n\nWith a huge number of new maps and balance changes, fixes for annoying multiplayer bugs and HiDPI support, this release should have something for everyone.\n\nCheck out the full news post at http://openra.net, have a look at http://changelog.openra.net for the complete changelog, and grab an installer for your OS from http://openra.net/download!\n\nWe hope you'll enjoy this newest release from OpenRA. Thanks for playing!
+2017-05-27 13-00-00:
+	Title: Release 20170527 hotfix now available!
+	Author: Paul Chote
+	Content: We are today pushing a new bugfix release that addresses a collection of issues that were not found during the playtesting of release-20170421.\n\nThe main changes in this hotfix are:\n • Disabled HiDPI support on Windows, fixing the\n   graphical glitches this caused on non-HiDPI displays.\n • Fixed cursor glitches with the Mono 5 runtime.\n • Fixed the Fullscreen (Legacy) mode on macOS.\n • Several smaller graphical and performance fixes.\n\nHead on over to our www.openra.net to grab the new release, and spread the word!
