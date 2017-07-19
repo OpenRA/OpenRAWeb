@@ -33,7 +33,7 @@ def package_name(platform, tag)
     modtag = tag.gsub('-', '.')
     case platform
         when "osx"
-            "OpenRA-#{tag}.zip"
+          tag == "release-20170527" ? "OpenRA-#{tag}.zip" : "OpenRA-#{tag}.dmg"
         when "win"
             "OpenRA-#{tag}.exe"
         when "deb"
