@@ -10,6 +10,7 @@ PLATFORMS = {
     "freebsd" => "FreeBSD",
 }
 
+create_debian_repository()
 playtest_tag = fetch_git_tag(GITHUB_PLAYTEST_ID)
 release_tag = fetch_git_tag(GITHUB_RELEASE_ID)
 sizes = fetch_package_sizes([GITHUB_RELEASE_ID, GITHUB_PLAYTEST_ID])
