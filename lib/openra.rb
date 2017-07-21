@@ -4,7 +4,7 @@ DOWNLOAD_GITHUB_BASE_PATH = "https://github.com/OpenRA/OpenRA/"
 ENABLE_GITHUB_API = true
 
 # Github release IDs: obtain from https://api.github.com/repos/OpenRA/OpenRA/releases
-GITHUB_PLAYTEST_ID = ''
+GITHUB_PLAYTEST_ID = '7126912'
 GITHUB_RELEASE_ID = '6523221'
 
 PAGES = {
@@ -33,7 +33,7 @@ def package_name(platform, tag)
     modtag = tag.gsub('-', '.')
     case platform
         when "osx"
-            "OpenRA-#{tag}.zip"
+          tag == "release-20170527" ? "OpenRA-#{tag}.zip" : "OpenRA-#{tag}.dmg"
         when "win"
             "OpenRA-#{tag}.exe"
         when "deb"

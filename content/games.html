@@ -104,16 +104,20 @@
         var row = $('<tr class="'+rowClass+'">');
         row.append('<td>'+game['name'].replace(/\\\'/g, "'")+'</span></td>');
 
-        if (game['state'] == '1')
-          row.append('<td>'+game['location']+'<br /><span class="gameSubline"><a href="openra://'+game['address']+'">'+game['address']+'</a></span></td>');
-        else
+        if (game['state'] == '1') {
+          var handler = 'openra-' + modver[0] + '-' + modver[1] + '://';
+          if (modver[1] == 'release-20170527')
+            handler = 'openra://';
+
+          row.append('<td>'+game['location']+'<br /><span class="gameSubline"><a href="'+handler+game['address']+'">'+game['address']+'</a></span></td>');
+        } else
           row.append('<td>'+game['location']+'<br /><span class="gameSubline">'+game['address']+'</span></td>');
 
-		var players = game['players']+' / '+game['maxplayers'];
-		if (game['spectators'] > 0)
-			players += ' + ' + game['spectators'];
+        var players = game['players']+' / '+game['maxplayers'];
+        if (game['spectators'] > 0)
+            players += ' + ' + game['spectators'];
 
-		players += (game['players'] + game['spectators'] == 1 ? ' player' : ' players')
+        players += (game['players'] + game['spectators'] == 1 ? ' player' : ' players')
         row.append('<td><span class="'+stateClass+'">'+state+'</span><br /><span class="gameSubline">'+players+'</span></td>');
         row.append('<td>'+mod+'<br /><span class="gameSubline">'+tag+'</span></td>');
         row.append('<td class="map-'+game['map']+'">Loading...</td></tr>');
