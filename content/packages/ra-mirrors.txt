@@ -6,3 +6,4 @@ http://81.169.246.181/openra/ra/ra-packages.zip
 http://openra.0x47.net/ra-packages.zip
 http://openra.mirror.haffdata.com/ra-packages.zip
 http://galaxy.republic.community/h/openra/ra-packages.zip
+http://94.23.62.19/openra/ra-packages.zip
