@@ -1,8 +1,4 @@
-2017-08-12 00-00-00:
-	Title: Red Alert Global League Season 4 Registrations
-	Author: netnazgul
-	Content: Beware, commanders! The fourth iteration of the Red Alert Global League is looming!\n\nPublic registrations are now open until August 31st. The league itself is to be held from September 11th till December 11th and promises to be the biggest OpenRA event to date, so don't hide in shadows and join the fray!\n\nVisit the OpenRA homepage (http://openra.net) to find all the links to the league's rules and registrations forum threads, and also to read all the latest news of OpenRA project and its development.
-2017-07-21 20-00-00:
-	Title: Playtest 20170722 out now!
-	Author: Paul Chote
-	Content: We're pleased to finally announce playtest-20170722, the first release candidate for what will be the biggest OpenRA release in many years. New features include:\n\n  • New game launchers supporting side-by-side installs\n  • A new command-bar interface for your units\n  • Overhauled building targeting and damage systems\n  • Improved support for LAN games\n  • Replay and map editor improvements\n  • Many other performace, balance, and bug fixes\n\nHead to www.openra.net for more information on these and the many other changes that are now available to try today!
+2017-09-02 20-00-00:
+	Title: Playtest 20170902 available!
+	Author: Reaperrr
+	Content: We're pleased to announce the new playtest-20170902, the second release candidate for the upcoming OpenRA release. Changes include:\n\n  • Over 40 bugs and other issues fixed\n  • New civilian tech structures and a new map for RA\n  • Improved Red Alert balance\n  • Fine-tuned Tiberian Dawn balance\n  • Updated Mod SDK\n\nHead to www.openra.net for more information!
