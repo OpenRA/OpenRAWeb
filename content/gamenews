@@ -1,4 +1,4 @@
-2017-09-23 20-00-00:
-	Title: Playtest 20170923 now available for testing
+2017-09-30 18-00-00:
+	Title: Playtest 20170930
 	Author: Paul Chote
-	Content: With two months and two playtests behind us, we are now almost ready to push the next OpenRA release!\n\nA final playtest is now available featuring:\n • An "Assault Move" modifier for Attack Move\n • Reworked music playback to be more robust\n • A handful of smaller bug and balance fixes\n\nHead to www.openra.net to download the new playtest and let us know what you think!
+	Content: Thanks to everybody who reported issues with the last playtest, today we are releasing a new version:\n\n • Fixed in-game map installation\n • Fixed a crash when using Attack Move\n • Fixed global chat timestamps\n • Added RA minelayer deployment to the command-bar\n • Improved attack-move cursor behaviour\n\nThis playtest will be your last chance to report any bugs or balance issues, so we encourage everybody to head to www.openra.net to download the new playtest and let us know what you think!
