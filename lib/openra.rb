@@ -61,6 +61,9 @@ def fetch_package_sizes(gh_release_ids)
  require 'octokit'
  s = Hash.new
  if ENABLE_GITHUB_API then
+   if ENV.has_key?("GITHUB_OAUTH") then
+    Octokit.access_token = ENV['GITHUB_OAUTH']
+   end
    gh_release_ids.each do |id|
      if id == "" then next end
      assets = Octokit.release_assets('https://api.github.com/repos/OpenRA/OpenRA/releases/' + id)
@@ -75,6 +78,9 @@ end
 def fetch_git_tag(github_id)
   require 'octokit'
   if ENABLE_GITHUB_API and github_id != '' then
+    if ENV.has_key?("GITHUB_OAUTH") then
+     Octokit.access_token = ENV['GITHUB_OAUTH']
+    end
     asset = Octokit.release_asset('https://api.github.com/repos/OpenRA/OpenRA/releases/' + github_id)
     asset.tag_name
   else
