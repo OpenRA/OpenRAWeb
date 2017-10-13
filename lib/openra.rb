@@ -93,5 +93,28 @@ def pretty_date(date)
 end
 
 def navigation_page(page)
-	page == @item.path || (page == "/news/" && @item.path.start_with?("/news/"))
+    page == @item.path || (page == "/news/" && @item.path.start_with?("/news/"))
+end
+
+def create_debian_repository()
+    require 'octokit'
+    require 'open-uri'
+    require 'fileutils'
+    FileUtils.mkdir_p('output/debian/packages')
+    Octokit.releases('OpenRA/OpenRA').each do |release|
+        release.assets.each do |asset|
+            if asset.content_type == "application/vnd.debian.binary-package" || asset.content_type == "application/x-debian-package" then
+                if !File.exists?("output/debian/packages/" + asset.name) then
+                    puts "Downloading .deb: " + asset.browser_download_url
+                    File.open("output/debian/packages/" + asset.name, "wb") do |output|
+                        open(asset.browser_download_url, "rb") do |input|
+                            output.write(input.read)
+                        end
+                    end
+                end
+            end
+	end
+    end
+    
+    system 'bash', '-c', 'pushd output/debian >/dev/null && dpkg-scanpackages -m packages/ > Packages'
 end
