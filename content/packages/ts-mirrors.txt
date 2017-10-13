@@ -2,7 +2,6 @@ http://openra.ppmsite.com/ts-packages.zip
 http://srvdonate.ut.mephi.ru/openra/ts-packages.zip
 http://openra.baxxster.no/openra/ts-packages.zip
 http://openra.us.baxxster.no/openra/ts-packages.zip
-http://81.169.246.181/openra/ts/ts-packages.zip
 http://openra.0x47.net/ts-packages.zip
 http://openra.mirror.haffdata.com/ts-packages.zip
 http://galaxy.republic.community/h/openra/ts-packages.zip
