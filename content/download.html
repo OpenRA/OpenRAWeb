@@ -97,7 +97,7 @@ $(document).ready(function(){
 <div id="osx" class="tab">
   <hr />
   <h3>Download OpenRA for OS X</h3>
-  <p>OpenRA requires Mono 3.2 or greater. <a href="http://www.mono-project.com/download/">Download Mono</a>.</p>
+  <p>OpenRA requires Mono 4.6 or greater. <a href="http://www.mono-project.com/download/">Download Mono</a>.</p>
   <br />
   <ul class="downloadlinks">
     <li><%= generate_download_button("osx", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
@@ -110,7 +110,7 @@ $(document).ready(function(){
 <div id="deb" class="tab">
   <hr />
   <h3>Download OpenRA for Debian / Ubuntu</h3>
-  <p>Download and run one of the packages below to install OpenRA via the Ubuntu Software Center.<br />Ubuntu 12.04 and Debian users must first install <span style="font-family: monospace;">libSDL2</span> from a PPA or other source.</p>
+  <p>Download and run one of the packages below to install OpenRA via the Software Center.</p>
   <ul class="downloadlinks">
     <li><%= generate_download_button("deb", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
     <li><%= generate_download_button("deb", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
