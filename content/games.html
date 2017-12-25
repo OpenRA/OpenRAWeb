@@ -98,14 +98,15 @@
         var row = $('<tr class="'+rowClass+'">');
         row.append('<td>'+game['name'].replace(/\\\'/g, "'")+'</span></td>');
 
+	var location = game['location'] || 'Unknown';
         if (game['state'] == '1') {
           var handler = 'openra-' + game['mod'] + '-' + game['version'] + '://';
           if (game['version'] == 'release-20170527')
             handler = 'openra://';
 
-          row.append('<td>'+game['location']+'<br /><span class="gameSubline"><a href="'+handler+game['address']+'">'+game['address']+'</a></span></td>');
+          row.append('<td>'+location+'<br /><span class="gameSubline"><a href="'+handler+game['address']+'">'+game['address']+'</a></span></td>');
         } else
-          row.append('<td>'+game['location']+'<br /><span class="gameSubline">'+game['address']+'</span></td>');
+          row.append('<td>'+location+'<br /><span class="gameSubline">'+game['address']+'</span></td>');
 
         var players = game['players']+' / '+game['maxplayers'];
         if (game['spectators'] > 0)
