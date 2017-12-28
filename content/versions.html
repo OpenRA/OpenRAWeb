@@ -1,0 +1,13 @@
+<%=
+# Generates a versions.json file that is consumed by the master server
+# to provide in-game version notifications
+# File will be renamed to versions.json during compilation
+require 'json'
+
+data = {
+  'release' => fetch_git_tag(GITHUB_RELEASE_ID),
+  'playtest' => GITHUB_PLAYTEST_ID != '' ? fetch_git_tag(GITHUB_PLAYTEST_ID) : '',
+  'known_versions' => fetch_git_tags(),
+}.to_json
+
+%>

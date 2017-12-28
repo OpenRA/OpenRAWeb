@@ -88,6 +88,18 @@ def fetch_git_tag(github_id)
   end
 end
 
+def fetch_git_tags()
+  require 'octokit'
+  if ENABLE_GITHUB_API then
+    if ENV.has_key?("GITHUB_OAUTH") then
+     Octokit.access_token = ENV['GITHUB_OAUTH']
+    end
+    Octokit.releases('OpenRA/OpenRA').map {|release| release.tag_name}
+  else
+    []
+  end
+end
+
 def pretty_date(date)
     attribute_to_time(date).strftime("%Y-%m-%d")
 end

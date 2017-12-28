@@ -32,6 +32,10 @@ compile 'sitemap' do
   filter :erb
 end
 
+compile 'versions' do
+  filter :erb
+end
+
 compile '/news/*/' do
     filter :kramdown
     layout 'news'
@@ -60,6 +64,10 @@ end
 
 route '/sitemap' do
   item.identifier.chop + '.xml'
+end
+
+route '/versions' do
+  item.identifier.chop + '.json'
 end
 
 route '/scripts/*' do
