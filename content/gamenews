@@ -1,4 +1,4 @@
-2018-01-01 21-00-00:
-	Title: Playtest 20180102
+2018-02-08 22-00-00:
+	Title: Playtest 20180208
 	Author: Paul Chote
-	Content: We are excited to welcome the new year with a new playtest! This pre-release build provides a first look at the next OpenRA release. New features include:\n\n  • An overhauled server browser and multiplayer UI\n  • The complete Harkonnen campaign in D2K\n  • Several AI behaviour and performance improvements\n  • New game options and abilities for custom maps\n  • Further Community-driven balance updates to RA\n  • Fixes for several issues on Windows and macOS\n\nHead to www.openra.net for more information and to download the new playtest and let us know what you think! We hope you enjoy it!
+	Content: A new playtest is now available with fixes for a number of issues that were reported in playtest-20180102.\n\nNotable changes include:\n• Fixes for several crashes and various other bugs\n• APC and Obelisk balance changes in Tiberian Dawn\n• Artillery and V2 balance changes in Red Alert\n• Fixed armor types in Dune 2000\n• Several new multiplayer maps for Red Alert\n\nThis playtest will be the last chance to report bugs or other feedback before the next release, so head to www.openra.net to try it out and let us know what you think! We hope you enjoy it!
