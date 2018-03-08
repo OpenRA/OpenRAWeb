@@ -1,4 +1,4 @@
-2018-02-18 20-00-00:
-	Title: Release 20180218
+2018-03-07 23-00-00:
+	Title: Release 20180307
 	Author: reaperrr
-	Content: A new release is out! Several bugfixes, improved MP lobby UI and extended moddability.\n\nNotable changes include:\n• Fixes for some crashes and various other bugs\n• Several fixes and balance tweaks for Tiberian Dawn\n• Finished Harkonnen campaign, more maps and\n  balance fixes for Dune 2000\n• Balance changes and several new maps for Red Alert\n\nGrab it now from www.openra.net! We hope you enjoy it!
+	Content: Hotfix release 20180307 is now online!\n\nIt fixes following issues:\n• Fixed "Failed to query server list" (requiring Mono 4.2 or newer)\n• Fixed compatibility with Mono 5.10 and newer\n• Fixed Windows build scripts\n• Fixed debug.log growing excessively in D2k\n\nGrab it now from www.openra.net! We hope you enjoy it!
