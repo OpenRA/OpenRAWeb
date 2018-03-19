@@ -8,7 +8,7 @@ Red Alert Global League is rolling yet again, with Season 5 starting on April 2n
 
 New players are always welcome to register and take part in the League. It is always exciting to prove your worth against others in a fair competition, and there is also a chance to get some prizes through playing. Be swift on the matter though, as the registrations are to be closed on March 24th.
 
-League rules can be found at [ragl.org forum](http://ragl.org/glforum/?view=thread&id=12&part=1#postid-22) and [as a googlesheet mirror](https://goo.gl/VDwMNm). 
+League rules can be found at [ragl.org forum](http://ragl.org/glforum/?view=thread&id=12&part=1#postid-22) and [as a googlesheet mirror](https://docs.google.com/document/d/1-MiyXf7BootBMm4cL811-3kjCYAzsFO3J85JLdEGFMY/edit?usp=sharing).
 Further registration guidelines and current roster are available at [ragl.org forum](http://ragl.org/glforum/?view=thread&id=11&part=1#postid-19) and [on sleipnirstuff](http://www.sleipnirstuff.com/forum/viewtopic.php?f=82&t=20470). 
 You can also ask anything about the League, find opponents for a match and have a casual chat at [community discord server](https://discord.gg/UcUztfr).
 <br>
