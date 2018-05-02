@@ -96,7 +96,7 @@ $(document).ready(function(){
 <div id="osx" class="tab">
   <hr />
   <h3>Download OpenRA for OS X</h3>
-  <p>OpenRA requires Mono 4.6 or greater. <a href="http://www.mono-project.com/download/">Download Mono</a>.</p>
+  <p>OpenRA requires Mono 4.6 or greater. <a href="https://www.mono-project.com/download/stable/">Download Mono</a>.</p>
   <br />
   <ul class="downloadlinks">
     <li><%= generate_download_button("osx", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
@@ -109,7 +109,7 @@ $(document).ready(function(){
 <div id="deb" class="tab">
   <hr />
   <h3>Download OpenRA for Debian / Ubuntu</h3>
-  <p>OpenRA requires Mono 4.2 or greater. Ubuntu 14.04 and Debian Jessie users should use the official upstream <a href="http://www.mono-project.com/download/stable/#download-lin">Mono package repository</a> to upgrade their Mono installation.</p>
+  <p>OpenRA requires Mono 4.2 or greater. Ubuntu 14.04 and Debian Jessie users should use the official upstream <a href="https://www.mono-project.com/download/stable/#download-lin">Mono package repository</a> to upgrade their Mono installation.</p>
   <p>Download and run one of the packages below to install OpenRA via the Software Center.</p>
   <ul class="downloadlinks">
     <li><%= generate_download_button("deb", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
@@ -119,7 +119,7 @@ $(document).ready(function(){
 <div id="rpm" class="tab">
   <hr />
   <h3>Install OpenRA for Fedora / openSUSE</h3>
-  <p>Stable releases and playtests are available via our <a href="http://software.opensuse.org/download.html?project=games:openra&amp;package=openra">openSUSE Build Service repository</a>.</p>
+  <p>Stable releases and playtests are available via our <a href="https://software.opensuse.org/download.html?project=games:openra&amp;package=openra">openSUSE Build Service repository</a>.</p>
 </div>
 <div id="arch" class="tab">
   <hr />
@@ -133,7 +133,7 @@ $(document).ready(function(){
   <p>Unofficial packages for both releases and playtests are available via the &ldquo;dr&rdquo; overlay:</p>
   <pre>$ emerge -av layman
 $ layman -a -S dotnet
-$ layman -a -S dr -o http://github.com/cerebrum/dr/raw/master/repo.xml
+$ layman -a -S dr -o https://github.com/cerebrum/dr/raw/master/repo.xml
 $ printf '%s\n' "games-strategy/openra ~amd64" >> /etc/portage/package.keywords
 $ emerge games-strategy/openra</pre>
   <p class="downloadthirdparty">We do not directly maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
@@ -150,7 +150,7 @@ $ cave resolve games-strategy/openra:playtest</pre>
 <div id="freebsd" class="tab">
   <hr />
   <h3>Install OpenRA for FreeBSD</h3>
-  <p>Stable releases are available in the <a href="http://www.freshports.org/games/openra/">FreeBSD Ports Collection</a>:<br />
+  <p>Stable releases are available in the <a href="https://www.freshports.org/games/openra/">FreeBSD Ports Collection</a>:<br />
 <pre># cd /usr/ports/games/openra
 # make install</pre></p>
   <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
