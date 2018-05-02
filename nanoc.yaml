@@ -82,9 +82,9 @@ deploy:
     dst:  "openra@openra.res0l.net:/home/openra/openra.res0l.net"
 
 # Meta data for news feeds:
-base_url: "http://www.openra.net"
+base_url: "https://www.openra.net"
 author_name: "OpenRA developers"
-author_uri: "http://www.openra.net"
+author_uri: "https://www.openra.net"
 
 
 debug: false # if true, don't concatenate scripts
