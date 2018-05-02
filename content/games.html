@@ -6,7 +6,7 @@
   function initMapInfo(hash) {
     var doMap = function(map) {
       if ('title' in map)
-        $('.map-'+hash).html('<a href="http://resource.openra.net/maps/'+map['id']+'" target="_maps">'+map['title']+'</a><br /><span class="gameSubline">'+map['map_type']+'&nbsp;('+map['players']+' Players)</span>');
+        $('.map-'+hash).html('<a href="https://resource.openra.net/maps/'+map['id']+'" target="_maps">'+map['title']+'</a><br /><span class="gameSubline">'+map['map_type']+'&nbsp;('+map['players']+' Players)</span>');
     };
     if (hash in data) {
       doMap(data[hash]);
@@ -15,7 +15,7 @@
 
     $.ajax({
       type: "GET",
-      url: "http://resource.openra.net/map/hash/"+hash,
+      url: "https://resource.openra.net/map/hash/"+hash,
       statusCode: {
         404: function() {
           $('.map-'+hash).html('Unknown Map');
@@ -34,7 +34,7 @@
   function updateGameList() {
     $.ajax({
       type: "GET",
-      url:  "http://master.openra.net/games?protocol=2&type=json"
+      url:  "https://master.openra.net/games?protocol=2&type=json"
     }).done(function(masterMessage) {
       $('#serverlist').empty();
       var masterReply = jQuery.parseJSON(masterMessage);
