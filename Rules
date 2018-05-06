@@ -36,6 +36,10 @@ compile 'versions' do
   filter :erb
 end
 
+compile 'appimages' do
+  filter :erb
+end
+
 compile '/news/*/' do
     filter :kramdown
     layout 'news'
@@ -67,6 +71,10 @@ route '/sitemap' do
 end
 
 route '/versions' do
+  item.identifier.chop + '.json'
+end
+
+route '/appimages' do
   item.identifier.chop + '.json'
 end
 

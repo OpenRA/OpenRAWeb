@@ -1,0 +1,36 @@
+<%=
+# Generates an appimages.json file that is consumed by the master server
+# to support appimage update checks
+# File will be renamed to appimages.json during compilation
+require 'json'
+
+filename_map = {
+  'ra' => 'Red-Alert',
+  'cnc' => 'Tiberian-Dawn',
+  'd2k' => 'Dune-2000'
+}
+
+suffix_map = {
+  'release' => '',
+  'playtest' => '-playtest'
+}
+
+tag_map = {
+  'release' => fetch_git_tag(GITHUB_RELEASE_ID),
+  'playtest' => fetch_git_tag(GITHUB_PLAYTEST_ID != '' ? GITHUB_PLAYTEST_ID : GITHUB_RELEASE_ID)
+}
+
+data = Hash.new
+
+['release', 'playtest'].each do |channel|
+  tag = tag_map[channel]
+  data[channel] = Hash.new
+  ['ra', 'cnc', 'd2k'].each do |mod|
+    name = 'OpenRA-' + filename_map[mod] + suffix_map[channel] + '-x86_64.AppImage.zsync'
+    data[channel][mod] = DOWNLOAD_GITHUB_BASE_PATH + 'releases/download/' + tag + '/' + name
+  end
+end
+
+data.to_json
+
+%>
