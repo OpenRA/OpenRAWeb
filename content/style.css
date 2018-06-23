@@ -52,6 +52,14 @@ p.download, .newsDetails {
   font-size: 0.8em;
 }
 
+.downloadsmallplatform {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
 .tab pre {
   font-size: 0.8em;
 }
@@ -415,29 +423,44 @@ td, th, tr {
   list-style-type:none;
   padding: 0;
   margin: 0 auto;
-  width: 90%;
+  width: 97%;
   text-align: center;
 }
 
 .downloadlinks li {
-  display: inline;
-  padding: 15px;
+  display: inline-block;
+  padding: 10px 15px;
 }
 
 .downloadlinks a, .downloadlinks span {
-  width: 190px;
+  width: 230px;
   font-family: 12px/1.4 Helvetica, arial, freesans, clean, sans-serif; 
   background: url("/images/download.svg") no-repeat 15px 15px;
-  padding: 10px 15px 10px 60px;
+  padding: 10px 15px 10px 50px;
   display: inline-block;
   border: solid 3px #650b03;
   background-color: #272d2c;
   text-decoration: none;
   text-align: center;
-  border-radius: 10px; 
+  border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   -khtml-border-radius: 10px;
+}
+
+.downloadlinks a.ra , .downloadlinks span.ra {
+  background: url("/images/icons/ra_32x32.png") no-repeat 12px 12px;
+  background-color: #272d2c;
+}
+
+.downloadlinks a.cnc, .downloadlinks span.cnc {
+  background: url("/images/icons/cnc_32x32.png") no-repeat 12px 12px;
+  background-color: #272d2c;
+}
+
+.downloadlinks a.d2k, .downloadlinks span.d2k {
+  background: url("/images/icons/d2k_32x32.png") no-repeat 12px 12px;
+  background-color: #272d2c;
 }
 
 .downloadlinks span {
@@ -455,7 +478,7 @@ td, th, tr {
   background-image: url("/images/nodownload-fallback.png");
 }
 
-.downloadlinks a:hover {
+.downloadlinks a:hover, .downloadlinks a.ra:hover, .downloadlinks a.cnc:hover, .downloadlinks a.d2k:hover {
   background-color: #888;
 }
 
