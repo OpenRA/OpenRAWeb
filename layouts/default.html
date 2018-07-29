@@ -49,6 +49,7 @@
       <% PAGES.each do |page, title| %>
         <li><a href="<%= page %>"<%= ' class="nav-selected"' if navigation_page(page) %>><%= title %></a></li>
       <% end %>
+      <li><a href="https://forum.openra.net">Forum</a></li>
       </ul>
       <div id="content"><%= yield %></div>
       <div id="footer"><p>Copyright &copy; 2007-<%= Date.today.year %> The OpenRA Developers (<a href="/legal/">Legal notices</a>)</p></div>
