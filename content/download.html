@@ -1,13 +1,10 @@
 <%
 PLATFORMS = {
     "win" => "Windows",
-    "osx" => "OS X",
-    "deb" => "Debian / Ubuntu",
-    "rpm" => "Fedora / openSUSE",
-    "arch" => "Arch Linux",
-    "gentoo" => "Gentoo",
-    "exherbo" => "Exherbo",
+    "osx" => "macOS",
+    "linux" => "Linux",
     "freebsd" => "FreeBSD",
+    "source" => "Source Code",
 }
 
 playtest_tag = fetch_git_tag(GITHUB_PLAYTEST_ID)
@@ -50,12 +47,7 @@ $(document).ready(function(){
       // Attempt to automatically highlight the viewer's OS on page load:
       var ua = navigator.userAgent;
       if (ua.match('Mac OS X')) activateTab($('a[href=#osx]'));
-      else if (ua.match(/Ubuntu|Debian/)) activateTab($('a[href=#deb]'));
-      else if (ua.match(/Red Hat|Fedora/)) activateTab($('a[href=#rpm]'));
-      else if (ua.match(/SUSE/)) activateTab($('a[href=#rpm]'));
-      else if (ua.match('Arch Linux')) activateTab($('a[href=#arch]'));
-      else if (ua.match('Gentoo')) activateTab($('a[href=#gentoo]'));
-      else if (ua.match('Exherbo')) activateTab($('a[href=#exherbo]'));
+      else if (ua.match(/Linux/)) activateTab($('a[href=#linux]'));
       else if (ua.match('FreeBSD')) activateTab($('a[href=#freebsd]'));
 
       // Bind the click event handler
@@ -73,21 +65,23 @@ $(document).ready(function(){
 	<li>Stable releases are recommended for players who want to play multiplayer games online.</li>
 	<li>Playtests provide a preview of the latest improvements for players who want to help test and shape the future releases of OpenRA.</li>
 </ul>
-<p>The latest stable release is <span class="versionlabel"><%= release_tag %></span><% if GITHUB_PLAYTEST_ID != '' then %>, and the latest playtest is <span class="versionlabel"><%= playtest_tag %></span><% end %>.
+<p>The latest stable release is <span class="versionlabel"><%= release_tag %></span><% if GITHUB_PLAYTEST_ID != '' then %>, and the latest playtest is <span class="versionlabel"><%= playtest_tag %></span><% end %>.</p>
+<p>Older releases can be found in the <a href="https://github.com/OpenRA/OpenRA/releases">GitHub Releases</a> archive.</p>
+<p>The OpenRA game engine is free software released under the <a href="/legal">GPL3 license</a>. The OpenRA mods require files from the original games, which you will be prompted to download or copy the first time you run a mod.<br />These files are not covered by the OpenRA license, and remain the property of their original owners.</p>
 <hr />
 
 <h3>Which Operating System?</h3>
 <ul class="downloadplatform">
   <% PLATFORMS.each do |id, name| %>
-  <li><a href="#<%= id %>"><img src="/images/platforms/<%= id %>.svg" alt="<%= name %>" title="<%= name %>" /></a></li>
+  <li><a href="#<%= id %>"><img src="/images/platforms/<%= id %>.svg" alt="<%= name %>" title="<%= name %>" width="96" /></a></li>
   <% end %>
 </ul>
-<p>You may also <a href="https://github.com/OpenRA/OpenRA/wiki/Compiling">compile from source</a> on any operating system.</p>
+<br />
 
 <div id="win" class="tab">
   <hr />
-  <h3>Download OpenRA for Windows</h3>
-  <p>The default GPU drivers included with Windows do not support OpenGL rendering.<br />You may need to install full drivers supplied by your GPU vendor.</p>
+  <h3><img src="/images/platforms/win-small.svg" class="downloadsmallplatform" />Windows Installers</h3>
+  <p>OpenRA works on most computers running Windows 7 or later that support OpenGL rendering.<br />You may need to install additional drivers supplied by your GPU vendor to enable OpenGL support.</p>
   <ul class="downloadlinks">
     <li><%= generate_download_button("win", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
     <li><%= generate_download_button("win", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
@@ -95,9 +89,9 @@ $(document).ready(function(){
 </div>
 <div id="osx" class="tab">
   <hr />
-  <h3>Download OpenRA for OS X</h3>
-  <p>OpenRA requires Mono 4.6 or greater. <a href="https://www.mono-project.com/download/stable/">Download Mono</a>.</p>
-  <br />
+  <h3><img src="/images/platforms/osx-small.svg" class="downloadsmallplatform" />macOS Applications</h3>
+  <p>OpenRA works on all macs running macOS 10.7 or later. Mono 4.6 or later is required (<a href="https://www.mono-project.com/download/stable/">Download Mono</a>).</p>
+  <p>OpenRA may appear to freeze the first time you launch it after updating macOS or Mono. This is caused by Mono indexing your system fonts, and OpenRA will launch normally once this has completed.</p>
   <ul class="downloadlinks">
     <li><%= generate_download_button("osx", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
     <li><%= generate_download_button("osx", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
@@ -106,52 +100,57 @@ $(document).ready(function(){
   <pre>$ brew cask install openra</pre>
   <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
 </div>
-<div id="deb" class="tab">
+<div id="linux" class="tab">
   <hr />
-  <h3>Download OpenRA for Debian / Ubuntu</h3>
-  <p>OpenRA requires Mono 4.2 or greater. Ubuntu 14.04 and Debian Jessie users should use the official upstream <a href="https://www.mono-project.com/download/stable/#download-lin">Mono package repository</a> to upgrade their Mono installation.</p>
-  <p>Download and run one of the packages below to install OpenRA via the Software Center.</p>
+  <h3><img src="/images/platforms/appimage-small.svg" class="downloadsmallplatform" />Official AppImages</h3>
+  <p>OpenRA is distributed as portable <a href="https://appimage.org/">AppImages</a> that run on most modern 64-bit Linux distributions.<br />Mono 4.2 or later is required. <a href="https://www.mono-project.com/download/stable/#download-lin">Official Mono packages</a> can be installed if your distro packages are not compatible.</p>
+  <p>Download the mods you want to play, <a href="https://github.com/OpenRA/OpenRA/wiki/AppImages">make the AppImage files executable</a>, then double click to play!<br />Install the optional <a href="https://github.com/AppImage/appimaged">appimaged</a> utility to integrate OpenRA with your system launcher and web browser.</p>
   <ul class="downloadlinks">
-    <li><%= generate_download_button("deb", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
-    <li><%= generate_download_button("deb", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
+    <li><%= generate_appimage_button("ra", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
+    <li><%= generate_appimage_button("ra", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
+    <li><%= generate_appimage_button("cnc", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
+    <li><%= generate_appimage_button("cnc", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
+    <li><%= generate_appimage_button("d2k", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
+    <li><%= generate_appimage_button("d2k", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
   </ul>
-</div>
-<div id="rpm" class="tab">
-  <hr />
-  <h3>Install OpenRA for Fedora / openSUSE</h3>
-  <p>Stable releases and playtests are available via our <a href="https://software.opensuse.org/download.html?project=games:openra&amp;package=openra">openSUSE Build Service repository</a>.</p>
-</div>
-<div id="arch" class="tab">
-  <hr />
-  <h3>Install OpenRA for Arch Linux</h3>
+  <h3><img src="/images/platforms/flatpak-small.png" class="downloadsmallplatform" />Flatpak</h3>
+  <p>An unofficial OpenRA Flatpak is available on <a href="https://flathub.org/apps/details/net.openra.OpenRA">Flathub</a>:</p>
+  <pre>$ flatpak install --from https://flathub.org/repo/appstream/net.openra.OpenRA.flatpakref</pre></p>
+  <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
+  <p class="downloadthirdparty">The Flatpak sandbox interferes with the in-game mod switching feature between official and community mods.<br />We recommend that users who would like to use this feature run the AppImage releases instead.</p>
+  <h3><img src="/images/platforms/arch-small.svg" class="downloadsmallplatform" />Arch Linux</h3>
   <p>Stable releases are available in the <a href="https://www.archlinux.org/packages/community/any/openra/">official Arch repository</a>, and can be installed using <span style="font-family: monospace;">pacman</span>:<pre>$ pacman -S openra </pre></p>
   <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
-</div>
-<div id="gentoo" class="tab">
-  <hr />
-  <h3>Install OpenRA for Gentoo</h3>
+  <h3><img src="/images/platforms/gentoo-small.svg" class="downloadsmallplatform" />Gentoo</h3>
   <p>Unofficial packages for both releases and playtests are available via the &ldquo;dr&rdquo; overlay:</p>
   <pre>$ emerge -av layman
 $ layman -a -S dotnet
 $ layman -a -S dr -o https://github.com/cerebrum/dr/raw/master/repo.xml
 $ printf '%s\n' "games-strategy/openra ~amd64" >> /etc/portage/package.keywords
 $ emerge games-strategy/openra</pre>
-  <p class="downloadthirdparty">We do not directly maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
-</div>
-<div id="exherbo" class="tab">
-  <hr />
-  <h3>Install OpenRA for Exherbo</h3>
-  <p>Packages for both releases and playtests are available via the <a href="https://git.exherbo.org/summer/packages/games-strategy/openra/index.html">hasufell overlay</a>:</p>
+  <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
+  <h3><img src="/images/platforms/exherbo-small.svg" class="downloadsmallplatform" />Exherbo</h3>
+  <p>Unofficial packages for both releases and playtests are available via the <a href="https://git.exherbo.org/summer/packages/games-strategy/openra/index.html">hasufell overlay</a>:</p>
   <pre>$ cave resolve repository/hasufell
 $ cave resolve games-strategy/openra:release
 $ cave resolve games-strategy/openra:playtest</pre>
-  <p class="downloadthirdparty">We do not directly maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
+  <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
 </div>
 <div id="freebsd" class="tab">
   <hr />
-  <h3>Install OpenRA for FreeBSD</h3>
+  <h3><img src="/images/platforms/freebsd-small.svg" class="downloadsmallplatform" />FreeBSD port</h3>
   <p>Stable releases are available in the <a href="https://www.freshports.org/games/openra/">FreeBSD Ports Collection</a>:<br />
 <pre># cd /usr/ports/games/openra
 # make install</pre></p>
   <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
+</div>
+<div id="source" class="tab">
+  <hr />
+  <h3><img src="/images/platforms/source-small.svg" class="downloadsmallplatform" />Source Code</h3>
+  <p>OpenRA can be compiled from source on all platforms.</p>
+  <p>Refer to the <a href="https://github.com/OpenRA/OpenRA/wiki/Compiling">OpenRA Wiki</a> for detailed compilation instructions.</p>
+  <ul class="downloadlinks">
+    <li><%= generate_download_button("source", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
+    <li><%= generate_download_button("source", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
+  </ul>
 </div>
