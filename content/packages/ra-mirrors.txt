@@ -1,7 +1,6 @@
 http://openra.ppmsite.com/ra-packages.zip
 http://srvdonate.ut.mephi.ru/openra/ra-packages.zip
 http://openra.baxxster.no/openra/ra-packages.zip
-http://openra.us.baxxster.no/openra/ra-packages.zip
 http://openra.0x47.net/ra-packages.zip
 http://openra.mirror.haffdata.com/ra-packages.zip
 http://galaxy.republic.community/h/openra/ra-packages.zip
