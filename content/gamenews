@@ -1,4 +1,4 @@
-2018-07-29 14-00-00:
-	Title: Playtest 20180729
+2018-08-25 21-00-00:
+	Title: Playtest 20180825
 	Author: Paul Chote
-	Content: A new playtest is available for community testing.\nThis pre-release build contains major changes and fixes:\n\n  • Player profiles and badges\n  • New lobby features for players and game admins\n  • Changes to kill-bounties, fake and tech structures,\n    and the Chronoshift in Red Alert\n  • Many other community-voted balance changes in\n    Red Alert and Tiberian Dawn\n  • Significant performance improvements\n  • Fixes for common crashes and other gameplay bugs\n\nRead more and download from www.openra.net and\nlet us know what you think!
+	Content: A new playtest is now available with fixes for many of the issues reported in playtest-20180729. Changes include:\n\n  • Improvements to the player account system\n  • Fixed incorrect infantry death screams\n  • Fixed crashes with text input and bots in the lobby\n  • Fixed AI harvester control\n  • Fixed bugs with the RA Chronoshift-return behaviour\n  • Fixed crashes in several campaign missions\n  • Fixed AppImage compatibility with Linux Mint\n\nRead more and download from www.openra.net and\nlet us know what you think!
