@@ -1,12 +1,10 @@
 <script type="text/javascript">
   var data = {};
-  var release_tag = "<%= fetch_git_tag(GITHUB_RELEASE_ID) %>";
-  var playtest_tag = "<%= fetch_git_tag(GITHUB_PLAYTEST_ID) %>";
 
   function initMapInfo(hash) {
     var doMap = function(map) {
       if ('title' in map)
-        $('.map-'+hash).html('<a href="https://resource.openra.net/maps/'+map['id']+'" target="_maps">'+map['title']+'</a><br /><span class="gameSubline">'+map['map_type']+'&nbsp;('+map['players']+' Players)</span>');
+        $('.map-'+hash).html('<a class="ellipsis" href="https://resource.openra.net/maps/'+map['id']+'" target="_maps">'+map['title']+'</a>');
     };
     if (hash in data) {
       doMap(data[hash]);
@@ -31,6 +29,96 @@
     });
   }
 
+  function modMetadata(game) {
+    // New format mods include the correct metadata already
+    if (game['modtitle']) {
+      return {
+          // Limit title length to avoid breakage
+          'title': game['modtitle'].substring(0, 50),
+          'icon': game['modicon32'],
+          'website': game['modwebsite']
+      }
+    }
+
+    // Generate data for older official mods
+    if (game['mod'] == 'ra') {
+      return {
+          'title': 'Red Alert',
+          'icon': 'https://www.openra.net/images/icons/ra_32x32.png',
+          'website': 'https://www.openra.net'
+      }
+    }
+
+    if (game['mod'] == 'cnc') {
+      return {
+          'title': 'Tiberian Dawn',
+          'icon': 'https://www.openra.net/images/icons/cnc_32x32.png',
+          'website': 'https://www.openra.net'
+      }
+    }
+
+    if (game['mod'] == 'd2k') {
+      return {
+          'title': 'Dune 2000',
+          'icon': 'https://www.openra.net/images/icons/d2k_32x32.png',
+          'website': 'https://www.openra.net'
+      }
+    }
+
+    return {
+      'title': 'Unknown Mod &lt;' + game['mod'] + '&gt;',
+      'icon': '',
+      'website': ''
+    }
+  }
+
+  function parseMasterQuery(masterReply, show_playing, show_waiting, show_empty) {
+    var groups = {};
+    for (var i in masterReply) {
+      game = masterReply[i];
+
+      // Filter out unwanted games
+      if (game['state'] == 3)
+        continue;
+
+      if ((game['state'] == 2) && !show_playing)
+        continue;
+
+      if ((game['state'] == 1 && game['players'] > 0) && !show_waiting)
+        continue;
+
+      if ((game['players'] == 0) && !show_empty)
+        continue;
+
+      var metadata = modMetadata(game);
+      var key = [
+        game['mod'], game['version'],
+        metadata['title'], metadata['icon'], metadata['website']
+      ].join('-');
+
+      if (!(key in groups)) {
+        metadata['games'] = [];
+        metadata['version'] = game['version'];
+        metadata['handler'] = 'openra-' + game['mod'] + '-' + game['version'] + '://';
+        metadata['players'] = 0;
+        groups[key] = metadata;
+      }
+
+      groups[key]['players'] += game['players'] + game['spectators'];
+      groups[key]['games'].push({
+        'name': game['name'].replace(/\\\'/g, "'"),
+        'location': game['location'] || 'Unknown',
+        'address': game['address'],
+        'map': game['map'],
+        'state': game['state'],
+        'players': game['players'],
+        'maxplayers': game['maxplayers'],
+        'spectators': game['spectators'],
+      }); 
+    }
+    return groups;
+  }
+
   function updateGameList() {
     $.ajax({
       type: "GET",
@@ -38,92 +126,118 @@
     }).done(function(masterMessage) {
       $('#serverlist').empty();
       var masterReply = jQuery.parseJSON(masterMessage);
+
+      var groups = parseMasterQuery(masterReply,
+        $('#status_playing').is(':checked'),
+        $('#status_waiting').is(':checked'),
+        $('#status_empty').is(':checked')
+      );
+
+      var ordered = Object.keys(groups).sort(function (a, b) {
+        return groups[b]['players'] - groups[a]['players'];
+      });
+
       var hashes = [];
       var activePlayers = 0;
       var activeServers = 0;
-      for (var i in masterReply) {
-        var game = masterReply[i];
+      for (var k in ordered) {
+        var group = groups[ordered[k]];
 
-        if (game['state'] == 3) // server shutting down
-            continue;
+        var header = $('<tr>');
+        var headerContent = $('<td colspan="6" class="grouprow">');
 
-        if ((game['state'] == 2) && !$('#status_playing').is(':checked'))
-            continue;
+        if (group['icon'])
+          headerContent.append('<img src="' + group['icon'] + '" width="16" height="16">');
 
-        if ((game['state'] == 1 && game['players'] > 0) && !$('#status_waiting').is(':checked'))
-            continue;
+        if (group['website'])
+          headerContent.append('<a href="' + group['website'] + '" rel="nofollow">' + group['title'] + '</a>');
+        else
+          headerContent.append('<span>' + group['title'] + '</span>');
 
-        if ((game['players'] == 0) && !$('#status_empty').is(':checked'))
-            continue;
+        headerContent.append('<span>&nbsp;(' + group['version']+')</span>');
 
-        activePlayers += game['players'];
-        activeServers++;
-        var state = 'Unknown';
-        var stateClass = '';
-        switch (game['state']) {
-          case 2: state = 'Playing'; stateClass = 'gamePlaying'; break;
-          case 1:
-           if (game['players'] > 0)
-           {
-             state = 'Waiting';
-             stateClass = 'gameWaiting';
-           }
-           else
-           {
-             state = 'Empty';
-             stateClass = 'gameEmpty';
-           }
-           break;
+        if (group['players']) {
+          var players = group['players'] == 1 ? 'Player' : 'Players';
+          headerContent.append('<span>&nbsp;&mdash;&nbsp;' + group['players'] + '&nbsp;' + players + '</span>');
         }
 
-        var mod = 'Unknown Mod ('+game['mod']+')';
-        switch (game['mod']) {
-          case 'ra': mod = "Red Alert"; break;
-          case 'cnc': mod = "Tiberian Dawn"; break;
-          case 'd2k': mod = "Dune 2000"; break;
-          case 'ts': mod = "Tiberian Sun"; break;
-          case 'ra2': mod = "Red Alert 2"; break;
+        header.append(headerContent)
+        $('#serverlist').append(header);
 
-          case 'fgtn': mod = "The Forgotten Chapter"; break;
-          case 'to': mod = "RA: Tiberium Origins"; break;
-          case 'tdx': mod = "Tiberian Dawn Xtended"; break;
-          case 'sp': mod = "Shattered Paradise"; break;
-          case 'cd': mod = "Crystallized Doom"; break;
+        var gameOrder = Object.keys(group['games']).sort(function (a, b) {
+          var ga = group['games'][a];
+          var gb = group['games'][b];
+
+          // Sort first by state (waiting, playing, empty)
+          if (gb['state'] != ga['state']) {
+            // Empty should appear below playing
+            if (gb['state'] == 1 && gb['players'] + gb['spectators'] == 0)
+              return -1;
+
+            if (ga['state'] == 1 && ga['players'] + ga['spectators'] == 0)
+              return 1;
+
+            return ga['state'] - gb['state'];
+          }
+
+          // Then by players
+          if (gb['players'] != ga['players'])
+            return gb['players'] - ga['players'];
+
+          // Finally by name
+          return gb['name'] > ga['name'];
+        });
+
+        for (var g in group['games']) {
+          var game = group['games'][gameOrder[g]];
+
+          activePlayers += game['players'];
+          activeServers++;
+          var state = 'Unknown';
+          var stateClass = '';
+          switch (game['state']) {
+            case 2: state = 'Playing'; stateClass = 'gamePlaying'; break;
+            case 1:
+             if (game['players'] > 0)
+             {
+               state = 'Waiting';
+               stateClass = 'gameWaiting';
+             }
+             else
+             {
+               state = 'Empty';
+               stateClass = 'gameEmpty';
+             }
+             break;
+          }
+
+          var row = $('<tr>');
+          row.append('<td class="ellipsis" style="text-align: left;" title="' + game['address'] + '">' + game['name'] + '</td>');
+          row.append('<td>'+game['location']+'</td>');
+          row.append('<td class="map-'+game['map']+'">Loading...</td>');
+
+          var players = game['players']+' / '+game['maxplayers'];
+          if (game['spectators'] > 0)
+              players += ' + ' + game['spectators'];
+
+          row.append('<td>'+players+'</td>');
+          row.append('<td><span class="'+stateClass+'">'+state+'</span></td>');
+
+
+          if (game['state'] == 1)
+            row.append('<td><a href="'+group['handler']+game['address']+'">Join</a></td>');
+          else
+            row.append('<td></td>');
+
+          $('#serverlist').append(row);
+
+          if ($.inArray(game['map'], hashes) < 0)
+            hashes.push(game['map']);
         }
-
-        rowClass = '';
-        if (game['version'] != release_tag & game['version'] != playtest_tag)
-          rowClass = 'greyout';
-
-        var row = $('<tr class="'+rowClass+'">');
-        row.append('<td>'+game['name'].replace(/\\\'/g, "'")+'</span></td>');
-
-	var location = game['location'] || 'Unknown';
-        if (game['state'] == '1') {
-          var handler = 'openra-' + game['mod'] + '-' + game['version'] + '://';
-          if (game['version'] == 'release-20170527')
-            handler = 'openra://';
-
-          row.append('<td>'+location+'<br /><span class="gameSubline"><a href="'+handler+game['address']+'">'+game['address']+'</a></span></td>');
-        } else
-          row.append('<td>'+location+'<br /><span class="gameSubline">'+game['address']+'</span></td>');
-
-        var players = game['players']+' / '+game['maxplayers'];
-        if (game['spectators'] > 0)
-            players += ' + ' + game['spectators'];
-
-        players += (game['players'] + game['spectators'] == 1 ? ' player' : ' players')
-        row.append('<td><span class="'+stateClass+'">'+state+'</span><br /><span class="gameSubline">'+players+'</span></td>');
-        row.append('<td>'+mod+'<br /><span class="gameSubline">'+game['version']+'</span></td>');
-        row.append('<td class="map-'+game['map']+'">Loading...</td></tr>');
-        $('#serverlist').append(row);
-
-        if ($.inArray(game['map'], hashes) < 0)
-          hashes.push(game['map']);
       }
 
       if (activeServers == 0)
-        $('#serverlist').append('<tr><td colspan="4">No matching games found</td></tr>');
+        $('#serverlist').append('<tr><td colspan="6">No matching games found</td></tr>');
 
       for (var i in hashes)
         initMapInfo(hashes[i]);
@@ -138,7 +252,7 @@
   $(document).ready(function() {
     $('#servercontainer').show();
     $('#serverlist').empty();
-    $('#serverlist').append('<tr><td colspan="4">Loading server list...</td></tr>');
+    $('#serverlist').append('<tr><td colspan="6">Loading server list...</td></tr>');
     updateGameList();
   });
 
@@ -207,7 +321,16 @@
 </form>
 <p>Found <span id="activeServers">0</span> servers with <span id="activePlayers">0</span> players matching your selection:</p>
 <table>
-  <thead><tr><th width="180">Server</th><th width="110">Location</th><th width="80">Status</th><th width="100">Mod</th><th width="160">Map</th></tr></thead>
+  <thead>
+    <tr>
+      <th width="210">Server</th>
+      <th width="120">Location</th>
+      <th width="195">Map</th>
+      <th width="80">Players</th>
+      <th width="60">Status</th>
+      <th width="35"></th>
+    </tr>
+  </thead>
   <tbody id="serverlist"></tbody>
 </table>
 <br/>

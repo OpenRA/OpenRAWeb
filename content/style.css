@@ -331,7 +331,7 @@ table {
 }
 
 td, th, tr {
-  padding: 5px;
+  padding: 3px 0;
 }
 
 #serverlist {
@@ -343,8 +343,24 @@ td, th, tr {
   overflow: hidden;
 }
 
-#serverlist .gameSubline {
-  font-size: 10px;
+#serverlist td.grouprow {
+  font-size: 11px;
+  padding: 7px 0 3px 0;
+  vertical-align: middle;
+  border-bottom: 1px #fff solid;
+}
+
+#serverlist td.grouprow img {
+  vertical-align: middle;
+  padding-right: 5px;
+  margin-top: -3px;
+}
+
+#serverlist .ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .gameWaiting {
