@@ -1,4 +1,4 @@
-2018-08-25 21-00-00:
-	Title: Playtest 20180825
+2018-09-23 14-30-00:
+	Title: Release 20180923
 	Author: Paul Chote
-	Content: A new playtest is now available with fixes for many of the issues reported in playtest-20180729. Changes include:\n\n  • Improvements to the player account system\n  • Fixed incorrect infantry death screams\n  • Fixed crashes with text input and bots in the lobby\n  • Fixed AI harvester control\n  • Fixed bugs with the RA Chronoshift-return behaviour\n  • Fixed crashes in several campaign missions\n  • Fixed AppImage compatibility with Linux Mint\n\nRead more and download from www.openra.net and\nlet us know what you think!
+	Content: With two months of successful playtesting behind us, we are pleased to finally announce Release 20180923.\n\nChanges include:\n\n  • A new player account and badges system\n  • Several other lobby and menu improvements\n  • Overhauled Red Alert Chronoshift behaviour\n  • Red Alert and Tiberian Dawn balance changes\n  • Improved performance and responsiveness\n  • A collection of crash and bug fixes\n\nRead more and download from www.openra.net and\nlet us know what you think!
