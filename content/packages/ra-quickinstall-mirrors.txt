@@ -1,4 +1,4 @@
 http://openra.baxxster.no/openra/ra-quickinstall.zip
 http://openra.ppmsite.com/ra-quickinstall.zip
 http://openra.mirror.haffdata.com/ra-quickinstall.zip
-http://galaxy.republic.community/h/openra/ra-quickinstall.zip
+http://dev.republic.community/h/openra/ra-quickinstall.zip

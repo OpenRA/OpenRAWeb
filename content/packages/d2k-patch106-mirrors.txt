@@ -1,4 +1,4 @@
 http://openra.baxxster.no/openra/d2k-patch106.zip
 http://openra.ppmsite.com/d2k-patch106.zip
 http://openra.mirror.haffdata.com/d2k-patch106.zip
-http://galaxy.republic.community/h/openra/d2k-patch106.zip
+http://dev.republic.community/h/openra/d2k-patch106.zip
