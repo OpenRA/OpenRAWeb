@@ -191,7 +191,7 @@
         for (var g in group['games']) {
           var game = group['games'][gameOrder[g]];
 
-          activePlayers += game['players'];
+          activePlayers += game['players'] + game['spectators'];
           activeServers++;
           var state = 'Unknown';
           var stateClass = '';
