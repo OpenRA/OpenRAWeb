@@ -18,10 +18,10 @@ PAGES = {
 
 SOCIAL = {
   "facebook" => { name: "Facebook", url: "https://www.facebook.com/openra" },
+  "discord" => { name: "Discord", url: "https://discord.gg/UcUztfr" },
   "twitter" => { name: "Twitter", url: "https://twitter.com/openRA" },
   "reddit" => { name: "Reddit", url: "https://www.reddit.com/r/openra" },
   "youtube" => { name: "Youtube", url: "https://www.youtube.com/channel/UCRoiPL1J4K1-EhQeNazrYig"},
-  "gplus" => { name: "Google+", url: "https://www.google.com/+OpenraNet" },
   "steam" => { name: "Steam", url: "https://steamcommunity.com/groups/openra/" },
   "itchio" => { name: "itch.io", url: "https://openra.itch.io/openra"},
   "gamereplays" => { name: "GameReplays", url: "https://www.gamereplays.org/openra/" },
