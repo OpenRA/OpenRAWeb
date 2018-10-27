@@ -21,7 +21,7 @@
 	  <p>Find us on social media:</p>
       <ul>
       <% SOCIAL.each do |s, data| %>
-        <li><a href="<%= data[:url] %>"<%= ' rel="publisher"' if s == "gplus" %>><img src="/images/social/<%= s %>.svg" alt="<%= data[:name] %>" title="<%= data[:name] %>" /></a></li>
+        <li><a href="<%= data[:url] %>"><img src="/images/social/<%= s %>.svg" alt="<%= data[:name] %>" title="<%= data[:name] %>" /></a></li>
       <% end %>
       </ul>
     </div>
