@@ -120,12 +120,9 @@
   }
 
   function updateGameList() {
-    $.ajax({
-      type: "GET",
-      url:  "https://master.openra.net/games?protocol=2&type=json"
-    }).done(function(masterMessage) {
+    var masterURL = "https://master.openra.net/games?protocol=2&type=json";
+    $.getJSON(masterURL, function(masterReply) {
       $('#serverlist').empty();
-      var masterReply = jQuery.parseJSON(masterMessage);
 
       var groups = parseMasterQuery(masterReply,
         $('#status_playing').is(':checked'),
