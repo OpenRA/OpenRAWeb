@@ -1,3 +1,8 @@
+<p><i>Update 2018-11-14:</i></p>
+<p>EA have announced that they are partnering with Petroglyph Games to develop remastered versions of Command & Conquer: Tiberian Dawn, Red Alert and their expansion packs!</p>
+<p>See <a href="https://www.reddit.com/r/commandandconquer/comments/9x1zcz/cc_remastered_announcement_from_ea/">this reddit discussion</a> and <a href="https://www.youtube.com/watch?v=MlMLEIDdIn0">this YouTube video</a> for more details.</p>
+<p>The original announcement is available below:</p>
+
 <div style="border-radius: 4px; background-color: #272d2c; padding: 5px">
 <div style="margin: -10px 5px">
 
