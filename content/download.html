@@ -122,10 +122,10 @@ $(document).ready(function(){
   <p>Stable releases are available in the <a href="https://www.archlinux.org/packages/community/any/openra/">official Arch repository</a>, and can be installed using <span style="font-family: monospace;">pacman</span>:<pre>$ pacman -S openra </pre></p>
   <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
   <h3><img src="/images/platforms/gentoo-small.svg" class="downloadsmallplatform" />Gentoo</h3>
-  <p>Unofficial packages for both releases and playtests are available via the &ldquo;dr&rdquo; overlay:</p>
+  <p>Unofficial packages for both releases and playtests are available via the &ldquo;dr&rdquo; overlay. You only need the dotnet overlay if you compile openra with the nuget USE flag.</p>
   <pre>$ emerge -av layman
-$ layman -a -S dotnet
-$ layman -a -S dr -o https://github.com/cerebrum/dr/raw/master/repo.xml
+$ layman -a dotnet -S
+$ layman -a dr -S -o https://github.com/cerebrum/dr/raw/master/repo.xml
 $ printf '%s\n' "games-strategy/openra ~amd64" >> /etc/portage/package.keywords
 $ emerge games-strategy/openra</pre>
   <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
