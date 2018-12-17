@@ -11,21 +11,15 @@
       return;
     }
 
-    $.ajax({
-      type: "GET",
-      url: "https://resource.openra.net/map/hash/"+hash,
-      statusCode: {
-        404: function() {
-          $('.map-'+hash).html('Unknown Map');
-        }
-      }
-    }).done(function(msg) {
+    var queryURL = "https://resource.openra.net/map/hash/"+hash;
+    $.getJSON(queryURL).done(function(reply) {
       data[hash] = {};
-      var reply = jQuery.parseJSON(msg);
       if (!!reply[0])
            data[hash] = reply[0];
 
       doMap(data[hash]);
+    }).fail(function() {
+      $('.map-'+hash).html('Unknown Map');
     });
   }
 
