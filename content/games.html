@@ -3,9 +3,15 @@
 
   function initMapInfo(hash) {
     var doMap = function(map) {
-      if ('title' in map)
-        $('.map-'+hash).html('<a class="ellipsis" href="https://resource.openra.net/maps/'+map['id']+'" target="_maps">'+map['title']+'</a>');
+      if ('title' in map) {
+        var content = $('<a class="ellipsis" target="_maps">');
+        content.attr('href', 'https://resource.openra.net/maps/'+map['id']);
+        content.text(map['title']);
+        $('.map-'+hash).text('');
+        $('.map-'+hash).append(content);
+      }
     };
+
     if (hash in data) {
       doMap(data[hash]);
       return;
@@ -133,19 +139,29 @@
       var activeServers = 0;
       for (var k in ordered) {
         var group = groups[ordered[k]];
-
         var header = $('<tr>');
         var headerContent = $('<td colspan="6" class="grouprow">');
 
-        if (group['icon'])
-          headerContent.append('<img src="' + group['icon'] + '" width="16" height="16">');
+        if (group['icon']) {
+          var content = $('<img width="16" height="16">');
+          content.attr('src', group['icon']);
+          headerContent.append(content);
+        }
 
-        if (group['website'])
-          headerContent.append('<a href="' + group['website'] + '" rel="nofollow">' + group['title'] + '</a>');
-        else
-          headerContent.append('<span>' + group['title'] + '</span>');
+        if (group['website']) {
+          var content = $('<a rel="nofollow">');
+          content.attr('href', group['website']);
+          content.text(group['title']);
+          headerContent.append(content);
+        } else {
+          var content = $('<span>');
+          content.text(group['title']);
+          headerContent.append(content);
+        }
 
-        headerContent.append('<span>&nbsp;(' + group['version']+')</span>');
+        var versionContent = $('<span style="margin-left:0.5em">');
+        versionContent.text('(' + group['version']+')');
+        headerContent.append(versionContent);
 
         if (group['players']) {
           var players = group['players'] == 1 ? 'Player' : 'Players';
@@ -203,9 +219,19 @@
           }
 
           var row = $('<tr>');
-          row.append('<td class="ellipsis" style="text-align: left;" title="' + game['address'] + '">' + game['name'] + '</td>');
-          row.append('<td>'+game['location']+'</td>');
-          row.append('<td class="map-'+game['map']+'">Loading...</td>');
+          var nameCell = $('<td style="text-align: left;">');
+          nameCell.attr('title', game['address']);
+          nameCell.text(game['name']);
+          row.append(nameCell);
+
+          var locationCell = $('<td class="ellipsis">');
+          locationCell.text(game['location']);
+          row.append(locationCell);
+
+          var mapCell = $('<td>');
+          mapCell.addClass('map-'+game['map']);
+          mapCell.text('Loading...');
+          row.append(mapCell);
 
           var players = game['players']+' / '+game['maxplayers'];
           if (game['spectators'] > 0)
@@ -214,12 +240,15 @@
           row.append('<td>'+players+'</td>');
           row.append('<td><span class="'+stateClass+'">'+state+'</span></td>');
 
+          var joinCell = $('<td>');
+          if (game['state'] == 1) {
+            var content = $('<a>');
+            content.attr('href', group['handler']+game['address']);
+            content.text('Join');
+            joinCell.append(content);
+          }
 
-          if (game['state'] == 1)
-            row.append('<td><a href="'+group['handler']+game['address']+'">Join</a></td>');
-          else
-            row.append('<td></td>');
-
+          row.append(joinCell);
           $('#serverlist').append(row);
 
           if ($.inArray(game['map'], hashes) < 0)
