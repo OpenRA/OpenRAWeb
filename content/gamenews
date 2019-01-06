@@ -1,4 +1,4 @@
-2018-12-16 09-00-00:
-	Title: 20181215 bugfix release
+2019-01-06 12-00-00:
+	Title: Playtest 20190106 out for testing
 	Author: Paul Chote
-	Content: A new release is now available with fixes for a collection of frustrating bugs and crashes in release-20180923:\n\n • Started servers showing as "Waiting" in the server list\n • Crashes and visual glitches in the game lobby\n • Rare crashes with attack-move and aircraft land orders\n • Chronoshift-MCV death and duplication glitches\n • Crashes with the /levelup cheat\n • Transport unload glitch\n • Tech-structure surrender-capture glitch\n • Compatibility issues with certain older GPUs\n\nVisit https://www.openra.net to download the new release and to find out about the public KKnD alpha!
+	Content: A new playtest is available for community testing.\nThis pre-release build contains major changes and fixes:\n\n  • Improved unit targeting into the Fog of War\n  • New behaviours for the RA Engineer, Spy, Thief\n  • Nine new-to-OpenRA campaign missions\n  • Army value display for spectators\n  • Map editor improvements\n  • Further performance improvements\n  • Fixes for common crashes and other gameplay bugs\n\nRead more and download from www.openra.net and\nlet us know what you think!
