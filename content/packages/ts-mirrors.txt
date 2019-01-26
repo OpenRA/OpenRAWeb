@@ -4,3 +4,4 @@ http://openra.baxxster.no/openra/ts-packages.zip
 http://openra.0x47.net/ts-packages.zip
 http://openra.mirror.haffdata.com/ts-packages.zip
 http://dev.republic.community/h/openra/ts-packages.zip
+http://openra.koljasagorski.de/ts-packages.zip
