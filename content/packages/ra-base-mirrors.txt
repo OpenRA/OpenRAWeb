@@ -2,3 +2,4 @@ http://openra.baxxster.no/openra/ra-base.zip
 http://openra.ppmsite.com/ra-base.zip
 http://openra.mirror.haffdata.com/ra-base.zip
 http://dev.republic.community/h/openra/ra-base.zip
+http://openra.koljasagorski.de/ra-base.zip
