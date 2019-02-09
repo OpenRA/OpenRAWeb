@@ -1,4 +1,4 @@
-2019-01-06 12-00-00:
-	Title: Playtest 20190106 out for testing
+2019-02-09 20-00-00:
+	Title: Playtest 20190209 and RAGL S7
 	Author: Paul Chote
-	Content: A new playtest is available for community testing.\nThis pre-release build contains major changes and fixes:\n\n  • Improved unit targeting into the Fog of War\n  • New behaviours for the RA Engineer, Spy, Thief\n  • Nine new-to-OpenRA campaign missions\n  • Army value display for spectators\n  • Map editor improvements\n  • Further performance improvements\n  • Fixes for common crashes and other gameplay bugs\n\nRead more and download from www.openra.net and\nlet us know what you think!
+	Content: A second playtest for our early 2019 release is out now.\nThis build fixes all known bugs and implements some long-awaited new features:\n\n  • Turreted units acquire targets while moving\n  • Force-firing artilly-style units targets the ground\n  • Improved sidebar audio notifications\n\nIn the competitive scene, signups for Season 7 of the Red Alert Global League are now open.\n\nSee the full news post at www.openra.net for more information and the new playtest download!
