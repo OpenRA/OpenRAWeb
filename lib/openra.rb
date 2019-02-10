@@ -18,7 +18,7 @@ PAGES = {
 
 SOCIAL = {
   "facebook" => { name: "Facebook", url: "https://www.facebook.com/openra" },
-  "discord" => { name: "Discord", url: "https://discord.gg/UcUztfr" },
+  "discord" => { name: "Discord", url: "https://discord.me/openra" },
   "twitter" => { name: "Twitter", url: "https://twitter.com/openRA" },
   "reddit" => { name: "Reddit", url: "https://www.reddit.com/r/openra" },
   "youtube" => { name: "Youtube", url: "https://www.youtube.com/channel/UCRoiPL1J4K1-EhQeNazrYig"},
