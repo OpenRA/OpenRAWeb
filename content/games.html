@@ -221,11 +221,15 @@
           var row = $('<tr>');
           var nameCell = $('<td style="text-align: left;">');
           nameCell.attr('title', game['address']);
-          nameCell.text(game['name']);
+          var nameContents = $('<span class="ellipsis">');
+          nameContents.text(game['name']);
+          nameCell.append(nameContents);
           row.append(nameCell);
 
-          var locationCell = $('<td class="ellipsis">');
-          locationCell.text(game['location']);
+          var locationCell = $('<td>');
+          var locationContents = $('<span class="ellipsis">');
+          locationContents.text(game['location']);
+          locationCell.append(locationContents);
           row.append(locationCell);
 
           var mapCell = $('<td>');
