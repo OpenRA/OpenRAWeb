@@ -76,11 +76,6 @@ watcher:
   notify_on_compilation_success: true
   notify_on_compilation_failure: true
 
-deploy:
-  res0l:
-    kind: rsync
-    dst:  "openra@openra.res0l.net:/home/openra/openra.res0l.net"
-
 # Meta data for news feeds:
 base_url: "https://www.openra.net"
 author_name: "OpenRA developers"
