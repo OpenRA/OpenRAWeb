@@ -1,4 +1,4 @@
-2019-02-09 20-00-00:
-	Title: Playtest 20190209 and RAGL S7
+2019-03-02 18-00-00:
+	Title: Playtest 20190302
 	Author: Paul Chote
-	Content: A second playtest for our early 2019 release is out now.\nThis build fixes all known bugs and implements some long-awaited new features:\n\n  • Turreted units acquire targets while moving\n  • Force-firing artilly-style units targets the ground\n  • Improved sidebar audio notifications\n\nIn the competitive scene, signups for Season 7 of the Red Alert Global League are now open.\n\nSee the full news post at www.openra.net for more information and the new playtest download!
+	Content: We are today pushing a new build that addresses a number of issues discovered in playtest-20190209:\n\n  • Fixed target cursor issues with buildings under the fog\n  • Fixed inconsistent "Unit Ready" audio notifications\n  • Fixed inconsistent harvester behaviour\n  • Fixed turrets "twitching" when aiming at some targets\n  • Fixed a collection of RA map and mission issues\n  • Implemented community-driven RA balance changes\n\nWe expect to repackage this final release candidate as a new release if no further regressions are found.\n\nVisit www.openra.net to download and comment!
