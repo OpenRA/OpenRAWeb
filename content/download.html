@@ -118,6 +118,31 @@ $(document).ready(function(){
   <pre>$ flatpak install --from https://flathub.org/repo/appstream/net.openra.OpenRA.flatpakref</pre></p>
   <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
   <p class="downloadthirdparty">The Flatpak sandbox interferes with the in-game mod switching feature between official and community mods.<br />We recommend that users who would like to use this feature run the AppImage releases instead.</p>
+  <h3><img src="/images/platforms/snapcraft.png" class="downloadsmallplatform" />Snap</h3>
+  <p>An unofficial OpenRA Snap package is available from the <a href="https://snapcraft.io/openra">Snap Store</a>:
+  <pre>$ snap install openra</pre></p>
+  <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
+  <h3><img src="/images/platforms/nixos.png" class="downloadsmallplatform" />NixOS</h3>
+  <p>Unofficial OpenRA packages exist in the <a href="https://github.com/NixOS/nixpkgs/tree/master/pkgs/games/openra">official NixOS repository</a>, that provides both the engine and mods provided by its source repository and other mods like KKnD and Red Alert 2. To install the latest stable release of the standard mods run:
+  <pre>$ nix-env -iA openraPackages.engines.release</pre>
+  While to install the latest playtest run:
+  <pre>$ nix-env -iA openraPackages.engines.playtest</pre>
+  and to install the latest packaged bleed commit (which can lag behind the actual latest bleed commit) run:
+  <pre>$ nix-env -iA openraPackages.engines.bleed</pre>
+  Installing additional mods is usually as simple as running:
+  <pre>$ nix-env -iA openraPackages.mods.id</pre>
+  where id is the short ID of the mod, e.g. kknd for KKnD, ra2 for Red Alert 2, rv for Romanov's Vengeance, <i>etc.</i></p>
+  <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
+  <h3><img src="/images/platforms/void-linux.svg" class="downloadsmallplatform" />Void Linux</h3>
+  <p>Stable releases of OpenRA are available from the <a href="https://github.com/void-linux/void-packages/tree/master/srcpkgs/openra">official Void Linux repository</a>. To install the package run:
+  <pre>$ xbps-install openra</pre>
+  </p> 
+  <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
+  <h3><img src="/images/platforms/solus.png" class="downloadsmallplatform" />Solus</h3>
+  <p>Stable releases are available in the official Solus repository. To install it run:
+    <pre>$ eopkg it openra</pre>
+  </p>
+  <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
   <h3><img src="/images/platforms/arch-small.svg" class="downloadsmallplatform" />Arch Linux</h3>
   <p>Stable releases are available in the <a href="https://www.archlinux.org/packages/community/any/openra/">official Arch repository</a>, and can be installed using <span style="font-family: monospace;">pacman</span>:<pre>$ pacman -S openra </pre></p>
   <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
