@@ -123,6 +123,11 @@ $(document).ready(function(){
       <pre>$ flatpak install --from https://flathub.org/repo/appstream/net.openra.OpenRA.flatpakref</pre>
       The Flatpak sandbox is known to interfere with the mod switching feature between official and community mods.<br />We recommend that players who would like to use this feature run the AppImage releases.
     </dd>
+    <dt><img src="/images/platforms/snapcraft-small.svg" class="downloadsmallplatform" />Snap</dt>
+    <dd>
+      Stable releases are available from the <a href="https://snapcraft.io/openra">Snap Store</a>:
+      <pre>$ snap install openra</pre></p>
+    </dd>
     <dt><img src="/images/platforms/arch-small.svg" class="downloadsmallplatform"/>Arch Linux</dt>
     <dd>
       Stable releases are available in the <a href="https://www.archlinux.org/packages/community/any/openra/">official Arch repository</a>:
@@ -142,6 +147,23 @@ $ cave resolve games-strategy/openra:playtest</pre></dd>
 $ layman -a -S dr -o https://github.com/cerebrum/dr/raw/master/repo.xml
 $ printf '%s\n' "games-strategy/openra ~amd64" >> /etc/portage/package.keywords
 $ emerge games-strategy/openra</pre></dd>
+    <dt><img src="/images/platforms/nix-small.svg" class="downloadsmallplatform" />NixOS</dt>
+    <dd>
+      Stable releases and Playtests are available from the <a href="https://github.com/NixOS/nixpkgs/tree/master/pkgs/games/openra">official NixOS repository</a>:
+      <pre>
+$ nix-env -iA openraPackages.engines.release
+$ nix-env -iA openraPackages.engines.playtest</pre>
+    </dd>
+    <dt><img src="/images/platforms/solus-small.svg" class="downloadsmallplatform" />Solus</dt>
+    <dd>
+      Stable releases are available from the official Solus repository:
+      <pre>$ eopkg it openra</pre>
+    </dd>
+    <dt><img src="/images/platforms/void-small.svg" class="downloadsmallplatform" />Void Linux</dt>
+    <dd>
+      Stable releases are available from the <a href="https://github.com/void-linux/void-packages/tree/master/srcpkgs/openra">official Void Linux repository</a>:
+    <pre>$ xbps-install openra</pre>
+    </dd>
   </dl>
 </div>
 <div id="freebsd" class="tab">
