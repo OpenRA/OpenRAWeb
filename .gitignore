@@ -1,3 +1,5 @@
+.bundle
 /output
 /tmp
+/vendor
 crash.log
