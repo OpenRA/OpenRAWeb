@@ -14,48 +14,76 @@ sizes = fetch_package_sizes([GITHUB_RELEASE_ID, GITHUB_PLAYTEST_ID])
 <script>
 // Wait until the DOM has loaded before querying the document
 $(document).ready(function(){
-    $('ul.downloadplatform').each(function(){
-      // For each set of tabs, we want to keep track of
-      // which tab is active and it's associated content
-      var $active, $content, $links = $(this).find('a');
+  
+  // Handler for platform tabs
+  $('ul.downloadplatform').each(function(){
+    // For each set of tabs, we want to keep track of
+    // which tab is active and it's associated content
+    var $active, $content, $links = $(this).find('a');
 
-      // If the location.hash matches one of the links, use that as the active tab.
-      // If no match is found, use the first link as the initial active tab.
-      $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
-      $active.addClass('active');
-      $content = $($active.attr('href'));
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+    $active.addClass('active');
+    $content = $($active.attr('href'));
 
-      // Hide the remaining content
-      $links.not($active).each(function () {
-        $($(this).attr('href')).hide();
-      });
-
-      function activateTab(tabEl){
-        // Make the old tab inactive.
-        if ($active && $active.length) $active.removeClass('active');
-        if ($content && $content.length) $content.hide();
-
-        // Update the variables with the new link and content
-        $active = $(tabEl);
-        $content = $($(tabEl).attr('href'));
-
-        // Make the tab active.
-        $active.addClass('active');
-        $content.show();
-      }
-
-      // Attempt to automatically highlight the viewer's OS on page load:
-      var ua = navigator.userAgent;
-      if (ua.match('Mac OS X')) activateTab($('a[href=#osx]'));
-      else if (ua.match(/Linux/)) activateTab($('a[href=#linux]'));
-      else if (ua.match('FreeBSD')) activateTab($('a[href=#freebsd]'));
-
-      // Bind the click event handler
-      $(this).on('click', 'a', function(e){
-        activateTab(this);
-        e.preventDefault();
-      });
+    // Hide the remaining content
+    $links.not($active).each(function () {
+      $($(this).attr('href')).hide();
     });
+
+    function activateTab(tabEl){
+      // Make the old tab inactive.
+      if ($active && $active.length) $active.removeClass('active');
+      if ($content && $content.length) $content.hide();
+
+      // Update the variables with the new link and content
+      $active = $(tabEl);
+      $content = $($(tabEl).attr('href'));
+
+      // Make the tab active.
+      $active.addClass('active');
+      $content.show();
+    }
+
+    // Attempt to automatically highlight the viewer's OS on page load:
+    var ua = navigator.userAgent;
+    if (ua.match('Mac OS X')) activateTab($('a[href=#osx]'));
+    else if (ua.match(/Linux/)) activateTab($('a[href=#linux]'));
+    else if (ua.match('FreeBSD')) activateTab($('a[href=#freebsd]'));
+
+    // Bind the click event handler
+    $(this).on('click', 'a', function(e){
+      activateTab(this);
+      e.preventDefault();
+    });
+  });
+
+  // Collapse accordion panels
+  $('.panel').each(function() {
+    $(this)[0].classList.add('collapse');
+  });
+
+  // Handler for accordions
+  $('.accordion').each(function() {
+    // Active state for button
+    function togglePanelHeight(el) {
+      el.classList.toggle("active");
+      // Toggle panel visibility
+      var panel = el.nextElementSibling.nextElementSibling;
+      if (!panel.classList.contains('collapse')) {
+        panel.style.maxHeight = "0";
+        panel.classList.add('collapse')
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        panel.classList.remove('collapse')
+      }
+    }
+    $(this).on('click', function(e){
+      togglePanelHeight(this);
+      e.preventDefault();
+    });
+  });
 });
 </script>
 
@@ -97,7 +125,9 @@ $(document).ready(function(){
     <li><%= generate_download_button("osx", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
   </ul>
   <p>OpenRA is also available on <a href="https://caskroom.github.io/">Homebrew Cask</a>:</p>
-  <pre>$ brew cask install openra</pre>
+  <div class="codebox">
+    <pre>$ brew cask install openra</pre>
+  </div>
   <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
 </div>
 <div id="linux" class="tab">
@@ -113,34 +143,65 @@ $(document).ready(function(){
     <li><%= generate_appimage_button("d2k", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
     <li><%= generate_appimage_button("d2k", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
   </ul>
-  <h3><img src="/images/platforms/flatpak-small.png" class="downloadsmallplatform" />Flatpak</h3>
-  <p>An unofficial OpenRA Flatpak is available on <a href="https://flathub.org/apps/details/net.openra.OpenRA">Flathub</a>:</p>
-  <pre>$ flatpak install --from https://flathub.org/repo/appstream/net.openra.OpenRA.flatpakref</pre></p>
-  <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
-  <p class="downloadthirdparty">The Flatpak sandbox interferes with the in-game mod switching feature between official and community mods.<br />We recommend that users who would like to use this feature run the AppImage releases instead.</p>
-  <h3><img src="/images/platforms/arch-small.svg" class="downloadsmallplatform" />Arch Linux</h3>
-  <p>Stable releases are available in the <a href="https://www.archlinux.org/packages/community/any/openra/">official Arch repository</a>, and can be installed using <span style="font-family: monospace;">pacman</span>:<pre>$ pacman -S openra </pre></p>
-  <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
-  <h3><img src="/images/platforms/gentoo-small.svg" class="downloadsmallplatform" />Gentoo</h3>
-  <p>Unofficial packages for both releases and playtests are available via the &ldquo;dr&rdquo; overlay:</p>
-  <pre>$ emerge -av layman
+  <h3>Community maintained packages</h3>
+  <p>Community maintained packages exist for a variety of Linux distributions.</p>
+  <p class="italic">We do not maintain the external package source, so there may be delays when a new version is released. Please contact the downstream repository maintainers about any packaging issues.</p>
+  <div class="distros">
+    <button class="accordion">
+      <img src="/images/platforms/flatpak-small.png" />
+      <span>Flatpak</span>
+    </button>
+    <span class="downloadthirdparty">An OpenRA Flatpak is available on <a href="https://flathub.org/apps/details/net.openra.OpenRA">Flathub</a>.</span>
+    <div class="panel">
+      <div class="codebox">
+        <pre>$ flatpak install --from https://flathub.org/repo/appstream/net.openra.OpenRA.flatpakref</pre>
+      </div>
+    </div>
+    <button class="accordion">
+      <img src="/images/platforms/arch-small.svg" />
+      <span>Arch Linux</span>
+    </button>
+    <span class="downloadthirdparty">Stable releases are available in the <a href="https://www.archlinux.org/packages/community/any/openra/">official Arch repository</a>.</span>
+    <div class="panel">
+      <div class="codebox">
+        <pre>$ pacman -S openra</pre>
+      </div>
+    </div>
+    <button class="accordion">
+      <img src="/images/platforms/gentoo-small.svg" />
+      <span>Gentoo</span>
+    </button>
+    <span class="downloadthirdparty">Packages for both releases and playtests are available via the <a href="https://github.com/cerebrum/dr">dr overaly</a>.</span>
+    <div class="panel">
+      <div class="codebox">
+        <pre>$ emerge -av layman
 $ layman -a -S dr -o https://github.com/cerebrum/dr/raw/master/repo.xml
 $ printf '%s\n' "games-strategy/openra ~amd64" >> /etc/portage/package.keywords
 $ emerge games-strategy/openra</pre>
-  <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
-  <h3><img src="/images/platforms/exherbo-small.svg" class="downloadsmallplatform" />Exherbo</h3>
-  <p>Unofficial packages for both releases and playtests are available via the <a href="https://git.exherbo.org/summer/packages/games-strategy/openra/index.html">hasufell overlay</a>:</p>
-  <pre>$ cave resolve repository/hasufell
+      </div>
+    </div>
+    <button class="accordion">
+      <img src="/images/platforms/exherbo-small.svg" />
+      <span>Exherbo</span>
+    </button>
+    <span class="downloadthirdparty">Packages for both releases and playtests are available via the <a href="https://git.exherbo.org/summer/packages/games-strategy/openra/index.html">hasufell overlay</a>.</span>
+    <div class="panel">
+      <div class="codebox">
+        <pre>$ cave resolve repository/hasufell
 $ cave resolve games-strategy/openra:release
 $ cave resolve games-strategy/openra:playtest</pre>
-  <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
+      </div>
+    </div>
+  </div>
 </div>
 <div id="freebsd" class="tab">
   <hr />
   <h3><img src="/images/platforms/freebsd-small.svg" class="downloadsmallplatform" />FreeBSD port</h3>
-  <p>Stable releases are available in the <a href="https://www.freshports.org/games/openra/">FreeBSD Ports Collection</a>:<br />
-<pre># cd /usr/ports/games/openra
-# make install</pre></p>
+  <p>Stable releases are available in the <a href="https://www.freshports.org/games/openra/">FreeBSD Ports Collection</a>:</p>
+  <div class="codebox">
+    <pre># cd /usr/ports/games/openra
+# make install</pre>
+  </div>
   <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
 </div>
 <div id="source" class="tab">

@@ -14,6 +14,7 @@ h3 {
 }
 
 body {
+  height: 100%;
   background-color: black;
   background-image: url("/images/bg.svg");
   background-attachment: fixed;
@@ -47,9 +48,13 @@ p.download, .newsDetails {
   font-size: 0.8em;
 }
 
+.italic { 
+  font-style: italic;
+}
+
 .downloadthirdparty {
   font-style: italic;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 .downloadsmallplatform {
@@ -498,7 +503,60 @@ td, th, tr {
   background-color: #888;
 }
 
+.codebox {
+  padding: 12px 10px;
+  background-color: #272d2c;
+}
+
+.distros {
+  padding: 0;
+  margin: 10px 0;
+}
+
+.accordion {
+  color: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+  background-color: transparent;
+  text-align: left;
+  padding: 0;
+  width: 150px;
+  font-size: 1.1em;
+}
+
+.accordion > img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  padding: 10px 0;
+}
+
+.accordion > span, .accordion + p {
+  padding: 0 5px;
+}
+
+.accordion:after {
+  content: '\25BE';
+}
+
+.accordion.active:after {
+  content: "\25B4";
+}
+
+.panel {
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+/* Hide inactive panels only when js is available. */
+.panel.collapse {
+  max-height: 0;
+}
+
 pre {
+  margin: 0;
   font-weight: normal;
   font-family: monospace;
 }
