@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="24" height="24" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <pattern id="pattern13210" patternTransform="translate(-298.35 240.87)" xlink:href="#pattern8174"/>
+  <filter id="filter27770" x="-.032853" y="-.10459" width="1.0657" height="1.2092">
+   <feGaussianBlur stdDeviation="1.2812499"/>
+  </filter>
+  <pattern id="pattern8174" width="3.2504171" height="2.7860718" patternTransform="translate(-298.35 240.87)" patternUnits="userSpaceOnUse">
+   <g transform="matrix(.033168 0 0 .033168 21.891 -5.3731)">
+    <rect x="-658" y="162" width="32" height="28" opacity=".99"/>
+    <rect x="-626" y="190" width="32" height="28" opacity=".99"/>
+    <rect x="-594" y="162" width="32" height="28" opacity=".99"/>
+    <rect x="-594" y="218" width="32" height="28" opacity=".99"/>
+    <rect x="-660" y="218" width="32" height="28" opacity=".99"/>
+   </g>
+  </pattern>
+  <filter id="filter10137">
+   <feGaussianBlur stdDeviation="3.1826429"/>
+  </filter>
+  <linearGradient id="linearGradient13206" x1="127.32" x2="127.32" y1="16.178" y2="119.03" gradientTransform="matrix(.18265 0 0 .23003 -11.307 218.26)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient13241" x1="124.39" x2="122.35" y1="131.96" y2="92.974" gradientTransform="matrix(1.4156 0 0 1.4156 -21.561 -74.596)" gradientUnits="userSpaceOnUse">
+   <stop offset="0"/>
+   <stop stop-opacity="0" offset="1"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(0,-232)">
+  <ellipse cx="12" cy="244" rx="11.905" ry="10.652" fill="#3e5495" opacity=".99" stroke="#3d5292" stroke-linejoin="round" stroke-width=".18973"/>
+  <ellipse cx="11.932" cy="243.39" rx="11.728" ry="10.068" fill="#4962ae" opacity=".99"/>
+  <g transform="matrix(.099878 0 0 .094864 -.21275 232.42)" font-family="'Bitstream Vera Sans'">
+   <text transform="matrix(1.5448 0 0 1.2972 338.45 -79.327)" x="-181.64458" y="178.59599" fill="#fff0ff" filter="url(#filter10137)" stroke="#fff0ff" stroke-width="5" style="line-height:0%" xml:space="preserve"><tspan x="-181.64458" y="178.59599" fill="#fff0ff" font-family="'Courier 10 Pitch'" font-size="144px" stroke="#fff0ff" stroke-width="5" style="line-height:125%">S</tspan></text>
+   <g stroke-width="1px">
+    <text transform="scale(1.0912 .91639)" x="53.020477" y="166.25648" fill="#4962ae" style="line-height:0%" xml:space="preserve"><tspan x="53.020477" y="166.25648" fill="#4962ae" font-family="'Courier 10 Pitch'" font-size="203.85px" style="line-height:125%">S</tspan></text>
+    <text transform="scale(1.0912 .91639)" x="53.020477" y="166.25648" fill="url(#linearGradient13241)" style="line-height:0%" xml:space="preserve"><tspan x="53.020477" y="166.25648" fill="url(#linearGradient13241)" font-family="'Courier 10 Pitch'" font-size="203.85px" style="line-height:125%">S</tspan></text>
+    <text transform="scale(1.0912 .91639)" x="53.020477" y="166.25648" fill="url(#pattern13210)" style="line-height:0%" xml:space="preserve"><tspan x="53.020477" y="166.25648" fill="url(#pattern13210)" font-family="'Courier 10 Pitch'" font-size="203.85px" style="line-height:125%">S</tspan></text>
+   </g>
+  </g>
+  <path d="m12.176 233.83c-6.6029 0.11255-11.16 4.3914-11.194 8.807 6.9843 1.9655 14.864 2.085 22.022-0.32862-0.61358-4.9128-5.7307-8.5652-10.828-8.4783z" fill="url(#linearGradient13206)" fill-rule="evenodd"/>
+  <g transform="matrix(.094864 0 0 .094864 -23.103 233.83)" fill="none">
+   <path transform="matrix(2 0 0 2 115.94 -131.94)" d="m91.469 126.97 0.4781 21.562h74.584" filter="url(#filter27770)" stroke="#fff" stroke-width="6"/>
+   <path d="m297.88 122.5 0.95621 43.124h149.17" stroke="#000" stroke-width="5.8756"/>
+  </g>
+ </g>
+</svg>

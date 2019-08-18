@@ -96,7 +96,7 @@ $(document).ready(function(){
     <li><%= generate_download_button("osx", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
     <li><%= generate_download_button("osx", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
   </ul>
-  <p>OpenRA is also available on <a href="https://caskroom.github.io/">Homebrew Cask</a>:</p>
+  <p>Stable releases are also available from <a href="https://caskroom.github.io/">Homebrew Cask</a>:</p>
   <pre>$ brew cask install openra</pre>
   <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
 </div>
@@ -113,27 +113,62 @@ $(document).ready(function(){
     <li><%= generate_appimage_button("d2k", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
     <li><%= generate_appimage_button("d2k", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
   </ul>
-  <h3><img src="/images/platforms/flatpak-small.png" class="downloadsmallplatform" />Flatpak</h3>
-  <p>An unofficial OpenRA Flatpak is available on <a href="https://flathub.org/apps/details/net.openra.OpenRA">Flathub</a>:</p>
-  <pre>$ flatpak install --from https://flathub.org/repo/appstream/net.openra.OpenRA.flatpakref</pre></p>
-  <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
-  <p class="downloadthirdparty">The Flatpak sandbox interferes with the in-game mod switching feature between official and community mods.<br />We recommend that users who would like to use this feature run the AppImage releases instead.</p>
-  <h3><img src="/images/platforms/arch-small.svg" class="downloadsmallplatform" />Arch Linux</h3>
-  <p>Stable releases are available in the <a href="https://www.archlinux.org/packages/community/any/openra/">official Arch repository</a>, and can be installed using <span style="font-family: monospace;">pacman</span>:<pre>$ pacman -S openra </pre></p>
-  <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
-  <h3><img src="/images/platforms/gentoo-small.svg" class="downloadsmallplatform" />Gentoo</h3>
-  <p>Unofficial packages for both releases and playtests are available via the &ldquo;dr&rdquo; overlay:</p>
-  <pre>$ emerge -av layman
-$ layman -a -S dr -o https://github.com/cerebrum/dr/raw/master/repo.xml
-$ printf '%s\n' "games-strategy/openra ~amd64" >> /etc/portage/package.keywords
-$ emerge games-strategy/openra</pre>
-  <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
-  <h3><img src="/images/platforms/exherbo-small.svg" class="downloadsmallplatform" />Exherbo</h3>
-  <p>Unofficial packages for both releases and playtests are available via the <a href="https://git.exherbo.org/summer/packages/games-strategy/openra/index.html">hasufell overlay</a>:</p>
-  <pre>$ cave resolve repository/hasufell
+  <h3>Community-maintained packages</h3>
+  <p>OpenRA may also be installed using packages provided by your Linux distribution or other third parties. These packages will provide better integration with your system, but may not always offer the latest release. Please contact the downstream repository maintainers about any packaging issues.</p>
+
+  <dl class="downloaddistros">
+    <dt><img src="/images/platforms/flatpak-small.png" class="downloadsmallplatform" />Flatpak</dt>
+    <dd>
+      Stable releases are available from <a href="https://flathub.org/apps/details/net.openra.OpenRA">Flathub</a>:
+      <pre>$ flatpak install --from https://flathub.org/repo/appstream/net.openra.OpenRA.flatpakref</pre>
+      The Flatpak sandbox is known to interfere with the mod switching feature between official and community mods.<br />We recommend that players who would like to use this feature run the AppImage releases.
+    </dd>
+    <dt><img src="/images/platforms/snapcraft-small.svg" class="downloadsmallplatform" />Snap</dt>
+    <dd>
+      Stable releases are available from the <a href="https://snapcraft.io/openra">Snap Store</a>:
+      <pre>$ snap install openra</pre>
+    </dd>
+    <dt><img src="/images/platforms/arch-small.svg" class="downloadsmallplatform"/>Arch Linux</dt>
+    <dd>
+      Stable releases are available in the <a href="https://www.archlinux.org/packages/community/any/openra/">official Arch repository</a>:
+      <pre>$ pacman -S openra</pre>
+    </dd>
+    <dt><img src="/images/platforms/exherbo-small.svg" class="downloadsmallplatform" />Exherbo</dt>
+    <dd>
+      Stable releases and Playtests are available from the <a href="https://git.exherbo.org/summer/packages/games-strategy/openra/index.html">hasufell overlay</a>:
+      <pre>$ cave resolve repository/hasufell
 $ cave resolve games-strategy/openra:release
 $ cave resolve games-strategy/openra:playtest</pre>
-  <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
+    </dd>
+    <dt><img src="/images/platforms/gentoo-small.svg" class="downloadsmallplatform"/>Gentoo</dt>
+    <dd>
+      Stable releases are available from the <a href="https://packages.gentoo.org/packages/games-strategy/openra">Official Gentoo repository</a>:
+      <pre>$ emerge -a games-strategy/openra</pre>
+    </dd>
+    <dt><img src="/images/platforms/nix-small.svg" class="downloadsmallplatform" />NixOS</dt>
+    <dd>
+      Stable releases and Playtests are available from the <a href="https://github.com/NixOS/nixpkgs/tree/master/pkgs/games/openra">official NixOS repository</a>:
+      <pre>$ nix-env -iA openraPackages.engines.release
+$ nix-env -iA openraPackages.engines.playtest</pre>
+    </dd>
+    <dt><img src="/images/platforms/slackware-small.svg" class="downloadsmallplatform" />Slackware</dt>
+    <dd>
+      Stable releases are available from <a href="https://www.slackbuilds.org/repository/14.2/games/OpenRA/">SlackBuilds.org</a>:
+      <pre>$ sqg -p OpenRA
+$ sbopkg -i OpenRA</pre>
+      Requires the <span style="font-family: monospace">sbopkg</span> utility from <a href="https://sbopkg.org/index.php">sbopkg.org</a>.
+    </dd>
+    <dt><img src="/images/platforms/solus-small.svg" class="downloadsmallplatform" />Solus</dt>
+    <dd>
+      Stable releases are available from the official Solus repository:
+      <pre>$ eopkg it openra</pre>
+    </dd>
+    <dt><img src="/images/platforms/void-small.svg" class="downloadsmallplatform" />Void Linux</dt>
+    <dd>
+      Stable releases are available from the <a href="https://github.com/void-linux/void-packages/tree/master/srcpkgs/openra">official Void Linux repository</a>:
+      <pre>$ xbps-install openra</pre>
+    </dd>
+  </dl>
 </div>
 <div id="freebsd" class="tab">
   <hr />
