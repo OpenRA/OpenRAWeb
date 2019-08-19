@@ -1,4 +1,4 @@
 2019-03-14 20-30-00:
-	Title: Release 20190314
+	Title: Playtest 20190825
 	Author: Paul Chote
-	Content: We are pleased to announce a new official release, which brings many improvements and fixes:\n\n  • Improved unit targeting into the Fog of War\n  • Improved targeting for turreted and artillery-style units\n  • New behaviours for the RA Engineer, Spy, Thief\n  • Nine new-to-OpenRA campaign missions\n  • Army value display for spectators\n  • Map editor improvements\n  • Further performance improvements\n  • Fixes for common crashes and other gameplay bugs\n\nDownload the new update from www.openra.net and read the full news post for more information!
+	Content: We are thrilled and relieved to finally announce the first public playtest for OpenRA's next release. The playtest brings many new features and improvements:\n\n  • Save/Load support for missions and skirmish\n  • A new spectator/replay interface\n  • A new in-game UI for Tiberian Dawn\n  • Improved order queuing behavior\n  • Direction selection for aircraft-based support powers\n  • Balance changes for RA and TD\n  • Fixes for many bugs and graphical glitches\n\nSee the full news post at www.openra.net for more information and the new playtest download!
