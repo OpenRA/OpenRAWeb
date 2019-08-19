@@ -4,7 +4,7 @@ DOWNLOAD_GITHUB_BASE_PATH = "https://github.com/OpenRA/OpenRA/"
 ENABLE_GITHUB_API = true
 
 # Github release IDs: obtain from https://api.github.com/repos/OpenRA/OpenRA/releases
-GITHUB_PLAYTEST_ID = ''
+GITHUB_PLAYTEST_ID = '19519277'
 GITHUB_RELEASE_ID = '16124869'
 
 PAGES = {
@@ -34,7 +34,11 @@ def package_name(platform, tag)
         when "osx"
             "OpenRA-#{tag}.dmg"
         when "win"
-            "OpenRA-#{tag}.exe"
+            if tag == "release-20190314" then
+                "OpenRA-#{tag}.exe"
+            else
+                "OpenRA-#{tag}-x64.exe"
+            end
         when "source"
             "OpenRA-#{tag}-source.tar.bz2"
         else
