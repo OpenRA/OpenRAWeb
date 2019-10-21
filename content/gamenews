@@ -1,4 +1,4 @@
-2019-03-14 20-30-00:
-	Title: Playtest 20190825
+2019-10-21 21-00-00:
+	Title: Playtest 20191021
 	Author: Paul Chote
-	Content: We are thrilled and relieved to finally announce the first public playtest for OpenRA's next release. The playtest brings many new features and improvements:\n\n  • Save/Load support for missions and skirmish\n  • A new spectator/replay interface\n  • A new in-game UI for Tiberian Dawn\n  • Improved order queuing behavior\n  • Direction selection for aircraft-based support powers\n  • Balance changes for RA and TD\n  • Fixes for many bugs and graphical glitches\n\nSee the full news post at www.openra.net for more information and the new playtest download!
+	Content: A new playtest is available for OpenRA's increasingly poorly named "Summer 2019" release.\n\nThe key changes in playtest-20191021 include:\n\n  • Fixed several issues with game loading/saving\n  • Fixed several crashes, glitches, and a desync\n  • Fixed mission related issues in RA and TD\n  • Fixed Linux and FreeBSD compatibility issues\n  • Refined the new spectator UI\n  • Included further Red Alert balance adjustments\n\nVisit www.openra.net to download the playtest and read an update on the unreleased Tiberian Sun mod.
