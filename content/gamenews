@@ -1,4 +1,4 @@
-2019-10-21 21-00-00:
-	Title: Playtest 20191021
+2019-11-02 19-00-00:
+	Title: Playtest 20191102
 	Author: Paul Chote
-	Content: A new playtest is available for OpenRA's increasingly poorly named "Summer 2019" release.\n\nThe key changes in playtest-20191021 include:\n\n  • Fixed several issues with game loading/saving\n  • Fixed several crashes, glitches, and a desync\n  • Fixed mission related issues in RA and TD\n  • Fixed Linux and FreeBSD compatibility issues\n  • Refined the new spectator UI\n  • Included further Red Alert balance adjustments\n\nVisit www.openra.net to download the playtest and read an update on the unreleased Tiberian Sun mod.
+	Content: A new playtest is available with several more fixes towards our upcoming late-2019 release:\n\n  • Fixed infantry failing to dodge crushes\n  • Fixed pilots (not) parachuting from killed aircraft\n  • Restored helicopter force-move above buildings\n  • Fixed several issues with left-click mouse controls\n  • Fixed 64-bit installation directory on Windows\n\nVisit www.openra.net to download the playtest and help us prepare for the next big OpenRA release!
