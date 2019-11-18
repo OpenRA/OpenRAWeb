@@ -86,12 +86,13 @@ $(document).ready(function(){
     <li><%= generate_download_button("win", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
     <li><%= generate_download_button("win", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
   </ul>
+  <p>Installers for 32-bit Windows can be found in the <a href="https://github.com/OpenRA/OpenRA/releases">GitHub Releases</a> archive.</p>
 </div>
 <div id="osx" class="tab">
   <hr />
   <h3><img src="/images/platforms/osx-small.svg" class="downloadsmallplatform" />macOS Applications</h3>
-  <p>OpenRA works on all macs running macOS 10.7 or later. Mono 4.6 or later is required (<a href="https://www.mono-project.com/download/stable/">Download Mono</a>).</p>
-  <p>OpenRA may appear to freeze the first time you launch it after updating macOS or Mono. This is caused by Mono indexing your system fonts, and OpenRA will launch normally once this has completed.</p>
+  <p>OpenRA works on all macs running macOS 10.9 or later.</p>
+  <p>OpenRA has not been notarized by Apple and may be blocked by the macOS Gatekeeper.<br />Permission to launch the games can be granted through the Security &amp; Privacy system preference panel.</p>
   <ul class="downloadlinks">
     <li><%= generate_download_button("osx", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
     <li><%= generate_download_button("osx", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
@@ -103,7 +104,7 @@ $(document).ready(function(){
 <div id="linux" class="tab">
   <hr />
   <h3><img src="/images/platforms/appimage-small.svg" class="downloadsmallplatform" />Official AppImages</h3>
-  <p>OpenRA is distributed as portable <a href="https://appimage.org/">AppImages</a> that run on most modern 64-bit Linux distributions.<br />Mono 4.2 or later is required. <a href="https://www.mono-project.com/download/stable/#download-lin">Official Mono packages</a> can be installed if your distro packages are not compatible.</p>
+  <p>OpenRA is distributed as portable <a href="https://appimage.org/">AppImages</a> that run on most modern 64-bit Linux distributions.</p>
   <p>Download the mods you want to play, <a href="https://github.com/OpenRA/OpenRA/wiki/AppImages">make the AppImage files executable</a>, then double click to play!<br />Install the optional <a href="https://github.com/AppImage/appimaged">appimaged</a> utility to integrate OpenRA with your system launcher and web browser.</p>
   <ul class="downloadlinks">
     <li><%= generate_appimage_button("ra", GITHUB_RELEASE_ID, release_tag, sizes) %></li>

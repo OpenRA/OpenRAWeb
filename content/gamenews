@@ -1,4 +1,4 @@
-2019-11-02 19-00-00:
-	Title: Playtest 20191102
+2019-11-17 22-00-00:
+	Title: Release 20191117
 	Author: Paul Chote
-	Content: A new playtest is available with several more fixes towards our upcoming late-2019 release:\n\n  • Fixed infantry failing to dodge crushes\n  • Fixed pilots (not) parachuting from killed aircraft\n  • Restored helicopter force-move above buildings\n  • Fixed several issues with left-click mouse controls\n  • Fixed 64-bit installation directory on Windows\n\nVisit www.openra.net to download the playtest and help us prepare for the next big OpenRA release!
+	Content: Just in time for the holiday season, release-20191117 is now available with all of the features and fixes that have been tested and refined over the past few months:\n\n  • Save/Load support for missions and skirmish\n  • A new spectator/replay interface\n  • A new in-game UI for Tiberian Dawn\n  • Improved order queuing behavior\n  • Direction selection for aircraft-based support powers\n  • Fixed several issues with left-click mouse controls\n  • Balance changes for RA and TD\n  • Fixes for many bugs and graphical glitches\n\nSee the full news post at www.openra.net for a video overview and the release download!
