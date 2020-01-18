@@ -1,4 +1,4 @@
 2019-11-17 22-00-00:
-	Title: Release 20191117
+	Title: Playtest 20200118
 	Author: Paul Chote
-	Content: Just in time for the holiday season, release-20191117 is now available with all of the features and fixes that have been tested and refined over the past few months:\n\n  • Save/Load support for missions and skirmish\n  • A new spectator/replay interface\n  • A new in-game UI for Tiberian Dawn\n  • Improved order queuing behavior\n  • Direction selection for aircraft-based support powers\n  • Fixed several issues with left-click mouse controls\n  • Balance changes for RA and TD\n  • Fixes for many bugs and graphical glitches\n\nSee the full news post at www.openra.net for a video overview and the release download!
+	Content: We are releasing a new playtest today that refines and fixes several issues in the current release:\n\n  • Fixed performance issues\n  • Fixed aircraft targeting issues\n  • Fixed crashes during gameplay or loading savegames\n  • Fixed several behaviour issues with unit and bot AI\n  • Fixed missing team chat in game replays\n  • Improved build icon layout in RA and D2k sidebars\n  • Improved in-game menu option layout\n\nWe encourage everybody to try a game or two, and to let us know if we have missed any other issues before a final hotfix release in a couple of weeks time.
