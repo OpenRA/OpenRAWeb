@@ -1,4 +1,4 @@
-2020-02-02 20-00-00:
-	Title: Release 20200202
+2020-03-03 22-00-00:
+	Title: Playtest 20200303
 	Author: Paul Chote
-	Content: While we work on the next full playtest, there are a few serious issues that we wanted to address without further delay. Release 20200202 is now available, including:\n\n  • Fixes for significant performance issues\n  • Fixes for several rare crashes\n  • Fixes for aircraft behaviour issues\n  • Fixed several behaviour issues with unit and bot AI\n  • Fixed missing team chat in game replays\n  • Improved build icon layout in RA and D2k sidebars\n  • Improved in-game menu option layout\n\nVisit www.openra.net for more information and to download the new release. Good luck and have fun!
+	Content: Playtest 20200303 is now avilable, including:\n\n  • Smooth Zooming and UI size options\n  • Improved HiDPI support\n  • New introduction screen and Settings menu\n  • New production rally point logic\n  • New Spectator Army tab\n  • New hotkeys for harvesters and factory selection\n  • New map editor features\n  • More pathfinding logic improvements\n  • More crash, bug, and performance fixes\n\nVisit www.openra.net for more information and to download the new playtest. We hope you enjoy it!
