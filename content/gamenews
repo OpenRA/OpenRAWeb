@@ -1,4 +1,4 @@
-2020-03-03 22-00-00:
-	Title: Playtest 20200303
-	Author: Paul Chote
-	Content: Playtest 20200303 is now avilable, including:\n\n  • Smooth Zooming and UI size options\n  • Improved HiDPI support\n  • New introduction screen and Settings menu\n  • New production rally point logic\n  • New Spectator Army tab\n  • New hotkeys for harvesters and factory selection\n  • New map editor features\n  • More pathfinding logic improvements\n  • More crash, bug, and performance fixes\n\nVisit www.openra.net for more information and to download the new playtest. We hope you enjoy it!
+2020-03-29 22-00-00:
+	Title: Playtest 20200329
+	Author: Lukas Franke
+	Content: Playtest 20200329 is out for testing. Changes include:\n\n  • Restored right-click scrolling support\n  • Fixed aircraft not taking off when no rallypoint is set\n  • Pathfinding improvements\n  • Reworked airstrip exits to prevent traffic jams\n  • Fixed spicebloom behaviour in Dune 2000\n  • Additional campaign missions\n  • Community balance changes for Red Alert\n\nVisit www.openra.net for more information and to download the new playtest. We hope you enjoy it!
