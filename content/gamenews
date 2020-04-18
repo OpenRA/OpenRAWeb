@@ -1,4 +1,4 @@
-2020-03-29 22-00-00:
-	Title: Playtest 20200329
-	Author: Lukas Franke
-	Content: Playtest 20200329 is out for testing. Changes include:\n\n  • Restored right-click scrolling support\n  • Fixed aircraft not taking off when no rallypoint is set\n  • Pathfinding improvements\n  • Reworked airstrip exits to prevent traffic jams\n  • Fixed spicebloom behaviour in Dune 2000\n  • Additional campaign missions\n  • Community balance changes for Red Alert\n\nVisit www.openra.net for more information and to download the new playtest. We hope you enjoy it!
+2020-04-18 22-00-00:
+	Title: Playtest 20200418
+	Author: Paul Chote
+	Content: Playtest 20200418 is out for testing. Changes include:\n\n  • Fixed a desync crash caused by Minelayers\n  • Fixed several issues related to Service Depots\n  • Fixed issues with player colour and faction validation\n  • Restored country display for anonymous players\n  • Fixed several issues in the singleplayer campaign\n\nWith the recent surge in online player numbers, we want to make sure that the upcoming release is as stable as it can possibly be.\n\nVisit www.openra.net to download the new playtest and let us know about any last issues we have missed!
