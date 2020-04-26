@@ -1,4 +1,4 @@
-2020-04-18 22-00-00:
-	Title: Playtest 20200418
+2020-04-26 14-00-00:
+	Title: Playtest 20200426
 	Author: Paul Chote
-	Content: Playtest 20200418 is out for testing. Changes include:\n\n  • Fixed a desync crash caused by Minelayers\n  • Fixed several issues related to Service Depots\n  • Fixed issues with player colour and faction validation\n  • Restored country display for anonymous players\n  • Fixed several issues in the singleplayer campaign\n\nWith the recent surge in online player numbers, we want to make sure that the upcoming release is as stable as it can possibly be.\n\nVisit www.openra.net to download the new playtest and let us know about any last issues we have missed!
+	Content: Playtest 20200426 is out for testing. Changes include:\n\n  • Restored support for OpenGL 2.1 rendering\n  • Fixed scripting issues in allies06 campaign missions\n\nWith the recent surge in online player numbers, we want to make sure that the upcoming release is as stable as it can possibly be.\n\nVisit www.openra.net to download the new playtest and let us know about any last issues we have missed!
