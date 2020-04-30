@@ -2,3 +2,4 @@ http://openra.baxxster.no/openra/ra-quickinstall.zip
 http://openra.ppmsite.com/ra-quickinstall.zip
 http://openra.mirror.haffdata.com/ra-quickinstall.zip
 https://republic.community/hosted/files/command-and-conquer/openra/ra-quickinstall.zip
+https://mirror.koljasagorski.de/OpenRA.net/ra-quickinstall.zip
