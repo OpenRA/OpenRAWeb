@@ -1,4 +1,4 @@
-2020-04-26 14-00-00:
-	Title: Playtest 20200426
+2020-05-03 16-00-00:
+	Title: Release 20200503
 	Author: Paul Chote
-	Content: Playtest 20200426 is out for testing. Changes include:\n\n  • Restored support for OpenGL 2.1 rendering\n  • Fixed scripting issues in allies06 campaign missions\n\nWith the recent surge in online player numbers, we want to make sure that the upcoming release is as stable as it can possibly be.\n\nVisit www.openra.net to download the new playtest and let us know about any last issues we have missed!
+	Content: We are pleased to finally announce Release 20200503, which brings long-awaited UI improvements, core engine upgrades, and balance improvements:\n\n  • Smooth Zooming and UI size configuration\n  • New campaign missions for TD and D2k\n  • New Spectator Army tab\n  • New hotkeys for harvesters and factory selection\n  • Red Alert balance changes\n  • Undo/Redo support for the map editor\n  • More crash, bug, and performance fixes\n\nSee the full news post at www.openra.net for a patch spotlight video and the release download!
