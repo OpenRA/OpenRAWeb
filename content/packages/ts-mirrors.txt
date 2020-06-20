@@ -3,4 +3,4 @@ http://srvdonate.ut.mephi.ru/openra/ts-packages.zip
 http://openra.baxxster.no/openra/ts-packages.zip
 http://openra.0x47.net/ts-packages.zip
 http://openra.mirror.haffdata.com/ts-packages.zip
-https://republic.community/hosted/files/command-and-conquer/openra/ts-packages.zip
+https://thepublic.community/hosted/files/command-and-conquer/openra/ts-packages.zip

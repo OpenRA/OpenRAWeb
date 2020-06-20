@@ -1,4 +1,4 @@
 http://openra.baxxster.no/openra/ra-base.zip
 http://openra.ppmsite.com/ra-base.zip
 http://openra.mirror.haffdata.com/ra-base.zip
-https://republic.community/hosted/files/command-and-conquer/openra/ra-base.zip
+https://thepublic.community/hosted/files/command-and-conquer/openra/ra-base.zip

@@ -3,4 +3,4 @@ http://srvdonate.ut.mephi.ru/openra/cnc-packages.zip
 http://openra.baxxster.no/openra/cnc-packages.zip
 http://openra.0x47.net/cnc-packages.zip
 http://openra.mirror.haffdata.com/cnc-packages.zip
-https://republic.community/hosted/files/command-and-conquer/openra/cnc-packages.zip
+https://thepublic.community/hosted/files/command-and-conquer/openra/cnc-packages.zip
