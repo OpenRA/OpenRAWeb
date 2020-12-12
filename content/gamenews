@@ -1,4 +1,4 @@
-2020-05-03 16-00-00:
-	Title: Release 20200503
+2020-12-13 16-00-00:
+	Title: Playtest 20201213
 	Author: Paul Chote
-	Content: We are pleased to finally announce Release 20200503, which brings long-awaited UI improvements, core engine upgrades, and balance improvements:\n\n  • Smooth Zooming and UI size configuration\n  • New campaign missions for TD and D2k\n  • New Spectator Army tab\n  • New hotkeys for harvesters and factory selection\n  • Red Alert balance changes\n  • Undo/Redo support for the map editor\n  • More crash, bug, and performance fixes\n\nSee the full news post at www.openra.net for a patch spotlight video and the release download!
+	Content: Just in time for the holiday period, we are kicking off a new playtest series for the next OpenRA release.\n\nNew features in playtest-20201213 include:\n  • Updated balance and map pool for RA and TD\n  • Stealth Deliveries lobby option for TD\n  • Automatic Concrete lobby option for D2k\n  • Lobby feature to disable map spawn points\n  • Share status and invites on Discord\n  • More fluid infantry combat\n  • RA Spies can now reset support powers\n\nSee the full news post at www.openra.net for more information and to download the new playtest. We hope you enjoy it, and happy holidays!

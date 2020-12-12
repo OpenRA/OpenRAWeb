@@ -92,11 +92,12 @@ $(document).ready(function(){
 <div id="osx" class="tab">
   <hr />
   <h3><img src="/images/platforms/osx-small.svg" class="downloadsmallplatform" />macOS Applications</h3>
-  <p>OpenRA works on all macs running macOS 10.9 or later.</p>
+  <p>OpenRA works best on a mac running macOS 10.13 or later.</p>
   <ul class="downloadlinks">
     <li><%= generate_download_button("osx", GITHUB_RELEASE_ID, release_tag, sizes) %></li>
     <li><%= generate_download_button("osx", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
   </ul>
+  <p>A separate "compat" release for OS X 10.9 &ndash; 10.12 can be found in the <a href="https://github.com/OpenRA/OpenRA/releases">GitHub Releases</a> archive.</p>
   <p>Stable releases are also available from <a href="https://formulae.brew.sh/cask/openra">Homebrew</a>:</p>
   <pre>$ brew cask install openra</pre>
   <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
