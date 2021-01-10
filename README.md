@@ -28,4 +28,3 @@ Use `bundle exec nanoc compile` and `bundle exec nanoc view` to generate and hos
 
 ## Stats
 * Analytics: http://www.seethestats.com/site/openra.net/STS5AYU4FS9
-* Uptime: http://stats.pingdom.com/syygqlg6525r/788293
