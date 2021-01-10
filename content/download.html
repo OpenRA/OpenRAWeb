@@ -90,6 +90,7 @@ $(document).ready(function(){
   <p>Installers for 32-bit Windows can be found in the <a href="https://github.com/OpenRA/OpenRA/releases">GitHub Releases</a> archive.</p>
   <p>Stable releases are also available from <a href="https://winstall.app/apps/OpenRA.OpenRA">WinGet</a>:</p>
   <pre>$ winget install openra</pre>
+  <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
 </div>
 <div id="osx" class="tab">
   <hr />
@@ -118,7 +119,7 @@ $(document).ready(function(){
     <li><%= generate_appimage_button("d2k", GITHUB_PLAYTEST_ID, playtest_tag, sizes) %></li>
   </ul>
   <h3>Community-maintained packages</h3>
-  <p>OpenRA may also be installed using packages provided by your Linux distribution or other third parties. These packages will provide better integration with your system, but may not always offer the latest release. Please contact the downstream repository maintainers about any packaging issues.</p>
+  <p>OpenRA may also be installed using packages provided by your Linux distribution or other third parties.</p>
 
   <dl class="downloaddistros">
     <dt><img src="/images/platforms/flatpak-small.png" class="downloadsmallplatform" />Flatpak</dt>
@@ -149,6 +150,7 @@ $ flatpak install --from https://flathub.org/beta-repo/appstream/net.openra.Open
       <pre>$ xbps-install openra</pre>
     </dd>
   </dl>
+  <p class="downloadthirdparty">We do not maintain this external package source, so there may be delays when a new version is released.<br />Please contact the downstream repository maintainers about any packaging issues.</p>
 </div>
 <div id="freebsd" class="tab">
   <hr />
